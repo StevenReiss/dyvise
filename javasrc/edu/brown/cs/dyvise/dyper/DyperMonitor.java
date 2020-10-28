@@ -103,7 +103,7 @@ private double		report_total;
 private long		num_reports;
 private double		check_total;
 private double		delay_total;
-rrivate long		num_checks;
+private long		num_checks;
 private int		max_depth;
 private double		last_check;
 
