@@ -124,6 +124,8 @@ public void addFiles(String[] paths)
 
 public void addClassPath(String classpath)
 {
+   if (classpath == null) return;
+   
    addFiles(classpath.split(File.pathSeparator));
 }
 

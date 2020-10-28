@@ -731,10 +731,10 @@ private void getProcessProps(Element xml)
     }
 
    program_props.put("SHARED_LIB_EXT",".so");
-   String vend = program_props.get("java.vm.vendor");
-   if (vend.contains("Apple")) {
-      program_props.put("SHARED_LIB_EXT",".jnilib");
-    }
+//    String vend = program_props.get("java.vm.vendor");
+//    if (vend.contains("Apple")) {
+//       program_props.put("SHARED_LIB_EXT",".jnilib");
+//     }
 }
 
 

@@ -675,7 +675,21 @@ private String handleClassModel(Element opts)
     }
    xw.textElement("CLASSPATH",cp);
    xw.textElement("JAVAHOME",System.getProperty("java.home"));
-   xw.textElement("BOOTPATH",System.getProperty("sun.boot.class.path"));
+   
+   String bcp = System.getProperty("sun.boot.class.path");
+   if (bcp == null) {
+      File f1 = new File(System.getProperty("java.home"));
+      File f2 = new File(f1,"jmods");
+      StringBuffer buf = new StringBuffer();
+      int ct = 0;
+      for (File f3 : f2.listFiles()) {
+         if (ct++ > 0) buf.append(File.pathSeparator);
+         buf.append(f3.getAbsolutePath());
+       }
+      bcp = buf.toString();
+    }
+   xw.textElement("BOOTPATH",bcp);
+   
    xw.textElement("CWD",System.getProperty("user.dir"));
 
    xw.begin("USER");
@@ -696,6 +710,9 @@ private String handleClassModel(Element opts)
 
    String rslt = xw.toString();
    xw.close();
+   
+   System.err.println("DYPER: class model: " + rslt);
+   
    return rslt;
 }
 

@@ -499,7 +499,7 @@ void setupClassModel(Collection<String> clsset)
    }
    if (debug_flag > 0) System.err.println("DYPATCH: Received model "
 	    + IvyXml.convertXmlToString(e));
-
+   
    e = IvyXml.getElementByTag(e, "CLASSMODEL");
    setupClasses(e);
 }
@@ -531,7 +531,7 @@ private synchronized void setupClasses(Element xml)
       boot_path = fixupPaths(cwd, boot_path);
    }
    class_loader.addClassPath(class_path);
-   class_loader.addClassPath(boot_path);
+   if (boot_path != null) class_loader.addClassPath(boot_path);
 
    for (Element ce : IvyXml.elementsByTag(xml, "CLASS")) {
       String nm = IvyXml.getAttrString(ce, "NAME");
@@ -601,10 +601,22 @@ private String fixupPaths(String wd,String paths)
 // Visit class by name with given ClassVisitor
 private void visitClass(String name,ClassVisitor cv) throws IOException
 {
-   InputStream is = class_loader.getResourceAsStream(name.replace('.', '/') + ".class");
+   String res = name.replace('.', '/') + ".class";
+   InputStream is = class_loader.getResourceAsStream(res);
+   if (is == null) {
+      ClassLoader cl1 = ClassLoader.getSystemClassLoader();
+      is = cl1.getResourceAsStream(res);
+    }
+   if (is == null) {
+      System.err.println("DYPATCH: Can't find " + name);
+      return;
+    }
    ClassReader cr = new ClassReader(is);
    cr.accept(cv, ClassReader.SKIP_FRAMES);
 }
+
+
+
 
 /********************************************************************************/
 /*										*/

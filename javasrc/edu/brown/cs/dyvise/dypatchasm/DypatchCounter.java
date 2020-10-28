@@ -292,8 +292,13 @@ public void visitFieldInsn(int opcode,String owner,String name,String desc)
 	 dims = 0;
 	 //FALLTHROUGH
       case Opcodes.ANEWARRAY:
-	 Type t = Type.getType(type);
-	 allocXml(t, dims);
+         try {
+            Type t = Type.getType(type);
+            allocXml(t, dims);
+          }
+         catch (Throwable t) {
+            System.err.println("DYPATCH: can't find type " + type + " for " + opcode);
+          }
 	 break;
    }
    ++ins_no;
