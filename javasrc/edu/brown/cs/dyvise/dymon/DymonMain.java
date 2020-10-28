@@ -141,7 +141,6 @@ private boolean 	web_access;
 private Object		check_lock;
 private String		server_host;
 private String		server_port;
-private Socket		dyperserver_socket;
 
 private static boolean do_debug = (System.getenv("BROWN_DYMON_DEBUG") != null);
 
@@ -1564,8 +1563,8 @@ private void startDyperServer()
 
    if (server_host != null) {
       try {
-	 dyperserver_socket = new Socket(server_host,Integer.parseInt(server_port));
-	 // s.close();
+	 Socket s = new Socket(server_host,Integer.parseInt(server_port));
+	 s.close();
        }
       catch (Throwable t) {
 	 System.err.println("DYMON: Problem connecting to dymondyperserver: " + t);

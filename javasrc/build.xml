@@ -1,0 +1,59 @@
+<project name='dyvise' default='all' >
+
+   <property file='../build.properties' />
+   <property name='PRO' value='/pro' />
+   <property name='IVYBIN' value='${PRO}/ivy/java' />
+   <property name='DYVISE' value='${PRO}/dyvise' />
+   <property name='BUBBLESBIN' value='${PRO}/bubbles/java' />
+
+   <target name='all'>
+      <ant antfile="build.xml" dir="edu/brown/cs/dyvise/dyper" />
+      <ant antfile="build.xml" dir="edu/brown/cs/dyvise/dypatchasm" />
+      <ant antfile="build.xml" dir="edu/brown/cs/dyvise/dymon" />
+      <ant antfile="build.xml" dir="edu/brown/cs/dyvise/dymaster" />
+      <ant antfile="build.xml" dir="edu/brown/cs/dyvise/dymem" />
+      <ant antfile="build.xml" dir="edu/brown/cs/dyvise/dyvision" />
+      <ant antfile="build.xml" dir="edu/brown/cs/dyvise/dpin" />
+      <ant antfile="build.xml" dir="edu/brown/cs/dyvise/dyvise" />
+      <ant antfile="build.xml" dir="edu/brown/cs/dyvise/dycomp" />
+      <ant antfile="build.xml" dir="edu/brown/cs/dyvise/dymac" />
+      <ant antfile="build.xml" dir="edu/brown/cs/dyvise/dynamo" />
+      <ant antfile="build.xml" dir="edu/brown/cs/dyvise/dystore" />
+      <ant antfile="build.xml" dir="edu/brown/cs/dyvise/dygraph" />
+      <ant antfile="build.xml" dir="edu/brown/cs/dyvise/dyview" />
+      <ant antfile="build.xml" dir="edu/brown/cs/dyvise/dylute" />
+      <ant antfile="build.xml" dir="edu/brown/cs/dyvise/dylate" />
+      <ant antfile="build.xml" dir="edu/brown/cs/dyvise/dylock" />
+   </target>
+
+   <path id='jdocsrc'>
+      <pathelement location='${DYVISE}/java' />
+      <pathelement location='${IVYBIN}' />
+      <pathelement location='${BUBBLESBIN}' />
+      <pathelement location='${PRO}/bubbles/lib/junit.jar' />
+      <fileset dir='${DYVISE}/lib/' includes='asm*.jar' />
+   </path>
+
+   <target name='doc'>
+      <javadoc sourcepathref='jdocsrc' classpathref='jdocsrc' destdir='${DYVISE}/doc'>
+	 <package name="edu.brown.cs.dyvise.dyper" />
+	 <package name="edu.brown.cs.dyvise.dypatchasm" />
+	 <package name="edu.brown.cs.dyvise.dymon" />
+	 <package name="edu.brown.cs.dyvise.dymaster" />
+	 <package name="edu.brown.cs.dyvise.dymem" />
+	 <package name="edu.brown.cs.dyvise.dyvision" />
+	 <package name="edu.brown.cs.dyvise.dpin" />
+	 <package name="edu.brown.cs.dyvise.dyvise" />
+	 <package name="edu.brown.cs.dyvise.dycomp" />
+	 <package name="edu.brown.cs.dyvise.dymac" />
+	 <package name="edu.brown.cs.dyvise.dynamo" />
+	 <package name="edu.brown.cs.dyvise.dystore" />
+	 <package name="edu.brown.cs.dyvise.dygraph" />
+	 <package name="edu.brown.cs.dyvise.dyview" />
+	 <package name="edu.brown.cs.dyvise.dylute" />
+	 <package name="edu.brown.cs.dyvise.dylate" />
+	 <package name="edu.brown.cs.dyvise.dylock" />
+      </javadoc>
+   </target>
+
+</project>

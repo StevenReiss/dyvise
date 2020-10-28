@@ -353,14 +353,12 @@ String getName()
 
 private void processInput()
 {
-   try {
-      BufferedReader br = new BufferedReader(new FileReader(input_file));
+   try (BufferedReader br = new BufferedReader(new FileReader(input_file))) {
       for ( ; ; ) {
 	 String ln = br.readLine();
 	 if (ln == null) break;
 	 processData(ln);
        }
-      br.close();
       dataUpdated();
     }
    catch (IOException e) {

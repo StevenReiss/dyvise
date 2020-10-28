@@ -255,83 +255,81 @@ private class Connection extends Thread {
 
    @Override public void run() {
       // System.err.println("DYMONDYPERSERVER: start connect");
-
-      try {
-	 InputStream ins = client_socket.getInputStream();
-	 BufferedReader lnr = new BufferedReader(new InputStreamReader(ins));
-
-	 boolean done = false;
-	 while (!done) {
-	    StringBuffer body = null;
-	    boolean isreply = false;
-	    for ( ; ; ) {
-	       String s = "";
-	       try {
-		  s = lnr.readLine();
-		}
-	       catch (SocketTimeoutException e) {
-		  continue;
-		}
-
-	       // System.err.println("SERVER: READ " + s);
-	       if (s == null) {
-		  done = true;
-		  break;
-		}
-	       if (s.equals(DYMON_DYPER_TRAILER)) break;
-	       if (s.equals(DYMON_DYPER_REPLY_TRAILER)) {
-		  isreply = true;
-		  break;
-		}
-	       if (body == null) body = new StringBuffer(s);
-	       else {
-		  body.append("\n");
-		  body.append(s);
-		}
-	     }
-	    if (isreply) {
-	       String reply = null;
-	       if (body != null) reply = body.toString();
-	       MintMessage msg = pending_messages.poll();
-	       if (msg != null) {
-		  // System.err.println("SERVER: REPLY: " + reply);
-		  msg.replyTo(reply);
-		}
-	       else {
-		  // System.err.println("SERVER: No pending message");
-		}
-
-	     }
-	    else if (body != null) {
-	       String btxt = body.toString();
-	       if (client_id == null && btxt.startsWith("CONNECT")) {
-		  client_id = btxt.substring(8).trim();
-		  named_connections.put(client_id,this);
-		}
-	       else {
-		  // System.err.println("SERVER: Send to mint: " + btxt);
-		  mint_control.send(btxt);
-		}
-	     }
-	  }
+      
+      try (InputStream ins = client_socket.getInputStream();
+         BufferedReader lnr = new BufferedReader(new InputStreamReader(ins))) {
+         boolean done = false;
+         while (!done) {
+            StringBuffer body = null;
+            boolean isreply = false;
+            for ( ; ; ) {
+               String s = "";
+               try {
+                  s = lnr.readLine();
+                }
+               catch (SocketTimeoutException e) {
+                  continue;
+                }
+               
+               // System.err.println("SERVER: READ " + s);
+               if (s == null) {
+                  done = true;
+                  break;
+                }
+               if (s.equals(DYMON_DYPER_TRAILER)) break;
+               if (s.equals(DYMON_DYPER_REPLY_TRAILER)) {
+                  isreply = true;
+                  break;
+                }
+               if (body == null) body = new StringBuffer(s);
+               else {
+                  body.append("\n");
+                  body.append(s);
+                }
+             }
+            if (isreply) {
+               String reply = null;
+               if (body != null) reply = body.toString();
+               MintMessage msg = pending_messages.poll();
+               if (msg != null) {
+                  // System.err.println("SERVER: REPLY: " + reply);
+                  msg.replyTo(reply);
+                }
+               else {
+                  // System.err.println("SERVER: No pending message");
+                }
+               
+             }
+            else if (body != null) {
+               String btxt = body.toString();
+               if (client_id == null && btxt.startsWith("CONNECT")) {
+                  client_id = btxt.substring(8).trim();
+                  named_connections.put(client_id,this);
+                }
+               else {
+                  // System.err.println("SERVER: Send to mint: " + btxt);
+                  mint_control.send(btxt);
+                }
+             }
+          }
        }
       catch (IOException e) {
-	 System.err.println("DYMONDYPERSERVER: Problem with socket: " + e);
-	 e.printStackTrace();
+         System.err.println("DYMONDYPERSERVER: Problem with socket: " + e);
+         e.printStackTrace();
        }
       catch (Throwable t) {
-	 System.err.println("DYMONSYPERSERVER: Problem with command: " + t);
-	 t.printStackTrace();
+         System.err.println("DYMONSYPERSERVER: Problem with command: " + t);
+         t.printStackTrace();
        }
-
+      
       System.err.println("DYMONDYPERSERVER: CONNECTION EXITED");
-
+      
       try {
-	 if (client_socket != null) client_socket.close();
-	 if (output_writer != null) output_writer.close();
+         if (client_socket != null) client_socket.close();
+         if (output_writer != null) output_writer.close();
        }
       catch (IOException e) { }
-
+      
       removeConnection(this);
    }
 

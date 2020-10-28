@@ -1,0 +1,60 @@
+<project name='dyvise' default='jar'>
+
+   <property file='build.properties' />
+
+   <available file="./build.properties" type='file' property='setup.done' />
+   <path id='setuppath'>
+      <pathelement location='..' />
+   </path>
+   <path id='dyvisepath'>
+      <pathelement location='.' />
+   </path>
+   <property name='setupfile' refid='setuppath' />
+   <property name='dyvisefile' refid='dyvisepath' />
+   <target name='setup' unless='setup.done'>
+      <echo file='./build.properties' message="PRO=${setupfile}${line.separator}" />
+      <echo file='./build.properties' message='DYVISE=${dyvisefile}${line.separator}' append='true' />
+      <property name='PRO' value='${setupfile}' />
+      <property name='DYVISE' value='${dyvisefile}' />
+      <mkdir dir='./java/edu/brown/cs/dyvise' />
+   </target>
+
+   <property name='BUBBLESLIB' value='${PRO}/bubbles/lib' />
+
+   <target name='all' depends='setup'>
+      <ant antfile="build.xml" dir="javasrc" />
+      <ant antfile='build.xml' dir='${PRO}/dyvisebb' />
+   </target>
+
+   <path id='jdocsrc'>
+      <pathelement location='./javasrc' />
+      <pathelement location='${PRO}/ivy/javasrc' />
+      <pathelement location='${PRO}/bubbles/javasrc' />
+    </path>
+
+   <target name='doc'>
+      <ant antfile='build.xml' dir='javasrc' target='doc' />
+      <zip zipfile='lib/apidoc.zip' basedir='doc' />
+   </target>
+
+   <target name='jar' depends='all'>
+      <jar destfile='dyvise.jar'>
+	 <fileset dir='./java' includes='**/*.class' />
+      </jar>
+   </target>
+
+</project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

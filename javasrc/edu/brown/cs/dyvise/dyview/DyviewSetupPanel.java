@@ -66,7 +66,6 @@ package edu.brown.cs.dyvise.dyview;
 import edu.brown.cs.dyvise.dycomp.DycompMain;
 import edu.brown.cs.dyvise.dymac.DymacMain;
 import edu.brown.cs.dyvise.dymon.DymonRemote;
-import edu.brown.cs.dyvise.dystatic.DystaticMain;
 import edu.brown.cs.dyvise.dyvise.*;
 import edu.brown.cs.ivy.project.IvyProject;
 import edu.brown.cs.ivy.swing.SwingGridPanel;
@@ -95,7 +94,6 @@ private JComboBox<IvyProject> project_selector;
 private DyviewStartPanel start_panel;
 private JLabel		last_static;
 private JLabel		last_dynamic;
-private JButton 	static_button;
 private JButton 	dynamic_button;
 private JButton 	next_button;
 private boolean 	dynamic_ready;
@@ -155,10 +153,6 @@ private void setupPanel()
    bx = Box.createHorizontalBox();
    bx.add(last_static);
    bx.add(Box.createHorizontalStrut(20));
-   static_button = new JButton("Update Static Analysis Now");
-   static_button.addActionListener(new StaticUpdateListener());
-   if (view_model.getProject() == null) static_button.setEnabled(false);
-   bx.add(static_button);
    addRawComponent("Last Analysis",bx);
 
    addSeparator();
@@ -358,95 +352,16 @@ private class AdvProjectListener implements ActionListener {
 private void setupProject()
 {
    if (view_model.getProject() == null) {
-      static_button.setEnabled(false);
       last_static.setText("No project");
       dynamic_button.setEnabled(false);
       dynamic_button.setText("No project");
       return;
     }
 
-   Date lup = view_model.getUpdateTime(DYSTATIC_UPDATE_LABEL,null);
-   if (lup == null) {
-      updateStaticAnalysis();
-    }
-   else {
-      last_static.setText(lup.toString());
-      static_button.setEnabled(true);
-    }
-
    start_panel.recompute();
 }
 
 
-
-private void updateStaticAnalysis()
-{
-   JOptionPane opt = new JOptionPane("Waiting for static analysis to complete",
-					JOptionPane.INFORMATION_MESSAGE,
-					JOptionPane.DEFAULT_OPTION,
-					null,null);
-   JDialog dlg = opt.createDialog(this,"Static Analysis Waiter");
-   dlg.setModal(true);
-
-   StaticAnalyzer sa = new StaticAnalyzer(view_model.getProject(),dlg);
-   sa.start();
-   dlg.setVisible(true);
-}
-
-
-
-private class StaticUpdateListener implements ActionListener {
-
-   public void actionPerformed(ActionEvent evt) {
-      updateStaticAnalysis();
-    }
-
-}	// end of inner class StaticUpdateListener
-
-
-
-private class StaticAnalyzer extends Thread {
-
-   private IvyProject for_project;
-   private JDialog wait_dialog;
-
-   StaticAnalyzer(IvyProject ip,JDialog dlg) {
-      super("Static Analyzer for " + ip.getName());
-      for_project = ip;
-      wait_dialog = dlg;
-    }
-
-   public void run() {
-      while (wait_dialog != null && !wait_dialog.isActive()) {
-	 try {
-	    Thread.sleep(1);
-	  }
-	 catch (InterruptedException e) { }
-       }
-      static_button.setEnabled(false);
-      last_static.setText("Updating...");
-      DystaticMain dm = new DystaticMain(for_project);
-      dm.defaultAnalysis();
-      Date lup = view_model.getUpdateTime(DYSTATIC_UPDATE_LABEL,null);
-
-      DycompMain dc = new DycompMain(for_project);
-      dc.processFile(DYVIEW_STATIC_COMPUTE,null);
-      start_panel.recompute();
-
-      if (view_model.getProject() == for_project) {
-	 if (lup != null) last_static.setText(lup.toString());
-	 else last_static.setText("Update failed");
-       }
-      static_button.setEnabled(true);
-
-      if (wait_dialog != null) {
-	 wait_dialog.setVisible(false);
-	 wait_dialog.dispose();
-	 wait_dialog = null;
-       }
-    }
-
-}
 
 
 

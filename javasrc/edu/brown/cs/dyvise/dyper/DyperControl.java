@@ -789,9 +789,9 @@ private String handleInstrument(Element xml)
 		}
 	     }
 	  }
-	 for (Class<?> c1 : clsa) {
-	    Compiler.compileClass(c1);
-	  }
+// 	 for (Class<?> c1 : clsa) {
+// 	    Compiler.compileClass(c1);
+// 	  }
        }
       else {
 	 ClassDefinition [] cdefs = new ClassDefinition[patchmap.size()];
@@ -1484,17 +1484,19 @@ private static String [] getCommandLine()
       File f = new File("/proc/self/cmdline");
       boolean fnd = false;
       if (f.exists()) {
-	 FileReader fr = new FileReader(f);
-	 char [] buf = new char[100000];
-	 int fsz = buf.length;
-	 int off = 0;
-	 for ( ; ; ) {
-	    int rsz = fr.read(buf,off,fsz-off);
-	    if (rsz < 0) break;
-	    off += rsz;
-	  }
-	 int sz = off;
-	 fr.close();
+   	 char [] buf = new char[100000];
+         int sz = 0;
+         try (FileReader fr = new FileReader(f)) {
+            int fsz = buf.length;
+            int off = 0;
+            for ( ; ; ) {
+               int rsz = fr.read(buf,off,fsz-off);
+               if (rsz < 0) break;
+               off += rsz;
+               if (off >= fsz) break;
+             }
+            sz = off;
+          }
 	 if (sz != 0 && sz != 4096) {
 	    int st = 0;
 	    for (int i = 1; i < sz; ++i) {
@@ -1583,14 +1585,14 @@ private static String getProcessId()
    try {
       File f = new File("/proc/self/stat");
       if (f.exists()) {
-	 FileReader fr = new FileReader(f);
-	 int pid = 0;
-	 for ( ; ; ) {
-	    int c = fr.read();
-	    if (c < '0' || c > '9') break;
-	    pid = pid * 10 + c - '0';
-	  }
-	 fr.close();
+         int pid = 0;
+         try (FileReader fr = new FileReader(f)) {
+            for ( ; ; ) {
+               int c = fr.read();
+               if (c < '0' || c > '9') break;
+               pid = pid * 10 + c - '0';
+             }
+          }
 	 return Integer.toString(pid);
        }
     }

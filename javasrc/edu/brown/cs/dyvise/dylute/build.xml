@@ -1,0 +1,66 @@
+<project name='dyvise.dylute' default='jar'>
+   <property file='../../../../../../build.properties' />
+   <property name='PRO' value='/pro' />
+   <available file="${PRO}/ivy" type="dir" property="ivy.present" />
+   <available file="${PRO}/bubbles" type="dir" property="bubbles.present" />
+   <property name='IVYBIN' value='${PRO}/ivy/java' />
+   <property name='BUBBLESBIN' value='${PRO}/bubbles/java' />
+   <property name='DYVISE' value='${basedir}/../../../../../..' />
+
+   <target name='init'>
+      <path id='dyvise.classpath'>
+	 <pathelement location='${DYVISE}/java' />
+	 <pathelement location='${IVYBIN}' />
+	 <pathelement location='${DYVISE}/lib/sprasm.jar' />
+	 <pathelement location='${PRO}/ivy/lib/asm6.jar' />
+	 <pathelement location='${PRO}/ivy/lib/junit.jar' />
+      </path>
+      <path id='test.classpath'>
+	 <pathelement location='${DYVISE}/java' />
+	 <pathelement location='${IVYBIN}' />
+	 <pathelement location='${DYVISE}/lib/sprasm.jar' />
+	 <pathelement location='${PRO}/ivy/lib/asm6.jar' />
+	 <pathelement location='${PRO}/ivy/lib/junit.jar' />
+      </path>
+   </target>
+
+   <target name='compile' depends='init'>
+      <javac srcdir='.' destdir='${DYVISE}/java' debug='on' deprecation='on'
+		includeantruntime='false' excludes='scan/**' >
+	 <classpath refid='dyvise.classpath' />
+	 <compilerarg value='-Xlint:all' />
+      </javac>
+   </target>
+
+   <target name='clean'>
+      <delete dir='${DYVISE}/java/edu/brown/cs/dyvise/dylute' />
+   </target>
+
+   <target name='test' depends='compile'>
+      <junit fork='true' printsummary='on'>
+	 <classpath refid='test.classpath' />
+	 <assertions><enable/></assertions>
+	 <formatter type='plain' />
+	 <test name='edu.brown.cs.dyvise.dylute.DyluteTest' />
+      </junit>
+   </target>
+
+   <target name='jar' depends='compile'>
+      <jar destfile='dylute.jar'>
+	 <manifest>
+	    <attribute name='Premain-Class' value='edu.brown.cs.dyvise.dylute.DyluteMain' />
+	    <attribute name='Agent-Class' value='edu.brown.cs.dyvise.dylute.DyluteMain' />
+	    <attribute name='Boot-Class-Path' value='/pro/dyvise/dylute/src/dylute.jar' />
+	    <attribute name='Can-Redefine-Classes' value='true' />
+	    <attribute name='Can-Retransform-Classes' value='true' />
+	    <attribute name='Can-Set-Native-Method-Prefix' value='false' />
+	    <attribute name='Sealed' value='false' />
+	 </manifest>
+	 <fileset dir='${DYVISE}/java' includes='**/dylute/*.class' />
+	 <zipfileset src='${DYVISE}/lib/sprasm.jar' excludes='META-INF/.*' />
+      </jar>
+   </target>
+
+</project>
+
+

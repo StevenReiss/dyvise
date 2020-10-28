@@ -1,0 +1,48 @@
+<project name='dyvise.dymon' default='compile'>
+   <property file='../../../../../../build.properties' />
+   <property name='PRO' value='/pro' />
+   <available file="${PRO}/ivy" type="dir" property="ivy.present" />
+   <available file="${PRO}/bubbles" type="dir" property="bubbles.present" />
+   <property name='IVYBIN' value='${PRO}/ivy/java' />
+   <property name='BUBBLESBIN' value='${PRO}/bubbles/java' />
+   <property name='DYVISE' value='${basedir}/../../../../../..' />
+
+   <target name='init'>
+      <path id='dyvise.classpath'>
+	 <pathelement location='${DYVISE}/java' />
+	 <pathelement location='${IVYBIN}' />
+	 <pathelement location='${PRO}/ivy/lib/asm6.jar' />
+	 <pathelement location='${PRO}/ivy/lib/junit.jar' />
+      </path>
+      <path id='test.classpath'>
+	 <pathelement location='${DYVISE}/java' />
+	 <pathelement location='${IVYBIN}' />
+	 <pathelement location='${PRO}/ivy/lib/asm6.jar' />
+	 <pathelement location='${PRO}/ivy/lib/junit.jar' />
+      </path>
+   </target>
+
+   <target name='compile' depends='init'>
+      <javac srcdir='.' destdir='${DYVISE}/java' debug='on' deprecation='on'
+		includeantruntime='false' excludes='scan/**' >
+	 <classpath refid='dyvise.classpath' />
+	 <compilerarg value='-Xlint:all' />
+      </javac>
+   </target>
+
+   <target name='clean'>
+      <delete dir='${DYVISE}/java/edu/brown/cs/dyvise/dymon' />
+   </target>
+
+   <target name='test' depends='compile'>
+      <junit fork='true' printsummary='on'>
+	 <classpath refid='test.classpath' />
+	 <assertions><enable/></assertions>
+	 <formatter type='plain' />
+	 <test name='edu.brown.cs.dyvise.dymon.DymonTest' />
+      </junit>
+   </target>
+
+</project>
+
+

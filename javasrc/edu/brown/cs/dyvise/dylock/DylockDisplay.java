@@ -49,6 +49,9 @@ private static final int MAX_RANGE = 100;
 
 private static Border bar_border = BorderFactory.createLineBorder(SwingColors.SWING_BORDER_COLOR,1);
 
+private static final long serialVersionUID = 1;
+
+
 
 /********************************************************************************/
 /*										*/
@@ -129,6 +132,8 @@ private void setupPanels()
 
 private class PatternArea extends JList<DylockPattern> implements ListSelectionListener {
 
+   private static final long serialVersionUID = 1;
+
    PatternArea(Collection<DylockPattern> cpats) {
       setDragEnabled(false);
       setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -175,14 +180,14 @@ private class TimeChanger implements AdjustmentListener {
       double x1 = ds.getEndTime();
       double t0,t1;
       if (x1 == x0) {
-         t0 = 0;
-         t1 = MAX_TIME;
+	 t0 = 0;
+	 t1 = MAX_TIME;
        }
       else {
-         t0 = (x0 + v0*(x1-x0)/MAX_TIME);
-         t1 = (x0 + v1*(x1-x0)/MAX_TIME);
+	 t0 = (x0 + v0*(x1-x0)/MAX_TIME);
+	 t1 = (x0 + v1*(x1-x0)/MAX_TIME);
        }
-   
+
       // boolean dyn = (v1 == MAX_TIME);
       // System.err.println("SET TIME " + t0 + " " + t1 + " " + dyn);
       graph_control.setTimeWindow(t0,t1,false);
@@ -212,9 +217,9 @@ private class RangeChanger implements AdjustmentListener {
 /********************************************************************************/
 
 private class FilterArea extends SwingGridPanel {
-   
+
    private static final long serialVersionUID = 1;
-   
+
    FilterArea() {
     }
 
@@ -232,9 +237,9 @@ private class FilterArea extends SwingGridPanel {
 private class MenuBar extends JMenuBar {
 
    private Map<DygraphView,DisplayAction> action_map;
-   
+
    private static final long serialVersionUID = 1;
-   
+
    MenuBar() {
       JMenu m1 = new JMenu("File");
       add(m1);
@@ -264,7 +269,7 @@ private class MenuBar extends JMenuBar {
 private class ControlAction extends AbstractAction {
 
    private static final long serialVersionUID = 1;
-   
+
    ControlAction() {
       super("Show Display Controller");
     }
@@ -288,9 +293,9 @@ private class ControlAction extends AbstractAction {
 private class DisplayAction extends AbstractAction {
 
    private DygraphView show_view;
-   
+
    private static final long serialVersionUID = 1;
-   
+
    DisplayAction(String id,DygraphView view) {
       super("Show " + id);
       show_view = view;

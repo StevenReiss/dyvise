@@ -407,9 +407,7 @@ private void createDatabase(String nm)
 
    using_database.connect(nm);
 
-   try {
-      BufferedReader br = new BufferedReader(new FileReader(DYVIEW_DATABASE_SETUP));
-
+   try (BufferedReader br = new BufferedReader(new FileReader(DYVIEW_DATABASE_SETUP))) {
       StringBuffer buf = new StringBuffer();
       for ( ; ; ) {
 	 String ln = br.readLine();
@@ -417,7 +415,6 @@ private void createDatabase(String nm)
 	 buf.append(ln);
 	 buf.append(" ");
        }
-      br.close();
 
       StringTokenizer tok = new StringTokenizer(buf.toString(),";");
       while (tok.hasMoreTokens()) {

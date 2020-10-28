@@ -206,14 +206,13 @@ private void processInput()
 {
    File f1 = input_file;
 
-   try {
+   try (BufferedReader br = new BufferedReader(new FileReader(f1))) {
       List<DylockLockEntry> ents = new ArrayList<DylockLockEntry>();
       List<DylockLockEntry> lents = new ArrayList<DylockLockEntry>();
       double ltime = 0;
       double ntime = 0;
-      BufferedReader br = new BufferedReader(new FileReader(f1));
       for ( ; ; ) {
-	 String ln = br.readLine();
+	 String ln = br.readLine(); 
 	 if (ln == null) break;
 	 if (ln.startsWith("ENDBLOCK")) {
 	    processBlock(lents);
@@ -234,7 +233,6 @@ private void processInput()
 	  }
        }
       processBlock(ents);
-      br.close();
     }
    catch (IOException e) {
       System.err.println("DYLOCK: Problem reading input file: " + e);
