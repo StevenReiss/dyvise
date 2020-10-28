@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Premain-Class: edu.brown.cs.dyvise.dyper.DyperControl
+Agent-Class: edu.brown.cs.dyvise.dyper.DyperControl
+Boot-Class-Path: /pro/dyvise/dyper/src/dyper.jar
+Can-Redefine-Classes: true
+Can-Retransform-Classes: true
+Can-Set-Native-Method-Prefix: false
+Sealed: false

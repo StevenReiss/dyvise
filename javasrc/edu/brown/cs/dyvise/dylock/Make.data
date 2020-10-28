@@ -1,0 +1,300 @@
+#
+# RCS: $Header: /pro/spr_cvs/pro/dyvise/javasrc/edu/brown/cs/dyvise/dylock/Make.data,v 1.8 2016/11/02 18:59:11 spr Exp $
+
+#
+# DYLOCK -- lock analysis for dynamic visualization
+#
+
+
+PACKAGE=dylock
+
+SFILES= \
+	DylockConstants.java \
+	DylockAnalysis.java \
+	DylockCheckerBase.java \
+	DylockCheckerCondition.java \
+	DylockCheckerDelay.java \
+	DylockCheckerJoin.java \
+	DylockCheckerLatch.java \
+	DylockCheckerMutex.java \
+	DylockCheckerReadWrite.java \
+	DylockCheckerSemaphore.java \
+	DylockClassGraph.java \
+	DylockCollector.java \
+	DylockDisplay.java \
+	DylockEventGenerator.java \
+	DylockGraphPanel.java \
+	DylockLockData.java \
+	DylockLockEntry.java \
+	DylockLockLocation.java \
+	DylockLockManager.java \
+	DylockLockRunData.java \
+	DylockMain.java \
+	DylockPattern.java \
+	DylockPatternAnalyzer.java \
+	DylockPatternBuilder.java \
+	DylockPatternEvent.java \
+	DylockPatternViewer.java \
+	DylockRunPanel.java \
+	DylockRunner.java \
+	DylockThreadData.java \
+	DylockViewer.java \
+	DylockViewPanel.java \
+	DylockViewRef.java \
+	DylockViewType.java \
+	DylockViewConditionType.java \
+	DylockViewDelayType.java \
+	DylockViewJoinType.java \
+	DylockViewLatchType.java \
+	DylockViewMultiType.java \
+	DylockViewMutexType.java \
+	DylockViewReadWriteType.java \
+	DylockViewSemaphoreType.java \
+	DylockViewUnknownType.java \
+	RandomAccessFile.java \
+
+
+SLIBLINKS= dylock.xml
+
+T1= /pro/bubbles/bema/src/locks.out
+T2= /pro/bubbles/bema/src/locks.csv
+T3= /research/dyvise/dylock/src/testout.xml
+T4= /research/dyvise/dylock/src/testout1.xml
+T5= edu.brown.cs.bubbles.bema.BemaMain
+
+test:	all
+	dyvisejava -Xmx16000m edu.brown.cs.dyvise.dylock.DylockMain -a -i /vol/spr/solar
+
+
+test0:	 all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -d $(T1) -l $(T2) -s $(T5) -o $(T3)
+
+test1:	 all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -d $(T1) -l $(T2) -m -o $(T4)
+
+view:	all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockViewer -d $(T3)
+
+BCP=/pro/bubbles/java:/pro/ivy/java:/pro/bubbles/lib/smack.jar:/pro/bubbles/lib/smackx-debug.jar:/pro/bubbles/lib/smackx-jingle.jar:/pro/bubbles/lib/smackx.jar:/pro/bubbles/lib/jsyntaxpane.jar:/pro/bubbles/lib/iText.jar:/pro/bubbles/lib/Lobo/Uninstaller/uninstaller.jar:/pro/bubbles/lib/Lobo/ext/Scenario.jar:/pro/bubbles/lib/Lobo/ext/cobra-no-commons.jar:/pro/bubbles/lib/Lobo/ext/javafx-swing.jar:/pro/bubbles/lib/Lobo/ext/javafxc.jar:/pro/bubbles/lib/Lobo/ext/javafxgui.jar:/pro/bubbles/lib/Lobo/ext/javafxrt.jar:/pro/bubbles/lib/Lobo/ext/jlfgr-1_0.jar:/pro/bubbles/lib/Lobo/ext/jmc.jar:/pro/bubbles/lib/Lobo/ext/js.jar:/pro/bubbles/lib/Lobo/ext/jweb-ext.jar:/pro/bubbles/lib/Lobo/ext/primary.jar:/pro/bubbles/lib/Lobo/ext/websvc.jar:/pro/bubbles/lib/Lobo/ext/xbean.jar:/pro/bubbles/lib/Lobo/lobo-pub.jar:/pro/bubbles/lib/Lobo/lobo.jar:/pro/bubbles/lib/jmf/customizer.jar:/pro/bubbles/lib/jmf/jmf.jar:/pro/bubbles/lib/jmf/mediaplayer.jar:/pro/bubbles/lib/jmf/multiplayer.jar:/pro/bubbles/lib/jung/collections-generic-4.01.jar:/pro/bubbles/lib/jung/jung-algorithms-2.0.1.jar:/pro/bubbles/lib/jung/jung-api-2.0.1.jar:/pro/bubbles/lib/jung/jung-graph-impl-2.0.1.jar:/pro/bubbles/lib/jung/jung-visualization-2.0.1.jar:/pro/bubbles/lib/asm.jar:/pro/bubbles/lib/postgresql.jar
+TGT=/research/dyvise/dylock/src/bubblestest
+TGT=/vol/spr/bubblestest
+TGT1=/ws/volfred/spr/bubblestest
+TGTM=/Users/spr/dylockdata/bubblestest
+
+testcreate: all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -c -o $(TGT) -verbose \
+		-Xmx16000m -cp $(BCP) edu.brown.cs.bubbles.bema.BemaMain -w /home/spr/Eclipse/bubblesx
+
+
+testcreate1: all
+	/vol/java/jdk7d/bin/java \
+	edu.brown.cs.dyvise.dylock.DylockMain -c -o $(TGT) -verbose \
+		-Xmx16000m -cp $(BCP) edu.brown.cs.bubbles.bema.BemaMain -w /home/spr/Eclipse/bubblesx
+
+
+t1a:	 all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -c -o $(TGT)1 \
+		-Xmx1024m -cp $(BCP) edu.brown.cs.bubbles.bema.BemaMain -w /home/spr/Eclipse/bubblesx
+
+
+t2:	all
+	@TMPDIR=/vol/tmp dyvisejava -Xmx16000m edu.brown.cs.dyvise.dylock.DylockMain -a -i $(TGT)
+
+t2a:	all
+	dyvisejava -Xmx1600m edu.brown.cs.dyvise.dylock.DylockMain -a -i $(TGT1)
+
+t2m:	all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -a -i $(TGTM)
+
+
+t3:	all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -v -i $(TGT)
+
+t3m:	 all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -v -i $(TGTM)
+
+t4:	all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -r -i $(TGT) \
+		-Xmx1024m -cp $(BCP) edu.brown.cs.bubbles.bema.BemaMain -w /home/spr/Eclipse/testing
+
+t4a:	all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -r -i $(TGT) -o view.trace \
+		-Xmx1024m -cp $(BCP) edu.brown.cs.bubbles.bema.BemaMain -w /home/spr/Eclipse/testing
+
+t4a1:	all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -r -i $(TGT) -o view.trace1 \
+		-Xmx1024m -cp $(BCP) edu.brown.cs.bubbles.bema.BemaMain -w /home/spr/Eclipse/testing
+
+t4b:	all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -r -i $(TGT) -t view.trace
+
+t5:	all
+	dyvisejava -Xmx32768m edu.brown.cs.dyvise.dylock.DylockMain -P -i $(TGT)
+
+t5m:	 all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -P -i $(TGTM)
+
+t6:	all
+	dyvisejava -Xmx48000m edu.brown.cs.dyvise.dylock.DylockMain -PV -i $(TGT)
+
+t6m:	 all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -PV -i $(TGTM)
+
+
+SCP =  $(HOME)/solar/java:$(HOME)/solar/javasrc:/pro/ivy/java:$(HOME)/jogl/jogl-linux64/jogl.jar
+SCPM =	$(HOME)/solar/java:$(HOME)/solar/javasrc:/pro/ivy/java:$(HOME)/jogl/lib/jogl.jar:$(HOME)/jogl/lib/gluegen-rt.jar
+SCP =  $(HOME)/solar/java:$(HOME)/solar/javasrc:/pro/ivy/java:/usr/share/java/jogl2.jar:/usr/share/java/gluegen2-rt.jar
+
+SIN = $(HOME)/solar/src/model.solar
+SIN2 = $(HOME)/solar/src/simple.solar
+STGT=/vol/spr/solar
+STGT1=/vol/spr/solar1
+STGT2=/vol/spr/solar2
+STGTM=/Users/spr/dylockdata/solar
+SLP = -Djava.library.path=/usr/lib/jni
+
+st0:
+	java -Xmx1024m -cp $(SCP) edu.brown.cs.cs032.solar.SolarMain -p 4 $(SIN)
+
+st0m:
+	java16 -Xmx1024m -cp $(SCPM) edu.brown.cs.cs032.solar.SolarMain -p 4 $(SIN)
+
+st01:
+	java -Xmx1024m -cp $(SCP) -XX:-PrintCompilation -verbose edu.brown.cs.cs032.solar.SolarMain -p 4 $(SIN)
+
+
+stcreate0:  all
+	java -cp $(SCP) edu.brown.cs.cs032.solar.SolarMain -p 4 $(SIN)
+
+stcreate:  all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -c -o $(STGT) \
+		-Xmx4096m -cp $(SCP) edu.brown.cs.cs032.solar.SolarMain -p 4 $(SIN)
+
+stcreatem:  all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -c -o $(STGTM) -java java16 \
+		-Xmx4096m -cp $(SCPM) edu.brown.cs.cs032.solar.SolarMain -p 4 $(SIN)
+
+stcreate1:  all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -c -o $(STGT1) \
+		-Xmx4096m -cp $(SCP) -XX:+PrintCompilation \
+		edu.brown.cs.cs032.solar.SolarMain -p 4 $(SIN)
+
+stcreate2:  all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -c -o $(STGT2) \
+		-Xmx4096m -cp $(SCP) -XX:+PrintCompilation \
+		edu.brown.cs.cs032.solar.SolarMain -p 4 $(SIN)
+
+stfull:  all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -c -full -o $(STGT1) \
+		-Xmx8192m -cp $(SCP) edu.brown.cs.cs032.solar.SolarMain -p 4 $(SIN)
+
+st1m:	 all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -c -o $(STGT) \
+		-Xmx4024m -cp $(SCPM) edu.brown.cs.cs032.solar.SolarMain -p 4 $(SIN)
+
+st2:	all
+	dyvisejava -Xmx56000m edu.brown.cs.dyvise.dylock.DylockMain -a -i $(STGT)
+
+st2m:	 all
+	dyvisejava -Xmx56000m edu.brown.cs.dyvise.dylock.DylockMain -a -i $(STGTM)
+
+st2b:	 all
+	dyvisejava -Xmx56000m edu.brown.cs.dyvise.dylock.DylockMain -a -i $(STGT2)
+
+
+st3:	all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -v -i $(STGT)
+
+st3m:	 all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -v -i $(STGTM)
+
+st3b:	 all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -v -i $(STGT2)
+
+st4:	all
+	dyvisejava -Xmx24000m edu.brown.cs.dyvise.dylock.DylockMain -r -i $(STGT) \
+		$(SLP) -Xmx10240m -cp $(SCP) edu.brown.cs.cs032.solar.SolarMain -p 4 $(SIN)
+
+st4m:	 all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -r -i $(STGTM) \
+		$(SLP) -Xmx10240m -cp $(SCP) edu.brown.cs.cs032.solar.SolarMain -p 4 $(SIN)
+
+st4b:	all
+	dyvisejava -Xmx36000m edu.brown.cs.dyvise.dylock.DylockMain -r -i $(STGT2) \
+		$(SLP) -Xmx10240m -cp $(SCP) edu.brown.cs.cs032.solar.SolarMain -p 4 $(SIN)
+
+st5:	all
+	dyvisejava -Xmx56000m edu.brown.cs.dyvise.dylock.DylockMain -P -i $(STGT)
+
+st5m:	 all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -P -i $(STGTM)
+
+st5b:	all
+	dyvisejava -Xmx48000m edu.brown.cs.dyvise.dylock.DylockMain -P -i $(STGT2)
+
+st6:	all
+	dyvisejava -Xmx56000m edu.brown.cs.dyvise.dylock.DylockMain -PV -i $(STGT)
+
+st6m:	 all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -PV -i $(STGTM)
+
+st6b:	all
+	dyvisejava -Xmx48000m edu.brown.cs.dyvise.dylock.DylockMain -PV -i $(STGT2)
+
+st2x:	 all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -a -i $(STGT) -p solar
+
+ETGT=/research/dyvise/dylock/src/eclipsetest
+
+ec1:	all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -c -o $(ETGT) \
+		-d64 -Djprobe.home=/home/spr/JProbe_8.0 -Xms16m -Xmx4000m -XX:PermSize=256M -XX:MaxPermSize=1024M -jar /home/spr/eclipse36/eclipse//plugins/org.eclipse.equinox.launcher_1.1.1.R36x_v20101122_1400.jar -os linux -ws gtk -arch x86_64 -showsplash -launcher /home/spr/eclipse36/eclipse/eclipse -name Eclipse --launcher.library /home/spr/eclipse36/eclipse//plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.2.R36x_v20101019_1345/eclipse_1310.so -startup /home/spr/eclipse36/eclipse//plugins/org.eclipse.equinox.launcher_1.1.1.R36x_v20101122_1400.jar -exitdata 28f2000a -product org.eclipse.epp.package.jee.product -vm /home/spr/jrmc-4.0.1-1.6.0/bin/java -vmargs -Djprobe.home=/home/spr/JProbe_8.0 -d64 -Xms16m -Xmx4000m -XX:PermSize=256M -XX:MaxPermSize=1024M -jar /home/spr/eclipse36/eclipse//plugins/org.eclipse.equinox.launcher_1.1.1.R36x_v20101122_1400.jar
+
+ec2:	all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -a -i $(ETGT)
+
+
+ATGT=/research/dyvise/dylock/src/argotest
+ACP= /home/spr/Eclipse/argouml2/argouml-app/src:/home/spr/Eclipse/argouml2/argouml-app/tests:/home/spr/Eclipse/argouml2/argouml-app/lib/commons-logging-1.0.2.jar:/home/spr/Eclipse/argouml2/argouml-app/lib/gef-0.13.3.jar:/home/spr/Eclipse/argouml2/argouml-app/lib/ocl-argo-1.1.jar:/home/spr/Eclipse/argouml2/argouml-app/lib/swidgets-0.1.4.jar:/home/spr/Eclipse/argouml2/argouml-app/lib/toolbar-1.4.1-20071227.jar:/argouml-core-tools/lib/easymock12.jar:/argouml-core-tools/jdepend-2.9/lib/jdepend-2.9.jar:/home/spr/Eclipse/argouml2/argouml-app/build-eclipse:/home/spr/Eclipse/argouml2/argouml-core-model-mdr/src:/home/spr/Eclipse/argouml2/argouml-core-model-mdr/tests:/home/spr/Eclipse/argouml2/argouml-core-model-mdr/lib/jmi.jar:/home/spr/Eclipse/argouml2/argouml-core-model-mdr/lib/jmiutils.jar:/home/spr/Eclipse/argouml2/argouml-core-model-mdr/lib/mdrapi.jar:/home/spr/Eclipse/argouml2/argouml-core-model-mdr/lib/mof.jar:/home/spr/Eclipse/argouml2/argouml-core-model-mdr/lib/nbmdr.jar:/home/spr/Eclipse/argouml2/argouml-core-model-mdr/lib/openide-util.jar:/home/spr/Eclipse/argouml2/argouml-core-tools/junit-3.8.2/junit.jar:/home/spr/Eclipse/argouml2/argouml-core-tools/lib/easymock12.jar:/home/spr/Eclipse/argouml2/argouml-core-tools/apache-ant-1.7.0/lib/ant.jar:/home/spr/Eclipse/argouml2/argouml-core-tools/build-eclipse:/home/spr/Eclipse/argouml2/argouml-core-model-mdr/build/java:/home/spr/Eclipse/argouml2/argouml-core-model-mdr/build-eclipse:/home/spr/Eclipse/argouml2/argouml-core-model/src:/home/spr/Eclipse/argouml2/argouml-core-model/tests:/home/spr/Eclipse/argouml2/argouml-core-model/build-eclipse:/home/spr/Eclipse/argouml2/argouml-core-infra/lib/log4j-1.2.6.jar:/home/spr/Eclipse/argouml2/argouml-core-infra/bin:/home/spr/Eclipse/argouml2/argouml-core-diagrams-sequence2/src:/home/spr/Eclipse/argouml2/argouml-core-diagrams-sequence2/tests:/home/spr/Eclipse/argouml2/argouml-core-diagrams-sequence2/build-eclipse:/home/spr/Eclipse/argouml2/argouml-core-umlpropertypanels/src:/home/spr/Eclipse/argouml2/argouml-core-umlpropertypanels/build-eclipse:/home/spr/Eclipse/argouml2/argouml-core-transformer/src:/home/spr/Eclipse/argouml2/argouml-core-transformer/build-eclipse:
+
+
+setup: all
+
+
+ac0:
+	java -Xmx512M -ea '-Dargouml.modules=org.argouml.sequence2.SequenceDiagramModule;org.argouml.core.propertypanels.module.XmlPropertyPanelsModule;org.argouml.transformer.TransformerModule' \
+		-cp $(ACP) org.argouml.application.Main
+
+ac1:	all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -c -o $(ATGT) \
+		-Xmx512M -ea '-Dargouml.modules=org.argouml.sequence2.SequenceDiagramModule;org.argouml.core.propertypanels.module.XmlPropertyPanelsModule;org.argouml.transformer.TransformerModule' \
+		-cp $(ACP) org.argouml.application.Main
+
+ac2:	all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -a -i $(ATGT)
+
+ac3:	all
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -v -i $(ATGT)
+
+
+
+FAITCP1=/research/people/spr/fait/java:/research/ivy/java:/research/bubbles/lib/junit.jar:/pro/ivy/lib/asm6.jar:
+FAITCP2=/pro/ivy/lib/eclipsejar/com.google.guava.jar:/pro/ivy/lib/eclipsejar/com.google.guava.jar.save:/pro/ivy/lib/eclipsejar/com.google.javascript.jar:/pro/ivy/lib/eclipsejar/com.google.javascript.jar.save:/pro/ivy/lib/eclipsejar/org.eclipse.core.commands.jar:/pro/ivy/lib/eclipsejar/org.eclipse.core.contenttype.jar:/pro/ivy/lib/eclipsejar/org.eclipse.core.filebuffers.jar:/pro/ivy/lib/eclipsejar/org.eclipse.core.filesystem.jar:/pro/ivy/lib/eclipsejar/org.eclipse.core.jobs.jar:/pro/ivy/lib/eclipsejar/org.eclipse.core.net.jar:/pro/ivy/lib/eclipsejar/org.eclipse.core.resources.jar:/pro/ivy/lib/eclipsejar/org.eclipse.core.runtime.jar:/pro/ivy/lib/eclipsejar/org.eclipse.debug.core.jar:/pro/ivy/lib/eclipsejar/org.eclipse.debug.ui.jar:/pro/ivy/lib/eclipsejar/org.eclipse.equinox.app.jar:/pro/ivy/lib/eclipsejar/org.eclipse.equinox.common.jar:/pro/ivy/lib/eclipsejar/org.eclipse.equinox.preferences.jar:/pro/ivy/lib/eclipsejar/org.eclipse.equinox.registry.jar:/pro/ivy/lib/eclipsejar/org.eclipse.jdt.core.jar:/pro/ivy/lib/eclipsejar/org.eclipse.jdt.core.manipulation.jar:/pro/ivy/lib/eclipsejar/org.eclipse.jdt.debug.jdi.jar:/pro/ivy/lib/eclipsejar/org.eclipse.jdt.debug.jdimodel.jar:/pro/ivy/lib/eclipsejar/org.eclipse.jdt.ui.jar:/pro/ivy/lib/eclipsejar/org.eclipse.jface.jar:/pro/ivy/lib/eclipsejar/org.eclipse.jface.text.jar:/pro/ivy/lib/eclipsejar/org.eclipse.ltk.core.refactoring.jar:/pro/ivy/lib/eclipsejar/org.eclipse.osgi.jar:/pro/ivy/lib/eclipsejar/org.eclipse.osgi.services.jar:/pro/ivy/lib/eclipsejar/org.eclipse.osgi.util.jar:/pro/ivy/lib/eclipsejar/org.eclipse.search.jar:/pro/ivy/lib/eclipsejar/org.eclipse.swt.gtk.linux.x86_64.jar:/pro/ivy/lib/eclipsejar/org.eclipse.swt.jar:/pro/ivy/lib/eclipsejar/org.eclipse.text.jar:/pro/ivy/lib/eclipsejar/org.eclipse.ui.ide.jar:/pro/ivy/lib/eclipsejar/org.eclipse.ui.workbench.jar:/pro/ivy/lib/eclipsejar/org.eclipse.wst.jsdt.core.jar:/pro/ivy/lib/eclipsejar/org.eclipse.wst.jsdt.debug.core.jar:/pro/ivy/lib/eclipsejar/org.python.pydev.core.core.jar
+FAITCP3=/research/people/spr/fait/lib/velocity-1.7.jar:/research/people/spr/fait/lib/velocity-1.7-dep.jar
+FAITCP= $(FAITCP1):$(FAITCP2):$(FAITCP3)
+FAITTGT= /ws/volfred/spr/faitlocks
+
+
+fait0:
+	java -cp $(FAITCP) edu.brown.cs.fait.server.ServerTest
+
+fait1:
+	dyvisejava edu.brown.cs.dyvise.dylock.DylockMain -c -o $(FAITTGT) \
+		-cp $(FAITCP) edu.brown.cs.fait.server.ServerTest
+
+
+fait2:
+	dylock -a -s edu.brown.cs.fait.server.ServerTest -i $(FAITTGT)
+
+fait3:
+	dylock -v -i $(FAITTGT)

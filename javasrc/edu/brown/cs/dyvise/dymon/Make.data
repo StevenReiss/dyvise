@@ -1,0 +1,71 @@
+#
+# RCS: $Header: /pro/spr_cvs/pro/dyvise/javasrc/edu/brown/cs/dyvise/dymon/Make.data,v 1.6 2016/11/02 18:59:14 spr Exp $
+
+#
+# DYMON -- monitor for dynamic performance evaluation
+#
+
+
+PACKAGE=dymon
+
+SFILES= \
+	DymonAgent.java \
+	DymonAgentCollections.java \
+	DymonAgentCpu.java \
+	DymonAgentCpuItem.java \
+	DymonAgentEvents.java \
+	DymonAgentIO.java \
+	DymonAgentHeap.java \
+	DymonAgentMemory.java \
+	DymonAgentPhaser.java \
+	DymonAgentReaction.java \
+	DymonAgentSocket.java \
+	DymonAgentStates.java \
+	DymonAgentThreads.java \
+	DymonAgentTiming.java \
+	DymonAgentManager.java \
+	DymonConstants.java \
+	DymonDetailing.java \
+	DymonDyperServer.java \
+	DymonException.java \
+	DymonMain.java \
+	DymonPatchData.java \
+	DymonPatchRequest.java \
+	DymonPatchTracker.java \
+	DymonProcess.java \
+	DymonResources.java \
+	DymonRemote.java \
+	DymonAttach.java \
+	DymonAttachRemote.java \
+	DymonSetup.java \
+	DymonRun.java \
+
+
+ifeq ($(BROWN),1)
+ALL= web
+endif
+
+WEBLOC= /web/dweb-devel/html/dyvise
+WEBLOC= conifer2:/vol/web/html/dyvise
+
+
+web:
+	scp $(SRCPATH)/*.html $(WEBLOC)/dymon
+	scp $(SRCPATH)/dymon*.js $(WEBLOC)/dymon/js
+	scp $(SRCPATH)/dymon*.php $(WEBLOC)/dymon/php
+
+
+SLIBLINKS= dymonrc.xml
+
+
+
+test:
+	dyvisejava -Xmx2048m edu.brown.cs.dyvise.dymon.DymonMain
+
+
+wtest:
+	dyvisejava -Xmx4096m edu.brown.cs.dyvise.dymon.DymonMain -web
+
+
+
+

@@ -1,0 +1,4 @@
+#! /bin/csh -f
+
+
+dyvisejava -Xmx1600m edu.brown.cs.dyvise.dymem.DymemMain $*

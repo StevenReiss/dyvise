@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Premain-Class: edu.brown.cs.dyvise.dylate.DylateMain
+Agent-Class: edu.brown.cs.dyvise.dylate.DylateMain
+Boot-Class-Path: /pro/dyvise/dylate/src/dylate.jar
+Can-Redefine-Classes: true
+Can-Retransform-Classes: true
+Can-Set-Native-Method-Prefix: false
+Sealed: false

@@ -1,0 +1,42 @@
+<PATCHMODEL NAME='CPUAGENT'>
+  <FOR CLASS='edu.brown.cs.cs032.solar.SolarGroupObject' METHOD='computeGroup'>
+    <PATCH MODE='CPUAGENT_BLOCKCTR' WHAT='BLOCK' />
+    <PATCH MODE='CPUAGENT_ENTER' WHAT='ENTER' />
+    <PATCH MODE='CPUAGENT_EXIT' WHAT='EXIT' />
+  </FOR>
+  <FOR CLASS='edu.brown.cs.cs032.solar.SolarBaseObject' METHOD='computeGravity'>
+    <PATCH MODE='CPUAGENT_BLOCKCTR' WHAT='BLOCK' />
+    <PATCH MODE='CPUAGENT_ENTER' WHAT='ENTER' />
+    <PATCH MODE='CPUAGENT_EXIT' WHAT='EXIT' />
+  </FOR>
+  <FOR CLASS='edu.brown.cs.cs032.solar.SolarCommonObject' METHOD='addForces'>
+    <PATCH MODE='CPUAGENT_BLOCKCTR' WHAT='BLOCK' />
+    <PATCH MODE='CPUAGENT_ENTER' WHAT='ENTER' />
+    <PATCH MODE='CPUAGENT_EXIT' WHAT='EXIT' />
+  </FOR>
+  <FOR CLASS='edu.brown.cs.cs032.solar.SolarGroupObject' METHOD='finishCycle'>
+    <PATCH MODE='CPUAGENT_BLOCKCTR' WHAT='BLOCK' />
+    <PATCH MODE='CPUAGENT_ENTER' WHAT='ENTER' />
+    <PATCH MODE='CPUAGENT_EXIT' WHAT='EXIT' />
+  </FOR>
+  <FOR CLASS='edu.brown.cs.cs032.solardraw.SolarDrawImpl' METHOD='drawObject'>
+    <PATCH MODE='CPUAGENT_BLOCKCTR' WHAT='BLOCK' />
+    <PATCH MODE='CPUAGENT_ENTER' WHAT='ENTER' />
+    <PATCH MODE='CPUAGENT_EXIT' WHAT='EXIT' />
+  </FOR>
+  <FOR CLASS='edu.brown.cs.cs032.solardraw.SolarDrawImpl' METHOD='display'>
+    <PATCH MODE='CPUAGENT_BLOCKCTR' WHAT='BLOCK' />
+    <PATCH MODE='CPUAGENT_ENTER' WHAT='ENTER' />
+    <PATCH MODE='CPUAGENT_EXIT' WHAT='EXIT' />
+  </FOR>
+  <FOR CLASS='edu.brown.cs.cs032.solar.SolarGravity' METHOD='compute'>
+    <PATCH MODE='CPUAGENT_BLOCKCTR' WHAT='BLOCK' />
+    <PATCH MODE='CPUAGENT_ENTER' WHAT='ENTER' />
+    <PATCH MODE='CPUAGENT_EXIT' WHAT='EXIT' />
+  </FOR>
+  <CLASS NAME='edu.brown.cs.cs032.solar.SolarGravity' />
+  <CLASS NAME='edu.brown.cs.cs032.solar.SolarCommonObject' />
+  <CLASS NAME='edu.brown.cs.cs032.solar.SolarGroupObject' />
+  <CLASS NAME='edu.brown.cs.cs032.solardraw.SolarDrawImpl' />
+  <CLASS NAME='edu.brown.cs.cs032.solar.SolarBaseObject' />
+</PATCHMODEL>

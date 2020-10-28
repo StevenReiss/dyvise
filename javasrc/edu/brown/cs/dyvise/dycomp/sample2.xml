@@ -1,0 +1,16 @@
+<ANALYSIS>
+<COMPUTE TYPE='CLOSURE' FROM='id1' TO='id2'>
+   <RESULT>lc</RESULT>
+   <TARGET NAME='id1' TYPE='STRING' />
+   <TARGET NAME='id2' TYPE='STRING' />
+   <TARGET NAME='level' TYPE='INT' />
+   <SOURCE RELATION='la'>
+      <MAP SOURCE='id1' TARGET='id1' />
+      <MAP SOURCE='id2' TARGET='id2' />
+      <MAP SOURCE='level' TARGET='level' />
+   </SOURCE>
+   <EVAL FIELD='level' OPERATOR='PLUS' SELF='0' />
+</COMPUTE>
+</ANALYSIS>
+
+

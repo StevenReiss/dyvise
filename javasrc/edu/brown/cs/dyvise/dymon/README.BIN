@@ -1,0 +1,21 @@
+This directory contains a binary distribution of our performance analysis tool.
+
+To install it, run
+
+	java -cp dyvisefull.jar edu.brown.cs.dyvise.dymon.DymonSetup
+
+from this directory.
+
+To run the memory visualizer:
+
+	java -cp $DIR$/dyvisefull.jar edu.brown.cs.dyvise.dymem.DymemMain
+
+where $DIR$ represents this directory.
+
+To run the performance analyzer:
+
+	java -cp $DIR$/dyvisefull.jar edu.brown.cs.dyvise.dyvision.DyvisionMain
+
+
+Documentation might be forthcoming at some point.  Source is available.
+

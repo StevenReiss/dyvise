@@ -1,0 +1,35 @@
+# RCS: $Header: /pro/spr_cvs/pro/dyvise/javasrc/edu/brown/cs/dyvise/dystore/Make.data,v 1.3 2011-03-19 20:34:43 spr Exp $
+
+#
+# DYSTORE -- storage manager for dynamic visualization
+#
+
+
+PACKAGE=dystore
+
+SFILES= \
+	DystoreAccessor.java \
+	DystoreAccessorImpl.java \
+	DystoreConstants.java \
+	DystoreControl.java \
+	DystoreDataMap.java \
+	DystoreField.java \
+	DystoreFieldImpl.java \
+	DystoreFilter.java \
+	DystoreFilterImpl.java \
+	DystoreRangeSet.java \
+	DystoreStore.java \
+	DystoreStoreImpl.java \
+	DystoreTable.java \
+	DystoreTableImpl.java \
+	DystoreTuple.java \
+	DystoreTupleImpl.java \
+	DystoreTupleSet.java \
+
+
+
+
+test: all
+
+
+

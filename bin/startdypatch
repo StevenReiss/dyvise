@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+set opts = "-Xmx1500m"
+
+if ($BROWN_DYVISE_ARCH == "x86_64") then
+   set opts = "-Xmx4000m"
+endif
+
+dyvisejava $opts edu.brown.cs.dyvise.dypatchasm.DypatchMain $*
+

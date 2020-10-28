@@ -1,0 +1,35 @@
+#
+# RCS: $Header: /pro/spr_cvs/pro/dyvise/javasrc/edu/brown/cs/dyvise/dypatchasm/Make.data,v 1.1 2013-08-05 12:03:39 spr Exp $
+
+#
+# DYPATCHASM -- patcher for dynamic performance evaluation using asm
+#
+
+
+PACKAGE=dypatch
+
+SFILES= \
+	DypatchClassVisitor.java \
+	DypatchClassWriter.java \
+	DypatchConstants.java \
+	DypatchCounter.java \
+	DypatchException.java \
+	DypatchField.java \
+	DypatchLocal.java \
+	DypatchMain.java \
+	DynamicURLClassLoader.java \
+
+SLIBLINKS= dypatch_modes.xml
+
+
+test:	all
+	dyvisejava edu.brown.cs.dyvise.dypatchasm.DypatchMain -T -P 12950@fred3
+
+
+
+
+
+
+
+
+

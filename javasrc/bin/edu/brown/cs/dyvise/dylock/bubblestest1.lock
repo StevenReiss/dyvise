@@ -1,0 +1,324 @@
+<LOCKSET>
+  <LOCK CLASS='Ljava/lang/ref/ReferenceQueue$Lock;' WAIT='0' ENTER='0' TIMED='0' WAITED='0' ID='-1' />
+  <LOCK CLASS='Ljava/awt/MediaTracker;' WAIT='93' ENTER='0' TIMED='0' WAITED='93' ID='1' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@waitForID(IJ)Z' OFFSET='76' />
+    <PRIOR LOCK='34' />
+    <PRIOR LOCK='4' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Vector;' WAIT='107' ENTER='0' TIMED='5' WAITED='101' ID='2' UNNEST='T'>
+    <LOCATION METHOD='Lsun/awt/image/ImageFetcher;@nextImage()Lsun/awt/image/ImageFetchable;' OFFSET='69' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Object;' WAIT='7' ENTER='1' TIMED='0' WAITED='6' ID='3' UNNEST='T'>
+    <LOCATION METHOD='Lsun/awt/AWTAutoShutdown;@activateBlockerThread()V' OFFSET='29' />
+    <LOCATION METHOD='Lsun/awt/AWTAutoShutdown;@run()V' OFFSET='13' />
+    <LOCATION METHOD='Lsun/awt/AWTAutoShutdown;@run()V' OFFSET='32' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/Component$AWTTreeLock;' WAIT='0' ENTER='7' TIMED='0' WAITED='0' ID='4' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/Container;@dispatchEventImpl(Ljava/awt/AWTEvent;)V' OFFSET='52' />
+    <LOCATION METHOD='Ljava/awt/Component;@invalidate()V' OFFSET='7' />
+    <LOCATION METHOD='Ljava/awt/Component;@move(II)V' OFFSET='7' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/EventQueue;' WAIT='0' ENTER='0' TIMED='0' WAITED='0' ID='-1' />
+  <LOCK CLASS='Ljava/util/HashMap;' WAIT='0' ENTER='4' TIMED='0' WAITED='0' ID='5' UNNEST='T'>
+    <LOCATION METHOD='Lsun/awt/AppContext;@get(Ljava/lang/Object;)Ljava/lang/Object;' OFFSET='7' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess$Gate;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='6' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@waitForExit()V' OFFSET='10' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' WAIT='1374' ENTER='8' TIMED='20' WAITED='1352' ID='7' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/client/MintClient;@getNextMessage(Z)Ljava/lang/Object;' OFFSET='80' />
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/client/MintClient;@getNextReply(Z)Ljava/lang/Object;' OFFSET='80' />
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/client/MintClient;@queueMessage(Ljava/lang/Object;)V' OFFSET='0' />
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/client/MintClient;@getNextReply(Z)Ljava/lang/Object;' OFFSET='6' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='8' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Lsun/misc/Launcher$AppClassLoader;' WAIT='0' ENTER='0' TIMED='0' WAITED='0' ID='-1' />
+  <LOCK CLASS='Ljava/lang/UNIXProcess$Gate;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='9' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@waitForExit()V' OFFSET='10' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClientJava;' WAIT='10' ENTER='0' TIMED='10' WAITED='0' ID='10' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/bubbles/bump/BumpClientJava;@ensureRunning()V' OFFSET='655' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='11' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='12' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='13' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='14' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='15' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='16' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='17' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='18' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='19' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='20' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='21' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='22' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='23' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='24' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='25' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/board/BoardLog;' WAIT='0' ENTER='9' TIMED='0' WAITED='0' ID='26' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/bubbles/board/BoardLog;@log(Ledu/brown/cs/bubbles/board/BoardConstants$LogLevel;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V' OFFSET='73' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='27' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='28' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='29' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='30' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='31' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$NameCollector;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='32' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/bubbles/bump/BumpClient$NameCollector;@getNames()Ljava/util/Collection;' OFFSET='8' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/ref/Reference$Lock;' WAIT='17' ENTER='0' TIMED='0' WAITED='17' ID='33' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/ref/Reference$ReferenceHandler;@run()V' OFFSET='46' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/ref/ReferenceQueue$Lock;' WAIT='0' ENTER='0' TIMED='0' WAITED='0' ID='-1' />
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bass/BassRepositoryLocation;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='34' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/bubbles/bass/BassRepositoryLocation;@waitForNames()V' OFFSET='4' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/buda/BudaRoot$MouseEventQueue;' WAIT='0' ENTER='0' TIMED='0' WAITED='0' ID='-1' />
+  <LOCK CLASS='Ljava/util/LinkedList;' WAIT='9' ENTER='0' TIMED='8' WAITED='0' ID='35' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/bubbles/bddt/BddtConsoleController$ConsoleThread;@run()V' OFFSET='33' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/image/PixelGrabber;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='36' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@grabPixels(J)Z' OFFSET='105' />
+  </LOCK>
+  <LOCK CLASS='Ljavax/swing/TimerQueue;' WAIT='0' ENTER='0' TIMED='0' WAITED='0' ID='-1' />
+  <LOCK CLASS='Ljava/awt/image/PixelGrabber;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='37' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@grabPixels(J)Z' OFFSET='105' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/ivy/mint/MintDefaultReply;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='38' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess$Gate;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='39' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@waitForExit()V' OFFSET='10' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bvcr/BvcrFactory;' WAIT='1' ENTER='0' TIMED='1' WAITED='0' ID='40' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/bubbles/bvcr/BvcrFactory;@startBvcrServer()V' OFFSET='285' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/ThreadGroup;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='41' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/ThreadGroup;@remove(Ljava/lang/Thread;)V' OFFSET='4' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/ivy/mint/MintDefaultReply;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='42' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+    <PRIOR LOCK='40' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/ivy/mint/MintDefaultReply;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='43' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess$Gate;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='44' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@waitForExit()V' OFFSET='10' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/banal/BanalFactory;' WAIT='1' ENTER='0' TIMED='1' WAITED='0' ID='45' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/bubbles/banal/BanalFactory;@startBanalServer()V' OFFSET='285' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/ivy/mint/MintDefaultReply;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='46' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+    <PRIOR LOCK='45' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/ivy/mint/MintDefaultReply;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='47' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess$Gate;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='48' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@waitForExit()V' OFFSET='10' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bpare/BpareFactory;' WAIT='1' ENTER='0' TIMED='1' WAITED='0' ID='49' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/bubbles/bpare/BpareFactory;@startBpareServer()V' OFFSET='282' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/ivy/mint/MintDefaultReply;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='50' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+    <PRIOR LOCK='49' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='51' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='52' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='53' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='54' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='55' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/ivy/mint/MintDefaultReply;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='56' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='57' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bale/BaleDocumentIde;' WAIT='1893' ENTER='1468' TIMED='0' WAITED='1893' ID='58' UNNEST='T'>
+    <LOCATION METHOD='Ljavax/swing/text/AbstractDocument;@writeLock()V' OFFSET='53' />
+    <LOCATION METHOD='Ljavax/swing/text/AbstractDocument;@readLock()V' OFFSET='19' />
+    <LOCATION METHOD='Ljavax/swing/text/AbstractDocument;@readLock()V' OFFSET='0' />
+    <LOCATION METHOD='Ljavax/swing/text/AbstractDocument;@writeLock()V' OFFSET='0' />
+    <LOCATION METHOD='Ljavax/swing/text/AbstractDocument;@readUnlock()V' OFFSET='0' />
+    <LOCATION METHOD='Ledu/brown/cs/bubbles/bale/BaleDocumentBase;@createPosition(I)Ljavax/swing/text/Position;' OFFSET='0' />
+    <PRIOR LOCK='4' />
+    <PRIOR LOCK='67' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/TaskQueue;' WAIT='0' ENTER='0' TIMED='0' WAITED='0' ID='-1' />
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='59' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='60' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bale/BaleDocumentFragment;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='61' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/bubbles/bale/BaleDocument;@waitForAst()V' OFFSET='38' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='62' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='63' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bale/BaleDocumentFragment;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='64' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/bubbles/bale/BaleDocument;@waitForAst()V' OFFSET='38' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='65' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='66' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bale/BaleDocumentFragment;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='67' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/bubbles/bale/BaleDocument;@waitForAst()V' OFFSET='38' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='68' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+    <PRIOR LOCK='4' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/MediaTracker;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='69' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@waitForAll(J)Z' OFFSET='73' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/image/PixelGrabber;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='70' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@grabPixels(J)Z' OFFSET='105' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/MediaTracker;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='71' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@waitForAll(J)Z' OFFSET='73' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/image/PixelGrabber;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='72' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@grabPixels(J)Z' OFFSET='105' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/MediaTracker;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='73' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@waitForAll(J)Z' OFFSET='73' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/image/PixelGrabber;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='74' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@grabPixels(J)Z' OFFSET='105' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/MediaTracker;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='75' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@waitForAll(J)Z' OFFSET='73' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/image/PixelGrabber;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='76' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@grabPixels(J)Z' OFFSET='105' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/MediaTracker;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='77' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@waitForAll(J)Z' OFFSET='73' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/image/PixelGrabber;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='78' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@grabPixels(J)Z' OFFSET='105' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='79' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/MediaTracker;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='80' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@waitForAll(J)Z' OFFSET='73' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/image/PixelGrabber;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='81' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@grabPixels(J)Z' OFFSET='105' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='82' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='83' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='84' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='1' WAITED='0' ID='85' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='1' WAITED='0' ID='86' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='87' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='88' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='89' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='90' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='91' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='92' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+    <PRIOR LOCK='4' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='93' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/ivy/mint/MintDefaultReply;@waitForReply(J)V' OFFSET='22' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/beam/BeamProgressBubble;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='94' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/bubbles/beam/BeamProgressBubble;@handleProgress(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;D)V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$CloseIDE;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='95' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/Thread;@join(J)V' OFFSET='38' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/board/BoardMetrics$DumpAllTask;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='96' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/Thread;@join(J)V' OFFSET='38' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bema/BemaMain$SaveSession;' WAIT='1' ENTER='0' TIMED='0' WAITED='1' ID='97' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/Thread;@join(J)V' OFFSET='38' />
+  </LOCK>
+  <LOCK CLASS='Ledu/brown/cs/bubbles/bass/BassTreeModelBase$Rebuilder;' WAIT='1' ENTER='0' TIMED='0' WAITED='0' ID='98' UNNEST='T'>
+    <LOCATION METHOD='Ledu/brown/cs/bubbles/bass/BassTreeModelBase$Rebuilder;@run()V' OFFSET='24' />
+  </LOCK>
+</LOCKSET>

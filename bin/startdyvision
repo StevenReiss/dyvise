@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+set jp = "-Xmx1500m"
+
+
+if ($BROWN_DYVISE_ARCH == x86_64) then
+   set jp = "-Xmx1500m"
+endif
+
+dyvisejava $jp edu.brown.cs.dyvise.dyvision.DyvisionMain $*

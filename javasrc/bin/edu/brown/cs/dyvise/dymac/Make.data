@@ -1,0 +1,36 @@
+#
+# RCS: $Header: /pro/spr_cvs/pro/dyvise/javasrc/edu/brown/cs/dyvise/dymac/Make.data,v 1.2 2010-03-30 16:21:04 spr Exp $
+
+#
+# DYMAC -- dynamic analysis for dynamic visualization
+#
+
+
+PACKAGE=dymac
+
+SFILES= \
+	DymacAttach.java \
+	DymacConstants.java \
+	DymacMain.java \
+	DymacProflet.java \
+	DymacProfletReaction.java \
+	DymacProfletStates.java \
+
+
+test: tests6
+
+
+testsolar: all
+	dyvisejava -d64 -Xmx8192m edu.brown.cs.dyvise.dymac.DymacMain -p solar -i sample -D \
+		-J edu.brown.cs.cs032.solar.SolarMain EVENTS STATES
+
+testcrawl: all
+	dyvisejava -d64 -Xmx8192m edu.brown.cs.dyvise.dymac.DymacMain -p s6 -i sample -D \
+		-J edu.brown.cs.cs032.crawler.crawl.CrawlMain EVENTS STATES
+
+
+tests6: all
+	dyvisejava -d64 -Xmx8192m edu.brown.cs.dyvise.dymac.DymacMain -p s6 -i sample -D \
+		-J edu.brown.cs.s6.engine.EngineMain EVENTS STATES
+
+

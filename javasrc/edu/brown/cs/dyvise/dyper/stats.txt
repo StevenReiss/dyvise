@@ -1,0 +1,86 @@
+CPU Performance Agent:
+
+
+What we want to compute:
+   For each method:
+        CPU time spent in method itself
+        CPU time spent in method and its children
+        # times the method was called
+   For each line:
+        CPU time spent at this line
+        CPU time spent at this line and its children
+        # times the line was executed
+   For each class:
+        Total cpu time for all methods
+   For each package:
+        Total cpu time for all classes
+
+
+
+We can start by looking at what we can estimate:
+
+Assume that we have been sampling the stack every S ms, accumulating N samples.
+
+  * Total Elapsed time Te = N*S (actually we have this number exactly)
+  * For each thread, let At = #times the thread is active
+     Then CPU time for the thread =~ (At / N)*Te
+  * Total CPU time is this summed over all threads
+
+
+Suppose that we find the K samples occur inside a function F. Then we
+can assume the K/N % of the time is spend in F.
+
+Actually SUM[(Kt/At)(At/N*Te)] sums cpu time per thread over all threads, but this
+is Te * SUM[Kt / N].
+
+
+Similarly we can estimate the run time spent is a function and all the functions
+it calls by using as Kt the number of times that function appears on a active
+stack.
+
+The same logic can be applied to lines.
+
+What is the error rate here?  Assume that the samples are chosen at random.
+
+
+
+
+
+Now suppose we instrument to get counts.  Let the time during which we
+are instrumenting be Ti.  Then we have counts for Ti/Te of the run.  One
+way of extending the counts is to multiply by Te/Ti.  Presumably we could
+be more intelligent about it, but using the run time for a method:
+
+Suppose for a method M we compute that its total CPU time is Tm.  Moreover,
+suppose we compute its CPU time during the instrumentation interval as
+Tx.  Then we should multiply the counts for this method by Tm/Tx to get
+the counts overall.
+
+
+What all this means:
+
+1)  We need to know the overall time spent accumulating samples.
+2)  We need to know the time spent in monitoring.
+3)  If we have run times during the monitoring we can use exact numbers rather
+        than estimates here.
+
+To get the error rate down, we should have at least M=10 samples that should hit
+a portion of code that is executed more than P percent of the time.  Suppose that
+we are interested in P=1, then we need to have P*100*M = 1000 samples before we
+can be sure of anything.
+
+In terms of sampling, we need to determine the number of samples needed to get
+good numbers.  This might be determinable dynamically?
+
+
+
+
+
+Now suppose we have high-level counts (e.g. method counts) but not line number
+counts over some interval I.  Then if we get detailed counts for a subinterval
+of size J, we can estimate the overall detail counts by multiplying what we
+have by I/J.
+
+This means that if we do detailing internally, we need to know for each detail
+that is accumulated, how much time it was active for and we need to know the
+overall active time.

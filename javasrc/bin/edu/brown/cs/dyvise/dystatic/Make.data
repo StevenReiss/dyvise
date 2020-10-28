@@ -1,0 +1,39 @@
+#
+# RCS: $Header: /pro/spr_cvs/pro/dyvise/javasrc/edu/brown/cs/dyvise/dystatic/Make.data,v 1.5 2010-08-27 17:01:03 spr Exp $
+
+#
+# DYSTATIC -- static analysis for dynamic visualization
+#
+
+
+PACKAGE=dystatic
+
+SFILES= \
+	DystaticConstants.java \
+	DystaticLoader.java \
+	DystaticBtLoader.java \
+	DystaticMain.java \
+	DystaticMethodData.java \
+	DystaticStatlet.java \
+
+
+
+test: all
+	dyvisejava -d64 -Xmx8192m edu.brown.cs.dyvise.dystatic.DystaticMain -p s6 -D
+
+test1: all
+	dyvisejava -d64 -Xmx8192m edu.brown.cs.dyvise.dystatic.DystaticMain -p solar -D
+
+test2: all
+	dyvisejava -d64 -Xmx8192m edu.brown.cs.dyvise.dystatic.DystaticMain -p taiga -D
+
+test3: all
+	dyvisejava -d64 -Xmx8192m edu.brown.cs.dyvise.dystatic.DystaticMain -p bubbles -D
+
+test4: all
+	dyvisejava -d64 -Xmx8192m edu.brown.cs.dyvise.dystatic.DystaticMain -p crawler -D
+
+testflow: all
+	dyvisejava -d64 -Xmx8192m edu.brown.cs.dyvise.dystatic.DystaticMain -p s6 -J -D > /ws/volfred/spr/dystaticflow.out 2>&1
+
+

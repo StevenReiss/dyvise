@@ -1,0 +1,202 @@
+#! /bin/csh -f
+
+rm -rf dyperbin
+mkdir dyperbin
+mkdir dyperbin/bin
+mkdir dyperbin/lib
+mkdir dyperbin/web
+mkdir dyperbin/tmp
+
+taigabuildimpljar6 -cp ${CLASSPATH} -j dyperbin/lib/dymon.jar -x edu.brown.cs.dyvise.dymon.DymonMain \
+	-S com.sun. -S javax. -S sun.
+
+cat > dyperbin/bin/startdymon  << 'EOF'
+#! /bin/csh -f
+set PRG = $0
+while (-l $PRG)
+   set ls = `ls -ld $PRG`
+   set link = `expr "$ls" : '.*-> \(.*\)$'`
+   if ( { expr "$link" : '.*/.*' > /dev/null} ) then
+      set PRG = "$link"
+   else
+      set PRG = `dirname "$PRG"`/"$link"
+   endif
+end
+
+set y1 = ${PRG:h}
+if ($y1 == ".") then
+   set y1 = `pwd`
+endif
+set y1x = `echo $y1 | grep '^/'`
+if ( X$y1x == X ) then
+   set y1 = `pwd`/$y1
+endif
+
+set y2 = ${y1:h}
+
+set PRG = `which java`
+set tx = /usr/bin/test
+if (-e /bin/test) set tx = /bin/test
+while ( { $tx -h "$PRG" } )
+   set ls = `/bin/ls -ld "${PRG}"`
+   set link = `expr "$ls" : '.*-> \(.*\)$'`
+   set y = `expr "X$link" : 'X/'` >& /dev/null
+   if ($y == 2) then
+      set PRG = "${link}"
+   else
+      set PRG = ${PRG:h}/${link}
+   endif
+end
+set j1 = ${PRG:h}
+set j2 = ${j1:h}
+
+setenv DYVISE $y2
+setenv IVY $y2
+setenv BROWN_DYMON_WEB $y2/web
+setenv BROWN_JAVA_HOME $j2
+
+java -cp $BROWN_JAVA_HOME/lib/tools.jar:$DYVISE/lib/dymon.jar edu.brown.cs.dyvise.dymon.DymonMain $*
+
+'EOF'
+chmod a+x dyperbin/bin/startdymon
+
+taigabuildimpljar6 -cp ${CLASSPATH} -j dyperbin/lib/dyvision.jar -x edu.brown.cs.dyvise.dyvision.DyvisionMain
+
+cat > dyperbin/bin/dyvision << 'EOF'
+#! /bin/csh -f
+
+set PRG = $0
+while (-l $PRG)
+   set ls = `ls -ld $PRG`
+   set link = `expr "$ls" : '.*-> \(.*\)$'`
+   if ( { expr "$link" : '.*/.*' > /dev/null} ) then
+      set PRG = "$link"
+   else
+      set PRG = `dirname "$PRG"`/"$link"
+   endif
+end
+
+set y1 = ${PRG:h}
+if ($y1 == ".") then
+   set y1 = `pwd`
+endif
+set y1x = `echo $y1 | grep '^/'`
+if ( X$y1x == X ) then
+   set y1 = `pwd`/$y1
+endif
+
+set y2 = ${y1:h}
+
+setenv DYVISE $y2
+setenv IVY $y2
+setenv BROWN_DYMON_WEB $y2/web
+
+java -Xmx1500m -jar $DYVISE/lib/dyvision.jar $*
+'EOF'
+chmod a+x dyperbin/bin/dyvision
+
+taigabuildimpljar6 -cp ${CLASSPATH} -j dyperbin/lib/dypatch.jar -x edu.brown.cs.dyvise.dypatch.DypatchMain
+
+cat > dyperbin/bin/startdypatch  << 'EOF'
+#! /bin/csh -f
+java -Xmx1024m -jar $DYVISE/lib/dypatch.jar $*
+'EOF'
+chmod a+x dyperbin/bin/startdypatch
+
+cp $BROWN_DYVISE_DYVISE/lib/*.xml dyperbin/lib
+
+cp -R /web/dweb-devel/html/dyvise/dymon/[fhjp]* dyperbin/web
+
+cp dyper.jar dyperbin/lib
+
+foreach a (i686 x86_64)
+   mkdir dyperbin/lib/$a
+   cp $BROWN_DYVISE_DYVISE/lib/$a/libdymti.so dyperbin/lib/$a
+end
+
+foreach a (i386)
+   mkdir dyperbin/lib/$a
+   cp $BROWN_DYVISE_DYVISE/lib/$a/libdymti.dylib dyperbin/lib/$a
+   (cd dyperbin/lib/$a; ln -s libdymti.dylib libdymti.jnilib)
+end
+
+taigabuildimpljar6 -cp ${CLASSPATH} -j dyperbin/lib/dyattach.jar -x edu.brown.cs.dyvise.dymon.DymonAttachRemote \
+	-S com.sun. -S javax. -S sun.
+
+cat > dyperbin/bin/dymonremoteattach  << 'EOF'
+#! /bin/csh -f
+
+set PRG = $0
+while (-l $PRG)
+   set ls = `ls -ld $PRG`
+   set link = `expr "$ls" : '.*-> \(.*\)$'`
+   if ( { expr "$link" : '.*/.*' > /dev/null} ) then
+      set PRG = "$link"
+   else
+      set PRG = `dirname "$PRG"`/"$link"
+   endif
+end
+
+set y1 = ${PRG:h}
+if ($y1 == ".") then
+   set y1 = `pwd`
+endif
+set y1x = `echo $y1 | grep '^/'`
+if ( X$y1x == X ) then
+   set y1 = `pwd`/$y1
+endif
+
+set y2 = ${y1:h}
+
+set PRG = `which java`
+set tx = /usr/bin/test
+if (-e /bin/test) set tx = /bin/test
+while ( { $tx -h "$PRG" } )
+   set ls = `/bin/ls -ld "${PRG}"`
+   set link = `expr "$ls" : '.*-> \(.*\)$'`
+   set y = `expr "X$link" : 'X/'` >& /dev/null
+   if ($y == 2) then
+      set PRG = "${link}"
+   else
+      set PRG = ${PRG:h}/${link}
+   endif
+end
+set j1 = ${PRG:h}
+set j2 = ${j1:h}
+
+setenv DYVISE $y2
+setenv IVY $y2
+setenv BROWN_DYMON_WEB $y2/web
+setenv BROWN_JAVA_HOME $j2
+
+
+java -cp $BROWN_JAVA_HOME/lib/tools.jar:$DYVISE/lib/dyattach.jar edu.brown.cs.dyvise.dymon.DymonAttachRemote $*
+'EOF'
+chmod a+x dyperbin/bin/dymonremoteattach
+
+
+taigabuildimpljar -cp ${CLASSPATH} -j dyperbin/lib/mintserver.jar -x edu.brown.cs.ivy.mint.server.MintServer
+taigabuildimpljar -cp ${CLASSPATH} -j dyperbin/lib/mintmaster.jar -x edu.brown.cs.ivy.mint.MintServerMaster
+
+
+cat > dyperbin/bin/startmaster << 'EOF'
+#! /bin/csh -f
+java -jar $DYVISE/lib/mintmaster.jar
+'EOF'
+chmod a+x dyperbin/bin/startmaster
+
+cat > dyperbin/bin/startmint << 'EOF'
+#! /bin/csh -f
+java -jar $DYVISE/lib/mintserver.jar $*
+'EOF'
+chmod a+x dyperbin/bin/startmint
+
+mkdir dyperbin/lib/registry
+
+
+
+tar czvf dyperbin.tar.gz dyperbin
+
+
+
+

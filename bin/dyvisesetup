@@ -1,0 +1,58 @@
+#! /bin/tcsh -f
+
+if ($?BROWN_DYVISE_ROOT == 0) then
+   set x0 = `zsh -c "whence $0"`
+   set x1 = ${x0:h}
+   set x2 = $x1/dyvisesetupenv
+   source $x2
+endif
+
+set path = ( /bin /usr/bin /usr/ucb/bin $BROWN_DYVISE_IVY/bin $BROWN_DYVISE_DYVISE/bin )
+set bp = `dyvisebasepath`
+
+if (! -d $bp/javasrc) then
+   mkdir $bp/javasrc
+endif
+
+if (! -d $bp/javasrc/edu) then
+   mkdir $bp/javasrc/edu
+endif
+
+if (! -d $bp/javasrc/edu/brown) then
+   mkdir $bp/javasrc/edu/brown
+endif
+
+if (! -d $bp/javasrc/edu/brown/cs) then
+   mkdir $bp/javasrc/edu/brown/cs
+endif
+
+if (! -d $bp/javasrc/edu/brown/cs/dyvise) then
+   mkdir $bp/javasrc/edu/brown/cs/dyvise
+endif
+
+
+
+if (! -d $bp/java) then
+   mkdir $bp/java
+endif
+
+if (! -d $bp/java/edu) then
+   mkdir $bp/java/edu
+endif
+
+if (! -d $bp/java/edu/brown) then
+   mkdir $bp/java/edu/brown
+endif
+
+if (! -d $bp/java/edu/brown/cs) then
+   mkdir $bp/java/edu/brown/cs
+endif
+
+if (! -d $bp/java/edu/brown/cs/dyvise) then
+   mkdir $bp/java/edu/brown/cs/dyvise
+endif
+
+if (! -d $bp/tmp ) then
+   mkdir $bp/tmp
+   chmod 777 $bp/tmp
+endif

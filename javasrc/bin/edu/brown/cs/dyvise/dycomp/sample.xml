@@ -1,0 +1,26 @@
+<ANALYSIS>
+<COMPUTE TYPE='CLOSURE' FROM='subtype' TO='supertype' REFLEXIVE='TRUE'>
+   <RESULT>CompClassHierarchy</RESULT>
+   <TARGET NAME='supertype' TYPE='STRING' />
+   <TARGET NAME='subtype' TYPE='STRING' />
+   <TARGET NAME='super' TYPE='BOOLEAN' />
+   <SOURCE RELATION='SrcInterface'>
+      <MAP SOURCE='type' TARGET='subtype' />
+      <MAP SOURCE='iface' TARGET='supertype' />
+      <MAP SOURCE='super' TARGET='super' />
+   </SOURCE>
+   <EVAL FIELD='super' OPERATOR='AND' SELF='true' />
+</COMPUTE>
+<COMPUTE TYPE='METHODTYPE'>
+   <RESULT>CompEventAccess</RESULT>
+   <SOURCE>DynEventRoutines</SOURCE>
+   <TARGET>edu.brown.cs.s6.common.S6Request$Search</TARGET>
+   <TASK>java.lang.Runnable</TASK>
+   <TASK>java.util.concurrent.Callable</TASK>
+</COMPUTE>
+<COMPUTE TYPE='ALLOCTYPE'>
+   <RESULT>CompEventAlloc</RESULT>
+   <TARGET>edu.brown.cs.s6.common.S6Request$Search</TARGET>
+   <TARGET>java.lang.Runnable</TARGET>
+</COMPUTE>
+</ANALYSIS>

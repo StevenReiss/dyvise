@@ -1,0 +1,4 @@
+#! /bin/csh
+
+
+exec dyvisejava edu.brown.cs.dyvise.dymon.DymonAttachRemote $*

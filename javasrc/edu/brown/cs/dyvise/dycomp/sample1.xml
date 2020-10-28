@@ -1,0 +1,16 @@
+<ANALYSIS>
+<COMPUTE TYPE='CLOSURE' FROM='subtype' TO='supertype'>
+   <RESULT>CompClassHierarchy</RESULT>
+   <TARGET NAME='supertype' TYPE='STRING' />
+   <TARGET NAME='subtype' TYPE='STRING' />
+   <TARGET NAME='super' TYPE='BOOLEAN' />
+   <SOURCE RELATION='SrcInterface'>
+      <MAP SOURCE='type' TARGET='subtype' />
+      <MAP SOURCE='iface' TARGET='supertype' />
+      <MAP SOURCE='super' TARGET='super' />
+   </SOURCE>
+   <EVAL FIELD='super' OPERATOR='AND' SELF='true' />
+</COMPUTE>
+</ANALYSIS>
+
+

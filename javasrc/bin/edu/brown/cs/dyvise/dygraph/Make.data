@@ -1,0 +1,34 @@
+# RCS: $Header: /pro/spr_cvs/pro/dyvise/javasrc/edu/brown/cs/dyvise/dygraph/Make.data,v 1.4 2013-05-09 12:28:57 spr Exp $
+
+#
+# DYGRAPH -- display manager for dynamic visualization
+#
+
+
+PACKAGE=dygraph
+
+SFILES= \
+	DygraphConstants.java \
+	DygraphControl.java \
+	DygraphDisplay.java \
+	DygraphDisplayHandler.java \
+	DygraphDisplayTimed.java \
+	DygraphDisplayTimeBlocks.java \
+	DygraphDisplayTimeRows.java \
+	DygraphSelector.java \
+	DygraphSelectorItem.java \
+	DygraphSelectorItemConst.java \
+	DygraphSelectorItemField.java \
+	DygraphSelectorItemInterval.java \
+	DygraphSelectorItemTable.java \
+	DygraphValue.java \
+	DygraphValueContext.java \
+	DygraphView.java \
+	DygraphViewImpl.java \
+
+
+test: all
+
+
+
+

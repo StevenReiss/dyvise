@@ -1,0 +1,46 @@
+#! /bin/tcsh -f
+
+if ($#argv != 1) then
+   echo `dyvisecreatejava <project>`
+   exit 1
+endif
+
+if ($1:t == "src") then
+   set dir = $1:h
+   set dir = $dir:t
+else
+   set dir = $1:t
+endif
+
+set ar = `ivyarch`
+set cwd = `pwd`
+set bp = `dyvisebasepath`
+
+
+dyvisesetup
+
+
+if (! -d $bp/javasrc/edu/brown/cs/dyvise/$dir ) then
+   mkdir $bp/javasrc/edu/brown/cs/dyvise/$dir
+endif
+
+if (! -d $bp/java/edu/brown/cs/dyvise/$dir ) then
+   mkdir $bp/java/edu/brown/cs/dyvise/$dir
+endif
+
+if (! -d $bp/$dir) then
+   mkdir $bp/$dir
+endif
+
+rm -rf $bp/$dir/src
+ln -s ../javasrc/edu/brown/cs/dyvise/$dir $bp/$dir/src
+rm -rf $bp/$dir/bin.java
+ln -s ../java/edu/brown/cs/dyvise/$dir $bp/$dir/bin.java
+
+rm -rf $bp/$dir/src/Makefile
+ln -s $bp/data/Make.pass $bp/$dir/src/Makefile
+touch $bp/$dir/src/Make.data
+
+cd $bp/$dir/src
+gnumake create
+cd $cwd

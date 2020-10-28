@@ -1,0 +1,1183 @@
+<LOCKSET>
+  <LOCK CLASS='Lorg/eclipse/equinox/launcher/Main$StartupClassLoader;' WAIT='0' ENTER='4' TIMED='0' WAITED='0' ID='1' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/internal/baseadaptor/StateManager;@getStateHelper()Lorg/eclipse/osgi/service/resolver/StateHelper;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/internal/resolver/StateHelperImpl;@getVisiblePackages(Lorg/eclipse/osgi/service/resolver/BundleDescription;I)[Lorg/eclipse/osgi/service/resolver/ExportPackageDescription;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/runtime/internal/adaptor/Semaphore;' WAIT='24' ENTER='24' TIMED='23' WAITED='1' ID='2' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/runtime/internal/adaptor/Semaphore;@acquire(J)Z' OFFSET='40' />
+    <LOCATION METHOD='Lorg/eclipse/core/runtime/internal/adaptor/Semaphore;@acquire(J)Z' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/core/runtime/internal/adaptor/Semaphore;@release()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/framework/eventmgr/EventManager$EventThread;' WAIT='200' ENTER='4554' TIMED='0' WAITED='200' ID='3' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/eventmgr/EventManager$EventThread;@getNextEvent()Lorg/eclipse/osgi/framework/eventmgr/EventManager$EventThread$Queued;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/eventmgr/EventManager$EventThread;@getNextEvent()Lorg/eclipse/osgi/framework/eventmgr/EventManager$EventThread$Queued;' OFFSET='4' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/eventmgr/ListenerQueue;@dispatchEventAsynchronous(ILjava/lang/Object;)V' OFFSET='29' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/eventmgr/EventManager$EventThread;@postEvent(Ljava/util/Set;Lorg/eclipse/osgi/framework/eventmgr/EventDispatcher;ILjava/lang/Object;)V' OFFSET='0' />
+    <PRIOR LOCK='34' />
+    <PRIOR LOCK='42' />
+    <PRIOR LOCK='162' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Vector;' WAIT='1' ENTER='6' TIMED='0' WAITED='1' ID='4' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@startedBundle(Lorg/osgi/framework/Bundle;)V' OFFSET='514' />
+    <LOCATION METHOD='Ljava/util/Vector;@size()I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@elementAt(I)Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@performWork(ILjava/lang/Object;)V' OFFSET='19' />
+    <LOCATION METHOD='Ljava/util/Vector;@removeAllElements()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@isEmpty()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/equinox/internal/util/event/Queue;' WAIT='7' ENTER='26' TIMED='1' WAITED='6' ID='5' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/WorkThread;@run()V' OFFSET='84' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@addEvent(Ljava/lang/Object;Z)V' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/WorkThread;@run()V' OFFSET='18' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Vector;' WAIT='1' ENTER='6' TIMED='0' WAITED='1' ID='6' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@startedBundle(Lorg/osgi/framework/Bundle;)V' OFFSET='514' />
+    <LOCATION METHOD='Ljava/util/Vector;@size()I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@elementAt(I)Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@performWork(ILjava/lang/Object;)V' OFFSET='19' />
+    <LOCATION METHOD='Ljava/util/Vector;@removeAllElements()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@isEmpty()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Vector;' WAIT='1' ENTER='6' TIMED='0' WAITED='1' ID='7' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@startedBundle(Lorg/osgi/framework/Bundle;)V' OFFSET='514' />
+    <LOCATION METHOD='Ljava/util/Vector;@size()I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@elementAt(I)Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@performWork(ILjava/lang/Object;)V' OFFSET='19' />
+    <LOCATION METHOD='Ljava/util/Vector;@removeAllElements()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@isEmpty()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Vector;' WAIT='1' ENTER='8' TIMED='0' WAITED='1' ID='8' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@startedBundle(Lorg/osgi/framework/Bundle;)V' OFFSET='514' />
+    <LOCATION METHOD='Ljava/util/Vector;@size()I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@elementAt(I)Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@performWork(ILjava/lang/Object;)V' OFFSET='19' />
+    <LOCATION METHOD='Ljava/util/Vector;@removeAllElements()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@isEmpty()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Vector;' WAIT='1' ENTER='8' TIMED='0' WAITED='1' ID='9' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@startedBundle(Lorg/osgi/framework/Bundle;)V' OFFSET='514' />
+    <LOCATION METHOD='Ljava/util/Vector;@size()I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@elementAt(I)Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@performWork(ILjava/lang/Object;)V' OFFSET='19' />
+    <LOCATION METHOD='Ljava/util/Vector;@removeAllElements()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@isEmpty()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Vector;' WAIT='1' ENTER='8' TIMED='0' WAITED='1' ID='10' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@startedBundle(Lorg/osgi/framework/Bundle;)V' OFFSET='514' />
+    <LOCATION METHOD='Ljava/util/Vector;@size()I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@elementAt(I)Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@performWork(ILjava/lang/Object;)V' OFFSET='19' />
+    <LOCATION METHOD='Ljava/util/Vector;@removeAllElements()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@isEmpty()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Vector;' WAIT='1' ENTER='6' TIMED='0' WAITED='1' ID='11' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@startedBundle(Lorg/osgi/framework/Bundle;)V' OFFSET='514' />
+    <LOCATION METHOD='Ljava/util/Vector;@size()I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@elementAt(I)Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@performWork(ILjava/lang/Object;)V' OFFSET='19' />
+    <LOCATION METHOD='Ljava/util/Vector;@removeAllElements()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@isEmpty()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Vector;' WAIT='1' ENTER='6' TIMED='0' WAITED='1' ID='12' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@startedBundle(Lorg/osgi/framework/Bundle;)V' OFFSET='514' />
+    <LOCATION METHOD='Ljava/util/Vector;@size()I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@elementAt(I)Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@performWork(ILjava/lang/Object;)V' OFFSET='19' />
+    <LOCATION METHOD='Ljava/util/Vector;@removeAllElements()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@isEmpty()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Vector;' WAIT='1' ENTER='6' TIMED='0' WAITED='1' ID='13' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@startedBundle(Lorg/osgi/framework/Bundle;)V' OFFSET='514' />
+    <LOCATION METHOD='Ljava/util/Vector;@size()I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@elementAt(I)Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@performWork(ILjava/lang/Object;)V' OFFSET='19' />
+    <LOCATION METHOD='Ljava/util/Vector;@removeAllElements()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@isEmpty()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Vector;' WAIT='1' ENTER='8' TIMED='0' WAITED='1' ID='14' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@startedBundle(Lorg/osgi/framework/Bundle;)V' OFFSET='514' />
+    <LOCATION METHOD='Ljava/util/Vector;@size()I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@elementAt(I)Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@performWork(ILjava/lang/Object;)V' OFFSET='19' />
+    <LOCATION METHOD='Ljava/util/Vector;@removeAllElements()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@isEmpty()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Vector;' WAIT='1' ENTER='8' TIMED='0' WAITED='1' ID='15' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@startedBundle(Lorg/osgi/framework/Bundle;)V' OFFSET='514' />
+    <LOCATION METHOD='Ljava/util/Vector;@size()I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@elementAt(I)Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@performWork(ILjava/lang/Object;)V' OFFSET='19' />
+    <LOCATION METHOD='Ljava/util/Vector;@removeAllElements()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@isEmpty()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Vector;' WAIT='1' ENTER='6' TIMED='0' WAITED='1' ID='16' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@startedBundle(Lorg/osgi/framework/Bundle;)V' OFFSET='514' />
+    <LOCATION METHOD='Ljava/util/Vector;@size()I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@elementAt(I)Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@performWork(ILjava/lang/Object;)V' OFFSET='19' />
+    <LOCATION METHOD='Ljava/util/Vector;@removeAllElements()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@isEmpty()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Vector;' WAIT='1' ENTER='6' TIMED='0' WAITED='1' ID='17' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@startedBundle(Lorg/osgi/framework/Bundle;)V' OFFSET='514' />
+    <LOCATION METHOD='Ljava/util/Vector;@size()I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@elementAt(I)Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@performWork(ILjava/lang/Object;)V' OFFSET='19' />
+    <LOCATION METHOD='Ljava/util/Vector;@removeAllElements()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@isEmpty()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Object;' WAIT='1' ENTER='5' TIMED='0' WAITED='1' ID='18' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/internal/core/AbstractBundle;@beginStateChange()V' OFFSET='125' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/internal/core/AbstractBundle;@completeStateChange()V' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/internal/core/AbstractBundle;@beginStateChange()V' OFFSET='6' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Vector;' WAIT='1' ENTER='6' TIMED='0' WAITED='1' ID='19' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@startedBundle(Lorg/osgi/framework/Bundle;)V' OFFSET='514' />
+    <LOCATION METHOD='Ljava/util/Vector;@size()I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@elementAt(I)Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/ds/SCRManager;@performWork(ILjava/lang/Object;)V' OFFSET='19' />
+    <LOCATION METHOD='Ljava/util/Vector;@removeAllElements()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@isEmpty()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Object;' WAIT='2' ENTER='4' TIMED='1' WAITED='1' ID='20' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/util/impl/tpt/timer/TimerImpl;@run()V' OFFSET='506' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/util/impl/tpt/timer/TimerImpl;@run()V' OFFSET='11' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/util/impl/tpt/timer/TimerImpl;@run()V' OFFSET='481' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/util/impl/tpt/timer/TimerImpl;@terminate()V' OFFSET='11' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/ArrayList;' WAIT='10' ENTER='11' TIMED='0' WAITED='10' ID='21' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/InternalWorker;@run()V' OFFSET='135' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@beginMonitoring(Lorg/eclipse/core/internal/jobs/ThreadJob;Lorg/eclipse/core/runtime/IProgressMonitor;)V' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@endMonitoring(Lorg/eclipse/core/internal/jobs/ThreadJob;)V' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/InternalWorker;@cancel()V' OFFSET='9' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/framework/eventmgr/EventManager$EventThread;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='22' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/eventmgr/EventManager$EventThread;@getNextEvent()Lorg/eclipse/osgi/framework/eventmgr/EventManager$EventThread$Queued;' OFFSET='4' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/WorkerPool;' WAIT='357' ENTER='1540' TIMED='178' WAITED='179' ID='23' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/WorkerPool;@sleep(J)V' OFFSET='52' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/WorkerPool;@jobQueued()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/WorkerPool;@startJob(Lorg/eclipse/core/internal/jobs/Worker;)Lorg/eclipse/core/internal/jobs/InternalJob;' OFFSET='92' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/WorkerPool;@decrementBusyThreads()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/WorkerPool;@startJob(Lorg/eclipse/core/internal/jobs/Worker;)Lorg/eclipse/core/internal/jobs/InternalJob;' OFFSET='3' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/WorkerPool;@incrementBusyThreads()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/WorkerPool;@sleep(J)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/WorkerPool;@add(Lorg/eclipse/core/internal/jobs/Worker;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/WorkerPool;@endWorker(Lorg/eclipse/core/internal/jobs/Worker;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/WorkerPool;@remove(Lorg/eclipse/core/internal/jobs/Worker;)Z' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/WorkerPool;@shutdown()V' OFFSET='0' />
+    <PRIOR LOCK='38' />
+    <PRIOR LOCK='42' />
+    <PRIOR LOCK='129' />
+    <PRIOR LOCK='132' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='24' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='25' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='26' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='27' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='28' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='29' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='30' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='31' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='32' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='33' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='34' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='35' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='36' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='37' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='38' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='39' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='40' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='41' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='42' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='43'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='44'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='45'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='46'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='47'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='48'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='49'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='50'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='51'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='52'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='53'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='54'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='55'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='56'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='57'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='58'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='59'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='60'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='61'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='62'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='63'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='64'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='65'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='66'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='67'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='68'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='69'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='70'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='71'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='72'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='73'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='74'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='75'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='76'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='77'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='78'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='79'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='80'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='81'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='82'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='83'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='84'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='85'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='86'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='87'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='88'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='89'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='90'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='91'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='92'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/jdt/internal/core/search/indexing/IndexManager;' WAIT='1' ENTER='331' TIMED='0' WAITED='1' ID='93' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/search/processing/JobManager;@run()V' OFFSET='86' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/search/indexing/IndexManager;@getIndex(Lorg/eclipse/core/runtime/IPath;)Lorg/eclipse/jdt/internal/core/index/Index;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/search/indexing/IndexManager;@getIndex(Lorg/eclipse/core/runtime/IPath;Lorg/eclipse/core/runtime/IPath;ZZ)Lorg/eclipse/jdt/internal/core/index/Index;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/search/processing/JobManager;@awaitingJobsCount()I' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/search/processing/JobManager;@disable()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/search/processing/JobManager;@discardJobs(Ljava/lang/String;)V' OFFSET='28' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/search/processing/JobManager;@currentJob()Lorg/eclipse/jdt/internal/core/search/processing/IJob;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/search/processing/JobManager;@discardJobs(Ljava/lang/String;)V' OFFSET='128' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/search/processing/JobManager;@enable()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/search/processing/JobManager;@shutdown()V' OFFSET='33' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/framework/eventmgr/EventManager$EventThread;' WAIT='221' ENTER='799' TIMED='0' WAITED='221' ID='94' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/eventmgr/EventManager$EventThread;@getNextEvent()Lorg/eclipse/osgi/framework/eventmgr/EventManager$EventThread$Queued;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/eventmgr/EventManager$EventThread;@getNextEvent()Lorg/eclipse/osgi/framework/eventmgr/EventManager$EventThread$Queued;' OFFSET='4' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/eventmgr/ListenerQueue;@dispatchEventAsynchronous(ILjava/lang/Object;)V' OFFSET='29' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/eventmgr/EventManager$EventThread;@postEvent(Ljava/util/Set;Lorg/eclipse/osgi/framework/eventmgr/EventDispatcher;ILjava/lang/Object;)V' OFFSET='0' />
+    <PRIOR LOCK='163' />
+    <PRIOR LOCK='95' />
+    <PRIOR LOCK='42' />
+    <PRIOR LOCK='144' />
+    <PRIOR LOCK='162' />
+    <PRIOR LOCK='171' />
+    <PRIOR LOCK='157' />
+    <PRIOR LOCK='143' />
+    <PRIOR LOCK='166' />
+    <PRIOR LOCK='131' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/internal/baseadaptor/DefaultClassLoader;' WAIT='0' ENTER='34' TIMED='0' WAITED='0' ID='95' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/jst/j2ee/internal/J2EEInit$21;@run()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jst/j2ee/internal/J2EEInit$20;@run()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jst/j2ee/common/internal/impl/CommonPackageImpl;@initializePackageContents()V' OFFSET='3489' />
+    <LOCATION METHOD='Lorg/eclipse/jst/j2ee/jca/internal/impl/JcaPackageImpl;@&lt;init&gt;()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jst/j2ee/ejb/internal/impl/EjbPackageImpl;@initializePackageContents()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jst/j2ee/jca/internal/impl/JcaPackageImpl;@&lt;init&gt;()V' OFFSET='3' />
+    <LOCATION METHOD='Lorg/eclipse/jst/j2ee/jca/JcaFactory;@&lt;clinit&gt;()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jst/javaee/core/internal/impl/JavaeePackageImpl;@init()Lorg/eclipse/jst/javaee/core/internal/metadata/JavaeePackage;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/baseadaptor/loader/ClasspathManager;@findLocalClass_LockClassLoader(Ljava/lang/String;[Lorg/eclipse/osgi/baseadaptor/hooks/ClassLoadingStatsHook;)Ljava/lang/Class;' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/jst/javaee/core/internal/impl/JavaeePackageImpl;@initializePackageContents()V' OFFSET='0' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='96' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='97'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='98' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Object;' WAIT='0' ENTER='9' TIMED='0' WAITED='0' ID='99' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/runtime/internal/adaptor/EclipseClassLoadingHook;@processClass(Ljava/lang/String;[BLorg/eclipse/osgi/baseadaptor/loader/ClasspathEntry;Lorg/eclipse/osgi/baseadaptor/bundlefile/BundleEntry;Lorg/eclipse/osgi/baseadaptor/loader/ClasspathManager;)[B' OFFSET='39' />
+    <PRIOR LOCK='42' />
+    <PRIOR LOCK='157' />
+    <PRIOR LOCK='150' />
+    <PRIOR LOCK='140' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='1' WAITED='0' ID='100' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@attempt()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='1' WAITED='0' ID='101' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@attempt()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/wst/jsdt/internal/core/search/indexing/IndexManager;' WAIT='1' ENTER='6' TIMED='0' WAITED='1' ID='102' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/wst/jsdt/internal/core/search/processing/JobManager;@run()V' OFFSET='86' />
+    <LOCATION METHOD='Lorg/eclipse/wst/jsdt/internal/core/search/processing/JobManager;@awaitingJobsCount()I' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/wst/jsdt/internal/core/search/processing/JobManager;@discardJobs(Ljava/lang/String;)V' OFFSET='28' />
+    <LOCATION METHOD='Lorg/eclipse/wst/jsdt/internal/core/search/processing/JobManager;@currentJob()Lorg/eclipse/wst/jsdt/internal/core/search/processing/IJob;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/wst/jsdt/internal/core/search/processing/JobManager;@discardJobs(Ljava/lang/String;)V' OFFSET='128' />
+    <LOCATION METHOD='Lorg/eclipse/wst/jsdt/internal/core/search/processing/JobManager;@enable()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/wst/jsdt/internal/core/search/processing/JobManager;@shutdown()V' OFFSET='33' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='103'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='104'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='105'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='106'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='107'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='108'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='109'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='110'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='111'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+    <PRIOR LOCK='42' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess$Gate;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='112' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@waitForExit()V' OFFSET='10' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@exit()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess$Gate;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='113' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@waitForExit()V' OFFSET='10' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@exit()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess;' WAIT='1' ENTER='2' TIMED='0' WAITED='1' ID='114' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess;@waitFor()I' OFFSET='8' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$1$1;@run()V' OFFSET='178' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess;@destroy()V' OFFSET='3' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess$Gate;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='115' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@waitForExit()V' OFFSET='10' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@exit()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess;' WAIT='1' ENTER='2' TIMED='0' WAITED='1' ID='116' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess;@waitFor()I' OFFSET='8' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$1$1;@run()V' OFFSET='178' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess;@destroy()V' OFFSET='3' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess$Gate;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='117' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@waitForExit()V' OFFSET='10' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@exit()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess;' WAIT='1' ENTER='2' TIMED='0' WAITED='1' ID='118' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess;@waitFor()I' OFFSET='8' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$1$1;@run()V' OFFSET='178' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess;@destroy()V' OFFSET='3' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess$Gate;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='119' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@waitForExit()V' OFFSET='10' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@exit()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess;' WAIT='1' ENTER='2' TIMED='0' WAITED='1' ID='120' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess;@waitFor()I' OFFSET='8' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$1$1;@run()V' OFFSET='178' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess;@destroy()V' OFFSET='3' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess$Gate;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='121' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@waitForExit()V' OFFSET='10' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@exit()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess;' WAIT='1' ENTER='2' TIMED='0' WAITED='1' ID='122' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess;@waitFor()I' OFFSET='8' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$1$1;@run()V' OFFSET='178' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess;@destroy()V' OFFSET='3' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess$Gate;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='123' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@waitForExit()V' OFFSET='10' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@exit()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess;' WAIT='1' ENTER='2' TIMED='0' WAITED='1' ID='124' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess;@waitFor()I' OFFSET='8' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$1$1;@run()V' OFFSET='178' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess;@destroy()V' OFFSET='3' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess$Gate;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='125' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@waitForExit()V' OFFSET='10' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@exit()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess;' WAIT='1' ENTER='2' TIMED='0' WAITED='1' ID='126' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess;@waitFor()I' OFFSET='8' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$1$1;@run()V' OFFSET='178' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess;@destroy()V' OFFSET='3' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess$Gate;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='127' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@waitForExit()V' OFFSET='10' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$Gate;@exit()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/UNIXProcess;' WAIT='1' ENTER='2' TIMED='0' WAITED='1' ID='128' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/UNIXProcess;@waitFor()I' OFFSET='8' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess$1$1;@run()V' OFFSET='178' />
+    <LOCATION METHOD='Ljava/lang/UNIXProcess;@destroy()V' OFFSET='3' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Object;' WAIT='0' ENTER='316' TIMED='0' WAITED='0' ID='129' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@startJob()Lorg/eclipse/core/runtime/jobs/Job;' OFFSET='39' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@endJob(Lorg/eclipse/core/internal/jobs/InternalJob;Lorg/eclipse/core/runtime/IStatus;Z)V' OFFSET='12' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@runNow(Lorg/eclipse/core/internal/jobs/ThreadJob;Z)Lorg/eclipse/core/internal/jobs/InternalJob;' OFFSET='44' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@nextJob()Lorg/eclipse/core/runtime/jobs/Job;' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@changeState(Lorg/eclipse/core/internal/jobs/InternalJob;I)V' OFFSET='9' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@findBlockingJob(Lorg/eclipse/core/internal/jobs/InternalJob;)Lorg/eclipse/core/internal/jobs/InternalJob;' OFFSET='15' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@schedule(Lorg/eclipse/core/internal/jobs/InternalJob;JZ)V' OFFSET='50' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@doSchedule(Lorg/eclipse/core/internal/jobs/InternalJob;J)V' OFFSET='7' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@sleepHint()J' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@setRule(Lorg/eclipse/core/internal/jobs/InternalJob;Lorg/eclipse/core/runtime/jobs/ISchedulingRule;)V' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@runNow(Lorg/eclipse/core/internal/jobs/ThreadJob;Z)Lorg/eclipse/core/internal/jobs/InternalJob;' OFFSET='18' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@dequeue(Lorg/eclipse/core/internal/jobs/JobQueue;Lorg/eclipse/core/internal/jobs/InternalJob;)V' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@wakeUp(Lorg/eclipse/core/internal/jobs/InternalJob;J)V' OFFSET='25' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@join(Lorg/eclipse/core/internal/jobs/InternalJob;)V' OFFSET='7' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@cancel(Lorg/eclipse/core/internal/jobs/InternalJob;)Z' OFFSET='11' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@isBlocking(Lorg/eclipse/core/internal/jobs/InternalJob;)Z' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@select(Ljava/lang/Object;I)Ljava/util/List;' OFFSET='15' />
+    <PRIOR LOCK='132' />
+    <PRIOR LOCK='130' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Class;' WAIT='0' ENTER='288' TIMED='0' WAITED='0' ID='130' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/graphics/Device;@isDisposed()Z' OFFSET='34' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Display;@getThread()Ljava/lang/Thread;' OFFSET='35' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Display;@asyncExec(Ljava/lang/Runnable;)V' OFFSET='35' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Display;@syncExec(Ljava/lang/Runnable;)V' OFFSET='35' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='36' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Display;@findDisplay(Ljava/lang/Thread;)Lorg/eclipse/swt/widgets/Display;' OFFSET='35' />
+    <PRIOR LOCK='189' />
+    <PRIOR LOCK='219' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/internal/baseadaptor/DefaultClassLoader;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='131' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/cdt/internal/core/pdom/JobChangeListener;@done(Lorg/eclipse/core/runtime/jobs/IJobChangeEvent;)V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/ImplicitJobs;' WAIT='0' ENTER='8' TIMED='0' WAITED='0' ID='132' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/ImplicitJobs;@begin(Lorg/eclipse/core/runtime/jobs/ISchedulingRule;Lorg/eclipse/core/runtime/IProgressMonitor;Z)V' OFFSET='34' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/ImplicitJobs;@addWaiting(Lorg/eclipse/core/internal/jobs/ThreadJob;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@runNow(Lorg/eclipse/core/internal/jobs/ThreadJob;Z)Lorg/eclipse/core/internal/jobs/InternalJob;' OFFSET='10' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/ImplicitJobs;@end(Lorg/eclipse/core/runtime/jobs/ISchedulingRule;Z)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/ImplicitJobs;@endJob(Lorg/eclipse/core/internal/jobs/InternalJob;)V' OFFSET='8' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/DeadlockDetector;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='133' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/LockManager;@addLockWaitThread(Ljava/lang/Thread;Lorg/eclipse/core/runtime/jobs/ISchedulingRule;)V' OFFSET='17' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Object;' WAIT='2' ENTER='3' TIMED='0' WAITED='2' ID='134' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/ThreadJob;@waitForRun(Lorg/eclipse/core/internal/jobs/ThreadJob;Lorg/eclipse/core/runtime/IProgressMonitor;Lorg/eclipse/core/internal/jobs/InternalJob;Ljava/lang/Thread;)Lorg/eclipse/core/internal/jobs/ThreadJob;' OFFSET='383' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/ThreadJob;@waitForRun(Lorg/eclipse/core/internal/jobs/ThreadJob;Lorg/eclipse/core/runtime/IProgressMonitor;Lorg/eclipse/core/internal/jobs/InternalJob;Ljava/lang/Thread;)Lorg/eclipse/core/internal/jobs/ThreadJob;' OFFSET='357' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@changeState(Lorg/eclipse/core/internal/jobs/InternalJob;I)V' OFFSET='17' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/ImplicitJobs;@notifyWaitingThreadJobs(Lorg/eclipse/core/internal/jobs/InternalJob;)V' OFFSET='6' />
+    <PRIOR LOCK='129' />
+    <PRIOR LOCK='132' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/watson/ElementTree;' WAIT='0' ENTER='4' TIMED='0' WAITED='0' ID='135' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/watson/ElementTree;@includes(Lorg/eclipse/core/runtime/IPath;)Z' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/watson/ElementTree;@newEmptyDelta()Lorg/eclipse/core/internal/watson/ElementTree;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Collections$SynchronizedMap;' WAIT='0' ENTER='60' TIMED='0' WAITED='0' ID='136' UNNEST='T'>
+    <LOCATION METHOD='Ljava/util/Collections$SynchronizedMap;@get(Ljava/lang/Object;)Ljava/lang/Object;' OFFSET='6' />
+    <LOCATION METHOD='Ljava/util/Collections$SynchronizedMap;@remove(Ljava/lang/Object;)Ljava/lang/Object;' OFFSET='6' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Object;' WAIT='1' ENTER='2' TIMED='0' WAITED='1' ID='137'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/ThreadJob;@waitForRun(Lorg/eclipse/core/internal/jobs/ThreadJob;Lorg/eclipse/core/runtime/IProgressMonitor;Lorg/eclipse/core/internal/jobs/InternalJob;Ljava/lang/Thread;)Lorg/eclipse/core/internal/jobs/ThreadJob;' OFFSET='383' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/ImplicitJobs;@notifyWaitingThreadJobs(Lorg/eclipse/core/internal/jobs/InternalJob;)V' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@changeState(Lorg/eclipse/core/internal/jobs/InternalJob;I)V' OFFSET='17' />
+    <PRIOR LOCK='132' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/registry/RegistryObjectManager;' WAIT='0' ENTER='7' TIMED='0' WAITED='0' ID='138' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/registry/RegistryObjectManager;@getObject(IB)Ljava/lang/Object;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/watson/ElementTree;' WAIT='0' ENTER='8' TIMED='0' WAITED='0' ID='139' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/watson/ElementTree;@getChildren(Lorg/eclipse/core/runtime/IPath;)[Lorg/eclipse/core/runtime/IPath;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/watson/ElementTree;@includes(Lorg/eclipse/core/runtime/IPath;)Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/internal/baseadaptor/DefaultClassLoader;' WAIT='0' ENTER='14' TIMED='0' WAITED='0' ID='140' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/JavaModelManager;@initializeContainer(Lorg/eclipse/jdt/core/IJavaProject;Lorg/eclipse/core/runtime/IPath;)Lorg/eclipse/jdt/core/IClasspathContainer;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/baseadaptor/loader/ClasspathManager;@findLocalClass_LockClassLoader(Ljava/lang/String;[Lorg/eclipse/osgi/baseadaptor/hooks/ClassLoadingStatsHook;)Ljava/lang/Class;' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/DeltaProcessingState;@resourceChanged(Lorg/eclipse/core/resources/IResourceChangeEvent;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/util/Messages;@bind(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/ChangeClasspathOperation;@classpathChanged(Lorg/eclipse/jdt/internal/core/ClasspathChange;Z)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/JavaProject;@resetCaches()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/ClasspathEntry;@validateClasspathEntry(Lorg/eclipse/jdt/core/IJavaProject;Lorg/eclipse/jdt/core/IClasspathEntry;Lorg/eclipse/jdt/core/IClasspathContainer;ZZ)Lorg/eclipse/jdt/core/IJavaModelStatus;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/JavaProject;@getEclipsePreferences()Lorg/eclipse/core/runtime/preferences/IEclipsePreferences;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/JavaProject;@loadPreferences()Lorg/eclipse/core/runtime/preferences/IEclipsePreferences;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/ProjectReferenceChange;@updateProjectReferencesIfNecessary()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/baseadaptor/bundlefile/MRUBundleFileList;' WAIT='0' ENTER='9' TIMED='0' WAITED='0' ID='141' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/baseadaptor/bundlefile/MRUBundleFileList;@use(Lorg/eclipse/osgi/baseadaptor/bundlefile/BundleFile;)V' OFFSET='13' />
+    <PRIOR LOCK='144' />
+    <PRIOR LOCK='162' />
+    <PRIOR LOCK='143' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Collections$SynchronizedCollection;' WAIT='0' ENTER='4' TIMED='0' WAITED='0' ID='142' UNNEST='T'>
+    <LOCATION METHOD='Ljava/util/Collections$SynchronizedCollection;@contains(Ljava/lang/Object;)Z' OFFSET='6' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/internal/baseadaptor/DefaultClassLoader;' WAIT='0' ENTER='2' TIMED='0' WAITED='0' ID='143' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/ui/navigator/JavaNavigatorViewActionProvider;@restoreState(Lorg/eclipse/ui/IMemento;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/ui/navigator/JavaNavigatorContentProvider$1;@propertyChange(Lorg/eclipse/jface/util/PropertyChangeEvent;)V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/internal/baseadaptor/DefaultClassLoader;' WAIT='0' ENTER='15' TIMED='0' WAITED='0' ID='144' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/wst/jsdt/internal/core/JavaModelManager$16;@run(Lorg/eclipse/core/runtime/IProgressMonitor;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/wst/jsdt/core/search/SearchEngine;@&lt;init&gt;()V' OFFSET='5' />
+    <LOCATION METHOD='Lorg/eclipse/wst/jsdt/internal/core/DeltaProcessingState;@getDeltaProcessor()Lorg/eclipse/wst/jsdt/internal/core/DeltaProcessor;' OFFSET='17' />
+    <LOCATION METHOD='Lorg/eclipse/wst/jsdt/internal/core/DeltaProcessor;@&lt;init&gt;(Lorg/eclipse/wst/jsdt/internal/core/DeltaProcessingState;Lorg/eclipse/wst/jsdt/internal/core/JavaModelManager;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/wst/jsdt/internal/core/DeltaProcessingState;@resourceChanged(Lorg/eclipse/core/resources/IResourceChangeEvent;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/wst/jsdt/internal/core/JavaModelManager;@getWorkspaceScope()Lorg/eclipse/wst/jsdt/internal/core/search/JavaWorkspaceScope;' OFFSET='8' />
+    <LOCATION METHOD='Lorg/eclipse/wst/jsdt/internal/core/DeltaProcessor;@resourceChanged(Lorg/eclipse/core/resources/IResourceChangeEvent;)V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/internal/baseadaptor/DefaultClassLoader;' WAIT='0' ENTER='18' TIMED='0' WAITED='0' ID='145' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/baseadaptor/loader/ClasspathManager;@findLocalClass_LockClassLoader(Ljava/lang/String;[Lorg/eclipse/osgi/baseadaptor/hooks/ClassLoadingStatsHook;)Ljava/lang/Class;' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/junit/buildpath/JUnitContainerInitializer;@getNewContainer(Lorg/eclipse/core/runtime/IPath;)Lorg/eclipse/jdt/internal/junit/buildpath/JUnitContainerInitializer$JUnitContainer;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/junit/buildpath/BuildPathSupport$JUnitPluginDescription;@getLibraryEntry()Lorg/eclipse/jdt/core/IClasspathEntry;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/junit/buildpath/P2Utils;@findBundle(Ljava/lang/String;Lorg/eclipse/osgi/service/resolver/VersionRange;Z)Lorg/eclipse/equinox/frameworkadmin/BundleInfo;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/junit/JUnitCorePlugin;@getService(Ljava/lang/String;)Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/junit/buildpath/JUnitContainerInitializer$JUnitContainer;@getDescription()Ljava/lang/String;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Object;' WAIT='1' ENTER='5' TIMED='0' WAITED='1' ID='146' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/internal/core/AbstractBundle;@beginStateChange()V' OFFSET='125' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/internal/core/AbstractBundle;@completeStateChange()V' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/internal/core/AbstractBundle;@beginStateChange()V' OFFSET='6' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/watson/ElementTree;' WAIT='0' ENTER='362' TIMED='0' WAITED='0' ID='147' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/watson/ElementTree;@includes(Lorg/eclipse/core/runtime/IPath;)Z' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/watson/ElementTree;@getElementData(Lorg/eclipse/core/runtime/IPath;)Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/watson/ElementTree;@getChildren(Lorg/eclipse/core/runtime/IPath;)[Lorg/eclipse/core/runtime/IPath;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/baseadaptor/BaseAdaptor$1;' WAIT='0' ENTER='7' TIMED='0' WAITED='0' ID='148' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/ClassLoader;@loadClass(Ljava/lang/String;Z)Ljava/lang/Class;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/internal/loader/BundleLoader;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='149' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/internal/loader/BundleLoader;@getImportedSources(Lorg/eclipse/osgi/framework/util/KeyedHashSet;)Lorg/eclipse/osgi/framework/util/KeyedHashSet;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/internal/serviceregistry/ServiceUse;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='150' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/internal/serviceregistry/ServiceRegistrationImpl;@getService(Lorg/eclipse/osgi/framework/internal/core/BundleContextImpl;)Ljava/lang/Object;' OFFSET='191' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/internal/serviceregistry/ServiceProperties;' WAIT='0' ENTER='2' TIMED='0' WAITED='0' ID='151' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/util/Headers;@get(Ljava/lang/Object;)Ljava/lang/Object;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/internal/serviceregistry/ServiceProperties;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='152' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/util/Headers;@get(Ljava/lang/Object;)Ljava/lang/Object;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lsun/nio/cs/StandardCharsets;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='153' UNNEST='T'>
+    <LOCATION METHOD='Lsun/nio/cs/FastCharsetProvider;@charsetForName(Ljava/lang/String;)Ljava/nio/charset/Charset;' OFFSET='3' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/HashMap;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='154' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/runtime/Activator;@getURLConverter(Ljava/net/URL;)Lorg/eclipse/osgi/service/urlconversion/URLConverter;' OFFSET='10' />
+  </LOCK>
+  <LOCK CLASS='Lsun/net/www/protocol/file/Handler;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='155' UNNEST='T'>
+    <LOCATION METHOD='Lsun/net/www/protocol/file/Handler;@openConnection(Ljava/net/URL;)Ljava/net/URLConnection;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/internal/serviceregistry/ServiceRegistry;' WAIT='0' ENTER='6' TIMED='0' WAITED='0' ID='156' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/internal/serviceregistry/ServiceRegistry;@lookupServiceRegistrations(Ljava/lang/String;Lorg/osgi/framework/Filter;)Ljava/util/List;' OFFSET='4' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/internal/baseadaptor/DefaultClassLoader;' WAIT='0' ENTER='200' TIMED='0' WAITED='0' ID='157' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/baseadaptor/loader/ClasspathManager;@findLocalClass_LockClassLoader(Ljava/lang/String;[Lorg/eclipse/osgi/baseadaptor/hooks/ClassLoadingStatsHook;)Ljava/lang/Class;' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/PDECore;@start(Lorg/osgi/framework/BundleContext;)V' OFFSET='29' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/builders/PluginRebuilder;@&lt;init&gt;()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/builders/PluginRebuilder;@start()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/lang/ClassLoader;@checkCerts(Ljava/lang/String;Ljava/security/CodeSource;)V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/lang/ClassLoader;@defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;Z)Ljava/lang/Class;' OFFSET='-1' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/PDECore;@getModelManager()Lorg/eclipse/pde/internal/core/PluginModelManager;' OFFSET='8' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/PluginModelManager;@&lt;init&gt;()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/PluginModelManager;@&lt;init&gt;()V' OFFSET='5' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/PluginModelManager$UpdateClasspathsJob;@&lt;init&gt;(Lorg/eclipse/pde/internal/core/PluginModelManager;)V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/lang/Class;@getDeclaredFields0(Z)[Ljava/lang/reflect/Field;' OFFSET='-1' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/PluginModelManager;@&lt;init&gt;()V' OFFSET='17' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/AbstractModelManager;@&lt;init&gt;()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/PDECore;@getExtensionsRegistry()Lorg/eclipse/pde/internal/core/PDEExtensionRegistry;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/PDECore;@getExtensionsRegistry()Lorg/eclipse/pde/internal/core/PDEExtensionRegistry;' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/PDEExtensionRegistry;@&lt;init&gt;()V' OFFSET='81' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/PDERegistryStrategy;@connectListeners()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/builders/FeatureRebuilder;@start()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/PDECore;@getFeatureModelManager()Lorg/eclipse/pde/internal/core/FeatureModelManager;' OFFSET='8' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/FeatureModelManager;@&lt;init&gt;()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/PDECore;@start(Lorg/osgi/framework/BundleContext;)V' OFFSET='102' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/RequiredPluginsClasspathContainer;@computePluginEntries()[Lorg/eclipse/jdt/core/IClasspathEntry;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/RequiredPluginsClasspathContainer;@addVisiblePackagesFromState(Lorg/eclipse/osgi/service/resolver/StateHelper;Lorg/eclipse/osgi/service/resolver/BundleDescription;Ljava/util/Map;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/TargetPlatformHelper;@getTargetVersion()D' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/TargetPlatformHelper;@getTargetVersionString()Ljava/lang/String;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/util/VersionUtil;@validateVersion(Ljava/lang/String;)Lorg/eclipse/core/runtime/IStatus;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/PDEClasspathContainer;@addProjectEntry(Lorg/eclipse/core/resources/IProject;[Lorg/eclipse/pde/internal/core/PDEClasspathContainer$Rule;Ljava/util/ArrayList;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/ClasspathUtilCore;@getBuild(Lorg/eclipse/pde/core/plugin/IPluginModelBase;)Lorg/eclipse/pde/core/build/IBuild;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/build/WorkspaceBuildModel;@load()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/build/BuildModel;@load(Ljava/io/InputStream;Z)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/build/Build;@processEntry(Ljava/lang/String;Ljava/lang/String;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/build/BuildModel;@getFactory()Lorg/eclipse/pde/core/build/IBuildModelFactory;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/framework/eventmgr/CopyOnWriteIdentityMap;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='158' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/internal/core/Framework;@publishBundleEventPrivileged(Lorg/osgi/framework/BundleEvent;)V' OFFSET='40' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Object;' WAIT='1' ENTER='5' TIMED='0' WAITED='1' ID='159' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/internal/core/AbstractBundle;@beginStateChange()V' OFFSET='125' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/internal/core/AbstractBundle;@completeStateChange()V' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/internal/core/AbstractBundle;@beginStateChange()V' OFFSET='6' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/internal/loader/BundleLoaderProxy;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='160' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/internal/loader/BundleLoaderProxy;@getBundleLoader0()Lorg/eclipse/osgi/internal/loader/BundleLoader;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/framework/internal/core/BundleRepository;' WAIT='0' ENTER='2' TIMED='0' WAITED='0' ID='161' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/internal/core/Framework;@getBundleBySymbolicName(Ljava/lang/String;)[Lorg/eclipse/osgi/framework/internal/core/AbstractBundle;' OFFSET='6' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/pde/internal/core/PluginModelManager;' WAIT='0' ENTER='137' TIMED='0' WAITED='0' ID='162' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/pde/internal/core/PluginModelManager;@initializeTable()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/internal/baseadaptor/DefaultClassLoader;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='163' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/baseadaptor/loader/ClasspathManager;@findLocalClass_LockClassLoader(Ljava/lang/String;[Lorg/eclipse/osgi/baseadaptor/hooks/ClassLoadingStatsHook;)Ljava/lang/Class;' OFFSET='6' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Object;' WAIT='1' ENTER='5' TIMED='0' WAITED='1' ID='164' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/internal/core/AbstractBundle;@beginStateChange()V' OFFSET='125' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/internal/core/AbstractBundle;@completeStateChange()V' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/internal/core/AbstractBundle;@beginStateChange()V' OFFSET='6' />
+    <PRIOR LOCK='162' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/baseadaptor/bundlefile/ZipBundleFile;' WAIT='1' ENTER='76' TIMED='1' WAITED='0' ID='165' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/baseadaptor/bundlefile/ZipBundleFile;@close()V' OFFSET='25' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/baseadaptor/bundlefile/ZipBundleFile;@getEntry(Ljava/lang/String;)Lorg/eclipse/osgi/baseadaptor/bundlefile/BundleEntry;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/baseadaptor/bundlefile/ZipBundleFile;@getZipFile()Ljava/util/zip/ZipFile;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/baseadaptor/bundlefile/ZipBundleFile;@incrementReference()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/baseadaptor/bundlefile/ZipBundleFile;@decrementReference()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/internal/baseadaptor/DefaultClassLoader;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='166' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/team/svn/core/ResourceChangeListener;@handleInitialWorkspaceDelta()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/framework/util/KeyedHashSet;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='167' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/internal/loader/BundleLoader;@findRequiredSource(Ljava/lang/String;Lorg/eclipse/osgi/framework/util/KeyedHashSet;)Lorg/eclipse/osgi/internal/loader/PackageSource;' OFFSET='15' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/TaskQueue;' WAIT='0' ENTER='0' TIMED='0' WAITED='0' ID='-1' />
+  <LOCK CLASS='Ljava/util/WeakHashMap;' WAIT='0' ENTER='2' TIMED='0' WAITED='0' ID='168'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/framework/util/ObjectPool;@intern(Ljava/lang/Object;)Ljava/lang/Object;' OFFSET='5' />
+    <PRIOR LOCK='162' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/internal/Lock;' WAIT='72' ENTER='302' TIMED='0' WAITED='72' ID='169' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/internal/Lock;@lock()I' OFFSET='30' />
+    <LOCATION METHOD='Lorg/eclipse/swt/internal/Lock;@unlock()V' OFFSET='3' />
+    <LOCATION METHOD='Lorg/eclipse/swt/internal/Lock;@lock()I' OFFSET='3' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Object;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='170'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@addLast(Lorg/eclipse/swt/widgets/RunnableLock;)V' OFFSET='8' />
+    <PRIOR LOCK='130' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/internal/baseadaptor/DefaultClassLoader;' WAIT='0' ENTER='17' TIMED='0' WAITED='0' ID='171' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/launching/JREContainerInitializer;@initialize(Lorg/eclipse/core/runtime/IPath;Lorg/eclipse/jdt/core/IJavaProject;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/launching/JREContainerInitializer;@resolveVM(Lorg/eclipse/core/runtime/IPath;)Lorg/eclipse/jdt/launching/IVMInstall;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/launching/environments/EnvironmentsManager;@initializeCompatibilities()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/launching/JavaRuntime;@initializeVMs()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/launching/JREContainer;@getClasspathEntries(Lorg/eclipse/jdt/launching/IVMInstall;Lorg/eclipse/core/runtime/IPath;Lorg/eclipse/jdt/core/IJavaProject;)[Lorg/eclipse/jdt/core/IClasspathEntry;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/launching/JREContainer;@computeClasspathEntries(Lorg/eclipse/jdt/launching/IVMInstall;Lorg/eclipse/jdt/core/IJavaProject;Ljava/lang/String;)[Lorg/eclipse/jdt/core/IClasspathEntry;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/baseadaptor/loader/ClasspathManager;@findLocalClass_LockClassLoader(Ljava/lang/String;[Lorg/eclipse/osgi/baseadaptor/hooks/ClassLoadingStatsHook;)Ljava/lang/Class;' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/launching/environments/DefaultAccessRuleParticipant;@retrieveSystemPackages(Lorg/eclipse/jdt/launching/environments/IExecutionEnvironment;)[Ljava/lang/String;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Object;' WAIT='0' ENTER='74' TIMED='0' WAITED='0' ID='172' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/jdt/launching/JavaRuntime;@initializeVMs()V' OFFSET='11' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/jdt/internal/launching/environments/EnvironmentsManager;' WAIT='0' ENTER='3' TIMED='0' WAITED='0' ID='173' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/launching/environments/EnvironmentsManager;@initializeCompatibilities()V' OFFSET='7' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/launching/environments/EnvironmentsManager;@getEnvironment(Ljava/lang/String;)Lorg/eclipse/jdt/launching/environments/IExecutionEnvironment;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/baseadaptor/bundlefile/ZipBundleFile;' WAIT='1' ENTER='2' TIMED='1' WAITED='0' ID='174'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/baseadaptor/bundlefile/ZipBundleFile;@close()V' OFFSET='25' />
+    <LOCATION METHOD='Lorg/eclipse/osgi/baseadaptor/bundlefile/ZipBundleFile;@close()V' OFFSET='0' />
+    <PRIOR LOCK='161' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/watson/ElementTree;' WAIT='0' ENTER='33' TIMED='0' WAITED='0' ID='175' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/watson/ElementTree;@includes(Lorg/eclipse/core/runtime/IPath;)Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/jdt/internal/core/JavaModelManager$PerProjectInfo;' WAIT='0' ENTER='2' TIMED='0' WAITED='0' ID='176' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/JavaModelManager$PerProjectInfo;@resetResolvedClasspath()Lorg/eclipse/jdt/internal/core/ClasspathChange;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/JavaModelManager$PerProjectInfo;@getResolvedClasspath()[Lorg/eclipse/jdt/core/IClasspathEntry;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/jdt/internal/launching/StandardVMType;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='177' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/launching/StandardVMType;@getLibraryInfo(Ljava/io/File;Ljava/io/File;)Lorg/eclipse/jdt/internal/launching/LibraryInfo;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/jdt/internal/launching/environments/ExecutionEnvironment;' WAIT='0' ENTER='2' TIMED='0' WAITED='0' ID='178' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/launching/environments/ExecutionEnvironment;@getParticipants()[Lorg/eclipse/jdt/launching/environments/IAccessRuleParticipant;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/launching/environments/ExecutionEnvironment;@getAccessRules(Lorg/eclipse/jdt/launching/IVMInstall;[Lorg/eclipse/jdt/launching/LibraryLocation;Lorg/eclipse/jdt/core/IJavaProject;)[[Lorg/eclipse/jdt/core/IAccessRule;' OFFSET='21' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Class;' WAIT='0' ENTER='18' TIMED='0' WAITED='0' ID='179' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/JavaModel;@existingExternalFilesContains(Ljava/io/File;)Z' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/JavaModel;@existingExternalFilesAdd(Ljava/io/File;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/JavaModel;@getFile(Ljava/lang/Object;)Ljava/io/File;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Collections$SynchronizedSet;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='180' UNNEST='T'>
+    <LOCATION METHOD='Ljava/util/Collections$SynchronizedCollection;@add(Ljava/lang/Object;)Z' OFFSET='6' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Object;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='181' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/internal/resolver/ExportPackageDescriptionImpl;@getDirective(Ljava/lang/String;)Ljava/lang/Object;' OFFSET='6' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/jdt/internal/core/JavaModelManager;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='182' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/jdt/internal/core/JavaModelManager;@containerGet(Lorg/eclipse/jdt/core/IJavaProject;Lorg/eclipse/core/runtime/IPath;)Lorg/eclipse/jdt/core/IClasspathContainer;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Object;' WAIT='2' ENTER='61' TIMED='0' WAITED='2' ID='183' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/ThreadJob;@waitForRun(Lorg/eclipse/core/internal/jobs/ThreadJob;Lorg/eclipse/core/runtime/IProgressMonitor;Lorg/eclipse/core/internal/jobs/InternalJob;Ljava/lang/Thread;)Lorg/eclipse/core/internal/jobs/ThreadJob;' OFFSET='383' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/ImplicitJobs;@notifyWaitingThreadJobs(Lorg/eclipse/core/internal/jobs/InternalJob;)V' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@changeState(Lorg/eclipse/core/internal/jobs/InternalJob;I)V' OFFSET='17' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/ThreadJob;@waitForRun(Lorg/eclipse/core/internal/jobs/ThreadJob;Lorg/eclipse/core/runtime/IProgressMonitor;Lorg/eclipse/core/internal/jobs/InternalJob;Ljava/lang/Thread;)Lorg/eclipse/core/internal/jobs/ThreadJob;' OFFSET='357' />
+    <PRIOR LOCK='129' />
+    <PRIOR LOCK='132' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='184' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='185' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='186' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='187' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='188' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/OrderedLock;' WAIT='0' ENTER='2' TIMED='0' WAITED='0' ID='189' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/OrderedLock;@createSemaphore()Lorg/eclipse/core/internal/jobs/Semaphore;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='190'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='189' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='191'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='189' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='192'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='189' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='193'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='189' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='194'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='189' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/properties/PropertyManager2;' WAIT='0' ENTER='60' TIMED='0' WAITED='0' ID='195' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/properties/PropertyManager2;@setProperty(Lorg/eclipse/core/resources/IResource;Lorg/eclipse/core/runtime/QualifiedName;Ljava/lang/String;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/properties/PropertyManager2;@getProperty(Lorg/eclipse/core/resources/IResource;Lorg/eclipse/core/runtime/QualifiedName;)Ljava/lang/String;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Collections$SynchronizedSet;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='196' UNNEST='T'>
+    <LOCATION METHOD='Ljava/util/Collections$SynchronizedCollection;@add(Ljava/lang/Object;)Z' OFFSET='6' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='197'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='189' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/internal/baseadaptor/DefaultClassLoader;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='198' UNNEST='T'>
+    <LOCATION METHOD='Lorg/tigris/subversion/subclipse/core/util/JobUtility$1;@run(Lorg/eclipse/core/runtime/IProgressMonitor;)Lorg/eclipse/core/runtime/IStatus;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='199'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='189' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='200'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='189' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='201'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='189' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/watson/ElementTree;' WAIT='0' ENTER='101144' TIMED='0' WAITED='0' ID='202' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/watson/ElementTree;@includes(Lorg/eclipse/core/runtime/IPath;)Z' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/watson/ElementTree;@getElementData(Lorg/eclipse/core/runtime/IPath;)Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/watson/ElementTree;@getChildren(Lorg/eclipse/core/runtime/IPath;)[Lorg/eclipse/core/runtime/IPath;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/watson/ElementTreeIterator;@&lt;init&gt;(Lorg/eclipse/core/internal/watson/ElementTree;Lorg/eclipse/core/runtime/IPath;)V' OFFSET='26' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/watson/ElementTree;@openElementData(Lorg/eclipse/core/runtime/IPath;)Ljava/lang/Object;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='203'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='189' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='204'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='189' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/internal/baseadaptor/DefaultClassLoader;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='205' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/baseadaptor/loader/ClasspathManager;@findLocalClass_LockClassLoader(Ljava/lang/String;[Lorg/eclipse/osgi/baseadaptor/hooks/ClassLoadingStatsHook;)Ljava/lang/Class;' OFFSET='6' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/ui/internal/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='206' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/ui/internal/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/ui/internal/Semaphore;@release()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/equinox/internal/util/impl/tpt/threadpool/Executor;' WAIT='1' ENTER='2' TIMED='0' WAITED='1' ID='207' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/util/impl/tpt/threadpool/Executor;@run()V' OFFSET='328' />
+    <LOCATION METHOD='Lorg/eclipse/equinox/internal/util/impl/tpt/threadpool/Executor;@terminate()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='208'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='189' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/ui/internal/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='209' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/ui/internal/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/ui/internal/Semaphore;@release()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='210'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='189' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='211'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='189' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='212'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='189' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='213'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='189' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='214'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+    <PRIOR LOCK='189' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Object;' WAIT='1' ENTER='11' TIMED='0' WAITED='1' ID='215'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/ThreadJob;@waitForRun(Lorg/eclipse/core/internal/jobs/ThreadJob;Lorg/eclipse/core/runtime/IProgressMonitor;Lorg/eclipse/core/internal/jobs/InternalJob;Ljava/lang/Thread;)Lorg/eclipse/core/internal/jobs/ThreadJob;' OFFSET='383' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@changeState(Lorg/eclipse/core/internal/jobs/InternalJob;I)V' OFFSET='17' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/ImplicitJobs;@notifyWaitingThreadJobs(Lorg/eclipse/core/internal/jobs/InternalJob;)V' OFFSET='6' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/JobManager;@startJob()Lorg/eclipse/core/runtime/jobs/Job;' OFFSET='51' />
+    <PRIOR LOCK='129' />
+    <PRIOR LOCK='132' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/watson/ElementTree;' WAIT='0' ENTER='25' TIMED='0' WAITED='0' ID='216' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/watson/ElementTree;@includes(Lorg/eclipse/core/runtime/IPath;)Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/osgi/baseadaptor/bundlefile/ZipBundleFile;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='217' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/osgi/baseadaptor/bundlefile/ZipBundleFile;@getEntry(Ljava/lang/String;)Lorg/eclipse/osgi/baseadaptor/bundlefile/BundleEntry;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='218' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/jface/operation/AccumulatingProgressMonitor;' WAIT='0' ENTER='14' TIMED='0' WAITED='0' ID='219' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/jface/operation/AccumulatingProgressMonitor;@clearCollector(Lorg/eclipse/jface/operation/AccumulatingProgressMonitor$Collector;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jface/operation/AccumulatingProgressMonitor;@internalWorked(D)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/eclipse/jface/operation/AccumulatingProgressMonitor;@done()V' OFFSET='3' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/swt/widgets/RunnableLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='220' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@syncExec(Ljava/lang/Runnable;)V' OFFSET='138' />
+    <LOCATION METHOD='Lorg/eclipse/swt/widgets/Synchronizer;@runAsyncMessages(Z)Z' OFFSET='19' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/epp/usagedata/internal/recording/UsageDataRecorder;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='221' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/epp/usagedata/internal/recording/UsageDataRecorder;@accept(Lorg/eclipse/epp/usagedata/internal/gathering/events/UsageDataEvent;)V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/eclipse/core/internal/jobs/Semaphore;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='222' UNNEST='T'>
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@acquire(J)Z' OFFSET='54' />
+    <LOCATION METHOD='Lorg/eclipse/core/internal/jobs/Semaphore;@release()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Thread;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='223' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/Thread;@join(J)V' OFFSET='38' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Thread;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='224' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/Thread;@join(J)V' OFFSET='38' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Thread;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='225' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/Thread;@join(J)V' OFFSET='38' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/logging/LogManager$Cleaner;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='226' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/Thread;@join(J)V' OFFSET='38' />
+  </LOCK>
+</LOCKSET>

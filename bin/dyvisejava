@@ -1,0 +1,57 @@
+#! /bin/tcsh -f
+
+
+if ($?BROWN_DYVISE_ROOT == 0) then
+   set x0 = `zsh -c "whence $0"`
+   set x1 = ${x0:h}
+   set x2 = $x1/dyvisesetupenv
+   source $x2
+endif
+
+
+if ($?SOURCEPATH == 0) then
+   setenv SOURCEPATH $CLASSPATH
+endif
+
+
+setenv BROWN_DYVISE_JAVA_ARCH $BROWN_DYVISE_ARCH
+
+if ($?LD_LIBRARY_PATH == 0) then
+   setenv LD_LIBRARY_PATH ${BROWN_DYVISE_DYVISE}/lib/${BROWN_DYVISE_ARCH}:${BROWN_DYVISE_IVY}/lib/${BROWN_DYVISE_ARCH}:/pro/lib
+else
+   setenv LD_LIBRARY_PATH ${BROWN_DYVISE_DYVISE}/lib/${BROWN_DYVISE_ARCH}:${BROWN_DYVISE_IVY}/lib/${BROWN_DYVISE_ARCH}:/pro/lib:${LD_LIBRARY_PATH}
+endif
+
+
+if ($BROWN_DYVISE_ARCH == i386) then
+   setenv BROWN_DYVISE_ARCH mac64
+   setenv BROWN_DYVISE_JAVA_ARCH mac64
+   setenv DYLD_LIBRARY_PATH ${BROWN_DYVISE_DYVISE}/lib/${BROWN_DYVISE_JAVA_ARCH}:${BROWN_DYVISE_IVY}/lib/${BROWN_DYVISE_JAVA_ARCH}:/pro/lib
+endif
+
+set jlib = $BROWN_JAVA_HOME/lib/tools.jar
+set mlib = $BROWN_DYVISE_DYVISE/lib/quadprog.jar
+set alib = $BROWN_DYVISE_IVY/lib/asm6.jar
+set slib =
+
+set pgx = $BROWN_DYVISE_IVY/lib/postgresql.jar
+if (-e $BROWN_DYVISE_IVY/lib/postgresqlcopy.jar) then
+   set pgx = $BROWN_DYVISE_IVY/lib/postgresqlcopy.jar
+endif
+
+if (-d $BROWN_DYVISE_DYVISE/java) then
+   setenv CLASSPATH $BROWN_DYVISE_DYVISE/java:$BROWN_DYVISE_IVY/java:$BROWN_DYVISE_IVY/lib/jikesbt.jar:$BROWN_DYVISE_DYVISE/lib/sprasm.jar:${jlib}:${mlib}:${alib}:${BROWN_IVY_DBMS}
+else
+   setenv CLASSPATH $BROWN_DYVISE_DYVISE/lib/dyvise.jar:$BROWN_DYVISE_IVY/lib/ivy.jar:$BROWN_DYVISE_IVY/lib/jikesbt.jar:$BROWN_DYVISE_DYVISE/lib/sprasm.jar:${jlib}:${mlib}:${alib}:${BROWN_IVY_DBMS}
+endif
+
+setenv CLASSPATH ${CLASSPATH}
+
+
+set cmd = java
+if ($?BROWN_DYVISE_DEBUG == 1) then
+   set cmd = djava
+endif
+
+exec $cmd $*
+

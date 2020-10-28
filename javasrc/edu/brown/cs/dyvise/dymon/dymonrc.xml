@@ -1,0 +1,27 @@
+<DYPER>
+   <PROCESS>
+      <PACKAGE NAME='com.sun.opengl.' VALUE='SYSTEM' />
+      <PACKAGE NAME='com.apple.' VALUE='SYSTEM' />
+      <PACKAGE NAME='apple.' VALUE='SYSTEM' />
+      <PACKAGE NAME='javax.media.' VALUE='SYSTEM' />
+   </PROCESS>
+
+   <PROCESS CLASS="org.eclipse.core.launcher.Main">
+      <NAME SHOW='Eclipse' ARG="-appl" />
+      <CLASSPATH PLUGIN='TRUE'>/pro/wadi/camel/src/plugins</CLASSPATH>
+   </PROCESS>
+
+   <PROCESS CLASS="org.eclipse.equinox.launcher.Main">
+      <NAME SHOW='Eclipse' ARG="-appl" />
+      <CLASSPATH PLUGIN='TRUE'>/home/spr/eclipse34/eclipse/plugins</CLASSPATH>
+   </PROCESS>
+
+   <PROCESS CLASS="edu.brown.cs.dyvise.dyvision.DyvisionMain" IGNORE='FALSE' />
+   <PROCESS CLASS="edu.brown.cs.dyvise.dymon.DymonMain" IGNORE='TRUE' />
+   <PROCESS CLASS="edu.brown.cs.dyvise.dymaster.DymasterMain" IGNORE='TRUE' />
+   <PROCESS CLASS="edu.brown.cs.dyvise.dymon.DymonAttachRemote" IGNORE='TRUE' />
+
+   <PROCESS CLASS="edu.brown.cs.ivy.mint.MintServerMaster" IGNORE='TRUE' />
+
+</DYPER>
+

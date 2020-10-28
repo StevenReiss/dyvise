@@ -1,0 +1,551 @@
+<DYVIEW>
+  <PROJECT_DIR>/home/spr/.ivy/Projects</PROJECT_DIR>
+  <PROJECT_NAME>solar</PROJECT_NAME>
+  <START_CLASS>edu.brown.cs.cs032.solar.SolarMain</START_CLASS>
+  <VISUAL NAME='ThreadState'>
+    <THREAD>edu.brown.cs.cs032.solar.SolarSystem$WorkerThread</THREAD>
+    <TRANSACTION>edu.brown.cs.cs032.solar.SolarObject</TRANSACTION>
+  </VISUAL>
+  <TUPLEMODEL>
+    <TUPLE INDEX='0' NAME='EVENT'>
+      <FIELD NAME='THREAD' TYPE='THREAD' />
+      <FIELD NAME='TRANSACTION' TYPE='OBJECT' />
+      <FIELD NAME='TASK' TYPE='OBJECT' />
+      <FIELD NAME='STATE' TYPE='STRING' />
+      <FIELD NAME='START' TYPE='START_TIME' />
+      <FIELD NAME='CPU' TYPE='INTERVAL' />
+      <FIELD NAME='END' TYPE='END_TIME' />
+    </TUPLE>
+    <TUPLE INDEX='1' NAME='CREATE'>
+      <FIELD NAME='THREAD' TYPE='THREAD' />
+      <FIELD NAME='TIME' TYPE='START_TIME' />
+      <FIELD NAME='TRANSACTION' TYPE='OBJECT' />
+      <FIELD NAME='TASK' TYPE='OBJECT' />
+    </TUPLE>
+  </TUPLEMODEL>
+  <GRAPHMODEL>
+    <GRAPH NAME='Events over Time' TYPE='TIMEROWS'>
+      <SELECT WHAT='ROWDATA'>
+        <TABLE DEFAULT='true' NAME='EVENT' />
+      </SELECT>
+      <SELECT SIZE='10' WHAT='ROW'>
+        <FIELD DEFAULT='true' NAME='THREAD' SORT='SORT_NAME' TABLE='EVENT' />
+        <FIELD NAME='THREAD' SORT='SORT_TIME' TABLE='EVENT' />
+        <FIELD NAME='TRANSACTION' SORT='SORT_NAME' TABLE='EVENT' />
+        <FIELD NAME='TRANSACTION' SORT='SORT_TIME' TABLE='EVENT' />
+      </SELECT>
+      <SELECT WHAT='HUE'>
+        <CONST NAME='NONE' VALUE='0.5' />
+        <FIELD NAME='THREAD' OP='MODE' TABLE='EVENT' />
+        <FIELD DEFAULT='true' NAME='TRANSACTION' OP='MODE' TABLE='EVENT' />
+        <FIELD NAME='STATE' OP='MODE' TABLE='EVENT' />
+      </SELECT>
+      <SELECT WHAT='SAT'>
+        <CONST DEFAULT='true' NAME='NONE' NULL='0.0' VALUE='1.0' />
+      </SELECT>
+      <SELECT WHAT='VALUE'>
+        <CONST DEFAULT='true' NAME='NONE' VALUE='1.0' />
+      </SELECT>
+      <SELECT SIZE='5' WHAT='ROWITEM'>
+        <CONST NAME='NONE' VALUE='0' />
+        <FIELD NAME='TRANSACTION' TABLE='EVENT' />
+        <FIELD DEFAULT='true' NAME='STATE' TABLE='EVENT' />
+      </SELECT>
+      <SELECT WHAT='WIDTH'>
+        <CONST DEFAULT='true' NAME='NONE' VALUE='1.0' />
+      </SELECT>
+      <SELECT WHAT='ITEMWIDTH'>
+        <INTERVAL DEFAULT='true' TABLE='EVENT' />
+      </SELECT>
+      <SELECT WHAT='LINKDATA'>
+        <TABLE DEFAULT='true' NAME='CREATE' />
+      </SELECT>
+      <SELECT WHAT='DATA1'>
+        <CONST NAME='NONE' VALUE='0' />
+        <FIELD DEFAULT='true' NAME='TRANSACTION' TABLE='CREATE' />
+      </SELECT>
+      <SELECT WHAT='DATA2'>
+        <CONST DEFAULT='true' NAME='NONE' VALUE='0' />
+        <FIELD NAME='TASK' TABLE='CREATE' />
+      </SELECT>
+      <SELECT WHAT='LHUE'>
+        <CONST DEFAULT='true' NAME='NONE' VALUE='0' />
+        <FIELD NAME='TRANSACTION' TABLE='EVENT' />
+      </SELECT>
+      <SELECT WHAT='LSAT'>
+        <CONST DEFAULT='true' NAME='GRAY' VALUE='0' />
+        <CONST DEFAULT='true' NAME='COLORED' VALUE='1' />
+      </SELECT>
+      <SELECT WHAT='LVALUE'>
+        <CONST DEFAULT='true' NAME='GRAY' VALUE='0.5' />
+      </SELECT>
+      <SELECT WHAT='LALPHA'>
+        <CONST DEFAULT='true' NAME='HALF' VALUE='0.5' />
+        <CONST NAME='NONE' VALUE='1.0' />
+      </SELECT>
+    </GRAPH>
+  </GRAPHMODEL>
+  <PATCHMODEL NAME='EVENTSTATE'>
+    <FOR CLASS='edu.brown.cs.cs032.solar.SolarRootObject' METHOD='finishCycle'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='1' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='THIS' />
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='2' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.cs032.solar.SolarSystem' METHOD='handleDone'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='3' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='1' TYPE='LOCAL' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='4' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.cs032.solar.SolarSystem$GravityRequest' METHOD='perform'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='5' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.cs032.solar.SolarSystem$GravityRequest' MEMBER='for_object' RESULT='edu.brown.cs.cs032.solar.SolarObject' TYPE='FIELD' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='6' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.cs032.solar.SolarModel' METHOD='buildObject'>
+      <PATCH WHAT='CALL'>
+        <MODE POST='true'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='7' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='STACK' />
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='edu.brown.cs.cs032.solar.SolarBaseObject.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.cs032.solar.SolarSystem' METHOD='&lt;init&gt;'>
+      <PATCH WHAT='CALL'>
+        <MODE POST='true'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='8' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='STACK' />
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='edu.brown.cs.cs032.solar.SolarRootObject.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.cs032.solar.SolarSystem' METHOD='loadFile'>
+      <PATCH WHAT='CALL'>
+        <MODE POST='true'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='9' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='STACK' />
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='edu.brown.cs.cs032.solar.SolarBaseObject.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.cs032.solar.SolarGroupObject' METHOD='addSubNode'>
+      <PATCH WHAT='CALL'>
+        <MODE POST='true'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='10' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='STACK' />
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='edu.brown.cs.cs032.solar.SolarGroupObject.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.cs032.solar.SolarSystem' METHOD='handleDone'>
+      <PATCH WHAT='LINE'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='11' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='306' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.cs032.solar.SolarMain' METHOD='main'>
+      <PATCH WHAT='LINE'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='12' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='94' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.cs032.solar.SolarSystem$WorkerThread' METHOD='run'>
+      <PATCH WHAT='LINE'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='13' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='344' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.cs032.solardraw.SolarDrawImpl' METHOD='display'>
+      <PATCH WHAT='LINE'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='14' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='281' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.cs032.solardraw.SolarDrawImpl' METHOD='display'>
+      <PATCH WHAT='LINE'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='15' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='283' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.cs032.solar.SolarSystem$WorkerThread' METHOD='run'>
+      <PATCH WHAT='LINE'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='16' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='342' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.cs032.solar.SolarBaseObject' METHOD='computeGravity'>
+      <PATCH WHAT='LINE'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='17' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='175' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.cs032.solar.SolarBaseObject' METHOD='computeGravity'>
+      <PATCH WHAT='LINE'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='18' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='177' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.cs032.solar.SolarGroupObject' METHOD='computeGravity'>
+      <PATCH WHAT='LINE'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='19' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='299' CASE='LINE' />
+      </PATCH>
+    </FOR>
+  </PATCHMODEL>
+  <EVENTMODEL>
+    <EVENT ID='1' NAME='STARTEVENT edu.brown.cs.cs032.solar.SolarRootObject.finishCycle'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.cs032.solar.SolarRootObject.finishCycle' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='2' NAME='ENDEVENT edu.brown.cs.cs032.solar.SolarRootObject.finishCycle'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='3' NAME='STARTEVENT edu.brown.cs.cs032.solar.SolarSystem.handleDone'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.cs032.solar.SolarSystem.handleDone' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='4' NAME='ENDEVENT edu.brown.cs.cs032.solar.SolarSystem.handleDone'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='5' NAME='STARTEVENT edu.brown.cs.cs032.solar.SolarSystem$GravityRequest.perform'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.cs032.solar.SolarSystem$GravityRequest.perform' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='6' NAME='ENDEVENT edu.brown.cs.cs032.solar.SolarSystem$GravityRequest.perform'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='7' NAME='ALLOC edu.brown.cs.cs032.solar.SolarModel.buildObject &gt; edu.brown.cs.cs032.solar.SolarBaseObject'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='8' NAME='ALLOC edu.brown.cs.cs032.solar.SolarSystem.&lt;init&gt; &gt; edu.brown.cs.cs032.solar.SolarRootObject'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='9' NAME='ALLOC edu.brown.cs.cs032.solar.SolarSystem.loadFile &gt; edu.brown.cs.cs032.solar.SolarBaseObject'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='10' NAME='ALLOC edu.brown.cs.cs032.solar.SolarGroupObject.addSubNode &gt; edu.brown.cs.cs032.solar.SolarGroupObject'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='11' NAME='THREADSTATE edu.brown.cs.cs032.solar.SolarSystem.handleDone @ 306'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.cs032.solar.SolarSystem.handleDone@306' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='12' NAME='THREADSTATE edu.brown.cs.cs032.solar.SolarMain.main @ 94'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.cs032.solar.SolarMain.main@94' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='13' NAME='THREADSTATE edu.brown.cs.cs032.solar.SolarSystem$WorkerThread.run @ 344'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.cs032.solar.SolarSystem$WorkerThread.run@344' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='14' NAME='THREADSTATE edu.brown.cs.cs032.solardraw.SolarDrawImpl.display @ 281'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.cs032.solardraw.SolarDrawImpl.display@281' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='15' NAME='THREADSTATE edu.brown.cs.cs032.solardraw.SolarDrawImpl.display @ 283'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.cs032.solardraw.SolarDrawImpl.display@283' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='16' NAME='THREADSTATE edu.brown.cs.cs032.solar.SolarSystem$WorkerThread.run @ 342'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.cs032.solar.SolarSystem$WorkerThread.run@342' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='17' NAME='THREADSTATE edu.brown.cs.cs032.solar.SolarBaseObject.computeGravity @ 175'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.cs032.solar.SolarBaseObject.computeGravity@175' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='18' NAME='THREADSTATE edu.brown.cs.cs032.solar.SolarBaseObject.computeGravity @ 177'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.cs032.solar.SolarBaseObject.computeGravity@177' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='19' NAME='THREADSTATE edu.brown.cs.cs032.solar.SolarGroupObject.computeGravity @ 299'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.cs032.solar.SolarGroupObject.computeGravity@299' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+  </EVENTMODEL>
+  <GRAPHICS>
+    <VIEW NAME='Events over Time' ENABLED='true'>
+      <SELECTOR NAME='ROWDATA'>
+        <ITEM TYPE='TABLE' TABLE='EVENT' />
+      </SELECTOR>
+      <SELECTOR NAME='LINKDATA'>
+        <ITEM TYPE='TABLE' TABLE='CREATE' />
+      </SELECTOR>
+      <SELECTOR NAME='ROW'>
+        <ITEM TYPE='FIELD' FIELD='THREAD' MERGE='NONE' SORT='SORT_NAME' />
+      </SELECTOR>
+      <SELECTOR NAME='ROWITEM'>
+        <ITEM TYPE='FIELD' FIELD='STATE' MERGE='NONE' SORT='SORT_NAME' />
+      </SELECTOR>
+      <SELECTOR NAME='HUE'>
+        <ITEM TYPE='FIELD' FIELD='STATE' MERGE='MODE' SORT='SORT_NAME' />
+      </SELECTOR>
+      <SELECTOR NAME='SAT'>
+        <ITEM TYPE='CONST' NAME='NONE' VALUE='1.0' NULL='0.0' />
+      </SELECTOR>
+      <SELECTOR NAME='VALUE'>
+        <ITEM TYPE='CONST' NAME='NONE' VALUE='1.0' NULL='1.0' />
+      </SELECTOR>
+      <SELECTOR NAME='WIDTH'>
+        <ITEM TYPE='CONST' NAME='NONE' VALUE='1.0' NULL='1.0' />
+      </SELECTOR>
+      <SELECTOR NAME='ITEMWIDTH'>
+        <ITEM TYPE='INTERVAL' />
+      </SELECTOR>
+      <SELECTOR NAME='DATA1'>
+        <ITEM TYPE='FIELD' FIELD='TRANSACTION' MERGE='NONE' SORT='SORT_NAME' />
+      </SELECTOR>
+      <SELECTOR NAME='DATA2'>
+        <ITEM TYPE='CONST' NAME='NONE' VALUE='0.0' NULL='0.0' />
+      </SELECTOR>
+      <SELECTOR NAME='LHUE'>
+        <ITEM TYPE='CONST' NAME='NONE' VALUE='0.0' NULL='0.0' />
+      </SELECTOR>
+      <SELECTOR NAME='LSAT'>
+        <ITEM TYPE='CONST' NAME='GRAY' VALUE='0.0' NULL='0.0' />
+      </SELECTOR>
+      <SELECTOR NAME='LVALUE'>
+        <ITEM TYPE='CONST' NAME='GRAY' VALUE='0.5' NULL='0.5' />
+      </SELECTOR>
+      <SELECTOR NAME='LALPHA'>
+        <ITEM TYPE='CONST' NAME='HALF' VALUE='0.5' NULL='0.5' />
+      </SELECTOR>
+    </VIEW>
+  </GRAPHICS>
+</DYVIEW>

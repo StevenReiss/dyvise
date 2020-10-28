@@ -1,0 +1,6 @@
+<ANALYSIS>
+<COMPUTE TYPE='METHODCLASSES'>
+   <RESULT START='true'>DynEventCandidates</RESULT>
+   <SOURCE START='true'>DynEventRoutines</SOURCE>
+</COMPUTE>
+</ANALYSIS>

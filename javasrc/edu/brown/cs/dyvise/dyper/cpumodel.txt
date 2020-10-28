@@ -1,0 +1,82 @@
+Here is what we would like to do for a model of CPU performance:
+
+Desired Result:
+   For each line/method of the source that is executed greater than k% (k=1) of the time:
+        # times it is executed
+        %cpu time spent executing at this line/method
+        %cpu time spent executing at this line/method or in any methods it calls
+
+   We want to say that these numbers have a P% confidence level (P=90 or 95).
+
+
+Inputs:
+   We can get stack samples that show where each thread in the application is currently executing
+(if it
+   is actually executing).  This provides us with line/method values.  The top of the stack
+indicates the
+   currently executing line and method and the rest of the stack tell us what is calling this
+method.
+
+   We can also do detailed instrumentation of selecting methods for intervals.  Here we can get
+counts
+   of the number of times each line (actually basic block, but its easy to map back and forth) is
+executed
+   and how many times each method is called.  In addition, we can get actual timings (in
+microseconds
+   it turns out) of the time spent between the entry and exit of a routine.
+
+
+Issues:
+   1)  How many stack samples do we need to get this data (as a function of k and P)?
+   2)  How many stack samples do we need to determine what routines should be detailed?  This
+presumes that
+        we detail routines that look like they might be taking k% of the cpu time.
+   3)  What percent of the time (or other measure) do we have to run detailed observations?
+   4)  What is the best way of sampling (periodic, periodic with a random variance, ...)?  Can we
+        do less frequent sampling as the program runs for longer periods of time?
+   5)  How long should the detailed intervals be?  How often should we try detailing?
+   6)  Can we correlate stack counts during detailing with the detailing to get more accurate
+        information?
+   7)  Can we use stack counts for the recent past to determine if the program is behaving
+differently
+        that it was in the further past?  If so, what size windows do we need to consider to be
+        statistically significant?
+   8)  When we have stack samples, should we always record everything, or is it sufficient to just
+record
+        methods until we see a method is used relatively frequently and then record line numbers
+for that
+        method?  If the latter, how many samples should we have before deciding what to do?
+
+
+
+Note that we want to do all this while minimizing the cost of instrumentation.  The costs here
+include:
+   * I haven't timed it, but stack sampling right now just involves keeping counts internally.  My
+guess is
+        that this takes about a millisecond to perform (most of it is java internal).
+   *  The counts gathered from such sampling have to be periodically shipped to the monitoring
+process.  This
+        probably takes 10ms of CPU time (mostly formatting the message).
+   *  Starting and stopping instrumentation seems to take on the order of 1 second (or possibly
+more, depending
+        on the number of classes that require instrumentation).
+   *  Code with detailed instrumentation probably runs 50% slower that uninstrumented code (again,
+this
+        will vary considerably based on exactly what the routine is doing and how frequently we
+need to
+        get actual microsecond timing information).
+
+We would like to keep the cost of instrumentation well under 1%.
+
+
+Note that this is just dealing with CPU performance.  Once we have this working, we are going to
+want to
+create similar models that look at lock behavior, I/O performance, interprocess communication,
+event
+processing, etc.
+
+Note that we also want to do this with continually running processes.  If we can get a crude
+approximation
+and then continually improve this as the process runs for longer, that would be fine.  In this case
+it is
+probably important to be able to continually estimate the current confidence levels however.

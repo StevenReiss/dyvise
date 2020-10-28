@@ -1,0 +1,1380 @@
+<DYVIEW>
+  <PROJECT_DIR>/home/spr/.ivy/Projects</PROJECT_DIR>
+  <PROJECT_NAME>s6</PROJECT_NAME>
+  <START_CLASS>edu.brown.cs.s6.engine.EngineMain</START_CLASS>
+  <VISUAL NAME='ThreadState'>
+    <TRANSACTION>edu.brown.cs.s6.common.S6Request</TRANSACTION>
+    <TASK>edu.brown.cs.s6.engine.EngineMain$DependWorker</TASK>
+    <TASK>edu.brown.cs.s6.engine.EngineMain$TestWorker</TASK>
+    <TASK>edu.brown.cs.s6.engine.EngineMain$TransformSolution</TASK>
+    <TASK>edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution</TASK>
+    <TASK>edu.brown.cs.s6.keysearch.KeySearchGoogle$ScanSolution</TASK>
+    <TASK>edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution</TASK>
+    <TASK>edu.brown.cs.s6.keysearch.KeySearchKoders$ScanSolution</TASK>
+    <TASK>edu.brown.cs.s6.keysearch.KeySearchKrugle$ScanSolution</TASK>
+    <TASK>edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile</TASK>
+    <TASK>edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador</TASK>
+    <TASK>edu.brown.cs.s6.keysearch.KeySearchSet$RunSearch</TASK>
+  </VISUAL>
+  <TUPLEMODEL>
+    <TUPLE INDEX='0' NAME='EVENT'>
+      <FIELD NAME='THREAD' TYPE='THREAD' />
+      <FIELD NAME='TRANSACTION' TYPE='OBJECT' />
+      <FIELD NAME='TASK' TYPE='OBJECT' />
+      <FIELD NAME='STATE' TYPE='STRING' />
+      <FIELD NAME='START' TYPE='START_TIME' />
+      <FIELD NAME='CPU' TYPE='INTERVAL' />
+      <FIELD NAME='END' TYPE='END_TIME' />
+    </TUPLE>
+    <TUPLE INDEX='1' NAME='CREATE'>
+      <FIELD NAME='THREAD' TYPE='THREAD' />
+      <FIELD NAME='TIME' TYPE='START_TIME' />
+      <FIELD NAME='TRANSACTION' TYPE='OBJECT' />
+      <FIELD NAME='TASK' TYPE='OBJECT' />
+    </TUPLE>
+  </TUPLEMODEL>
+  <GRAPHMODEL>
+    <GRAPH NAME='Events over Time' TYPE='TIMEROWS'>
+      <SELECT WHAT='ROWDATA'>
+	<TABLE DEFAULT='true' NAME='EVENT' />
+      </SELECT>
+      <SELECT SIZE='10' WHAT='ROW'>
+	<FIELD DEFAULT='true' NAME='THREAD' SORT='SORT_NAME' TABLE='EVENT' />
+	<FIELD NAME='THREAD' SORT='SORT_TIME' TABLE='EVENT' />
+	<FIELD NAME='TRANSACTION' SORT='SORT_NAME' TABLE='EVENT' />
+	<FIELD NAME='TRANSACTION' SORT='SORT_TIME' TABLE='EVENT' />
+      </SELECT>
+      <SELECT WHAT='HUE'>
+	<CONST NAME='NONE' VALUE='0.5' />
+	<FIELD NAME='THREAD' OP='MODE' TABLE='EVENT' />
+	<FIELD DEFAULT='true' NAME='TRANSACTION' OP='MODE' TABLE='EVENT' />
+	<FIELD NAME='STATE' OP='MODE' TABLE='EVENT' />
+      </SELECT>
+      <SELECT WHAT='SAT'>
+	<CONST DEFAULT='true' NAME='NONE' NULL='0.0' VALUE='1.0' />
+      </SELECT>
+      <SELECT WHAT='VALUE'>
+	<CONST DEFAULT='true' NAME='NONE' VALUE='1.0' />
+      </SELECT>
+      <SELECT SIZE='5' WHAT='ROWITEM'>
+	<CONST NAME='NONE' VALUE='0' />
+	<FIELD NAME='TRANSACTION' TABLE='EVENT' />
+	<FIELD DEFAULT='true' NAME='STATE' TABLE='EVENT' />
+      </SELECT>
+      <SELECT WHAT='WIDTH'>
+	<CONST DEFAULT='true' NAME='NONE' VALUE='1.0' />
+      </SELECT>
+      <SELECT WHAT='ITEMWIDTH'>
+	<INTERVAL DEFAULT='true' TABLE='EVENT' />
+      </SELECT>
+      <SELECT WHAT='LINKDATA'>
+	<TABLE DEFAULT='true' NAME='CREATE' />
+      </SELECT>
+      <SELECT WHAT='DATA1'>
+	<CONST NAME='NONE' VALUE='0' />
+	<FIELD DEFAULT='true' NAME='TRANSACTION' TABLE='CREATE' />
+      </SELECT>
+      <SELECT WHAT='DATA2'>
+	<CONST DEFAULT='true' NAME='NONE' VALUE='0' />
+	<FIELD NAME='TASK' TABLE='CREATE' />
+      </SELECT>
+      <SELECT WHAT='LHUE'>
+	<CONST DEFAULT='true' NAME='NONE' VALUE='0' />
+	<FIELD NAME='TRANSACTION' TABLE='EVENT' />
+      </SELECT>
+      <SELECT WHAT='LSAT'>
+	<CONST DEFAULT='true' NAME='GRAY' VALUE='0' />
+	<CONST DEFAULT='true' NAME='COLORED' VALUE='1' />
+      </SELECT>
+      <SELECT WHAT='LVALUE'>
+	<CONST DEFAULT='true' NAME='GRAY' VALUE='0.5' />
+      </SELECT>
+      <SELECT WHAT='LALPHA'>
+	<CONST DEFAULT='true' NAME='HALF' VALUE='0.5' />
+	<CONST NAME='NONE' VALUE='1.0' />
+      </SELECT>
+    </GRAPH>
+  </GRAPHMODEL>
+  <PATCHMODEL NAME='EVENTSTATE'>
+    <FOR CLASS='edu.brown.cs.s6.engine.EngineMain$DependWorker' METHOD='run'>
+      <PATCH WHAT='ENTER'>
+	<MODE POST='false'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='1' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='MULTIPLE'>
+	      <ACCESS LOCAL='0' TYPE='LOCAL' />
+	      <ACCESS CLASS='edu.brown.cs.s6.engine.EngineMain$DependWorker' MEMBER='solution_set' RESULT='edu.brown.cs.s6.common.S6SolutionSet' TYPE='FIELD' />
+	      <ACCESS CLASS='edu.brown.cs.s6.common.S6SolutionSet' MEMBER='getRequest' TYPE='METHOD0' />
+	    </ARG>
+	    <ARG TYPE='THIS' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='2' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.engine.EngineMain$TestWorker' METHOD='run'>
+      <PATCH WHAT='ENTER'>
+	<MODE POST='false'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='3' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='MULTIPLE'>
+	      <ACCESS LOCAL='0' TYPE='LOCAL' />
+	      <ACCESS CLASS='edu.brown.cs.s6.engine.EngineMain$TestWorker' MEMBER='solution_set' RESULT='edu.brown.cs.s6.common.S6SolutionSet' TYPE='FIELD' />
+	      <ACCESS CLASS='edu.brown.cs.s6.common.S6SolutionSet' MEMBER='getRequest' TYPE='METHOD0' />
+	    </ARG>
+	    <ARG TYPE='THIS' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='4' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.engine.EngineMain$TransformSolution' METHOD='call'>
+      <PATCH WHAT='ENTER'>
+	<MODE POST='false'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='5' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='MULTIPLE'>
+	      <ACCESS LOCAL='0' TYPE='LOCAL' />
+	      <ACCESS CLASS='edu.brown.cs.s6.engine.EngineMain$TransformSolution' MEMBER='solution_set' RESULT='edu.brown.cs.s6.common.S6SolutionSet' TYPE='FIELD' />
+	      <ACCESS CLASS='edu.brown.cs.s6.common.S6SolutionSet' MEMBER='getRequest' TYPE='METHOD0' />
+	    </ARG>
+	    <ARG TYPE='THIS' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='6' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution' METHOD='run'>
+      <PATCH WHAT='ENTER'>
+	<MODE POST='false'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='7' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='MULTIPLE'>
+	      <ACCESS LOCAL='0' TYPE='LOCAL' />
+	      <ACCESS CLASS='edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution' MEMBER='solution_set' RESULT='edu.brown.cs.s6.common.S6SolutionSet' TYPE='FIELD' />
+	      <ACCESS CLASS='edu.brown.cs.s6.common.S6SolutionSet' MEMBER='getRequest' TYPE='METHOD0' />
+	    </ARG>
+	    <ARG TYPE='THIS' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='8' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchGoogle$ScanSolution' METHOD='run'>
+      <PATCH WHAT='ENTER'>
+	<MODE POST='false'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='9' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='MULTIPLE'>
+	      <ACCESS LOCAL='0' TYPE='LOCAL' />
+	      <ACCESS CLASS='edu.brown.cs.s6.keysearch.KeySearchGoogle$ScanSolution' MEMBER='solution_set' RESULT='edu.brown.cs.s6.common.S6SolutionSet' TYPE='FIELD' />
+	      <ACCESS CLASS='edu.brown.cs.s6.common.S6SolutionSet' MEMBER='getRequest' TYPE='METHOD0' />
+	    </ARG>
+	    <ARG TYPE='THIS' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='10' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution' METHOD='run'>
+      <PATCH WHAT='ENTER'>
+	<MODE POST='false'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='11' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='MULTIPLE'>
+	      <ACCESS LOCAL='0' TYPE='LOCAL' />
+	      <ACCESS CLASS='edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution' MEMBER='solution_set' RESULT='edu.brown.cs.s6.common.S6SolutionSet' TYPE='FIELD' />
+	      <ACCESS CLASS='edu.brown.cs.s6.common.S6SolutionSet' MEMBER='getRequest' TYPE='METHOD0' />
+	    </ARG>
+	    <ARG TYPE='THIS' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='12' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchKoders$ScanSolution' METHOD='run'>
+      <PATCH WHAT='ENTER'>
+	<MODE POST='false'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='13' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='MULTIPLE'>
+	      <ACCESS LOCAL='0' TYPE='LOCAL' />
+	      <ACCESS CLASS='edu.brown.cs.s6.keysearch.KeySearchKoders$ScanSolution' MEMBER='solution_set' RESULT='edu.brown.cs.s6.common.S6SolutionSet' TYPE='FIELD' />
+	      <ACCESS CLASS='edu.brown.cs.s6.common.S6SolutionSet' MEMBER='getRequest' TYPE='METHOD0' />
+	    </ARG>
+	    <ARG TYPE='THIS' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='14' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchKrugle$ScanSolution' METHOD='run'>
+      <PATCH WHAT='ENTER'>
+	<MODE POST='false'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='15' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='MULTIPLE'>
+	      <ACCESS LOCAL='0' TYPE='LOCAL' />
+	      <ACCESS CLASS='edu.brown.cs.s6.keysearch.KeySearchKrugle$ScanSolution' MEMBER='solution_set' RESULT='edu.brown.cs.s6.common.S6SolutionSet' TYPE='FIELD' />
+	      <ACCESS CLASS='edu.brown.cs.s6.common.S6SolutionSet' MEMBER='getRequest' TYPE='METHOD0' />
+	    </ARG>
+	    <ARG TYPE='THIS' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='16' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile' METHOD='run'>
+      <PATCH WHAT='ENTER'>
+	<MODE POST='false'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='17' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='MULTIPLE'>
+	      <ACCESS LOCAL='0' TYPE='LOCAL' />
+	      <ACCESS CLASS='edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile' MEMBER='solution_set' RESULT='edu.brown.cs.s6.common.S6SolutionSet' TYPE='FIELD' />
+	      <ACCESS CLASS='edu.brown.cs.s6.common.S6SolutionSet' MEMBER='getRequest' TYPE='METHOD0' />
+	    </ARG>
+	    <ARG TYPE='THIS' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='18' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador' METHOD='run'>
+      <PATCH WHAT='ENTER'>
+	<MODE POST='false'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='19' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='MULTIPLE'>
+	      <ACCESS LOCAL='0' TYPE='LOCAL' />
+	      <ACCESS CLASS='edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador' MEMBER='solution_set' RESULT='edu.brown.cs.s6.common.S6SolutionSet' TYPE='FIELD' />
+	      <ACCESS CLASS='edu.brown.cs.s6.common.S6SolutionSet' MEMBER='getRequest' TYPE='METHOD0' />
+	    </ARG>
+	    <ARG TYPE='THIS' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='20' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchSet$RunSearch' METHOD='run'>
+      <PATCH WHAT='ENTER'>
+	<MODE POST='false'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='21' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='MULTIPLE'>
+	      <ACCESS LOCAL='0' TYPE='LOCAL' />
+	      <ACCESS CLASS='edu.brown.cs.s6.keysearch.KeySearchSet$RunSearch' MEMBER='solution_set' RESULT='edu.brown.cs.s6.common.S6SolutionSet' TYPE='FIELD' />
+	      <ACCESS CLASS='edu.brown.cs.s6.common.S6SolutionSet' MEMBER='getRequest' TYPE='METHOD0' />
+	    </ARG>
+	    <ARG TYPE='THIS' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='22' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.common.S6FactoryImpl' METHOD='createSearchRequest'>
+      <PATCH WHAT='CALL'>
+	<MODE POST='true'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='23' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='STACK' />
+	    <ARG TYPE='NULL' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='edu.brown.cs.s6.request.RequestSearch.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.common.S6FactoryImpl' METHOD='createCheckRequest'>
+      <PATCH WHAT='CALL'>
+	<MODE POST='true'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='24' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='STACK' />
+	    <ARG TYPE='NULL' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='edu.brown.cs.s6.request.RequestCheck.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.common.S6FactoryImpl' METHOD='createFormatRequest'>
+      <PATCH WHAT='CALL'>
+	<MODE POST='true'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='25' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='STACK' />
+	    <ARG TYPE='NULL' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='edu.brown.cs.s6.request.RequestFormat.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.engine.EngineMain' METHOD='handleDependencies'>
+      <PATCH WHAT='CALL'>
+	<MODE POST='true'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='26' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='NULL' />
+	    <ARG TYPE='STACK' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='edu.brown.cs.s6.engine.EngineMain$DependWorker.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.engine.EngineMain' METHOD='handleTestCases'>
+      <PATCH WHAT='CALL'>
+	<MODE POST='true'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='27' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='NULL' />
+	    <ARG TYPE='STACK' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='edu.brown.cs.s6.engine.EngineMain$TestWorker.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.engine.EngineMain' METHOD='handleTransforms'>
+      <PATCH WHAT='CALL'>
+	<MODE POST='true'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='28' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='NULL' />
+	    <ARG TYPE='STACK' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='edu.brown.cs.s6.engine.EngineMain$TransformSolution.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchGoogle' METHOD='queueSpecificSolution'>
+      <PATCH WHAT='CALL'>
+	<MODE POST='true'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='29' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='NULL' />
+	    <ARG TYPE='STACK' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchGoogle$ScanSolution' METHOD='run'>
+      <PATCH WHAT='CALL'>
+	<MODE POST='true'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='30' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='NULL' />
+	    <ARG TYPE='STACK' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchGoogle' METHOD='queueInitialSolutions'>
+      <PATCH WHAT='CALL'>
+	<MODE POST='true'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='31' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='NULL' />
+	    <ARG TYPE='STACK' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='edu.brown.cs.s6.keysearch.KeySearchGoogle$ScanSolution.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchKoders' METHOD='queueSpecificSolution'>
+      <PATCH WHAT='CALL'>
+	<MODE POST='true'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='32' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='NULL' />
+	    <ARG TYPE='STACK' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchKoders$ScanSolution' METHOD='run'>
+      <PATCH WHAT='CALL'>
+	<MODE POST='true'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='33' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='NULL' />
+	    <ARG TYPE='STACK' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchKoders' METHOD='queueInitialSolutions'>
+      <PATCH WHAT='CALL'>
+	<MODE POST='true'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='34' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='NULL' />
+	    <ARG TYPE='STACK' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='edu.brown.cs.s6.keysearch.KeySearchKoders$ScanSolution.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchKoders$ScanSolution' METHOD='run'>
+      <PATCH WHAT='CALL'>
+	<MODE POST='true'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='35' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='NULL' />
+	    <ARG TYPE='STACK' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='edu.brown.cs.s6.keysearch.KeySearchKoders$ScanSolution.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchKrugle' METHOD='queueInitialSolutions'>
+      <PATCH WHAT='CALL'>
+	<MODE POST='true'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='36' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='NULL' />
+	    <ARG TYPE='STACK' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='edu.brown.cs.s6.keysearch.KeySearchKrugle$ScanSolution.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador' METHOD='run'>
+      <PATCH WHAT='CALL'>
+	<MODE POST='true'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='37' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='NULL' />
+	    <ARG TYPE='STACK' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchLabrador' METHOD='queueSpecificSolution'>
+      <PATCH WHAT='CALL'>
+	<MODE POST='true'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='38' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='NULL' />
+	    <ARG TYPE='STACK' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchLabrador' METHOD='queueInitialSolutions'>
+      <PATCH WHAT='CALL'>
+	<MODE POST='true'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='39' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='NULL' />
+	    <ARG TYPE='STACK' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchSet' METHOD='queueInitialSolutions'>
+      <PATCH WHAT='CALL'>
+	<MODE POST='true'>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='40' />
+	    <ARG TYPE='CURTHREAD' />
+	    <ARG TYPE='NULL' />
+	    <ARG TYPE='STACK' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='edu.brown.cs.s6.keysearch.KeySearchSet$RunSearch.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.ivy.xml.IvyXmlReaderThread' METHOD='run'>
+      <PATCH WHAT='LINE'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='41' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='161' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.engine.EngineMain$TransformSolution' METHOD='call'>
+      <PATCH WHAT='LINE'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='42' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='1' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution' METHOD='run'>
+      <PATCH WHAT='LINE'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='43' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='290' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution' METHOD='run'>
+      <PATCH WHAT='LINE'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='44' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='299' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador' METHOD='run'>
+      <PATCH WHAT='LINE'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='45' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='168' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile' METHOD='run'>
+      <PATCH WHAT='LINE'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='46' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='208' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile' METHOD='run'>
+      <PATCH WHAT='LINE'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='47' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='209' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile' METHOD='run'>
+      <PATCH WHAT='LINE'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='48' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='210' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.engine.EnginePool$Worker' METHOD='run'>
+      <PATCH WHAT='LINE'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='49' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='336' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution' METHOD='run'>
+      <PATCH WHAT='LINE'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='50' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='275' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution' METHOD='run'>
+      <PATCH WHAT='LINE'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='51' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='296' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution' METHOD='run'>
+      <PATCH WHAT='LINE'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='52' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='297' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.ivy.xml.IvyXmlReader' METHOD='readXml'>
+      <PATCH WHAT='LINE'>
+	<MODE>
+	  <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+	    <ARG TYPE='INTEGER' VALUE='53' />
+	    <ARG TYPE='CURTHREAD' />
+	  </CODE>
+	</MODE>
+	<WHEN ARG='196' CASE='LINE' />
+      </PATCH>
+    </FOR>
+  </PATCHMODEL>
+  <EVENTMODEL>
+    <EVENT ID='1' NAME='STARTEVENT edu.brown.cs.s6.engine.EngineMain$DependWorker.run'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.s6.engine.EngineMain$DependWorker.run' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='2' NAME='ENDEVENT edu.brown.cs.s6.engine.EngineMain$DependWorker.run'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='3' NAME='STARTEVENT edu.brown.cs.s6.engine.EngineMain$TestWorker.run'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.s6.engine.EngineMain$TestWorker.run' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='4' NAME='ENDEVENT edu.brown.cs.s6.engine.EngineMain$TestWorker.run'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='5' NAME='STARTEVENT edu.brown.cs.s6.engine.EngineMain$TransformSolution.call'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.s6.engine.EngineMain$TransformSolution.call' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='6' NAME='ENDEVENT edu.brown.cs.s6.engine.EngineMain$TransformSolution.call'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='7' NAME='STARTEVENT edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution.run'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution.run' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='8' NAME='ENDEVENT edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution.run'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='9' NAME='STARTEVENT edu.brown.cs.s6.keysearch.KeySearchGoogle$ScanSolution.run'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.s6.keysearch.KeySearchGoogle$ScanSolution.run' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='10' NAME='ENDEVENT edu.brown.cs.s6.keysearch.KeySearchGoogle$ScanSolution.run'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='11' NAME='STARTEVENT edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution.run'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution.run' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='12' NAME='ENDEVENT edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution.run'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='13' NAME='STARTEVENT edu.brown.cs.s6.keysearch.KeySearchKoders$ScanSolution.run'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.s6.keysearch.KeySearchKoders$ScanSolution.run' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='14' NAME='ENDEVENT edu.brown.cs.s6.keysearch.KeySearchKoders$ScanSolution.run'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='15' NAME='STARTEVENT edu.brown.cs.s6.keysearch.KeySearchKrugle$ScanSolution.run'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.s6.keysearch.KeySearchKrugle$ScanSolution.run' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='16' NAME='ENDEVENT edu.brown.cs.s6.keysearch.KeySearchKrugle$ScanSolution.run'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='17' NAME='STARTEVENT edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile.run'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile.run' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='18' NAME='ENDEVENT edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile.run'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='19' NAME='STARTEVENT edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador.run'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador.run' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='20' NAME='ENDEVENT edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador.run'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='21' NAME='STARTEVENT edu.brown.cs.s6.keysearch.KeySearchSet$RunSearch.run'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.s6.keysearch.KeySearchSet$RunSearch.run' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='22' NAME='ENDEVENT edu.brown.cs.s6.keysearch.KeySearchSet$RunSearch.run'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='23' NAME='ALLOC edu.brown.cs.s6.common.S6FactoryImpl.createSearchRequest &gt; edu.brown.cs.s6.request.RequestSearch'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='24' NAME='ALLOC edu.brown.cs.s6.common.S6FactoryImpl.createCheckRequest &gt; edu.brown.cs.s6.request.RequestCheck'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='25' NAME='ALLOC edu.brown.cs.s6.common.S6FactoryImpl.createFormatRequest &gt; edu.brown.cs.s6.request.RequestFormat'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='26' NAME='ALLOC edu.brown.cs.s6.engine.EngineMain.handleDependencies &gt; edu.brown.cs.s6.engine.EngineMain$DependWorker'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='27' NAME='ALLOC edu.brown.cs.s6.engine.EngineMain.handleTestCases &gt; edu.brown.cs.s6.engine.EngineMain$TestWorker'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='28' NAME='ALLOC edu.brown.cs.s6.engine.EngineMain.handleTransforms &gt; edu.brown.cs.s6.engine.EngineMain$TransformSolution'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='29' NAME='ALLOC edu.brown.cs.s6.keysearch.KeySearchGoogle.queueSpecificSolution &gt; edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='30' NAME='ALLOC edu.brown.cs.s6.keysearch.KeySearchGoogle$ScanSolution.run &gt; edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='31' NAME='ALLOC edu.brown.cs.s6.keysearch.KeySearchGoogle.queueInitialSolutions &gt; edu.brown.cs.s6.keysearch.KeySearchGoogle$ScanSolution'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='32' NAME='ALLOC edu.brown.cs.s6.keysearch.KeySearchKoders.queueSpecificSolution &gt; edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='33' NAME='ALLOC edu.brown.cs.s6.keysearch.KeySearchKoders$ScanSolution.run &gt; edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='34' NAME='ALLOC edu.brown.cs.s6.keysearch.KeySearchKoders.queueInitialSolutions &gt; edu.brown.cs.s6.keysearch.KeySearchKoders$ScanSolution'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='35' NAME='ALLOC edu.brown.cs.s6.keysearch.KeySearchKoders$ScanSolution.run &gt; edu.brown.cs.s6.keysearch.KeySearchKoders$ScanSolution'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='36' NAME='ALLOC edu.brown.cs.s6.keysearch.KeySearchKrugle.queueInitialSolutions &gt; edu.brown.cs.s6.keysearch.KeySearchKrugle$ScanSolution'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='37' NAME='ALLOC edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador.run &gt; edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='38' NAME='ALLOC edu.brown.cs.s6.keysearch.KeySearchLabrador.queueSpecificSolution &gt; edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='39' NAME='ALLOC edu.brown.cs.s6.keysearch.KeySearchLabrador.queueInitialSolutions &gt; edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='40' NAME='ALLOC edu.brown.cs.s6.keysearch.KeySearchSet.queueInitialSolutions &gt; edu.brown.cs.s6.keysearch.KeySearchSet$RunSearch'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='41' NAME='THREADSTATE edu.brown.cs.ivy.xml.IvyXmlReaderThread.run @ 161'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.ivy.xml.IvyXmlReaderThread.run@161' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='42' NAME='THREADSTATE edu.brown.cs.s6.engine.EngineMain$TransformSolution.call @ 1'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.s6.engine.EngineMain$TransformSolution.call@1' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='43' NAME='THREADSTATE edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution.run @ 290'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution.run@290' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='44' NAME='THREADSTATE edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution.run @ 299'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution.run@299' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='45' NAME='THREADSTATE edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador.run @ 168'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador.run@168' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='46' NAME='THREADSTATE edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile.run @ 208'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile.run@208' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='47' NAME='THREADSTATE edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile.run @ 209'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile.run@209' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='48' NAME='THREADSTATE edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile.run @ 210'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile.run@210' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='49' NAME='THREADSTATE edu.brown.cs.s6.engine.EnginePool$Worker.run @ 336'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.s6.engine.EnginePool$Worker.run@336' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='50' NAME='THREADSTATE edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution.run @ 275'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution.run@275' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='51' NAME='THREADSTATE edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution.run @ 296'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution.run@296' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='52' NAME='THREADSTATE edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution.run @ 297'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution.run@297' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='53' NAME='THREADSTATE edu.brown.cs.ivy.xml.IvyXmlReader.readXml @ 196'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.ivy.xml.IvyXmlReader.readXml@196' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+  </EVENTMODEL>
+  <GRAPHICS>
+    <VIEW NAME='Events over Time' ENABLED='true'>
+      <SELECTOR NAME='ROWDATA'>
+	<ITEM TYPE='TABLE' TABLE='EVENT' />
+      </SELECTOR>
+      <SELECTOR NAME='LINKDATA'>
+	<ITEM TYPE='TABLE' TABLE='CREATE' />
+      </SELECTOR>
+      <SELECTOR NAME='ROW'>
+	<ITEM TYPE='FIELD' FIELD='THREAD' MERGE='NONE' SORT='SORT_NAME' />
+      </SELECTOR>
+      <SELECTOR NAME='ROWITEM'>
+	<ITEM TYPE='FIELD' FIELD='STATE' MERGE='NONE' SORT='SORT_NAME' />
+      </SELECTOR>
+      <SELECTOR NAME='HUE'>
+	<ITEM TYPE='FIELD' FIELD='TRANSACTION' MERGE='MODE' SORT='SORT_NAME' />
+      </SELECTOR>
+      <SELECTOR NAME='SAT'>
+	<ITEM TYPE='CONST' NAME='NONE' VALUE='1.0' NULL='0.0' />
+      </SELECTOR>
+      <SELECTOR NAME='VALUE'>
+	<ITEM TYPE='CONST' NAME='NONE' VALUE='1.0' NULL='1.0' />
+      </SELECTOR>
+      <SELECTOR NAME='WIDTH'>
+	<ITEM TYPE='CONST' NAME='NONE' VALUE='1.0' NULL='1.0' />
+      </SELECTOR>
+      <SELECTOR NAME='ITEMWIDTH'>
+	<ITEM TYPE='INTERVAL' />
+      </SELECTOR>
+      <SELECTOR NAME='DATA1'>
+	<ITEM TYPE='FIELD' FIELD='TRANSACTION' MERGE='NONE' SORT='SORT_NAME' />
+      </SELECTOR>
+      <SELECTOR NAME='DATA2'>
+	<ITEM TYPE='CONST' NAME='NONE' VALUE='0.0' NULL='0.0' />
+      </SELECTOR>
+      <SELECTOR NAME='LHUE'>
+	<ITEM TYPE='CONST' NAME='NONE' VALUE='0.0' NULL='0.0' />
+      </SELECTOR>
+      <SELECTOR NAME='LSAT'>
+	<ITEM TYPE='CONST' NAME='GRAY' VALUE='0.0' NULL='0.0' />
+      </SELECTOR>
+      <SELECTOR NAME='LVALUE'>
+	<ITEM TYPE='CONST' NAME='GRAY' VALUE='0.5' NULL='0.5' />
+      </SELECTOR>
+      <SELECTOR NAME='LALPHA'>
+	<ITEM TYPE='CONST' NAME='HALF' VALUE='0.5' NULL='0.5' />
+      </SELECTOR>
+    </VIEW>
+  </GRAPHICS>
+</DYVIEW>

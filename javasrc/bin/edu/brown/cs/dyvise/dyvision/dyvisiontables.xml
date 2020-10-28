@@ -1,0 +1,358 @@
+<DYVISION>
+
+   <TABLE NAME="CPU" TITLE="CPU Utilization" AGENT="CPU">
+      <COLUMN NAME="Name" TYPE="STRING" SIZE="200" KEY="TRUE" />
+      <COLUMN NAME="Base Time" TYPE="TIME" SIZE="75" UNITS="sec"  />
+      <COLUMN NAME="Base %" TYPE="PERCENT" SIZE="60" CUTOFF="TRUE" />
+      <COLUMN NAME="Total Time" TYPE="TIME" UNITS="sec" SIZE="75" />
+      <COLUMN NAME="Total %" TYPE="PERCENT" SIZE="60" />
+      <COLUMN NAME="Count" TYPE="COUNT" SIZE="60" />
+      <COLUMN NAME="Exec Time" TYPE="TIME" UNITS="seconds" SIZE="75" />
+      <COLUMN NAME="Tm/Ex (ms)" TYPE="MSINTERVAL" UNITS="msec" SIZE="75" />
+      <TRANSFORM>
+	 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+	    <xsl:output omit-xml-declaration="yes" method="text" />
+	    <xsl:strip-space elements="*" />
+	    <xsl:template match="CPUTIME//ITEM">
+	       <xsl:value-of select="@NAME"/>;
+	       <xsl:value-of select="@BASETIME"/>;
+	       <xsl:value-of select="@BASEPCT"/>;
+	       <xsl:value-of select="@TOTALTIME"/>;
+	       <xsl:value-of select="@TOTALPCT"/>;
+	       <xsl:value-of select="@COUNT"/>;
+	       <xsl:value-of select="@TIME"/>;
+	       <xsl:value-of select="@TIMEPER"/>;
+	       ***EOL***;
+	    </xsl:template>
+	 </xsl:stylesheet>
+      </TRANSFORM>
+   </TABLE>
+
+   <TABLE NAME="THREAD" TITLE="Thread Activity" AGENT="THREADS TIMING">
+      <COLUMN NAME="Name" TYPE="STRING" SIZE="150" KEY="TRUE" />
+      <COLUMN NAME="% Run" TYPE="PERCENT" SIZE="60"/>
+      <COLUMN NAME="% Wait" TYPE="PERCENT" SIZE="60"/>
+      <COLUMN NAME="% I/O" TYPE="PERCENT" SIZE="60"/>
+      <COLUMN NAME="% Block" TYPE="PERCENT" SIZE="60"/>
+      <COLUMN NAME="% Sleep" TYPE="PERCENT" SIZE="60"/>
+      <COLUMN NAME="Run Time" TYPE="MSTIME" UNITS="msec" SIZE="75"/>
+      <COLUMN NAME="# Wait" TYPE="COUNT" SIZE="60"/>
+      <COLUMN NAME="# Block" TYPE="COUNT" SIZE="60"/>
+      <COLUMN NAME="Wait Time" TYPE="MSTIME" UNITS="msec" SIZE="75"/>
+      <COLUMN NAME="Block Time" TYPE="MSTIME" UNITS="msec" SIZE="75"/>
+      <COLUMN NAME="Exited" TYPE="BOOLEAN" SIZE="60"/>
+      <TRANSFORM>
+	 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+	    <xsl:output omit-xml-declaration="yes" method="text" />
+	    <xsl:strip-space elements="*" />
+	    <xsl:template match="THREADS/THREAD">
+	       <xsl:value-of select="@NAME"/>;
+	       <xsl:value-of select="@RUNPCT"/>;
+	       <xsl:value-of select="@WAITPCT"/>;
+	       <xsl:value-of select="@IOPCT"/>;
+	       <xsl:value-of select="@BLOCKPCT"/>;
+	       <xsl:value-of select="@SLEEPPCT"/>;
+	       <xsl:value-of select="@RUNTIME"/>;
+	       <xsl:value-of select="@NUMWAIT"/>;
+	       <xsl:value-of select="@NUMBLOCK"/>;
+	       <xsl:value-of select="@WAITTIME"/>;
+	       <xsl:value-of select="@BLOCKTIME"/>;
+	       <xsl:value-of select="@TERMINATE"/>;
+	       ***EOL***;
+	    </xsl:template>
+	 </xsl:stylesheet>
+      </TRANSFORM>
+   </TABLE>
+
+   <TABLE NAME="MEMORY" TITLE="Memory Usage" AGENT="MEMORY HEAP" ROWS='7'>
+      <COLUMN NAME="Name" TYPE="STRING" SIZE="150" KEY="TRUE" />
+      <COLUMN NAME="Initial Size" TYPE="MEMORY" SIZE="75"/>
+      <COLUMN NAME="Max Size" TYPE="MEMORY" SIZE="75"/>
+      <COLUMN NAME="Size Used" TYPE="MEMORY" SIZE="75"/>
+      <COLUMN NAME="Committed" TYPE="MEMORY" SIZE="75"/>
+      <TRANSFORM>
+	 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+	    <xsl:output omit-xml-declaration="yes" method="text" />
+	    <xsl:strip-space elements="*" />
+	    <xsl:template match="MEMORY/REGIONS/USAGE|MEMORY/POOLS/USAGE">
+	       <xsl:value-of select="@NAME"/>;
+	       <xsl:value-of select="@INIT"/>;
+	       <xsl:value-of select="@MAX"/>;
+	       <xsl:value-of select="@USEDAVG"/>;
+	       <xsl:value-of select="@COMMAVG"/>;
+	       ***EOL***;
+	    </xsl:template>
+	 </xsl:stylesheet>
+      </TRANSFORM>
+   </TABLE>
+
+   <TABLE NAME="GC" TITLE="Garbage Collections" AGENT="MEMORY HEAP" ROWS='2'>
+      <COLUMN NAME="Name" TYPE="STRING" SIZE="150" KEY="TRUE" />
+      <COLUMN NAME="Count" TYPE="COUNT" SIZE="60"/>
+      <COLUMN NAME="Time (ms)" TYPE="MSTIME" UNITS="msec" SIZE="75"/>
+      <TRANSFORM>
+	 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+	    <xsl:output omit-xml-declaration="yes" method="text" />
+	    <xsl:strip-space elements="*" />
+	    <xsl:template match="GCS/GC">
+	       <xsl:value-of select="@NAME"/>;
+	       <xsl:value-of select="@COUNT"/>;
+	       <xsl:value-of select="@TIME"/>;
+	       ***EOL***;
+	    </xsl:template>
+	 </xsl:stylesheet>
+      </TRANSFORM>
+   </TABLE>
+
+   <TABLE NAME="IO" TITLE="Input/Output" AGENT="IO THREADS">
+      <COLUMN NAME="Class" TYPE="STRING" SIZE="150" KEY="TRUE" />
+      <COLUMN NAME="Method" TYPE="STRING" SIZE="100" KEY="TRUE" />
+      <COLUMN NAME="% Time" TYPE="PERCENT" SIZE="75"/>
+      <COLUMN NAME="Time" TYPE="MSTIME" UNITS="msec" SIZE="75"/>
+      <COLUMN NAME="Calls" TYPE="COUNT" SIZE="75"/>
+      <TRANSFORM>
+	 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+	    <xsl:output omit-xml-declaration="yes" method="text" />
+	    <xsl:strip-space elements="*" />
+	    <xsl:template match="IO/IOMETHOD">
+	       <xsl:value-of select="@CLASS"/>;
+	       <xsl:value-of select="@METHOD"/>;
+	       <xsl:value-of select="@PCT"/>;
+	       <xsl:value-of select="@TIME"/>;
+	       <xsl:value-of select="@CALLS"/>;
+	       ***EOL***;
+	    </xsl:template>
+	 </xsl:stylesheet>
+      </TRANSFORM>
+   </TABLE>
+
+   <TABLE NAME="TIMING" TITLE="Timings" AGENT="TIMING THREADS">
+      <COLUMN NAME="Thread" TYPE="STRING" SIZE="150" KEY="TRUE" />
+      <COLUMN NAME="% Cpu" TYPE="PERCENT" SIZE="60" />
+      <COLUMN NAME="% User" TYPE="PERCENT" SIZE="60"/>
+      <COLUMN NAME="% System" TYPE="PERCENT" SIZE="60"/>
+      <TRANSFORM>
+	 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+	    <xsl:output omit-xml-declaration="yes" method="text" />
+	    <xsl:strip-space elements="*" />
+	    <xsl:template match="TIMING/THREAD">
+	       <xsl:value-of select="@NAME"/>;
+	       <xsl:value-of select="@PCTCPU"/>;
+	       <xsl:value-of select="@PCTUSER"/>;
+	       <xsl:value-of select="@PCTSYS" />;
+	       ***EOL***;
+	    </xsl:template>
+	 </xsl:stylesheet>
+      </TRANSFORM>
+   </TABLE>
+
+   <TABLE NAME="HEAP" TITLE="Heap Usage" AGENT="MEMORY HEAP">
+      <COLUMN NAME="Class" TYPE="STRING" SIZE="150" KEY="TRUE" />
+      <COLUMN NAME="# Objects" TYPE="COUNT" SIZE="75" />
+      <COLUMN NAME="Size" TYPE="MEMORY" SIZE="60"/>
+      <COLUMN NAME="% Heap" TYPE="PERCENT" SIZE="60"/>
+      <TRANSFORM>
+	 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+	    <xsl:output omit-xml-declaration="yes" method="text" />
+	    <xsl:strip-space elements="*" />
+	    <xsl:template match="HEAP/CLASS">
+	       <xsl:value-of select="@NAME"/>;
+	       <xsl:value-of select="@COUNT"/>;
+	       <xsl:value-of select="@SIZE"/>;
+	       <xsl:value-of select="@PCT" />;
+	       ***EOL***;
+	    </xsl:template>
+	 </xsl:stylesheet>
+      </TRANSFORM>
+   </TABLE>
+
+   <TABLE NAME="BLOCKS" TITLE="Thread Blocking" AGENT="THREADS">
+      <COLUMN NAME="Thread" TYPE="STRING" SIZE="150" KEY="TRUE" />
+      <COLUMN NAME="Id" TYPE="STRING" SIZE="30" />
+      <COLUMN NAME="Blockon" TYPE="COUNT" SIZE="20" DYNAMIC='TRUE' />
+      <TRANSFORM>
+	 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+	    <xsl:output omit-xml-declaration="yes" method="text" />
+	    <xsl:strip-space elements="*" />
+	    <xsl:template match="THREADS/LOCKMAT/FORTHREAD">
+	       <xsl:value-of select="@NAME"/>;
+	       <xsl:value-of select="@ID"/>;
+	       <xsl:apply-templates/>
+	       ***EOL***;
+	    </xsl:template>
+	    <xsl:template match="BLOCKON">
+	       <xsl:value-of select="@ID"/>=<xsl:value-of select="@COUNT"/>;
+	    </xsl:template>
+	 </xsl:stylesheet>
+      </TRANSFORM>
+   </TABLE>
+
+   <TABLE NAME="IOSRC" TITLE="Input/Output Sources" AGENT="IO">
+      <COLUMN NAME="Class" TYPE="STRING" SIZE="150" KEY="TRUE" />
+      <COLUMN NAME="Method" TYPE="STRING" SIZE="100" KEY="TRUE" />
+      <COLUMN NAME="% Time" TYPE="PERCENT" SIZE="75"/>
+      <COLUMN NAME="Time" TYPE="MSTIME" UNITS="msec" SIZE="75"/>
+      <COLUMN NAME="From Class" TYPE="STRING" SIZE="100" KEY="TRUE" />
+      <COLUMN NAME="Method" TYPE="STRING" SIZE="100" KEY="TRUE" />
+      <COLUMN NAME="Line" TYPE="LINE" SIZE="60" KEY="TRUE" />
+      <COLUMN NAME="Percent" TYPE="PERCENT" SIZE="75" />
+      <TRANSFORM>
+	 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+	    <xsl:output omit-xml-declaration="yes" method="text" />
+	    <xsl:strip-space elements="*" />
+	    <xsl:template match="IO/IOMETHOD/SOURCE">
+	       <xsl:value-of select="parent::node()/attribute::CLASS" />;
+	       <xsl:value-of select="parent::node()/attribute::METHOD" />;
+	       <xsl:value-of select="parent::node()/attribute::PCT" />;
+	       <xsl:value-of select="parent::node()/attribute::TIME" />;
+	       <xsl:value-of select="@CLASS"/>;
+	       <xsl:value-of select="@METHOD"/>;
+	       <xsl:value-of select="@LINE"/>;
+	       <xsl:value-of select="@PCT"/>;
+	       ***EOL***;
+	    </xsl:template>
+	 </xsl:stylesheet>
+      </TRANSFORM>
+   </TABLE>
+
+   <TABLE NAME="IOTHR" TITLE="Input/Output Threads" AGENT="IO">
+      <COLUMN NAME="Class" TYPE="STRING" SIZE="150" KEY="TRUE" />
+      <COLUMN NAME="Method" TYPE="STRING" SIZE="100" KEY="TRUE" />
+      <COLUMN NAME="% Time" TYPE="PERCENT" SIZE="75"/>
+      <COLUMN NAME="Time" TYPE="MSTIME" UNITS="msec" SIZE="75"/>
+      <COLUMN NAME="From Thread" TYPE="STRING" SIZE="100" KEY="TRUE" />
+      <COLUMN NAME="Percent" TYPE="PERCENT" SIZE="75" />
+      <TRANSFORM>
+	 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+	    <xsl:output omit-xml-declaration="yes" method="text" />
+	    <xsl:strip-space elements="*" />
+	    <xsl:template match="IO/IOMETHOD/THREAD">
+	       <xsl:value-of select="parent::node()/attribute::CLASS" />;
+	       <xsl:value-of select="parent::node()/attribute::METHOD" />;
+	       <xsl:value-of select="parent::node()/attribute::PCT" />;
+	       <xsl:value-of select="parent::node()/attribute::TIME" />;
+	       <xsl:value-of select="@NAME"/>;
+	       <xsl:value-of select="@PCT"/>;
+	       ***EOL***;
+	    </xsl:template>
+	 </xsl:stylesheet>
+      </TRANSFORM>
+   </TABLE>
+
+   <TABLE NAME="EVENT" TITLE="Event Handling" AGENT="REACTION">
+      <COLUMN NAME="Class" TYPE="STRING" SIZE="300" KEY="TRUE" />
+      <COLUMN NAME="Method" TYPE="STRING" SIZE="100" KEY="TRUE" />
+      <COLUMN NAME="% Time" TYPE="PERCENT" SIZE="75"/>
+      <COLUMN NAME="Time" TYPE="MSTIME" UNITS="msec" SIZE="75"/>
+      <COLUMN NAME="Calls" TYPE="COUNT" SIZE="75"/>
+      <TRANSFORM>
+	 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+	    <xsl:output omit-xml-declaration="yes" method="text" />
+	    <xsl:strip-space elements="*" />
+	    <xsl:template match="REACTION/EVENTMETHOD">
+	       <xsl:value-of select="@CLASS"/>;
+	       <xsl:value-of select="@METHOD"/>;
+	       <xsl:value-of select="@PCT"/>;
+	       <xsl:value-of select="@TIME"/>;
+	       <xsl:value-of select="@CALLS"/>;
+	       ***EOL***;
+	    </xsl:template>
+	 </xsl:stylesheet>
+      </TRANSFORM>
+   </TABLE>
+
+   <TABLE NAME="SOCKET" TITLE="Socket Calls" AGENT="SOCKETS">
+      <COLUMN NAME="Class" TYPE="STRING" SIZE="150" KEY="TRUE" />
+      <COLUMN NAME="Method" TYPE="STRING" SIZE="100" KEY="TRUE" />
+      <COLUMN NAME="% Time" TYPE="PERCENT" SIZE="75"/>
+      <COLUMN NAME="Time" TYPE="MSTIME" UNITS="msec" SIZE="75"/>
+      <TRANSFORM>
+	 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+	    <xsl:output omit-xml-declaration="yes" method="text" />
+	    <xsl:strip-space elements="*" />
+	    <xsl:template match="SOCKETS/SOCKETCOUNT">
+	       <xsl:value-of select="@CLASS"/>;
+	       <xsl:value-of select="@METHOD"/>;
+	       <xsl:value-of select="@PCT"/>;
+	       <xsl:value-of select="@TIME"/>;
+	       ***EOL***;
+	    </xsl:template>
+	 </xsl:stylesheet>
+      </TRANSFORM>
+   </TABLE>
+
+   <TABLE NAME="SOCKTHR" TITLE="Socket Threads" AGENT="SOCKETS">
+      <COLUMN NAME="Class" TYPE="STRING" SIZE="150" KEY="TRUE" />
+      <COLUMN NAME="Method" TYPE="STRING" SIZE="100" KEY="TRUE" />
+      <COLUMN NAME="% Time" TYPE="PERCENT" SIZE="75"/>
+      <COLUMN NAME="Time" TYPE="MSTIME" UNITS="msec" SIZE="75"/>
+      <COLUMN NAME="From Thread" TYPE="STRING" SIZE="100" KEY="TRUE" />
+      <COLUMN NAME="Percent" TYPE="PERCENT" SIZE="75" />
+      <TRANSFORM>
+	 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+	    <xsl:output omit-xml-declaration="yes" method="text" />
+	    <xsl:strip-space elements="*" />
+	    <xsl:template match="SOCKETS/SOCKETCOUNT/THREAD">
+	       <xsl:value-of select="parent::node()/attribute::CLASS" />;
+	       <xsl:value-of select="parent::node()/attribute::METHOD" />;
+	       <xsl:value-of select="parent::node()/attribute::PCT" />;
+	       <xsl:value-of select="parent::node()/attribute::TIME" />;
+	       <xsl:value-of select="@NAME"/>;
+	       <xsl:value-of select="@PCT"/>;
+	       ***EOL***;
+	    </xsl:template>
+	 </xsl:stylesheet>
+      </TRANSFORM>
+   </TABLE>
+
+   <TABLE NAME="SOCKIO" TITLE="Socket I/O" AGENT="SOCKETS">
+      <COLUMN NAME="From" TYPE="STRING" SIZE="200" KEY="TRUE" />
+      <COLUMN NAME="To" TYPE="STRING" SIZE="200" KEY="TRUE" />
+      <COLUMN NAME="# Read" TYPE="COUNT" SIZE="100"/>
+      <COLUMN NAME="# Write" TYPE="COUNT" SIZE="100"/>
+      <COLUMN NAME="Closed" TYPE="BOOLEAN" SIZE="75" KEY="TRUE" />
+      <TRANSFORM>
+	 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+	    <xsl:output omit-xml-declaration="yes" method="text" />
+	    <xsl:strip-space elements="*" />
+	    <xsl:template match="SOCKETS/SOCKET">
+	       <xsl:value-of select="LOCAL"/>;
+	       <xsl:value-of select="REMOTE"/>;
+	       <xsl:value-of select="@READ"/>;
+	       <xsl:value-of select="@WRITE"/>;
+	       <xsl:value-of select="@CLOSED"/>;
+	       ***EOL***;
+	    </xsl:template>
+	 </xsl:stylesheet>
+      </TRANSFORM>
+   </TABLE>
+
+   <TABLE NAME='ALLOCS' TITLE='Allocations' AGENT='MEMORY HEAP'>
+      <COLUMN NAME='Class' TYPE='STRING' SIZE='200' KEY='TRUE' />
+      <COLUMN NAME='# Alloc' TYPE='COUNT' SIZE='100' />
+      <COLUMN NAME='From Class' TYPE='STRING' SIZE='200' KEY='TRUE' />
+      <COLUMN NAME='Method' TYPE='STRING' SIZE='200' KEY='TRUE' />
+      <COLUMN NAME='Line' TYPE='LINE' SIZE='100' KEY='TRUE' />
+      <COLUMN NAME='Percent' TYPE='PERCENT' SIZE='100' KEY='TRUE' />
+      <TRANSFORM>
+	 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+	    <xsl:output omit-xml-declaration="yes" method="text" />
+	    <xsl:strip-space elements="*" />
+	    <xsl:template match="MEMORY/ALLOCATIONS/ALLOC/SOURCE">
+	       <xsl:value-of select="parent::node()/attribute::NAME" />;
+	       <xsl:value-of select="parent::node()/attribute::COUNT" />;
+	       <xsl:value-of select="@CLASS" />;
+	       <xsl:value-of select="@METHOD" />;
+	       <xsl:value-of select="@LINE"/>;
+	       <xsl:value-of select="@PCT"/>;
+	       ***EOL***;
+	    </xsl:template>
+	 </xsl:stylesheet>
+      </TRANSFORM>
+   </TABLE>
+
+</DYVISION>
+
+
+
+

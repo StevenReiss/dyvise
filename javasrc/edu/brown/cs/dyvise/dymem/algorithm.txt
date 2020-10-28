@@ -1,0 +1,142 @@
+
+
+
+
+
+
+FUNCTION computeGraph()
+  FOREACH CLASS element, create an Item structure with size and count
+  FOREACH REF element DO
+     Find corresponding class items, Fi and Ti
+     IF (Fi != Ti) THEN
+        Create Reference stucture R with the count
+        Add R to the set of Fi.references
+        Increment Ti.count by R.count
+     ENDIF
+  ENDFOR
+
+  SET work_list = empty
+  SET CycleMap = empty
+  SET mark = 1
+
+  FOREACH Item C
+     IF (C.count == 0) Add C to work_list
+  ENDFOR
+
+  WHILE (work_list is not empty) DO
+     CALL topSort
+     CALL findCycles
+  ENDWHILE
+
+
+
+FUNCTION topSort()
+   WHILE (work_list is not empty) DO
+      Remove first item M from work_list
+      FOREACH Reference R<F,T> in M.references DO
+         IF (cycle_map[F] != NULL && cycle_map[F] != cycle_map[T]) THEN
+            T.count -= R.count
+            IF (T.count == 0) Add T to work_list;
+         ENDIF
+      ENDFOR
+   ENDWHILE
+
+
+
+
+FUNCTION findCycles()
+   increment mark
+   SET cycle_count = 1
+   SET cycles_found = empty
+   FOREACH Item M DO
+      IF (M.count != 0) THEN
+         SET cycle_stack = empty
+         CALL cycleSearch(M)
+      ENDIF
+   ENDFOR
+
+   FOREACH CycleItem C in cycles_found DO
+      Add C to the set of cycles
+      FOREACH Item M in C DO cycle_map[M] = C
+      FOREACH Item M in C DO
+         FOREACH Reference R<M,T> in M.references DO
+            IF (cycle_map[T] == C) THEN
+               Decrement T.count by R.count
+               IF (T.count == 0) add T to work_list
+             ENDIF
+          ENDFOR
+       ENDFOR
+    ENDFOR
+
+
+
+FUNCTION cycleSearch(Item C)
+   IF (C.mark == mark || cycle_map[C] != null) RETURN
+   C.mark = mark
+   C.dfn = cycle_count
+   C.lowdfn = cycle_count
+   cycle_count += 1
+   Add C to cycle_stack
+
+   FOREACH Reference R<C,T> DO
+      C.lowdfn = cycleNext(T,C.dfn)
+   ENDFOR
+
+   IF (C.lowdfn == C.dfn) THEN
+      IF (C == head of cycle_stack) THEN Pop cycle_stack
+      ELSE
+         Create a new CycleItem NC
+         Pop elements off cycle_stack until C is found, add each to CycleItem
+         Add NC to cycles_found
+      ENDIF
+   ENDIF
+
+
+FUNCTION cycleNext(Item M,int dfn)
+   IF (M.mark == mark && M.dfn < dfn) THEN
+      IF (M is on cycle_stack) RETURN M.dfn;
+   ELSE
+      CALL cycleSearch(M)
+      return M.lowdfn
+   ENDIF
+
+
+
+
+FUNCTION assignSizeValues(Item M)
+    IF M has already been done THEN RETURN
+
+    FOREACH Link<M,T> DO CALL assignSizeValues(T)
+    FOREACH Dump m
+       SET size[M,m] = local size of M in dump m
+       FOREACH Link L<M,T>
+          Increment Size[M,m] by L.sizeFraction * Size[T,m]
+       ENDFOR
+    ENDFOR
+
+    IF # models < 2  || # inlinks < 2 THEN
+       Set size for each link proportional to its link count
+       RETURN
+    END
+
+    FOREACH Link L<F,M> DO
+       FOREACH Dump m
+          SET Vc[F][m] = count for F in dump m
+          SET Vr[F][m] = # references to F in dump m
+          SET Vp[F][m] = # pointers from F in dump m
+       END
+    END FOR
+
+    SET Y[m] = size of M in dump m less assigned sizes
+    SOLVE Vc * Xc = Y, X >= 0, minimizing least squared error
+    SOLVE Vr * Xr = Y, X >= 0, minimizing least squared error
+    SOLVE Vp * Xp = Y, X >= 0, minimizing least squared error
+    CHOOSE {c,r,p} with least error E, x
+    IF E < error threshold THEN
+       assignValues(Xx,Y)
+    ELSE
+       Set size for each link proportional to its link count
+    ENDIF
+
+
+

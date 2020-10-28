@@ -1,0 +1,6 @@
+<DYNAMO METHOD='EVENTSTATE'>
+   <SET NAME='EVENTS' VALUE='CompEventAccess_d1otmz' />
+   <SET NAME='ALLOCS' VALUE='CompEventAlloc_d1otmz' />
+   <SET NAME='THREADSTATES' VALUE='DynThreadStates_d1otmz' />
+   <SET NAME='EVENTROUTINES' VALUE='DynEventRoutines_d1otmz' />
+</DYNAMO>

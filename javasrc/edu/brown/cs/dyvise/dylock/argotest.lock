@@ -1,0 +1,280 @@
+<LOCKSET>
+  <LOCK CLASS='Ljava/lang/ref/ReferenceQueue$Lock;' WAIT='0' ENTER='0' TIMED='0' WAITED='0' ID='-1' />
+  <LOCK CLASS='Ljava/awt/MediaTracker;' WAIT='146' ENTER='1589' TIMED='0' WAITED='146' ID='1' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@waitForID(IJ)Z' OFFSET='76' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@setDone()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@statusID(IZZ)I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@removeImage(Ljava/awt/Image;I)V' OFFSET='0' />
+    <LOCATION METHOD='Ljavax/swing/ImageIcon;@loadImage(Ljava/awt/Image;)V' OFFSET='8' />
+    <LOCATION METHOD='Ljavax/swing/ImageIcon;@getNextID()I' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@addImage(Ljava/awt/Image;III)V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@waitForID(IJ)Z' OFFSET='0' />
+    <PRIOR LOCK='4' />
+    <PRIOR LOCK='23' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/Vector;' WAIT='176' ENTER='2199' TIMED='10' WAITED='165' ID='2' UNNEST='T'>
+    <LOCATION METHOD='Lsun/awt/image/ImageFetcher;@isFetcher(Ljava/lang/Thread;)Z' OFFSET='10' />
+    <LOCATION METHOD='Lsun/awt/image/ImageFetcher;@nextImage()Lsun/awt/image/ImageFetchable;' OFFSET='69' />
+    <LOCATION METHOD='Lsun/awt/image/ImageFetcher;@nextImage()Lsun/awt/image/ImageFetchable;' OFFSET='10' />
+    <LOCATION METHOD='Ljava/util/Vector;@size()I' OFFSET='0' />
+    <LOCATION METHOD='Lsun/awt/image/ImageFetcher;@add(Lsun/awt/image/ImageFetchable;)V' OFFSET='10' />
+    <LOCATION METHOD='Ljava/util/Vector;@indexOf(Ljava/lang/Object;I)I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@addElement(Ljava/lang/Object;)V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@elementAt(I)Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@removeElement(Ljava/lang/Object;)Z' OFFSET='0' />
+    <LOCATION METHOD='Ljava/util/Vector;@removeElementAt(I)V' OFFSET='0' />
+    <LOCATION METHOD='Lsun/awt/image/ImageFetcher;@stoppingAnimation(Ljava/lang/Thread;)V' OFFSET='10' />
+    <LOCATION METHOD='Lsun/awt/image/ImageFetcher;@startingAnimation()V' OFFSET='14' />
+    <LOCATION METHOD='Lsun/awt/image/ImageFetcher;@run()V' OFFSET='14' />
+    <PRIOR LOCK='1' />
+    <PRIOR LOCK='4' />
+    <PRIOR LOCK='23' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Object;' WAIT='10' ENTER='16581' TIMED='0' WAITED='9' ID='3' UNNEST='T'>
+    <LOCATION METHOD='Lsun/awt/AWTAutoShutdown;@activateBlockerThread()V' OFFSET='29' />
+    <LOCATION METHOD='Lsun/awt/AWTAutoShutdown;@run()V' OFFSET='12' />
+    <LOCATION METHOD='Lsun/awt/AWTAutoShutdown;@run()V' OFFSET='32' />
+    <LOCATION METHOD='Lsun/awt/AWTAutoShutdown;@notifyThreadBusy(Ljava/lang/Thread;)V' OFFSET='18' />
+    <LOCATION METHOD='Lsun/awt/AWTAutoShutdown;@notifyPeerMapUpdated()V' OFFSET='13' />
+    <LOCATION METHOD='Lsun/awt/AWTAutoShutdown;@notifyThreadFree(Ljava/lang/Thread;)V' OFFSET='18' />
+    <PRIOR LOCK='-1' />
+    <PRIOR LOCK='32' />
+    <PRIOR LOCK='4' />
+    <PRIOR LOCK='23' />
+    <PRIOR LOCK='-1' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/Component$AWTTreeLock;' WAIT='0' ENTER='773' TIMED='0' WAITED='0' ID='4' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/Component;@invalidate()V' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/Container;@dispatchEventImpl(Ljava/awt/AWTEvent;)V' OFFSET='51' />
+    <LOCATION METHOD='Ljava/awt/Window;@getGraphicsConfiguration()Ljava/awt/GraphicsConfiguration;' OFFSET='6' />
+    <LOCATION METHOD='Ljavax/swing/JComponent;@paintChildren(Ljava/awt/Graphics;)V' OFFSET='8' />
+    <LOCATION METHOD='Ljava/awt/Container;@validate()V' OFFSET='15' />
+    <LOCATION METHOD='Ljava/awt/Component;@reshape(IIII)V' OFFSET='7' />
+    <LOCATION METHOD='Ljava/awt/BorderLayout;@layoutContainer(Ljava/awt/Container;)V' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/Component;@resize(II)V' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/Container;@preferredSize()Ljava/awt/Dimension;' OFFSET='29' />
+    <LOCATION METHOD='Ljava/awt/BorderLayout;@preferredLayoutSize(Ljava/awt/Container;)Ljava/awt/Dimension;' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/Component;@validate()V' OFFSET='13' />
+    <LOCATION METHOD='Ljava/awt/Container;@mixOnValidating()V' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/Component;@setFont(Ljava/awt/Font;)V' OFFSET='7' />
+    <LOCATION METHOD='Ljava/awt/Container;@invalidateTree()V' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/Container;@clearCurrentFocusCycleRootOnHide()V' OFFSET='15' />
+    <LOCATION METHOD='Ljava/awt/Container;@clearMostRecentFocusOwnerOnHide()V' OFFSET='10' />
+    <LOCATION METHOD='Ljava/awt/Component;@hide()V' OFFSET='26' />
+    <LOCATION METHOD='Ljava/awt/Component;@mixOnHiding(Z)V' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/Container;@containsFocus()Z' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/Container;@addImpl(Ljava/awt/Component;Ljava/lang/Object;I)V' OFFSET='7' />
+    <LOCATION METHOD='Ljava/awt/Component;@getGraphicsConfiguration()Ljava/awt/GraphicsConfiguration;' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/KeyboardFocusManager;@clearMostRecentFocusOwner(Ljava/awt/Component;)V' OFFSET='11' />
+    <LOCATION METHOD='Ljava/awt/Container;@removeAll()V' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/Component;@disable()V' OFFSET='17' />
+    <LOCATION METHOD='Ljava/awt/BorderLayout;@addLayoutComponent(Ljava/awt/Component;Ljava/lang/Object;)V' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/BorderLayout;@addLayoutComponent(Ljava/lang/String;Ljava/awt/Component;)V' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/Container;@remove(Ljava/awt/Component;)V' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/Container;@remove(I)V' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/BorderLayout;@removeLayoutComponent(Ljava/awt/Component;)V' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/FlowLayout;@preferredLayoutSize(Ljava/awt/Container;)Ljava/awt/Dimension;' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/GridLayout;@preferredLayoutSize(Ljava/awt/Container;)Ljava/awt/Dimension;' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/Component;@enable()V' OFFSET='13' />
+    <LOCATION METHOD='Ljava/awt/Container;@findComponentAt(II)Ljava/awt/Component;' OFFSET='6' />
+    <LOCATION METHOD='Ljava/awt/Container;@findComponentAtImpl(IIZ)Ljava/awt/Component;' OFFSET='36' />
+    <LOCATION METHOD='Ljava/awt/Container;@getMouseEventTargetImpl(IIZLjava/awt/Container$EventTargetFilter;ZZ)Ljava/awt/Component;' OFFSET='7' />
+  </LOCK>
+  <LOCK CLASS='Lsun/misc/Launcher$AppClassLoader;' WAIT='0' ENTER='0' TIMED='0' WAITED='0' ID='-1' />
+  <LOCK CLASS='Ljava/awt/EventQueue;' WAIT='0' ENTER='0' TIMED='0' WAITED='0' ID='-1' />
+  <LOCK CLASS='Ljava/lang/ref/ReferenceQueue$Lock;' WAIT='0' ENTER='0' TIMED='0' WAITED='0' ID='-1' />
+  <LOCK CLASS='Ljava/util/LinkedList;' WAIT='2599' ENTER='2947' TIMED='0' WAITED='2598' ID='5' UNNEST='T'>
+    <LOCATION METHOD='Lorg/netbeans/mdr/util/EventNotifier$EventsDelivery;@run()V' OFFSET='46' />
+    <LOCATION METHOD='Lorg/netbeans/mdr/util/EventNotifier;@fireChanged()V' OFFSET='13' />
+    <LOCATION METHOD='Lorg/netbeans/mdr/util/EventNotifier$EventsDelivery;@run()V' OFFSET='9' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/HashMap;' WAIT='0' ENTER='130' TIMED='0' WAITED='0' ID='6' UNNEST='T'>
+    <LOCATION METHOD='Lsun/awt/AppContext;@get(Ljava/lang/Object;)Ljava/lang/Object;' OFFSET='6' />
+    <PRIOR LOCK='4' />
+    <PRIOR LOCK='23' />
+  </LOCK>
+  <LOCK CLASS='Lsun/awt/image/URLImageSource;' WAIT='0' ENTER='50' TIMED='0' WAITED='0' ID='7' UNNEST='T'>
+    <LOCATION METHOD='Lsun/awt/image/InputStreamImageSource;@doFetch()V' OFFSET='3' />
+    <LOCATION METHOD='Lsun/awt/image/URLImageSource;@getConnection()Ljava/net/URLConnection;' OFFSET='0' />
+    <LOCATION METHOD='Lsun/awt/image/InputStreamImageSource;@setDecoder(Lsun/awt/image/ImageDecoder;)V' OFFSET='3' />
+    <LOCATION METHOD='Lsun/awt/image/ImageDecoder;@nextConsumer(Lsun/awt/image/ImageConsumerQueue;)Lsun/awt/image/ImageConsumerQueue;' OFFSET='6' />
+    <LOCATION METHOD='Lsun/awt/image/InputStreamImageSource;@doneDecoding(Lsun/awt/image/ImageDecoder;)V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/MediaTracker;' WAIT='1' ENTER='3' TIMED='0' WAITED='1' ID='8' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@waitForAll(J)Z' OFFSET='73' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@setDone()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@statusAll(ZZ)I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@isErrorAny()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/image/PixelGrabber;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='9' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@grabPixels(J)Z' OFFSET='105' />
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@imageComplete(I)V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/MediaTracker;' WAIT='1' ENTER='3' TIMED='0' WAITED='1' ID='10' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@waitForAll(J)Z' OFFSET='73' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@setDone()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@statusAll(ZZ)I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@isErrorAny()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/image/PixelGrabber;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='11' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@grabPixels(J)Z' OFFSET='105' />
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@imageComplete(I)V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/MediaTracker;' WAIT='1' ENTER='3' TIMED='0' WAITED='1' ID='12' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@waitForAll(J)Z' OFFSET='73' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@setDone()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@statusAll(ZZ)I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@isErrorAny()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/image/PixelGrabber;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='13' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@grabPixels(J)Z' OFFSET='105' />
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@imageComplete(I)V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/MediaTracker;' WAIT='1' ENTER='3' TIMED='0' WAITED='1' ID='14' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@waitForAll(J)Z' OFFSET='73' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@setDone()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@statusAll(ZZ)I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@isErrorAny()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/image/PixelGrabber;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='15' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@grabPixels(J)Z' OFFSET='105' />
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@imageComplete(I)V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/MediaTracker;' WAIT='1' ENTER='3' TIMED='0' WAITED='1' ID='16' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@waitForAll(J)Z' OFFSET='73' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@setDone()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@statusAll(ZZ)I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@isErrorAny()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/image/PixelGrabber;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='17' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@grabPixels(J)Z' OFFSET='105' />
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@imageComplete(I)V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/MediaTracker;' WAIT='1' ENTER='3' TIMED='0' WAITED='1' ID='18' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@waitForAll(J)Z' OFFSET='73' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@setDone()V' OFFSET='0' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@statusAll(ZZ)I' OFFSET='0' />
+    <LOCATION METHOD='Ljava/awt/MediaTracker;@isErrorAny()Z' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/image/PixelGrabber;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='19' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@grabPixels(J)Z' OFFSET='105' />
+    <LOCATION METHOD='Ljava/awt/image/PixelGrabber;@imageComplete(I)V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lsun/awt/image/URLImageSource;' WAIT='0' ENTER='50' TIMED='0' WAITED='0' ID='20' UNNEST='T'>
+    <LOCATION METHOD='Lsun/awt/image/InputStreamImageSource;@doFetch()V' OFFSET='3' />
+    <LOCATION METHOD='Lsun/awt/image/URLImageSource;@getConnection()Ljava/net/URLConnection;' OFFSET='0' />
+    <LOCATION METHOD='Lsun/awt/image/InputStreamImageSource;@setDecoder(Lsun/awt/image/ImageDecoder;)V' OFFSET='3' />
+    <LOCATION METHOD='Lsun/awt/image/ImageDecoder;@nextConsumer(Lsun/awt/image/ImageConsumerQueue;)Lsun/awt/image/ImageConsumerQueue;' OFFSET='6' />
+    <LOCATION METHOD='Lsun/awt/image/InputStreamImageSource;@doneDecoding(Lsun/awt/image/ImageDecoder;)V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljavax/swing/TimerQueue;' WAIT='0' ENTER='0' TIMED='0' WAITED='0' ID='-1' />
+  <LOCK CLASS='Lsun/awt/image/URLImageSource;' WAIT='0' ENTER='50' TIMED='0' WAITED='0' ID='21' UNNEST='T'>
+    <LOCATION METHOD='Lsun/awt/image/InputStreamImageSource;@doFetch()V' OFFSET='3' />
+    <LOCATION METHOD='Lsun/awt/image/URLImageSource;@getConnection()Ljava/net/URLConnection;' OFFSET='0' />
+    <LOCATION METHOD='Lsun/awt/image/InputStreamImageSource;@setDecoder(Lsun/awt/image/ImageDecoder;)V' OFFSET='3' />
+    <LOCATION METHOD='Lsun/awt/image/ImageDecoder;@nextConsumer(Lsun/awt/image/ImageConsumerQueue;)Lsun/awt/image/ImageConsumerQueue;' OFFSET='6' />
+    <LOCATION METHOD='Lsun/awt/image/InputStreamImageSource;@doneDecoding(Lsun/awt/image/ImageDecoder;)V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lsun/awt/image/URLImageSource;' WAIT='0' ENTER='50' TIMED='0' WAITED='0' ID='22' UNNEST='T'>
+    <LOCATION METHOD='Lsun/awt/image/InputStreamImageSource;@doFetch()V' OFFSET='3' />
+    <LOCATION METHOD='Lsun/awt/image/URLImageSource;@getConnection()Ljava/net/URLConnection;' OFFSET='0' />
+    <LOCATION METHOD='Lsun/awt/image/InputStreamImageSource;@setDecoder(Lsun/awt/image/ImageDecoder;)V' OFFSET='3' />
+    <LOCATION METHOD='Lsun/awt/image/ImageDecoder;@nextConsumer(Lsun/awt/image/ImageConsumerQueue;)Lsun/awt/image/ImageConsumerQueue;' OFFSET='6' />
+    <LOCATION METHOD='Lsun/awt/image/InputStreamImageSource;@doneDecoding(Lsun/awt/image/ImageDecoder;)V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/argouml/ui/targetmanager/TargetManager;' WAIT='0' ENTER='134' TIMED='0' WAITED='0' ID='23' UNNEST='T'>
+    <LOCATION METHOD='Lorg/argouml/ui/targetmanager/TargetManager;@getTarget()Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/argouml/ui/targetmanager/TargetManager;@setTarget(Ljava/lang/Object;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/argouml/ui/targetmanager/TargetManager;@getSingleModelTarget()Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/argouml/ui/targetmanager/TargetManager;@getTargets()Ljava/util/List;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/argouml/ui/targetmanager/TargetManager;@getSingleTarget()Ljava/lang/Object;' OFFSET='0' />
+    <LOCATION METHOD='Lorg/argouml/ui/targetmanager/TargetManager;@removeTarget(Ljava/lang/Object;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/argouml/ui/targetmanager/TargetManager;@addTarget(Ljava/lang/Object;)V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lsun/misc/URLClassPath;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='24'>
+    <LOCATION METHOD='Lsun/misc/URLClassPath;@getLoader(I)Lsun/misc/URLClassPath$Loader;' OFFSET='0' />
+    <PRIOR LOCK='-1' />
+  </LOCK>
+  <LOCK CLASS='Lsun/awt/image/URLImageSource;' WAIT='0' ENTER='50' TIMED='0' WAITED='0' ID='25' UNNEST='T'>
+    <LOCATION METHOD='Lsun/awt/image/InputStreamImageSource;@doFetch()V' OFFSET='3' />
+    <LOCATION METHOD='Lsun/awt/image/URLImageSource;@getConnection()Ljava/net/URLConnection;' OFFSET='0' />
+    <LOCATION METHOD='Lsun/awt/image/InputStreamImageSource;@setDecoder(Lsun/awt/image/ImageDecoder;)V' OFFSET='3' />
+    <LOCATION METHOD='Lsun/awt/image/ImageDecoder;@nextConsumer(Lsun/awt/image/ImageConsumerQueue;)Lsun/awt/image/ImageConsumerQueue;' OFFSET='6' />
+    <LOCATION METHOD='Lsun/awt/image/InputStreamImageSource;@doneDecoding(Lsun/awt/image/ImageDecoder;)V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Ljava/awt/EventQueue$1AWTInvocationLock;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='26' UNNEST='T'>
+    <LOCATION METHOD='Ljava/awt/EventQueue;@invokeAndWait(Ljava/lang/Runnable;)V' OFFSET='50' />
+    <LOCATION METHOD='Ljava/awt/event/InvocationEvent;@dispatch()V' OFFSET='65' />
+  </LOCK>
+  <LOCK CLASS='Lsun/awt/image/URLImageSource;' WAIT='0' ENTER='50' TIMED='0' WAITED='0' ID='27' UNNEST='T'>
+    <LOCATION METHOD='Lsun/awt/image/InputStreamImageSource;@doFetch()V' OFFSET='3' />
+    <LOCATION METHOD='Lsun/awt/image/URLImageSource;@getConnection()Ljava/net/URLConnection;' OFFSET='0' />
+    <LOCATION METHOD='Lsun/awt/image/InputStreamImageSource;@setDecoder(Lsun/awt/image/ImageDecoder;)V' OFFSET='3' />
+    <LOCATION METHOD='Lsun/awt/image/ImageDecoder;@nextConsumer(Lsun/awt/image/ImageConsumerQueue;)Lsun/awt/image/ImageConsumerQueue;' OFFSET='6' />
+    <LOCATION METHOD='Lsun/awt/image/InputStreamImageSource;@doneDecoding(Lsun/awt/image/ImageDecoder;)V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/netbeans/mdr/handlers/MDRClassLoader$Delegator;' WAIT='0' ENTER='50' TIMED='0' WAITED='0' ID='28' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/ClassLoader;@loadClass(Ljava/lang/String;Z)Ljava/lang/Class;' OFFSET='0' />
+    <PRIOR LOCK='23' />
+    <PRIOR LOCK='29' />
+  </LOCK>
+  <LOCK CLASS='Lorg/netbeans/mdr/persistence/memoryimpl/StorageImpl;' WAIT='0' ENTER='1720' TIMED='0' WAITED='0' ID='29' UNNEST='T'>
+    <LOCATION METHOD='Lorg/netbeans/mdr/storagemodel/MdrStorage;@getObject(Lorg/netbeans/mdr/persistence/MOFID;)Lorg/netbeans/mdr/storagemodel/StorableBaseObject;' OFFSET='39' />
+    <LOCATION METHOD='Lorg/netbeans/mdr/persistence/memoryimpl/StorageImpl;@objectStateWillChange(Ljava/lang/Object;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/netbeans/mdr/storagemodel/MdrStorage;@getObjectsFromIndex(Lorg/netbeans/mdr/persistence/MultivaluedIndex;Ljava/lang/Object;)Ljava/util/Collection;' OFFSET='37' />
+    <LOCATION METHOD='Lorg/netbeans/mdr/NBMDRepositoryImpl;@getHandler(Lorg/netbeans/mdr/storagemodel/StorableBaseObject;Ljava/lang/Class;)Ljavax/jmi/reflect/RefBaseObject;' OFFSET='309' />
+    <LOCATION METHOD='Lorg/netbeans/mdr/persistence/memoryimpl/StorageImpl;@objectStateChanged(Ljava/lang/Object;)V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/netbeans/mdr/persistence/memoryimpl/StorageImpl;@getSerialNumber()J' OFFSET='0' />
+    <LOCATION METHOD='Lorg/netbeans/mdr/handlers/MDRClassLoader;@resolveInterface(Lorg/netbeans/mdr/storagemodel/StorableObject;Z)Ljava/lang/Class;' OFFSET='42' />
+    <PRIOR LOCK='23' />
+    <PRIOR LOCK='36' />
+  </LOCK>
+  <LOCK CLASS='Lorg/netbeans/mdr/handlers/MDRClassLoader;' WAIT='0' ENTER='3' TIMED='0' WAITED='0' ID='30' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/Class;@forName0(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;' OFFSET='-1' />
+    <LOCATION METHOD='Ljava/lang/ClassLoader;@checkCerts(Ljava/lang/String;Ljava/security/CodeSource;)V' OFFSET='0' />
+    <PRIOR LOCK='23' />
+  </LOCK>
+  <LOCK CLASS='Lorg/netbeans/mdr/util/MultipleReadersMutex;' WAIT='91' ENTER='7175' TIMED='0' WAITED='91' ID='31' UNNEST='T'>
+    <LOCATION METHOD='Lorg/netbeans/mdr/util/MultipleReadersMutex;@enter(Z)V' OFFSET='98' />
+    <LOCATION METHOD='Lorg/netbeans/mdr/util/MultipleReadersMutex;@leave(Z)Z' OFFSET='48' />
+    <LOCATION METHOD='Lorg/netbeans/mdr/util/MultipleReadersMutex;@enter(Z)V' OFFSET='8' />
+    <PRIOR LOCK='23' />
+    <PRIOR LOCK='29' />
+  </LOCK>
+  <LOCK CLASS='Lsun/awt/PostEventQueue;' WAIT='0' ENTER='19' TIMED='0' WAITED='0' ID='32' UNNEST='T'>
+    <LOCATION METHOD='Lsun/awt/PostEventQueue;@postEvent(Ljava/awt/AWTEvent;)V' OFFSET='12' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/Boolean;' WAIT='0' ENTER='2' TIMED='0' WAITED='0' ID='33' UNNEST='T'>
+    <LOCATION METHOD='Lorg/argouml/model/mdr/ModelEventPumpMDRImpl;@decrementEvents()V' OFFSET='6' />
+    <LOCATION METHOD='Lorg/argouml/model/mdr/ModelEventPumpMDRImpl;@plannedChange(Lorg/netbeans/api/mdr/events/MDRChangeEvent;)V' OFFSET='127' />
+  </LOCK>
+  <LOCK CLASS='Lorg/netbeans/mdr/NBMDRepositoryImpl;' WAIT='0' ENTER='39' TIMED='0' WAITED='0' ID='34' UNNEST='T'>
+    <LOCATION METHOD='Lorg/netbeans/mdr/NBMDRepositoryImpl;@beginTrans(Z)V' OFFSET='3' />
+    <LOCATION METHOD='Lorg/netbeans/mdr/NBMDRepositoryImpl;@initCheck()V' OFFSET='0' />
+    <LOCATION METHOD='Lorg/netbeans/mdr/NBMDRepositoryImpl;@decrementWait()V' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/netbeans/mdr/persistence/memoryimpl/PrimaryIndexImpl;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='35' UNNEST='T'>
+    <LOCATION METHOD='Lorg/netbeans/mdr/persistence/memoryimpl/SinglevaluedIndexImpl;@get(Ljava/lang/Object;)Ljava/lang/Object;' OFFSET='0' />
+  </LOCK>
+  <LOCK CLASS='Lorg/netbeans/mdr/NBMDRepositoryImpl$FacilityCache;' WAIT='0' ENTER='2' TIMED='0' WAITED='0' ID='36' UNNEST='T'>
+    <LOCATION METHOD='Lorg/netbeans/mdr/NBMDRepositoryImpl;@getHandler(Lorg/netbeans/mdr/persistence/MOFID;)Ljavax/jmi/reflect/RefBaseObject;' OFFSET='6' />
+  </LOCK>
+  <LOCK CLASS='[Ljava/lang/Byte;' WAIT='0' ENTER='2' TIMED='0' WAITED='0' ID='37' UNNEST='T'>
+    <LOCATION METHOD='Lorg/argouml/model/mdr/ModelEventPumpMDRImpl;@unregisterModelEvent(Ljava/beans/PropertyChangeListener;Ljava/lang/Object;[Ljava/lang/String;)V' OFFSET='173' />
+    <PRIOR LOCK='23' />
+  </LOCK>
+  <LOCK CLASS='Ljava/lang/ThreadGroup;' WAIT='0' ENTER='1' TIMED='0' WAITED='0' ID='38' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/ThreadGroup;@remove(Ljava/lang/Thread;)V' OFFSET='3' />
+  </LOCK>
+  <LOCK CLASS='Lsun/awt/AppContext;' WAIT='0' ENTER='2' TIMED='0' WAITED='0' ID='39' UNNEST='T'>
+    <LOCATION METHOD='Lsun/awt/image/FetcherInfo;@getFetcherInfo()Lsun/awt/image/FetcherInfo;' OFFSET='7' />
+    <LOCATION METHOD='Ljavax/swing/ImageIcon;@getTracker()Ljava/awt/MediaTracker;' OFFSET='7' />
+    <PRIOR LOCK='1' />
+  </LOCK>
+  <LOCK CLASS='Ljava/util/logging/LogManager$Cleaner;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='40' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/Thread;@join(J)V' OFFSET='38' />
+  </LOCK>
+  <LOCK CLASS='Lsun/awt/X11/XToolkit$2;' WAIT='1' ENTER='1' TIMED='0' WAITED='1' ID='41' UNNEST='T'>
+    <LOCATION METHOD='Ljava/lang/Thread;@join(J)V' OFFSET='38' />
+  </LOCK>
+</LOCKSET>

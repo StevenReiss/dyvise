@@ -1,0 +1,19 @@
+#
+# RCS: $Header: /pro/spr_cvs/pro/dyvise/javasrc/edu/brown/cs/dyvise/dpin/Make.data,v 1.1.1.1 2008-10-22 13:16:47 spr Exp $
+
+#
+# DPIN -- DYnamic Performance Evaluation Runner programmatic interface
+#
+
+
+PACKAGE=dpin
+
+SFILES= \
+	DpinConstants.java \
+	DpinMain.java \
+	DpinProcess.java \
+
+
+
+test000:
+	dyvisejava edu.brown.cs.dyvise.dpin.DpinMain

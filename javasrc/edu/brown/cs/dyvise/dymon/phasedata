@@ -1,0 +1,513 @@
+DYMON: DROP PHASE 0 0.0
+PHASE 1: edu.brown.cs.s6.engine.EngineMain 0.8660254
+PHASE 1: edu.brown.cs.ivy.xml.IvyXmlReaderThread 0.28867513
+PHASE 1: edu.brown.cs.s6.language.java.LanguageJava 0.28867513
+PHASE 1: edu.brown.cs.s6.engine.EngineMain$EngineClient 0.28867513
+DYMON: NEW PHASE 1
+DYMON: DROP PHASE 1 0.6358142942772247
+PHASE 2: edu.brown.cs.ivy.xml.IvyXml 0.51250637
+PHASE 2: edu.brown.cs.s6.engine.EngineMain 0.39789715
+PHASE 2: java.util.concurrent.FutureTask 0.33189246
+PHASE 2: java.util.concurrent.FutureTask$Sync 0.33189246
+PHASE 2: java.util.concurrent.Executors$RunnableAdapter 0.33189246
+PHASE 2: edu.brown.cs.s6.engine.EnginePool$Worker 0.33189246
+PHASE 2: edu.brown.cs.s6.keysearch.KeySearchGoogle$ScanSolution 0.16594623
+PHASE 2: edu.brown.cs.s6.keysearch.KeySearchSet$RunSearch 0.16594623
+PHASE 2: edu.brown.cs.ivy.xml.IvyXml$XmlParser 0.17328009
+DYMON: NEW PHASE 2
+DYMON: DROP PHASE 2 0.6987078619140448
+PHASE 3: edu.brown.cs.ivy.xml.IvyXml 0.22343409
+PHASE 3: java.util.concurrent.FutureTask 0.35962754
+PHASE 3: java.util.concurrent.FutureTask$Sync 0.35962754
+PHASE 3: java.util.concurrent.Executors$RunnableAdapter 0.35962754
+PHASE 3: edu.brown.cs.s6.engine.EnginePool$Worker 0.46177262
+PHASE 3: edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution 0.23833852
+PHASE 3: edu.brown.cs.ivy.xml.IvyXml$NodeSpecIterator 0.20429015
+PHASE 3: edu.brown.cs.s6.keysearch.KeySearchBase 0.47773692
+DYMON: NEW PHASE 3
+DYMON: DROP PHASE 3 0.6738428152901363
+PHASE 4: org.eclipse.jdt.core.dom.ASTParser 0.29912168
+PHASE 4: java.util.concurrent.Executors$RunnableAdapter 0.17397629
+PHASE 4: java.util.concurrent.FutureTask 0.17397629
+PHASE 4: edu.brown.cs.s6.language.java.JavaTyper$TypeSetter 0.20659225
+PHASE 4: java.util.concurrent.FutureTask$Sync 0.17397629
+PHASE 4: edu.brown.cs.s6.engine.EnginePool$Worker 0.17397629
+PHASE 4: edu.brown.cs.s6.keysearch.KeySearchBase 0.1739763
+PHASE 4: edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution 0.17397629
+PHASE 4: org.eclipse.jdt.core.dom.ASTConverter 0.6517064
+PHASE 4: org.eclipse.jdt.core.dom.ASTNode 0.3765613
+DYMON: NEW PHASE 4
+DYMON: DROP PHASE 4 0.4512000098735524
+PHASE 5: edu.brown.cs.s6.language.java.FragmentJava$ClonedMethodFragment 0.18711513
+PHASE 5: edu.brown.cs.s6.engine.EnginePool$Worker 0.17181626
+PHASE 5: edu.brown.cs.s6.language.java.TransformJava 0.49674612
+PHASE 5: org.eclipse.jdt.core.dom.ASTNode 0.36937407
+PHASE 5: edu.brown.cs.s6.language.java.FragmentJava$FragmentDelta 0.1782049
+PHASE 5: edu.brown.cs.s6.engine.EngineMain$TransformSolution 0.24503173
+PHASE 5: org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer 0.47224295
+PHASE 5: edu.brown.cs.s6.solution.SolutionBase 0.32102653
+DYMON: NEW PHASE 5
+DYMON: DROP PHASE 5 0.5047752548809886
+PHASE 6: java.util.concurrent.Executors$RunnableAdapter 0.2172408
+PHASE 6: java.util.concurrent.FutureTask$Sync 0.27357748
+PHASE 6: edu.brown.cs.s6.engine.EnginePool$Worker 0.27357748
+PHASE 6: edu.brown.cs.s6.language.java.FragmentJava 0.273652
+PHASE 6: org.eclipse.jdt.core.dom.ASTNode 0.29972345
+PHASE 6: java.util.concurrent.FutureTask 0.27357748
+PHASE 6: edu.brown.cs.s6.language.java.JavaTester 0.65049213
+PHASE 6: edu.brown.cs.s6.engine.EngineMain$TestWorker 0.2168307
+DYMON: NEW PHASE 6
+DYMON: DROP PHASE 0 0.0
+PHASE 1: edu.brown.cs.ivy.xml.IvyXmlReader 0.0836242
+PHASE 1: edu.brown.cs.s6.engine.EngineMain 0.75261784
+PHASE 1: org.eclipse.jdt.core.dom.SimpleName 0.0836242
+PHASE 1: edu.brown.cs.s6.language.java.JavaChecker 0.3344968
+PHASE 1: org.eclipse.jdt.core.dom.AST 0.2508726
+PHASE 1: edu.brown.cs.ivy.xml.IvyXmlReaderThread 0.3344968
+PHASE 1: edu.brown.cs.s6.language.java.JavaAst 0.0836242
+PHASE 1: edu.brown.cs.s6.language.java.LanguageJava 0.2508726
+PHASE 1: edu.brown.cs.s6.engine.EngineMain$EngineClient 0.2508726
+DYMON: NEW PHASE 1
+DYMON: DROP PHASE 1 0.05504847319571127
+PHASE 2: edu.brown.cs.ivy.xml.IvyXml 0.6796099
+PHASE 2: java.util.concurrent.Executors$RunnableAdapter 0.30204883
+PHASE 2: edu.brown.cs.s6.engine.EnginePool 0.100682944
+PHASE 2: edu.brown.cs.s6.keysearch.KeySearchGoogle$ScanSolution 0.30204883
+PHASE 2: edu.brown.cs.ivy.xml.IvyXml$XmlParser 0.22653663
+PHASE 2: java.util.concurrent.FutureTask 0.30204883
+PHASE 2: java.util.concurrent.FutureTask$Sync 0.30204883
+PHASE 2: edu.brown.cs.s6.engine.EnginePool$Worker 0.32721958
+DYMON: NEW PHASE 2
+DYMON: DROP PHASE 2 0.748111021262442
+PHASE 3: edu.brown.cs.s6.engine.EngineMain 0.19002895
+PHASE 3: org.eclipse.jdt.core.dom.ASTParser 0.53128487
+PHASE 3: java.util.concurrent.Executors$RunnableAdapter 0.31173554
+PHASE 3: edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution 0.3117351
+PHASE 3: java.util.concurrent.FutureTask 0.31173554
+PHASE 3: java.util.concurrent.FutureTask$Sync 0.31173554
+PHASE 3: edu.brown.cs.s6.engine.EnginePool$Worker 0.31173557
+PHASE 3: edu.brown.cs.s6.keysearch.KeySearchBase 0.2981202
+DYMON: NEW PHASE 3
+DYMON: DROP PHASE 3 0.7254421201773609
+PHASE 4: org.eclipse.jdt.core.dom.ASTParser 0.34536123
+PHASE 4: java.util.concurrent.Executors$RunnableAdapter 0.18172668
+PHASE 4: java.util.concurrent.FutureTask 0.18172668
+PHASE 4: java.util.concurrent.FutureTask$Sync 0.18172668
+PHASE 4: edu.brown.cs.s6.engine.EnginePool$Worker 0.18172668
+PHASE 4: edu.brown.cs.s6.keysearch.KeySearchBase 0.18172668
+PHASE 4: edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution 0.18172668
+PHASE 4: org.eclipse.jdt.core.dom.ASTConverter 0.6701618
+PHASE 4: org.eclipse.jdt.core.dom.ASTNode 0.31366706
+DYMON: NEW PHASE 4
+DYMON: DROP PHASE 4 0.6955565157310557
+PHASE 5: java.util.concurrent.Executors$RunnableAdapter 0.09588749
+PHASE 5: java.util.concurrent.FutureTask$Sync 0.09588749
+PHASE 5: edu.brown.cs.s6.language.java.JavaTyper$TypeSetter 0.31028715
+PHASE 5: edu.brown.cs.s6.engine.EnginePool$Worker 0.09588749
+PHASE 5: edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution 0.09588749
+PHASE 5: org.eclipse.jdt.core.dom.ASTNode 0.8364294
+PHASE 5: java.util.concurrent.FutureTask 0.09588749
+PHASE 5: org.eclipse.jdt.core.dom.CompilationUnit 0.097793125
+PHASE 5: edu.brown.cs.s6.keysearch.KeySearchBase 0.09801265
+PHASE 5: org.eclipse.jdt.core.dom.ASTConverter 0.27352375
+DYMON: NEW PHASE 5
+DYMON: DROP PHASE 0 0.0
+PHASE 1: edu.brown.cs.ivy.xml.IvyXml 0.3086067
+PHASE 1: edu.brown.cs.s6.engine.EngineMain 0.77151674
+PHASE 1: org.eclipse.jdt.core.dom.BodyDeclaration 0.15430336
+PHASE 1: edu.brown.cs.s6.language.java.JavaChecker 0.15430336
+PHASE 1: org.eclipse.jdt.core.dom.AST 0.15430336
+PHASE 1: edu.brown.cs.ivy.xml.IvyXmlReaderThread 0.3086067
+PHASE 1: org.eclipse.jdt.core.dom.MethodDeclaration 0.15430336
+PHASE 1: edu.brown.cs.s6.language.java.LanguageJava 0.15430336
+PHASE 1: edu.brown.cs.s6.engine.EngineMain$EngineClient 0.3086067
+DYMON: NEW PHASE 1
+DYMON: DROP PHASE 1 0.40370354289916577
+PHASE 2: edu.brown.cs.ivy.xml.IvyXml 0.5541614
+PHASE 2: edu.brown.cs.s6.engine.EngineMain 0.2847286
+PHASE 2: java.util.concurrent.FutureTask 0.3055095
+PHASE 2: java.util.concurrent.FutureTask$Sync 0.3055095
+PHASE 2: java.util.concurrent.Executors$RunnableAdapter 0.3055095
+PHASE 2: edu.brown.cs.s6.engine.EnginePool$Worker 0.3055095
+PHASE 2: edu.brown.cs.s6.keysearch.KeySearchGoogle$ScanSolution 0.3055095
+PHASE 2: edu.brown.cs.s6.keysearch.KeySearchBase 0.30763167
+DYMON: NEW PHASE 2
+DYMON: DROP PHASE 2 0.6923084508730142
+PHASE 3: edu.brown.cs.s6.engine.EngineMain 0.23953255
+PHASE 3: org.eclipse.jdt.core.dom.ASTParser 0.57240725
+PHASE 3: java.util.concurrent.Executors$RunnableAdapter 0.2905461
+PHASE 3: edu.brown.cs.s6.language.java.LanguageJava 0.23953255
+PHASE 3: edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution 0.29054606
+PHASE 3: java.util.concurrent.FutureTask 0.2905461
+PHASE 3: java.util.concurrent.FutureTask$Sync 0.2905461
+PHASE 3: edu.brown.cs.s6.engine.EnginePool$Worker 0.2905461
+PHASE 3: edu.brown.cs.s6.keysearch.KeySearchBase 0.2550227
+DYMON: NEW PHASE 3
+DYMON: DROP PHASE 3 0.7343857894189816
+PHASE 4: org.eclipse.jdt.core.dom.ASTParser 0.33318657
+PHASE 4: java.util.concurrent.Executors$RunnableAdapter 0.1862576
+PHASE 4: java.util.concurrent.FutureTask 0.1862576
+PHASE 4: java.util.concurrent.FutureTask$Sync 0.1862576
+PHASE 4: edu.brown.cs.s6.engine.EnginePool$Worker 0.1862576
+PHASE 4: edu.brown.cs.s6.language.java.LanguageJava 0.19155182
+PHASE 4: edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution 0.1862576
+PHASE 4: org.eclipse.jdt.core.dom.ASTConverter 0.68295693
+PHASE 4: org.eclipse.jdt.core.dom.ASTNode 0.27832577
+DYMON: NEW PHASE 4
+DYMON: DROP PHASE 4 0.5730121450849194
+PHASE 5: edu.brown.cs.s6.language.java.FragmentJava$ClonedMethodFragment 0.22766851
+PHASE 5: edu.brown.cs.s6.engine.EnginePool$Worker 0.23557395
+PHASE 5: edu.brown.cs.s6.language.java.TransformJava 0.4958114
+PHASE 5: org.eclipse.jdt.core.dom.ASTNode 0.45753002
+PHASE 5: edu.brown.cs.s6.language.java.FragmentJava$FragmentDelta 0.1821348
+PHASE 5: edu.brown.cs.s6.engine.EngineMain$TransformSolution 0.252965
+PHASE 5: org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer 0.22766851
+PHASE 5: edu.brown.cs.s6.solution.SolutionBase 0.38726684
+DYMON: NEW PHASE 5
+DYMON: DROP PHASE 5 0.16755191844244247
+PHASE 6: java.util.concurrent.Executors$RunnableAdapter 0.2162642
+PHASE 6: edu.brown.cs.ivy.exec.IvyExec 0.40463033
+PHASE 6: java.util.concurrent.FutureTask$Sync 0.2174889
+PHASE 6: edu.brown.cs.s6.engine.EnginePool$Worker 0.43329293
+PHASE 6: edu.brown.cs.s6.language.java.FragmentJava 0.21738034
+PHASE 6: java.util.concurrent.FutureTask 0.2174889
+PHASE 6: edu.brown.cs.s6.language.java.JavaTester 0.63457215
+PHASE 6: edu.brown.cs.s6.engine.EngineMain$TestWorker 0.21601996
+DYMON: NEW PHASE 6
+DYMON: DROP PHASE 6 0.7242291703912808
+PHASE 7: java.util.concurrent.Executors$RunnableAdapter 0.06250001
+PHASE 7: edu.brown.cs.ivy.exec.IvyExec 0.10067877
+PHASE 7: java.util.concurrent.FutureTask$Sync 0.06250993
+PHASE 7: edu.brown.cs.s6.engine.EnginePool$Worker 0.967043
+PHASE 7: edu.brown.cs.s6.language.java.FragmentJava 0.06250993
+PHASE 7: java.util.concurrent.FutureTask 0.06250993
+PHASE 7: edu.brown.cs.s6.language.java.JavaTester 0.18750001
+PHASE 7: edu.brown.cs.s6.engine.EngineMain$TestWorker 0.06250001
+DYMON: NEW PHASE 7
+DYMON: DROP PHASE 7 0.6786234150704945
+DYMON: SET PHASE 6 0.8953036901870625
+DYMON: DROP PHASE 6 0.685907936585652
+PHASE 8: java.util.concurrent.Executors$RunnableAdapter 0.1734377
+PHASE 8: org.eclipse.jdt.core.dom.NaiveASTFlattener 0.38927868
+PHASE 8: java.util.concurrent.FutureTask$Sync 0.17343771
+PHASE 8: edu.brown.cs.s6.engine.EnginePool$Worker 0.18951751
+PHASE 8: edu.brown.cs.s6.language.java.FragmentJava 0.22209805
+PHASE 8: org.eclipse.jdt.core.dom.ASTNode 0.5595902
+PHASE 8: java.util.concurrent.FutureTask 0.17343771
+PHASE 8: edu.brown.cs.s6.language.java.JavaTester 0.5203131
+PHASE 8: edu.brown.cs.s6.engine.EngineMain$TestWorker 0.1734377
+DYMON: NEW PHASE 8
+DYMON: DROP PHASE 8 0.6149977595839499
+DYMON: SET PHASE 7 0.9823260055848233
+DYMON: DROP PHASE 7 0.637604179773279
+DYMON: SET PHASE 8 0.9946582154867909
+DYMON: DROP PHASE 0 0.0
+PHASE 1: edu.brown.cs.s6.engine.EngineMain 0.8846517
+PHASE 1: edu.brown.cs.s6.common.S6FactoryImpl 0.14744195
+PHASE 1: edu.brown.cs.ivy.xml.IvyXmlReaderThread 0.2948839
+PHASE 1: edu.brown.cs.s6.language.java.LanguageJava 0.14744195
+PHASE 1: edu.brown.cs.s6.engine.EngineMain$EngineClient 0.2948839
+DYMON: NEW PHASE 1
+DYMON: DROP PHASE 1 0.7187733924656641
+PHASE 2: edu.brown.cs.s6.engine.EngineMain 0.6100679
+PHASE 2: edu.brown.cs.s6.language.java.LanguageJava 0.12560223
+PHASE 2: edu.brown.cs.s6.engine.EngineMain$EngineClient 0.19737491
+PHASE 2: edu.brown.cs.ivy.exec.IvyExecFiles$Monitor 0.70710677
+PHASE 2: edu.brown.cs.s6.common.S6FactoryImpl 0.05382952
+PHASE 2: edu.brown.cs.s6.language.java.JavaChecker 0.14354539
+PHASE 2: edu.brown.cs.ivy.xml.IvyXmlReaderThread 0.19737491
+PHASE 2: org.eclipse.jdt.core.dom.AST 0.071772695
+DYMON: NEW PHASE 2
+DYMON: DROP PHASE 2 0.7269691282417625
+DYMON: SET PHASE 1 0.9988466927898116
+DYMON: DROP PHASE 1 0.7192092850164045
+DYMON: SET PHASE 2 0.9999999396677595
+DYMON: DROP PHASE 2 0.7269691284745932
+DYMON: SET PHASE 1 0.998819182801526
+DYMON: DROP PHASE 1 0.7196263957885094
+DYMON: SET PHASE 2 0.9999999399005901
+DYMON: DROP PHASE 2 0.7269691415713169
+DYMON: SET PHASE 1 0.9987854798091576
+DYMON: DROP PHASE 1 0.7200260681856889
+DYMON: SET PHASE 2 0.9999999501742423
+DYMON: DROP PHASE 2 0.7269691418041475
+DYMON: SET PHASE 1 0.9987463907455094
+DYMON: DROP PHASE 1 0.7204091307939962
+DYMON: SET PHASE 2 0.9999999501742423
+DYMON: DROP PHASE 2 0.7269691457622685
+DYMON: SET PHASE 1 0.9987022101995535
+DYMON: DROP PHASE 1 0.7207766233186703
+DYMON: SET PHASE 2 0.999999952269718
+DYMON: DROP PHASE 2 0.7269691455294378
+DYMON: SET PHASE 1 0.9986536429496482
+DYMON: DROP PHASE 1 0.7211293091822881
+DYMON: SET PHASE 2 0.9999999520368874
+DYMON: DROP PHASE 2 0.7269691455294378
+DYMON: SET PHASE 1 0.9986010473803617
+DYMON: DROP PHASE 1 0.11760974483877362
+PHASE 3: java.util.concurrent.Executors$RunnableAdapter 0.37469494
+PHASE 3: edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile 0.3697925
+PHASE 3: java.sql.DriverManager 0.24652833
+PHASE 3: java.util.concurrent.FutureTask 0.37469494
+PHASE 3: java.util.concurrent.FutureTask$Sync 0.37469494
+PHASE 3: edu.brown.cs.s6.engine.EnginePool$Worker 0.436327
+PHASE 3: edu.brown.cs.s6.license.LicenseManager 0.24652833
+PHASE 3: edu.brown.cs.s6.keysearch.KeySearchBase 0.25143078
+DYMON: NEW PHASE 3
+DYMON: DROP PHASE 3 0.6187014923488294
+PHASE 4: edu.brown.cs.s6.engine.EngineMain 0.20381889
+PHASE 4: org.eclipse.jdt.core.dom.ASTParser 0.6079063
+PHASE 4: java.util.concurrent.Executors$RunnableAdapter 0.28456333
+PHASE 4: edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile 0.28452235
+PHASE 4: java.util.concurrent.FutureTask 0.28456333
+PHASE 4: java.util.concurrent.FutureTask$Sync 0.28456333
+PHASE 4: edu.brown.cs.s6.engine.EnginePool$Worker 0.28595126
+PHASE 4: edu.brown.cs.s6.keysearch.KeySearchBase 0.20822808
+DYMON: NEW PHASE 4
+DYMON: DROP PHASE 4 0.6674338537446148
+PHASE 5: org.eclipse.jdt.core.dom.ASTParser 0.24448144
+PHASE 5: java.util.concurrent.Executors$RunnableAdapter 0.16828021
+PHASE 5: edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile 0.16828021
+PHASE 5: java.util.concurrent.FutureTask 0.16828021
+PHASE 5: java.util.concurrent.FutureTask$Sync 0.16828021
+PHASE 5: edu.brown.cs.s6.engine.EnginePool$Worker 0.16828021
+PHASE 5: edu.brown.cs.s6.language.java.LanguageJava 0.20972373
+PHASE 5: org.eclipse.jdt.core.dom.ASTConverter 0.59709394
+PHASE 5: org.eclipse.jdt.core.dom.ASTNode 0.5326262
+DYMON: NEW PHASE 5
+DYMON: DROP PHASE 5 0.6796345314216298
+PHASE 6: edu.brown.cs.s6.language.java.FragmentJava$ClonedMethodFragment 0.16264242
+PHASE 6: org.eclipse.jdt.core.dom.NaiveASTFlattener 0.13681906
+PHASE 6: edu.brown.cs.s6.engine.EnginePool$Worker 0.31966165
+PHASE 6: edu.brown.cs.s6.language.java.TransformJava 0.39757034
+PHASE 6: org.eclipse.jdt.core.dom.ASTNode 0.5682024
+PHASE 6: edu.brown.cs.s6.engine.EngineMain$TransformSolution 0.21685654
+PHASE 6: org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer 0.35841566
+PHASE 6: edu.brown.cs.s6.solution.SolutionBase 0.28963855
+DYMON: NEW PHASE 6
+DYMON: DROP PHASE 6 0.28071028786316743
+PHASE 7: java.util.concurrent.FutureTask$Sync 0.21888687
+PHASE 7: edu.brown.cs.s6.engine.EnginePool$Worker 0.21888687
+PHASE 7: edu.brown.cs.s6.engine.EngineMain$TestWorker 0.19637656
+PHASE 7: java.util.concurrent.Executors$RunnableAdapter 0.19874087
+PHASE 7: edu.brown.cs.ivy.exec.IvyExec 0.5891296
+PHASE 7: edu.brown.cs.s6.language.java.FragmentJava 0.218491
+PHASE 7: java.util.concurrent.FutureTask 0.21888687
+PHASE 7: edu.brown.cs.s6.language.java.JavaTester 0.5891296
+DYMON: NEW PHASE 7
+DYMON: DROP PHASE 7 0.3353060666307765
+DYMON: SET PHASE 6 0.9724503223248631
+DYMON: DROP PHASE 6 0.28071862112274626
+DYMON: SET PHASE 7 0.9999999436176495
+DYMON: DROP PHASE 7 0.33530606477550634
+DYMON: SET PHASE 6 0.972456897392826
+DYMON: DROP PHASE 6 0.2807269464892071
+DYMON: SET PHASE 7 0.9999999435008079
+DYMON: DROP PHASE 7 0.3353060736934598
+DYMON: SET PHASE 6 0.9724633652386758
+DYMON: DROP PHASE 6 0.1104114013753452
+DYMON: SET PHASE 7 0.9790088891779756
+DYMON: DROP PHASE 7 0.7086119415083828
+PHASE 8: java.util.concurrent.FutureTask$Sync 0.15253888
+PHASE 8: edu.brown.cs.s6.engine.EnginePool$Worker 0.15253888
+PHASE 8: edu.brown.cs.ivy.exec.IvyExecFiles$Monitor 0.7074327
+PHASE 8: java.util.concurrent.Executors$RunnableAdapter 0.15253589
+PHASE 8: edu.brown.cs.ivy.exec.IvyExec 0.38372084
+PHASE 8: edu.brown.cs.s6.language.java.FragmentJava 0.15253922
+PHASE 8: java.util.concurrent.FutureTask 0.15253888
+PHASE 8: edu.brown.cs.s6.language.java.JavaTester 0.45760655
+DYMON: NEW PHASE 8
+DYMON: DROP PHASE 8 0.6808960717385593
+DYMON: SET PHASE 7 0.7717548978240458
+DYMON: DROP PHASE 7 0.5475494187262233
+PHASE 9: edu.brown.cs.ivy.xml.IvyXml 0.6683067
+PHASE 9: edu.brown.cs.ivy.xml.IvyXml$XmlParser 0.2227689
+PHASE 9: java.util.concurrent.FutureTask$Sync 0.2521783
+PHASE 9: edu.brown.cs.s6.engine.EnginePool$Worker 0.47098073
+PHASE 9: edu.brown.cs.s6.keysearch.KeySearchGoogle$ScanSolution 0.21880244
+PHASE 9: edu.brown.cs.ivy.exec.IvyExecFiles$Monitor 0.154788
+PHASE 9: java.util.concurrent.Executors$RunnableAdapter 0.25217766
+PHASE 9: java.util.concurrent.FutureTask 0.2521783
+DYMON: NEW PHASE 9
+DYMON: DROP PHASE 9 0.4498588571461679
+PHASE 10: edu.brown.cs.ivy.xml.IvyXml 0.031309035
+PHASE 10: java.util.concurrent.FutureTask$Sync 0.34104493
+PHASE 10: edu.brown.cs.s6.engine.EnginePool$Worker 0.34876922
+PHASE 10: java.util.concurrent.Executors$RunnableAdapter 0.34104493
+PHASE 10: javax.swing.text.html.parser.Parser 0.030897116
+PHASE 10: edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution 0.32441974
+PHASE 10: java.util.concurrent.FutureTask 0.34104493
+PHASE 10: edu.brown.cs.s6.keysearch.KeySearchBase 0.6488395
+DYMON: NEW PHASE 10
+DYMON: DROP PHASE 10 0.7153782211187206
+DYMON: SET PHASE 5 0.9494882312320774
+DYMON: DROP PHASE 5 0.32693933373358525
+DYMON: SET PHASE 7 0.8768676857605112
+DYMON: DROP PHASE 7 0.27231043642668595
+PHASE 11: java.util.concurrent.FutureTask$Sync 0.003965317
+PHASE 11: edu.brown.cs.s6.engine.EnginePool$Worker 0.9998655
+PHASE 11: edu.brown.cs.s6.engine.EngineMain$TestWorker 0.003964867
+PHASE 11: java.util.concurrent.Executors$RunnableAdapter 0.003965236
+PHASE 11: edu.brown.cs.ivy.exec.IvyExec 0.0057748235
+PHASE 11: edu.brown.cs.s6.language.java.FragmentJava 0.003965685
+PHASE 11: java.util.concurrent.FutureTask 0.003965317
+PHASE 11: edu.brown.cs.s6.language.java.JavaTester 0.011894527
+DYMON: NEW PHASE 11
+DYMON: DROP PHASE 11 0.6062244415554465
+PHASE 12: edu.brown.cs.s6.engine.EnginePool$Worker 0.6060811
+PHASE 12: org.eclipse.jdt.core.dom.IfStatement 0.10101467
+PHASE 12: edu.brown.cs.ivy.exec.IvyExecFiles$Monitor 0.050509438
+PHASE 12: org.eclipse.jdt.core.dom.ASTNode 0.60608816
+PHASE 12: edu.brown.cs.s6.engine.EngineMain 0.151522
+PHASE 12: org.eclipse.jdt.core.dom.Block 0.20202935
+PHASE 12: edu.brown.cs.ivy.exec.IvyExecFiles$FileCopy 0.050509438
+PHASE 12: org.eclipse.jdt.core.dom.NaiveASTFlattener 0.40405864
+PHASE 12: edu.brown.cs.s6.language.java.FragmentJava 0.05069249
+DYMON: NEW PHASE 12
+DYMON: DROP PHASE 12 0.6315476224478832
+DYMON: SET PHASE 11 0.7776698989664458
+DYMON: DROP PHASE 11 0.345636897687466
+PHASE 13: java.util.concurrent.FutureTask$Sync 0.24994564
+PHASE 13: edu.brown.cs.s6.engine.EnginePool$Worker 0.33294624
+PHASE 13: edu.brown.cs.s6.engine.EngineMain 0.14275211
+PHASE 13: org.eclipse.jdt.core.dom.ASTParser 0.24992211
+PHASE 13: java.util.concurrent.Executors$RunnableAdapter 0.24994564
+PHASE 13: java.util.concurrent.FutureTask 0.24994564
+PHASE 13: edu.brown.cs.s6.keysearch.KeySearchBase 0.37488317
+PHASE 13: org.eclipse.jdt.core.dom.ASTConverter 0.6248053
+DYMON: NEW PHASE 13
+DYMON: DROP PHASE 13 0.7037572149523703
+PHASE 14: java.util.concurrent.FutureTask$Sync 0.23342538
+PHASE 14: edu.brown.cs.s6.engine.EnginePool$Worker 0.24791618
+PHASE 14: org.eclipse.jdt.core.dom.ASTNode 0.6063266
+PHASE 14: edu.brown.cs.s6.engine.EngineMain$TestWorker 0.17388967
+PHASE 14: java.util.concurrent.Executors$RunnableAdapter 0.17388967
+PHASE 14: edu.brown.cs.s6.language.java.FragmentJava 0.23337626
+PHASE 14: java.util.concurrent.FutureTask 0.23342538
+PHASE 14: edu.brown.cs.s6.language.java.JavaTester 0.521669
+DYMON: NEW PHASE 14
+DYMON: DROP PHASE 14 0.6352652589520948
+DYMON: SET PHASE 8 0.9154854917705885
+DYMON: DROP PHASE 8 0.1380685387840659
+DYMON: SET PHASE 1 0.889249171335791
+DYMON: DROP PHASE 1 0.08060669287666836
+DYMON: SET PHASE 5 0.9341772523300326
+DYMON: DROP PHASE 5 0.7078365050661481
+PHASE 15: edu.brown.cs.s6.language.java.JavaTyper$TypeSetter 0.42972943
+PHASE 15: java.util.concurrent.FutureTask$Sync 0.12854062
+PHASE 15: edu.brown.cs.s6.engine.EnginePool$Worker 0.12879896
+PHASE 15: org.eclipse.jdt.core.dom.ASTNode 0.41022384
+PHASE 15: org.eclipse.jdt.core.dom.ASTParser 0.16878982
+PHASE 15: java.util.concurrent.Executors$RunnableAdapter 0.12854062
+PHASE 15: java.util.concurrent.FutureTask 0.12854062
+PHASE 15: org.eclipse.jdt.core.dom.ASTConverter 0.6660444
+DYMON: NEW PHASE 15
+DYMON: DROP PHASE 15 0.6686755073558172
+DYMON: SET PHASE 5 0.9267410665638706
+DYMON: DROP PHASE 5 0.3585695875057286
+DYMON: SET PHASE 14 0.9648690553436894
+DYMON: DROP PHASE 14 0.7302918639285102
+DYMON: SET PHASE 11 0.7903616580090038
+DYMON: DROP PHASE 11 0.28472864915863955
+DYMON: SET PHASE 5 0.9264924411617498
+DYMON: DROP PHASE 5 0.18424072555591878
+DYMON: SET PHASE 11 0.9951317942694077
+DYMON: DROP PHASE 11 0.6044146044121889
+DYMON: SET PHASE 5 0.8057690963471013
+DYMON: DROP PHASE 5 0.2251131894708309
+DYMON: SET PHASE 10 0.8381826768722109
+DYMON: DROP PHASE 10 0.6928349211836029
+DYMON: SET PHASE 5 0.8999505833727771
+DYMON: DROP PHASE 5 0.5183421790771038
+DYMON: SET PHASE 4 0.8618766327272502
+DYMON: DROP PHASE 4 0.7110532680766961
+DYMON: SET PHASE 15 0.8274224448059742
+DYMON: DROP PHASE 15 0.4659267457299768
+PHASE 16: org.eclipse.jdt.core.dom.rewrite.ASTRewrite 0.11446381
+PHASE 16: org.eclipse.jdt.core.dom.ASTNode 0.43822116
+PHASE 16: edu.brown.cs.s6.language.java.FragmentJava$FragmentDelta 0.15261842
+PHASE 16: edu.brown.cs.s6.engine.EngineMain$TransformSolution 0.19077303
+PHASE 16: edu.brown.cs.s6.solution.SolutionBase 0.2863763
+PHASE 16: edu.brown.cs.s6.language.java.FragmentJava$ClonedClassFragment 0.19077303
+PHASE 16: edu.brown.cs.s6.language.java.TransformJava 0.28615955
+PHASE 16: org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer 0.67724425
+DYMON: NEW PHASE 16
+DYMON: DROP PHASE 16 0.35142290263700476
+DYMON: SET PHASE 14 0.9572536213066628
+DYMON: DROP PHASE 14 0.42930828776163454
+DYMON: SET PHASE 11 0.9754401148174798
+DYMON: DROP PHASE 11 0.38626468604828684
+DYMON: SET PHASE 4 0.7533511517105556
+DYMON: DROP PHASE 4 0.7413585164039471
+DYMON: SET PHASE 15 0.7810645830890165
+DYMON: DROP PHASE 15 0.5650481762850674
+DYMON: SET PHASE 16 0.831200066670411
+DYMON: DROP PHASE 16 0.15280997590581646
+DYMON: SET PHASE 8 0.9916027177957096
+DYMON: DROP PHASE 8 0.36261923986388633
+DYMON: SET PHASE 11 0.9895890475293339
+DYMON: DROP PHASE 11 0.3598716510319764
+DYMON: SET PHASE 3 0.8595108968003408
+DYMON: DROP PHASE 3 0.311033244490669
+DYMON: SET PHASE 15 0.9756160181184015
+DYMON: DROP PHASE 15 0.554458531610355
+DYMON: SET PHASE 16 0.8068967251120002
+DYMON: DROP PHASE 16 0.2251176488548163
+DYMON: SET PHASE 7 0.9133261738814967
+DYMON: DROP PHASE 7 0.28238334850692764
+DYMON: SET PHASE 11 0.9969034107455056
+DYMON: DROP PHASE 11 0.15608706550223833
+DYMON: SET PHASE 15 0.9737609462875292
+DYMON: DROP PHASE 15 0.7397379477049233
+DYMON: SET PHASE 12 0.8708825218788182
+DYMON: DROP PHASE 12 0.6016011663439462
+DYMON: SET PHASE 15 0.9398612256346122
+DYMON: DROP PHASE 15 0.22239750388190271
+DYMON: SET PHASE 8 0.9798040567712633
+DYMON: DROP PHASE 8 0.13661675940888449
+DYMON: SET PHASE 6 0.9858528031374499
+DYMON: DROP PHASE 6 0.2607290264294855
+DYMON: SET PHASE 7 0.8198273716662687
+DYMON: DROP PHASE 7 0.49337402048775103
+PHASE 17: edu.brown.cs.ivy.xml.IvyXml 0.2734347
+PHASE 17: java.util.concurrent.FutureTask$Sync 0.10871316
+PHASE 17: edu.brown.cs.s6.engine.EnginePool$Worker 0.10871316
+PHASE 17: edu.brown.cs.ivy.exec.IvyExecFiles$Monitor 0.85474306
+PHASE 17: edu.brown.cs.s6.engine.EngineMain$TestWorker 0.10871316
+PHASE 17: java.util.concurrent.Executors$RunnableAdapter 0.10871316
+PHASE 17: edu.brown.cs.s6.language.java.FragmentJava 0.10871316
+PHASE 17: java.util.concurrent.FutureTask 0.10871316
+PHASE 17: edu.brown.cs.s6.language.java.JavaTester 0.32613918
+DYMON: NEW PHASE 17
+DYMON: DROP PHASE 17 0.44752944182199655
+DYMON: SET PHASE 8 0.9900984408694503
+DYMON: DROP PHASE 8 0.12771011550799694
+DYMON: SET PHASE 16 0.9461531272677003
+DYMON: DROP PHASE 16 0.19075305325561978
+DYMON: SET PHASE 11 0.8885903294278902
+DYMON: DROP PHASE 11 0.3196692472527143
+DYMON: SET PHASE 7 0.9882195515462069
+DYMON: DROP PHASE 7 0.7422499882825163
+DYMON: SET PHASE 11 0.8244758175205998
+DYMON: DROP PHASE 11 0.33400057018267504
+DYMON: SET PHASE 16 0.9656045994385355
+DYMON: DROP PHASE 16 0.3954152358892289
+DYMON: SET PHASE 10 0.9491410285780724
+DYMON: DROP PHASE 10 0.3814805304585773
+DYMON: SET PHASE 11 0.9972147384475049
+DYMON: DROP PHASE 11 0.1964568116589656
+DYMON: SET PHASE 15 0.980229598107691
+DYMON: DROP PHASE 15 0.19835994707949234
+DYMON: SET PHASE 8 0.9919238680394991
+DYMON: DROP PHASE 8 0.27006130078870355
+DYMON: SET PHASE 10 0.8978985650779121
+DYMON: DROP PHASE 10 0.7454291502044451
+DYMON: SET PHASE 5 0.9624450445024468
+DYMON: DROP PHASE 5 0.3487235318613587
+DYMON: SET PHASE 14 0.9699205091822202
+DYMON: DROP PHASE 14 0.39642632721800547
+DYMON: SET PHASE 11 0.9957527745970269
+DYMON: DROP PHASE 11 0.43714281464080545
+DYMON: SET PHASE 10 0.8528941598899952
+DYMON: DROP PHASE 10 0.3038114311063579
+DYMON: SET PHASE 3 0.8197154107560833

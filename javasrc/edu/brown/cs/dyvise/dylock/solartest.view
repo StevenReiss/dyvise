@@ -1,0 +1,97 @@
+<DYLUTE>
+  <LOCK ID='65545' VID='1'>
+    <CLASS>sun.awt.PostEventQueue</CLASS>
+    <LOCATION CLASS='Lsun/awt/PostEventQueue;' METHOD='postEvent' SIGNATURE='(Ljava/awt/AWTEvent;)V' OFFSET='13' ID='65552' DOESWAIT='false' DOESNOTIFY='false' />
+    <ANALYSIS>
+      <TYPE KIND='MUTEX'>
+        <LOCATION CLASS='Lsun/awt/PostEventQueue;' METHOD='postEvent' SIGNATURE='(Ljava/awt/AWTEvent;)V' OFFSET='13' ID='65552' DOESWAIT='false' DOESNOTIFY='false' />
+      </TYPE>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK ID='30186' VID='2'>
+    <CLASS>edu.brown.cs.cs032.solar.SolarSystem$Finisher</CLASS>
+    <LOCATION CLASS='Ledu/brown/cs/cs032/solar/SolarSystem$Finisher;' METHOD='noteDone' SIGNATURE='()Ledu/brown/cs/cs032/solar/SolarObject;' OFFSET='3' ID='30193' DOESWAIT='false' DOESNOTIFY='false' />
+    <ANALYSIS>
+      <TYPE KIND='MUTEX'>
+        <LOCATION CLASS='Ledu/brown/cs/cs032/solar/SolarSystem$Finisher;' METHOD='noteDone' SIGNATURE='()Ledu/brown/cs/cs032/solar/SolarObject;' OFFSET='3' ID='30193' DOESWAIT='false' DOESNOTIFY='false' />
+      </TYPE>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK ID='2' VID='3'>
+    <CLASS>java.awt.EventQueue$1AWTInvocationLock</CLASS>
+    <LOCATION CLASS='Ljava/awt/EventQueue;' METHOD='invokeAndWait' SIGNATURE='(Ljava/lang/Runnable;)V' OFFSET='50' ID='4' DOESWAIT='false' DOESNOTIFY='false' />
+    <ANALYSIS>
+      <TYPE KIND='UNKNOWN' />
+    </ANALYSIS>
+  </LOCK>
+  <LOCK ID='60461' VID='4'>
+    <CLASS>java.util.HashMap</CLASS>
+    <LOCATION CLASS='Lsun/awt/AppContext;' METHOD='get' SIGNATURE='(Ljava/lang/Object;)Ljava/lang/Object;' OFFSET='6' ID='60468' DOESWAIT='false' DOESNOTIFY='false' />
+    <ANALYSIS>
+      <TYPE KIND='MUTEX'>
+        <LOCATION CLASS='Lsun/awt/AppContext;' METHOD='get' SIGNATURE='(Ljava/lang/Object;)Ljava/lang/Object;' OFFSET='6' ID='60468' DOESWAIT='false' DOESNOTIFY='false' />
+      </TYPE>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK ID='69788' VID='5'>
+    <CLASS>java.util.logging.LogManager$Cleaner</CLASS>
+    <CLASS>sun.awt.X11.XToolkit$1$1</CLASS>
+    <LOCATION CLASS='Ljava/lang/Thread;' METHOD='join' SIGNATURE='(J)V' OFFSET='38' ID='69795' DOESWAIT='false' DOESNOTIFY='false' />
+    <ANALYSIS>
+      <TYPE KIND='JOIN'>
+        <LOCATION CLASS='Ljava/lang/Thread;' METHOD='join' SIGNATURE='(J)V' OFFSET='38' ID='69795' DOESWAIT='false' DOESNOTIFY='false' />
+      </TYPE>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK ID='83' VID='6'>
+    <CLASS>java.lang.ref.Reference$Lock</CLASS>
+    <LOCATION CLASS='Ljava/lang/ref/Reference$ReferenceHandler;' METHOD='run' SIGNATURE='()V' OFFSET='46' ID='89' DOESWAIT='false' DOESNOTIFY='false' />
+    <LOCATION CLASS='Lsun/java2d/loops/DrawGlyphListAA;' METHOD='DrawGlyphListAA' SIGNATURE='(Lsun/java2d/SunGraphics2D;Lsun/java2d/SurfaceData;Lsun/font/GlyphList;)V' ID='90' DOESWAIT='false' DOESNOTIFY='false' />
+    <ANALYSIS>
+      <TYPE KIND='MUTEX'>
+        <LOCATION CLASS='Lsun/java2d/loops/DrawGlyphListAA;' METHOD='DrawGlyphListAA' SIGNATURE='(Lsun/java2d/SunGraphics2D;Lsun/java2d/SurfaceData;Lsun/font/GlyphList;)V' ID='90' DOESWAIT='false' DOESNOTIFY='false' />
+      </TYPE>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK ID='3' VID='7'>
+    <CLASS>edu.brown.cs.cs032.solar.SolarSystem</CLASS>
+    <LOCATION CLASS='Ledu/brown/cs/cs032/solar/SolarSystem;' METHOD='handleDone' SIGNATURE='(Ledu/brown/cs/cs032/solar/SolarObject;)V' OFFSET='46' ID='6' DOESWAIT='false' DOESNOTIFY='true' />
+    <LOCATION CLASS='Ledu/brown/cs/cs032/solar/SolarSystem;' METHOD='waitForRoot' SIGNATURE='()V' OFFSET='8' ID='5' DOESWAIT='false' DOESNOTIFY='false' />
+    <ANALYSIS>
+      <TYPE KIND='CONDITION'>
+        <WAITS>
+          <LOCATION CLASS='Ledu/brown/cs/cs032/solar/SolarSystem;' METHOD='waitForRoot' SIGNATURE='()V' OFFSET='8' ID='5' DOESWAIT='false' DOESNOTIFY='false' />
+        </WAITS>
+        <NOTIFYS>
+          <LOCATION CLASS='Ledu/brown/cs/cs032/solar/SolarSystem;' METHOD='handleDone' SIGNATURE='(Ledu/brown/cs/cs032/solar/SolarObject;)V' OFFSET='46' ID='6' DOESWAIT='false' DOESNOTIFY='true' />
+        </NOTIFYS>
+      </TYPE>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK ID='4' VID='8'>
+    <CLASS>java.util.HashMap</CLASS>
+    <LOCATION CLASS='Ledu/brown/cs/cs032/solar/SolarSystem;' METHOD='handleDone' SIGNATURE='(Ledu/brown/cs/cs032/solar/SolarObject;)V' OFFSET='13' ID='8' DOESWAIT='false' DOESNOTIFY='false' />
+    <LOCATION CLASS='Ledu/brown/cs/cs032/solar/SolarSystem;' METHOD='handleDone' SIGNATURE='(Ledu/brown/cs/cs032/solar/SolarObject;)V' OFFSET='12' ID='10' DOESWAIT='false' DOESNOTIFY='false' />
+    <LOCATION CLASS='Ledu/brown/cs/cs032/solar/SolarSystem;' METHOD='queueComputeLocalGravity' SIGNATURE='(Ledu/brown/cs/cs032/solar/SolarObject;DILedu/brown/cs/cs032/solar/SolarConstants$SolarFinisher;)V' OFFSET='12' ID='9' DOESWAIT='false' DOESNOTIFY='false' />
+    <LOCATION CLASS='Ledu/brown/cs/cs032/solar/SolarSystem;' METHOD='queueComputeLocalGravity' SIGNATURE='(Ledu/brown/cs/cs032/solar/SolarObject;DILedu/brown/cs/cs032/solar/SolarConstants$SolarFinisher;)V' OFFSET='13' ID='7' DOESWAIT='false' DOESNOTIFY='false' />
+    <ANALYSIS>
+      <TYPE KIND='MUTEX'>
+        <LOCATION CLASS='Ledu/brown/cs/cs032/solar/SolarSystem;' METHOD='handleDone' SIGNATURE='(Ledu/brown/cs/cs032/solar/SolarObject;)V' OFFSET='12' ID='10' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ledu/brown/cs/cs032/solar/SolarSystem;' METHOD='handleDone' SIGNATURE='(Ledu/brown/cs/cs032/solar/SolarObject;)V' OFFSET='13' ID='8' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ledu/brown/cs/cs032/solar/SolarSystem;' METHOD='queueComputeLocalGravity' SIGNATURE='(Ledu/brown/cs/cs032/solar/SolarObject;DILedu/brown/cs/cs032/solar/SolarConstants$SolarFinisher;)V' OFFSET='12' ID='9' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ledu/brown/cs/cs032/solar/SolarSystem;' METHOD='queueComputeLocalGravity' SIGNATURE='(Ledu/brown/cs/cs032/solar/SolarObject;DILedu/brown/cs/cs032/solar/SolarConstants$SolarFinisher;)V' OFFSET='13' ID='7' DOESWAIT='false' DOESNOTIFY='false' />
+      </TYPE>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK ID='1' VID='9'>
+    <CLASS>java.lang.Object</CLASS>
+    <LOCATION CLASS='Lsun/awt/AWTAutoShutdown;' METHOD='activateBlockerThread' SIGNATURE='()V' OFFSET='29' ID='1' DOESWAIT='false' DOESNOTIFY='false' />
+    <LOCATION CLASS='Lsun/awt/AWTAutoShutdown;' METHOD='run' SIGNATURE='()V' OFFSET='32' ID='3' DOESWAIT='false' DOESNOTIFY='false' />
+    <LOCATION CLASS='Lsun/awt/AWTAutoShutdown;' METHOD='run' SIGNATURE='()V' OFFSET='13' ID='2' DOESWAIT='false' DOESNOTIFY='false' />
+    <ANALYSIS>
+      <TYPE KIND='MUTEX'>
+        <LOCATION CLASS='Lsun/awt/AWTAutoShutdown;' METHOD='run' SIGNATURE='()V' OFFSET='13' ID='2' DOESWAIT='false' DOESNOTIFY='false' />
+      </TYPE>
+    </ANALYSIS>
+  </LOCK>
+</DYLUTE>

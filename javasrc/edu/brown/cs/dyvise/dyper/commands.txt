@@ -1,0 +1,448 @@
+Automatic Performance Analysis and Visualization
+<< Dynmamic Performance Evaluation Runner >>
+
+
+We should develop a command language that can be used by arbitrary front
+ends to control the monitoring back end.  The idea here would be to allow
+front ends that intelligently zero in on any bottlenecks (and do high
+level analysis to find them) as well as front ends that let the programmer
+specify precisely when and what to measure.
+
+The command language should be in the form of XML message that can
+either be sent directly or through the mint message service.
+
+Startup:
+   When a DyPer process starts up it sends the message:
+        <DYPER START='process_id' />
+and waits for a reply.  This should allow a monitoring tool to wake up
+and do any initial instrumentation set up before replying to the actual
+message. The default type of instrumentation if no reply is given is
+determined by the arguments string that is passed in.
+   When a DyPer process terminates it should send the message:
+        <DYPER END='process_id' />
+
+
+
+Connection:
+   It should be possible for a monitor to start up after a process has started
+and to then control the process.  This means that the monitor has to discover
+all the running processes that it might control.  To facilite this, the
+process handles the message:
+        <DYPER COMMAND='WHO' />
+which returns the XML
+        <DYPER_REPLY ID='process_id' />
+
+
+Commands:
+
+   All commands follow the same top-level syntax:
+        <DYPER PID='process_id' XCOMMAND='command'>
+                command data as xml
+        </DYPER>
+Where a reply is requested the reply is generally an XML structure of the form:
+        <DYPER_REPLY ID='process_id'>
+            <reply data as text or XML as appropriate>
+        </DYPER_REPLY>
+
+
+Commands:
+
+WHORU
+        Provide information about this particular run including the
+        command line arguments, starting class, environment, and
+        system properties.
+
+        The response should be of the form:
+           <DYPER_REPLY ID='process_id'>
+              <JAVARG>java_arg</JAVAARG>
+              ...
+              <START>start_class</START>
+              <ARG>program_arg</ARG>
+              ...
+              <ENV KEY='id'>value</ENV>
+              ...
+              <PROPERTY KEY='id'>value</PROPERTY>
+              ...
+              <TIME MILLIS='time' NANO='time' />
+           </DYPER_REPLY>
+
+
+PING
+        Note that you are still alive.  The normal reply is:
+           <DYPER_REPLY ID='process_id'>PONG</DYPER_REPLY>
+
+
+SET
+        This command lets the client set various paramters inside the monitor.
+        The command data consists of either
+            <SETTINGS>
+               <VAR NAME='name' VALUE='value' />
+               ...
+            </SETTINGS>
+        or, if there is only one variable being set
+            <VAR NAME='name' VALUE='value' />
+
+        The valid variables include:
+            CHECKTIME <long>             :: time between stack checks in milliseconds
+            DISABLETIME <long>           :: time between checks when disabled
+            REPORTTIME <long>            :: time between reports
+            MONITOR <boolean>            :: enable/disable monitoring
+            SHOWSTACK <boolean>          :: enable/disable stack dumps
+            CONTENTION <boolean>         :: enable/disable contention monitoring
+            CPUTIME <boolean>            :: enable/disable thread cpu time monitoring
+            MAXDEPTH <int>               :: max stack depth considered
+            THREAD_DEFAULT               :: default use value for a thread
+            FULLMONITORING               :: no delay monitoring
+
+            CLASS_DETAIL_MIN_TOTAL       :: total hits before detailing a class
+            CLASS_DETAIL_MINIMUM         :: min value before detailing a class
+            CLASS_DETAIL_THRESHOLD       :: relative threshold to start detailing a class
+            CLASS_DETAIL_STOP_THRESHOLD  :: relavite threshold to stop detailing a class
+            METHOD_DETAIL_MIN_TOTAL      :: total hits before detailing a method
+            METHOD_DETAIL_MINIMUM        :: min value before detailing a method
+            METHOD_DETAIL_THRESHOLD      :: relative threshold to start detailing a method
+            METHOD_DETAIL_STOP_THRESHOLD :: relavite threshold to stop detailing a method
+
+
+GET
+        This command lets the client access various parameters.  The parameters are the
+        same as those in SET.  The command data is of the form:
+           <VAR NAME='name' />
+
+
+CLEAR
+        This commands clears all the counters, etc. of the monitor.  It takes an optional
+        argument of the form <CLEAR AGENT='name' />
+        No argument implies clear for all agents
+
+
+SETDETAIL
+        This command lets the client explicitly set detailing for a particular item or
+        set of items.  The command data consists of either
+           <SETTINGS>
+              <DETAIL ITEM='name' VALUE='flag' AGENT='agent' />
+              ...
+           </SETTINGS>
+        or, if there is only one item being set,
+           <DETAIL ITEM='name' VALUE='flag' AGENT='agent' />
+        Here the flag value is a boolean (T,t,True,f,F,false,0,1), and the agent value
+        is the name of a runtime agent (subclass of DyperAgent).
+
+CLASSES
+        This command is used to define whether classes are system classes or I/O classes
+        or normal classes.  System classes are typically not monitored directly.  I/O
+        classes are classes where any execution is considered an I/O operation.  Other
+        settings are possible in the future.
+
+        The command data here is of the form:
+           <CLASSES CLEAR='flag' CLEARIO='flag' CLEARSYSTEM='flag'>
+              <PACKAGE NAME='name.' TYPE='type' />
+              ...
+              <CLASS NAME='name' TYPE='type' />
+              ...
+           </CLASSES>
+        Here the various clear options remove all old settings or all old settings of
+        a given type.  These attributes may be omitted if flag is false.  Classes can
+        either be specified by naming the whole package or by naming the specific
+        class.  The most specific match will always apply.  Setting a package will
+        remove any previous class-specific settings that match.  The type value can
+        be one of:
+                NORMAL
+                SYSTEM
+                IO
+                SYSTEM_IO       (both system and io)
+
+
+GETCLASSES
+        This command can be used to query the class information that is either built
+        in or defined by the CLASSES command.  The command data here can either be
+        empty (requesting all class data) or can be a match request of the form:
+           <MATCH TYPE='type' NAME='name' />
+        where TYPE if specified, limits responses to classes of that type and NAME
+        if specified limits responses to classes that have name as a prefix.  The
+        value that is returned is of the form:
+           <CLASSES>
+              <PACKAGE NAME='name' TYPE='type' />
+              ...
+              <CLASS NAME='name' TYPE='type' />
+              ...
+           </CLASSES>
+
+
+REPORT
+        This command requests a report of the monitoring information.  The optional command
+        data is the type of report that is desired.  Current report types include:
+                <REPORT TYPE='ALL' />
+        The report data is returned as XML.  The format is currently in a state of flux
+        and will be documented when it is fixed.
+
+        If the REPORTTIME variable is set to a value > 0, then the monitor will automatically
+        send out reports (with the same format) enclosed in:
+           <DYPER REPORT='process_id' TIME='time' >
+              report data
+           </DYPER>
+        at about that time interval.
+
+
+CLASSMODEL
+        This command is a request for the class model.  This is the set of all classes,
+        the appropriate classpaths, etc.  The data in this case is optional.  If it is
+        present it gives options in the form of:
+             <OPTIONS BINARY='flag' />
+        where a flag value of TRUE will cause the class entries to contain the class
+        file in encoded form. The output is in the form:
+
+           <CLASSMODEL CANDREDFINE='flag'>
+              <CLASSPATH>classpath</CLASSPATH>
+              <JAVAHOME>java home</JAVAHOME?
+              <BOOTPATH>base path</BASEPATH>
+              <USER NAME='username' />
+              <CLASS NAME='class'>
+                 <BINARY>ascii-encoded-class-file</BINARY>
+              </CLASS>
+              ...
+           </CLASSMODEL>
+
+
+
+SHOWSTACK
+        This command requests a dump of the current stacks of all active threads.  The
+        report is in XML.  The format look like:
+                <THREADS>
+                   <THREAD ID='id' NAME='name' STATE='state' ...>
+                      <STACK CLASS='class' METHOD='method' LINE='line' ... />
+                      ...
+                   </THREAD>
+                   ...
+                </THREADS>
+
+        If the SHOWSTACK variable is set to true, then the monitor wil automatically
+        send out reports (with the same format) enclosed in:
+           <DYPER DUMP='process_id' TIME='now'>
+              dump data
+           </DYPER>
+        at the current timing interval. Note that this will happen even if monitoring
+        is disabled (but with the disable check interval).
+
+
+INSTRUMENT
+        This command is used to cause code to be instrumented.  The argument data
+        is of the form
+           <MODEL NAME='name' INSERT='flag'>
+              <PATCH CLASS='name' ORIG='file' PATCH='file' />
+              ...
+           </MODEL>
+        where the model name corresponds to a Patch model for DYPATCH and the INSERT
+        flag is TRUE if instrumentation is being inserted and FALSE if it is being
+        removed.  Note that only one model should be instrumented at a time.  The
+        patch lines are the ones returned from a DYPATCH PATCH request.
+
+        This command returns the time in milliseconds after the patch was installed.
+        This is of the form
+           <PATCH TIME='millis' />
+
+
+AGENT
+        This command adds an agent that will be used to accumulate information
+        in the running process.  The agrument data is of the form:
+           <AGENT CLASS='classname' />
+
+
+USETHREAD
+        This command lets the monitor control which threads are monitored and
+        which are ignored.  The argument is of the form
+           <THREADS>
+              <THREAD ID='threadid' IGNORE='boolean' USE='boolean' />
+              ...
+           </THREADS>
+        A thread that has the ignore bit set is ignored; a thread that has
+        the use bit set is used.  Otherwise the default for a thread is used
+        (THREAD_DEFAULT parameter).
+
+
+
+=======================================================================================
+
+
+Patching
+
+
+Patch management and class file creation is handled by a separate process,
+dypatch, that handles models for the various files and caches previous results
+for faster dynamic patching.  This assumes a common directory where the files
+are kept (we might consider messaging the files back and forth at some future
+point).
+
+Each dyper monitored program should have its own dypatch programming.  (Ideally
+these could be combined, but jikesbt has too many static variables to allow
+multiple patching).  This is started by running:
+        dyvisejava edu.brown.cs.dyvise.dypatch.DypatchMain -P <process_id>
+
+
+Dypatch responts to commands of the form:
+   <DYPATCH PID='processid' COMMAND='command'>data</DYPATCH>
+where data is XML and can be empty.
+
+
+All responses have the form
+   <DYPATCH_REPLY ID='processid'>response</DYPATCH_REPLY>
+
+
+
+
+COMMANDS:
+
+
+
+PING
+        Note that you are still alive.  The normal reply is:
+           <DYPATCH_REPLY ID='process_id'>PONG</DYPATCH_REPLY>
+
+
+
+MODEL
+        This command is used to replace or update the patch model for instrumentation.
+        It consists of an XML structure that defines what should be patched and how.
+        The actual deatils of the patches are deferred to a separate XML file that is
+        preloaded into dypatch and which names patching modes and exactly what they
+        correspond to in terms of a patch (e.g. call routine X with argument y1 ... yn).
+
+        The data format here is:
+           <MODEL NAME='name'>
+              <FOR CLASS='class' METHOD='method' UPDATE='update'>
+                 <PATCH WHAT='option' MODE='mode'>
+                    <WHEN CASE='type' ARG='value' />
+                    ...
+                 </PATCH>
+                 ...
+              </FOR>
+              ...
+           </MODEL>
+
+        Here update is one of NEW or ADD where NEW implies that all old patches
+        for this method are discarded while ADD keeps any old patches that don't
+        conflict with the new ones.  Note that NEW can be used without any
+        patches specified to clear all old patches.  In the latter case, METHOD
+        and CLASS can be specified as '*' (this will clear all patches of all methods in
+        the class or in all classes).
+
+        The WHAT field indicates what is to be patched in the method.  It can
+        be one of:
+                ENTER
+                EXIT
+                BLOCK_START
+                SYNC_TEST
+                SYNC_ENTER
+                SYNC_EXIT
+                STATIC_ACCESS
+                FIELD_ACCESS
+                STATIC_WRITE
+                FIELD_WRITE
+                OBJECT_ALLOC
+                ARRAY_ALLOC
+                BASE_ARRAY_ALLOC
+                CALL
+
+        The WHEN element is optional.  If present, it denotes a condition on the
+        patch which should be checked first.  Available conditions include:
+                CASE='FIELD' ARG='fieldname'
+                CASE='BLOCK' ARG='instruction number at start of block'
+                CASE='CLASS' ARG='classname'  (for allocations)
+                CASE='METHOD' ARG='methodname' (for calls)
+
+        The MODE field of the PATCH element denotes what the actual patch
+        consists of.  It refers to an element in the dypatch resource file.
+
+
+PATCH
+        This command requests that the current patch model be used to create
+        patched class files.  The data consists of
+           <PATCH ALL='flag' MODEL='name'>
+              <CLASS NAME='name' />
+              ...
+           </PATCH>
+
+        The value that is returned is:
+           <DYPATCH_REPLY ID='process_id'>
+              <PATCH>
+                 <CLASS NAME='name' ORIG='file' PATCH='file' />
+                 ...
+              </PATCH>
+           </DYPATCH_REPLY>
+        where the PATCH attribute may be missing if no patches were specified
+        by the model.
+
+
+DIRECTORY
+        This command sets the patch file directory to the string value of the
+        argument.
+
+
+
+
+=======================================================================================
+
+
+Patching Modes
+
+Patching modes can either be defined procedurally or, if generic enough, through
+XML files.
+
+The XML format for a patching mode is as follows:
+
+   <DYPATCH_MODE NAME='mode name' CONTEXT='class'>
+      <CODE ...>
+      <INSTRUCTION />
+      <CODE ...>
+   </DYPATCH_MODE>
+
+Note that the context type denotes the class name of the instrumentation collection
+context.  It is required if any of the methods are non-static or if there is either
+an argument or a condition that references the current context.
+
+If external code is used for patching, the the XML definition looks like
+
+   <DYPATCH_EXTERNAL NAME='mode name' CLASS='class name' JAR='jar file' />
+
+
+The CODE elements here define instructions that should be added.  The principle
+type of code is a Call instruction defined using:
+
+   <CODE TYPE='CALL' CLASS='class' METHOD='method' SIGNATURE='signature'>
+      <CONDITION TYPE='condtype' LVALUE='condvalue' RVALUE='rhsvalue' />
+      <ARG TYPE='argtype' VALUE='argvalue' />
+      ...
+      <RETURN TYPE='CONTEXT'>
+   </CODE>
+
+Valid argument types include:
+        Type                       Value
+   THIS                         --
+   INTEGER                      integer constant
+   CURTHREAD                    --
+   FIELD                        field name
+   RETURN                       --
+   LOCAL                        local # (or name)
+   INSNO                        --
+   BLOCKID                      --
+   METHODID                     --
+   CLASSID                      --
+   REFMETHODID                  --
+   REFCLASSID                   --
+   REFBLOCKID                   --
+   ARG                          argument #
+   CONTEXT                      --
+   NULL                         --
+
+Valid condition types include
+        Type                       Lvalue                   Rvalue
+   CONTEXT                      --                      --
+   FIELD                        field_name              int_value or NULL or NONNULL
+   RETURN                       --                      int_value or NULL or NONNULL
+   LOCAL                        local # (or name)       int_value or NULL or NONNULL
+   ARG                          arg #                   int_value or NULL or NONNULL
+
+
+If METHOD is not a static method, then it is assumed to be a method in the current
+context and the current context will be checked for non-null and used as the (hidden)
+first argument.

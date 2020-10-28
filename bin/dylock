@@ -1,0 +1,3 @@
+#! /bin/csh -f
+
+dyvisejava edu.brown.cs.dyvise.dylock.DylockMain $*

@@ -1,0 +1,151 @@
+#! /bin/tcsh -f
+
+if ($?BROWN_DYVISE_ROOT) then
+else
+   unset x0
+   if $?0 == 0 then
+      set x0 = dyvisesetupenv
+   endif
+
+   if $?x0 == 0 then
+      if X$0 == X then
+	 set x0 = dyvisesetupenv
+      else if X$0 == X-csh then
+	 set x0 = dyvisesetupenv
+      else if X$0 == Xcsh then
+	 set x0 = dyvisesetupenv
+      else
+	 set x0 = $0
+      endif
+    endif
+
+   unsetenv BROWN_DYVISE_ARCH
+
+   set path = ($path .)
+   set x = `zsh -c "whence dyvisesetupenv"`
+   if (X$x == X) then
+      set x = `zsh -c "whence $x0"`
+   endif
+   if (X$x == X) then
+      if ($?BROWN_IVY_ROOT) then
+	 if (-e $BROWN_IVY_ROOT/dyvise/bin/dyvisesetupenv) then
+	    set x = $BROWN_IVY_ROOT/dyvise/bin/dyvisesetupenv
+	 endif
+      endif
+   endif
+
+   if (X$x == X) then
+      echo "Can't locate dyvisesetupenv"
+      exit 1
+    endif
+
+   set y1 = ${x:h}
+   if ($y1 == ".") then
+      set y1 = "`pwd`"
+    endif
+
+   set y1x = `echo $y1 | grep '^/'`
+
+   if ( X$y1x == X ) then
+      set y1 = "`pwd`/$y1"
+   endif
+
+   set y2 = "${y1:h}"
+   if ($y2 == bin) then
+      set y2 = "`pwd`"
+   else if (${y2:t} == bin) then
+      set y2 = "${y2:h}"
+    endif
+
+   set y3 = "${y2:h}"
+   set y4 = "$y3/tea"
+   setenv BROWN_DYVISE_ROOT "$y3"
+   setenv BROWN_DYVISE_DYVISE "$y2"
+   setenv BROWN_DYVISE_IVY "$y3/ivy"
+   setenv BROWN_DYVISE_ARCH `$BROWN_DYVISE_IVY/bin/ivyarch`
+
+   source "$BROWN_DYVISE_IVY/bin/ivysetupenv"
+
+   if ($?LD_LIBRARY_PATH == 0) then
+      setenv LD_LIBRARY_PATH "$BROWN_DYVISE_ROOT/lib:$BROWN_DYVISE_DYVISE/lib/${BROWN_DYVISE_ARCH}"
+   else
+      setenv LD_LIBRARY_PATH "$BROWN_DYVISE_ROOT/lib:$BROWN_DYVISE_DYVISE/lib/${BROWN_DYVISE_ARCH}:$LD_LIBRARY_PATH"
+   endif
+   if ($BROWN_DYVISE_ARCH == ppc) then
+      setenv DYLD_LIBRARY_PATH "$LD_LIBRARY_PATH"
+   endif
+
+   set path = ( $path "$BROWN_DYVISE_DYVISE/bin" "$BROWN_DYVISE_DYVISE/bin/$BROWN_DYVISE_ARCH" )
+
+endif
+
+if ($?BROWN_DYVISE_TRACE_DIR) then
+else
+   if (-e /ws/volfred/dymon) then
+      setenv BROWN_DYVISE_TRACE_DIR /ws/volfred/dymon
+   else
+      setenv BROWN_DYVISE_TRACE_DIR "$BROWN_DYVISE_DYVISE/tmp"
+   endif
+endif
+
+if ($?CLASSPATH) then
+   set xxx = `echo $CLASSPATH | fgrep dyvise/java`
+   if ( "X$xxx" == X ) then
+      setenv CLASSPATH "${CLASSPATH}:$BROWN_DYVISE_DYVISE/java:$BROWN_DYVISE_DYVISE/javasrc"
+   endif
+else
+   setenv CLASSPATH "$BROWN_DYVISE_DYVISE/java:$BROWN_DYVISE_DYVISE/javasrc"
+endif
+
+set xxx = `echo $CLASSPATH | fgrep jikesbt.jar`
+if ( "X$xxx" == X ) then
+   setenv CLASSPATH "${CLASSPATH}:$BROWN_DYVISE_IVY/lib/jikesbt.jar"
+endif
+
+set xxx = `echo $CLASSPATH | fgrep ivy/java`
+if ( "X$xxx" == X ) then
+   setenv CLASSPATH "${CLASSPATH}:$BROWN_DYVISE_IVY/java"
+endif
+
+set xxx = `echo $CLASSPATH | fgrep tools.jar`
+if ( "X$xxx" == X ) then
+   setenv CLASSPATH "${CLASSPATH}:$BROWN_JAVA_HOME/lib/tools.jar"
+endif
+
+set xxx = `echo $CLASSPATH | fgrep quadprog.jar`
+if ( "X$xxx" == X ) then
+   setenv CLASSPATH "${CLASSPATH}:$BROWN_DYVISE_DYVISE/lib/quadprog.jar"
+endif
+
+set xxx = `echo $CLASSPATH | fgrep sprasm.jar`
+if ( "X$xxx" == X ) then
+   setenv CLASSPATH "${CLASSPATH}:$BROWN_DYVISE_DYVISE/lib/sprasm.jar"
+endif
+
+set xxx = `echo $CLASSPATH | grep asm6.jar`
+if ( "X$xxx" == X ) then
+   setenv CLASSPATH "${CLASSPATH}:$BROWN_DYVISE_IVY/lib/asm6.jar"
+endif
+
+if ($?LD_LIBRARY_PATH == 0) then
+   set xxx =
+else
+   set xxx = `echo $LD_LIBRARY_PATH | fgrep dyvise/lib`
+endif
+if ( "X$xxx" == X ) then
+   if ($BROWN_DYVISE_ARCH == i686 || $BROWN_DYVISE_ARCH == x86_64) then
+      if ($?LD_LIBRARY_PATH == 0) then
+	 setenv LD_LIBRARY_PATH "$BROWN_DYVISE_ROOT/lib:$BROWN_DYVISE_DYVISE/lib/${BROWN_DYVISE_ARCH}"
+      else
+	 setenv LD_LIBRARY_PATH "$BROWN_DYVISE_ROOT/lib:$BROWN_DYVISE_DYVISE/lib/${BROWN_DYVISE_ARCH}:$LD_LIBRARY_PATH"
+      endif
+      if ($BROWN_DYVISE_ARCH == ppc) then
+	 setenv DYLD_LIBRARY_PATH "$LD_LIBRARY_PATH"
+      endif
+   endif
+endif
+
+if ($?BROWN_DYMON_WEB == 0) then
+   setenv BROWN_DYMON_WEB /web/dweb-devel/html/dyvise/dymon
+endif
+

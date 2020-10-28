@@ -1,0 +1,145 @@
+#
+# RCS: $Header: /pro/spr_cvs/pro/dyvise/javasrc/edu/brown/cs/dyvise/dyper/Make.data,v 1.9 2016/11/02 18:59:20 spr Exp $
+
+#
+# DYPER -- DYnamic Performance Evaluation Runner
+#
+
+
+PACKAGE=dyper
+
+SFILES= \
+	DyperAgent.java \
+	DyperAgentCollections.java \
+	DyperAgentCpu.java \
+	DyperAgentEvents.java \
+	DyperAgentIO.java \
+	DyperAgentMemory.java \
+	DyperAgentReaction.java \
+	DyperAgentSocket.java \
+	DyperAgentStates.java \
+	DyperAgentThreads.java \
+	DyperAgentTiming.java \
+	DyperConstants.java \
+	DyperControl.java \
+	DyperInstrumenter.java \
+	DyperMonitor.java \
+	DyperNative.java \
+	DyperXmlWriter.java \
+
+SLIBLINKS= dyper.jar
+
+
+POSTALL= jar
+
+SOLARCP=$(HOME)/solar/java:$(HOME)/solar/javasrc:$(BROWN_DYVISE_IVY)/java:$(HOME)/jogl/jogl-linux64/jogl.jar
+SOLARCP32= $(HOME)/solar/java:$(HOME)/solar/javasrc:$(BROWN_DYVISE_IVY)/java:/pro/java/linux/software/jogl/jogl-1_0_0/lib/jogl.jar
+
+CRAWLCP=$(HOME)/crawler/java:$(HOME)/crawler/lib/Tidy.jar
+
+# LOCALJAVAFLAGS= -target 1.5
+
+
+jarold:
+	taigabuildimpljar -cp $(BROWN_DYVISE_DYVISE)/java:$(BROWN_DYVISE_IVY)/java \
+		-j $(BROWN_DYVISE_DYVISE)/dyper/src/dyper.jar \
+		-m $(BROWN_DYVISE_DYVISE)/dyper/src/manifest.mf edu.brown.cs.dyvise.dyper.DyperControl \
+		edu.brown.cs.dyvise.dyper.DyperNative \
+		edu.brown.cs.dyvise.dyper.DyperAgentCpu \
+		edu.brown.cs.dyvise.dyper.DyperAgentTiming \
+		edu.brown.cs.dyvise.dyper.DyperAgentMemory \
+		edu.brown.cs.dyvise.dyper.DyperAgentThreads \
+		edu.brown.cs.dyvise.dyper.DyperAgentIO \
+		edu.brown.cs.dyvise.dyper.DyperAgentCollections \
+		edu.brown.cs.dyvise.dyper.DyperAgentStates \
+		edu.brown.cs.dyvise.dyper.DyperAgentReaction \
+		edu.brown.cs.dyvise.dyper.DyperAgentEvents \
+		edu.brown.cs.dyvise.dyper.DyperAgentSocket
+
+jar:
+	jar cvmf $(BROWN_DYVISE_DYVISE)/dyper/src/manifest.mf \
+		$(BROWN_DYVISE_DYVISE)/dyper/src/dyper.jar \
+		-C $(BROWN_DYVISE_DYVISE)/java edu/brown/cs/dyvise/dyper \
+		-C $(BROWN_DYVISE_IVY)/java edu/brown/cs/ivy/mint \
+		-C $(BROWN_DYVISE_IVY)/java edu/brown/cs/ivy/xml \
+		-C $(BROWN_DYVISE_IVY)/java edu/brown/cs/ivy/exec \
+		-C $(BROWN_DYVISE_IVY)/java edu/brown/cs/ivy/file
+
+test000:
+	dyjava spr.onsets.OnsetMain -y
+
+test001:
+	dyjava -cp $(SOLARCP) edu.brown.cs.cs032.solar.SolarMain \
+		/u/spr/solar/src/model.solar -n 10
+
+test001a:
+	java -cp $(SOLARCP) edu.brown.cs.cs032.solar.SolarMain \
+		/u/spr/solar/src/model.solar -n 10
+
+test001b:
+	dyjava -cp $(SOLARCP32) edu.brown.cs.cs032.solar.SolarMain \
+		/u/spr/solar/src/model.solar -n 10
+
+test001c:
+	ddyjava -cp $(SOLARCP) edu.brown.cs.cs032.solar.SolarMain \
+		/u/spr/solar/src/model.solar -n 10
+
+test001d:
+	ijava -cp $(SOLARCP) edu.brown.cs.cs032.solar.SolarMain \
+		/u/spr/solar/src/model.solar -n 10
+
+test002:
+	cp $(HOME)/crawler/data/urllist.use $(HOME)/crawler/data/urllist
+	sprjava -javaagent:/pro/dyvise/dyper/src/dyper.jar -cp $(CRAWLCP) edu.brown.cs.cs032.crawler.crawl.CrawlMain -c -t 16 -n 100000
+
+test003:
+	dyjava -cp $(SOLARCP) edu.brown.cs.cs032.solar.SolarMain \
+		/u/spr/solar/src/large.solar -n 10 -p 6
+
+test003a:
+	sprjava -cp $(SOLARCP) edu.brown.cs.cs032.solar.SolarMain \
+		/u/spr/solar/src/large.solar -n 10 -p 6
+
+test003b:
+	dyjava -cp $(SOLARCP32) edu.brown.cs.cs032.solar.SolarMain \
+		/u/spr/solar/src/large.solar -n 10
+
+
+timing0:
+	time (make test001a > /tmp/xxx 2>&1 )
+	time (make test001a > /tmp/xxx 2>&1 )
+	time (make test001a > /tmp/xxx 2>&1 )
+	time (make test001a > /tmp/xxx 2>&1 )
+	time (make test001a > /tmp/xxx 2>&1 )
+	time (make test001a > /tmp/xxx 2>&1 )
+	time (make test001a > /tmp/xxx 2>&1 )
+	time (make test001a > /tmp/xxx 2>&1 )
+	time (make test001a > /tmp/xxx 2>&1 )
+	time (make test001a > /tmp/xxx 2>&1 )
+
+timing1:
+	time (make test001 > /tmp/xxx 2>&1 )
+	time (make test001 > /tmp/xxx 2>&1 )
+	time (make test001 > /tmp/xxx 2>&1 )
+	time (make test001 > /tmp/xxx 2>&1 )
+	time (make test001 > /tmp/xxx 2>&1 )
+	time (make test001 > /tmp/xxx 2>&1 )
+	time (make test001 > /tmp/xxx 2>&1 )
+	time (make test001 > /tmp/xxx 2>&1 )
+	time (make test001 > /tmp/xxx 2>&1 )
+	time (make test001 > /tmp/xxx 2>&1 )
+
+timing2:
+	time (make test001b > /tmp/xxx 2>&1 )
+	time (make test001b > /tmp/xxx 2>&1 )
+	time (make test001b > /tmp/xxx 2>&1 )
+	time (make test001b > /tmp/xxx 2>&1 )
+	time (make test001b > /tmp/xxx 2>&1 )
+	time (make test001b > /tmp/xxx 2>&1 )
+	time (make test001b > /tmp/xxx 2>&1 )
+	time (make test001b > /tmp/xxx 2>&1 )
+	time (make test001b > /tmp/xxx 2>&1 )
+	time (make test001b > /tmp/xxx 2>&1 )
+
+
+

@@ -1,0 +1,33 @@
+#! /bin/tcsh -f
+
+
+if ($?BROWN_DYVISE_ROOT == 0) then
+   set x0 = `zsh -c "whence $0"`
+   set x1 = ${x0:h}
+   set x2 = $x1/dyvisesetupenv
+   source $x2
+endif
+
+if ($?SOURCEPATH == 0) then
+   setenv SOURCEPATH $CLASSPATH
+endif
+
+if (-d $BROWN_DYVISE_DYVISE/java) then
+   setenv CLASSPATH $BROWN_DYVISE_DYVISE/java:$BROWN_DYVISE_IVY/java:$BROWN_DYVISE_IVY/lib/jikesbt.jar
+else
+   setenv CLASSPATH $BROWN_DYVISE_DYVISE/lib/dyvise.jar:$BROWN_DYVISE_IVY/lib/ivy.jar:$BROWN_DYVISE_IVY/lib/jikesbt.jar
+endif
+
+
+set jv = `java -version |& fgrep 1.4`
+set jv5 = `java -version |& fgrep 1.5`
+if ( "X$jv5" == X) then
+   if ( "X$jv" == X ) then
+      if ($BROWN_DYVISE_ARCH == i686) then
+	 set path = (/pro/java/linux/jdk1.4/bin $path)
+      endif
+   endif
+endif
+
+exec $BROWN_DYVISE_ROOT/bloom/bin/jive -Xmx1024m $*
+

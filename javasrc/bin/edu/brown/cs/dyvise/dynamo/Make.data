@@ -1,0 +1,24 @@
+
+# RCS: $Header: /pro/spr_cvs/pro/dyvise/javasrc/edu/brown/cs/dyvise/dynamo/Make.data,v 1.1 2009-09-19 00:10:00 spr Exp $
+
+#
+# DYNAMO -- dynamic analysis modeling
+#
+
+
+PACKAGE=dynamo
+
+SFILES= \
+	DynamoConstants.java \
+	DynamoPatchCode.java \
+	DynamoPatchCodeEventState.java \
+	DynamoPatchDescriptor.java \
+	DynamoPatchSetup.java \
+
+
+test:	all
+	dyvisejava edu.brown.cs.dyvise.dynamo.DynamoPatchSetup -p s6 \
+		-o /pro/dyvise/dynamo/src/test.out \
+		/pro/dyvise/dynamo/src/sample.xml
+
+

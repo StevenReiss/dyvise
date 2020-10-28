@@ -1,0 +1,77 @@
+<DYPATCH>
+   <MODE NAME="CPUAGENT_BLOCKCTR" CONTEXT="edu.brown.cs.dyvise.dyper.DyperAgentCpu" POST='TRUE'>
+      <CODE TYPE='CALL' METHOD='monCountItem' SIGNATURE='(int)'>
+	 <ARG TYPE='BLOCKID'/>
+      </CODE>
+   </MODE>
+   <MODE NAME="CPUAGENT_ENTER" CONTEXT="edu.brown.cs.dyvise.dyper.DyperAgentCpu" POST='FALSE'>
+      <LOCAL VALUE='time' TYPE='long' />
+      <CODE TYPE='CALL' METHOD='monMethodEnter' SIGNATURE='(int)'>
+	 <ARG TYPE='METHODID'/>
+	 <RETURN TYPE='NEWLOCAL' VALUE='time'/>
+      </CODE>
+   </MODE>
+   <MODE NAME="CPUAGENT_EXIT" CONTEXT="edu.brown.cs.dyvise.dyper.DyperAgentCpu">
+      <CODE TYPE='CALL' METHOD='monMethodExit' SIGNATURE='(int,long)'>
+	 <ARG TYPE='METHODID'/>
+	 <ARG TYPE='NEWLOCAL' VALUE='time' />
+      </CODE>
+   </MODE>
+   <MODE NAME="MEMAGENT_SOURCE" CONTEXT="edu.brown.cs.dyvise.dyper.DyperAgentMemory">
+      <CODE TYPE='CALL' METHOD='monObjectNew2' SIGNATURE='(java.lang.Object)'>
+	 <ARG TYPE='THIS'/>
+      </CODE>
+   </MODE>
+   <MODE NAME="MEMAGENT_TYPE" CONTEXT="edu.brown.cs.dyvise.dyper.DyperAgentMemory">
+      <CODE TYPE='CALL' METHOD='monObjectNew1' SIGNATURE='(java.lang.Object)'>
+	 <ARG TYPE='THIS'/>
+      </CODE>
+   </MODE>
+   <MODE NAME="MEMAGENT_COUNT" CONTEXT="edu.brown.cs.dyvise.dyper.DyperAgentMemory">
+      <CODE TYPE='CALL' METHOD='monObjectNew' SIGNATURE='(java.lang.Object)'>
+	 <ARG TYPE='THIS'/>
+      </CODE>
+   </MODE>
+   <MODE NAME="IOAGENT_ENTER" CONTEXT="edu.brown.cs.dyvise.dyper.DyperAgentIO" POST='TRUE'>
+      <CODE TYPE='CALL' METHOD='monMethodEnter' SIGNATURE='(int)'>
+	 <ARG TYPE='METHODID'/>
+      </CODE>
+   </MODE>
+   <MODE NAME="REACTION_ENTER" CONTEXT="edu.brown.cs.dyvise.dyper.DyperAgentReaction" POST='FALSE'>
+      <LOCAL VALUE='time' TYPE='long' />
+      <CODE TYPE='CALL' METHOD='monMethodEnter' SIGNATURE='(int)'>
+	 <ARG TYPE='METHODID'/>
+	 <RETURN TYPE='NEWLOCAL' VALUE='time' />
+      </CODE>
+   </MODE>
+   <MODE NAME="REACTION_EXIT" CONTEXT="edu.brown.cs.dyvise.dyper.DyperAgentReaction">
+      <CODE TYPE='CALL' METHOD='monMethodExit' SIGNATURE='(int,long)'>
+	 <ARG TYPE='METHODID'/>
+	 <ARG TYPE='NEWLOCAL' VALUE='time' />
+      </CODE>
+   </MODE>
+   <MODE NAME="SOCKETAGENT_READ" CONTEXT="edu.brown.cs.dyvise.dyper.DyperAgentSocket" POST='TRUE'>
+      <CODE TYPE='CALL' METHOD='monSocketOp' SIGNATURE='(java.lang.Object,int)'>
+	 <ARG TYPE='FIELD' VALUE='socket' VALUE2='java.net.Socket'/>
+	 <ARG TYPE='INTEGER' VALUE='0' />
+      </CODE>
+   </MODE>
+   <MODE NAME="SOCKETAGENT_WRITE" CONTEXT="edu.brown.cs.dyvise.dyper.DyperAgentSocket" POST='TRUE'>
+      <CODE TYPE='CALL' METHOD='monSocketOp' SIGNATURE='(java.lang.Object,int)'>
+	 <ARG TYPE='FIELD' VALUE='socket' VALUE2='java.net.Socket'/>
+	 <ARG TYPE='INTEGER' VALUE='1' />
+      </CODE>
+   </MODE>
+   <MODE NAME="SOCKETAGENT_CLOSE" CONTEXT="edu.brown.cs.dyvise.dyper.DyperAgentSocket" POST='TRUE'>
+      <CODE TYPE='CALL' METHOD='monSocketOp' SIGNATURE='(java.lang.Object,int)'>
+	 <ARG TYPE='FIELD' VALUE='socket' VALUE2='java.net.Socket'/>
+	 <ARG TYPE='INTEGER' VALUE='2' />
+      </CODE>
+   </MODE>
+   <MODE NAME="SOCKETAGENT_CLOSE1" CONTEXT="edu.brown.cs.dyvise.dyper.DyperAgentSocket" POST='TRUE'>
+      <CODE TYPE='CALL' METHOD='monSocketOp' SIGNATURE='(java.lang.Object,int)'>
+	 <ARG TYPE='THIS'/>
+	 <ARG TYPE='INTEGER' VALUE='2' />
+      </CODE>
+   </MODE>
+</DYPATCH>

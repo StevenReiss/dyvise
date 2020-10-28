@@ -1,0 +1,33 @@
+have_wait = false
+have_notify = false
+initial_count = -1
+count = 0
+waiting = 0
+
+foreach Event<type,location>
+   if location is a P-location then
+      switch (type)
+         case WAIT :
+            have_wait = true;
+            if (initial_count < 0) initial_count = -count;
+            if (initial_count + count > 0) MARK INVALID
+            ++waiting
+         case WAITED :
+            --waiting;
+         case UNLOCK :
+            --count;
+            if (initial_count >= 0 && initial_count + count < 0) MARK INVALID
+         case NOTIFY :
+            MARK INVALID
+   else if location is a V-location then
+      switch (type)
+         case ENTERED :
+            ++count;
+         case WAIT :
+         case WAITED :
+            MARK INVALID
+         case NOTIFY :
+            have_nofify = true;
+
+Valid if not marked invalid && have_wait && have_notify && initial_count >= 0
+

@@ -1,0 +1,19 @@
+#! /bin/csh -f
+
+set opts = "$*"
+
+setenv DYPER_COMMAND_LINE "$opts"
+@ argno = 0
+foreach i ($*)
+   setenv DYPER_ARG_$argno $i
+   @ argno = $argno + 1
+end
+setenv DYPER_ARG_COUNT $argno
+
+setenv DYPER_PID `hostname`_$$
+
+
+
+djava -javaagent:/pro/dyvise/dyper/src/dyper.jar $*
+
+

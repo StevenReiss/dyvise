@@ -1,0 +1,35 @@
+#
+# RCS: $Header: /pro/spr_cvs/pro/dyvise/javasrc/edu/brown/cs/dyvise/dyvision/Make.data,v 1.5 2010-03-30 16:24:34 spr Exp $
+
+#
+# DYVISION -- visualizer for dymon/dyper
+#
+
+
+PACKAGE=dyvision
+
+SFILES= \
+	DyvisionConstants.java \
+	DyvisionControlPanel.java \
+	DyvisionDetail.java \
+	DyvisionFormat.java \
+	DyvisionMain.java \
+	DyvisionSummary.java \
+	DyvisionTableSpec.java \
+	DyvisionTime.java \
+	DyvisionTimeData.java \
+	DyvisionView.java \
+
+
+
+test:
+	dyvisejava -d64 -Xmx4000m edu.brown.cs.dyvise.dyvision.DyvisionMain -D
+
+test32:
+	dyvisejava -Xmx1500m edu.brown.cs.dyvise.dyvision.DyvisionMain
+
+SLIBLINKS= dyvisiontables.xml
+
+
+prof:
+	dyvisejava -d64 -Xmx2000m -agentlib:hprof=depth=10 edu.brown.cs.dyvise.dyvision.DyvisionMain

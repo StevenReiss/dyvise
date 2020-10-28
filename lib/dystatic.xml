@@ -1,0 +1,5 @@
+<DYSTATIC>
+   <MAP FROM="java.awt.Toolkit" TO="sun.awt.X11.XToolkit" />
+   <MAP FROM="java.awt.Image" TO="sun.awt.image.ToolkitImage" />
+   <MAP FROM="sun.awt.image.InputStreamImageSource" TO="sun.awt.image.ImageFetcher" />
+</DYSTATIC>

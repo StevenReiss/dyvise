@@ -1,0 +1,59 @@
+#
+# RCS: $Header: /pro/spr_cvs/pro/dyvise/javasrc/edu/brown/cs/dyvise/dymem/Make.data,v 1.7 2013-06-03 13:02:57 spr Exp $
+
+#
+# DYMEM -- memory analysis and display
+#
+
+
+PACKAGE=dymem
+
+SFILES= \
+	DymemConstants.java \
+	DymemCycleCutter.java \
+	DymemCycleNamer.java \
+	DymemDataPanel.java \
+	DymemException.java \
+	DymemExtract.java \
+	DymemFrame.java \
+	DymemGraph.java \
+	DymemHistory.java \
+	DymemMain.java \
+	DymemParameters.java \
+	DymemStats.java \
+	DymemTimeLine.java \
+	DymemViewCommon.java \
+	DymemViewDelta.java \
+	DymemViewSimple.java \
+	DymemHprofReader.java \
+	DymemDump.java \
+
+
+test:
+	dyvisejava edu.brown.cs.dyvise.dymem.DymemViewDelta 21266@fred3
+
+
+test1:
+	java -d64 -Xmx8000m -XX:-UseGCOverheadLimit edu.brown.cs.dyvise.dymem.DymemViewer 18518@fred3
+
+test2:
+	dyvisejava edu.brown.cs.dyvise.dymem.DymemViewDelta 6019@fred4
+
+test3:
+	dyvisejava edu.brown.cs.dyvise.dymem.DymemViewDelta 7921@bauxite.local
+
+
+
+etest:
+	dyvisejava edu.brown.cs.dyvise.dymem.DymemExtract 24436@fred3
+
+
+
+testh:	all
+	dyvisejava -d64 -Xmx24000m edu.brown.cs.dyvise.dymem.DymemHprofReader
+
+
+testd:	all
+	dyvisejava -d64 -Xmx24000m edu.brown.cs.dyvise.dymem.DymemDump 29694
+
+

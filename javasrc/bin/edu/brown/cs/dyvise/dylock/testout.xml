@@ -1,0 +1,576 @@
+<DYLOCK PROJECT='bubbles'>
+  <LOCK>
+    <DATA ID='3' WAITS='0' ENTERS='1' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='0' BLOCKTIME='0'>
+      <CLASS>Lsun/awt/image/ToolkitImage;</CLASS>
+      <LOCATION CLASS='Lsun/awt/image/ToolkitImage;' METHOD='infoDone' SIGNATURE='(I)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+    </DATA>
+    <ANALYSIS>
+      <MUTEX>
+        <LOCATION CLASS='Lsun/awt/image/ToolkitImage;' METHOD='infoDone' SIGNATURE='(I)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='4' WAITS='107' ENTERS='1310' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='4552773764' BLOCKTIME='29244890'>
+      <CLASS>Ljava/util/Vector;</CLASS>
+      <LOCATION CLASS='Lsun/awt/image/ImageFetcher;' METHOD='nextImage' SIGNATURE='()Lsun/awt/image/ImageFetchable;' OFFSET='69' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Lsun/awt/image/ImageFetcher;' METHOD='add' SIGNATURE='(Lsun/awt/image/ImageFetchable;)V' OFFSET='10' DOESWAIT='false' DOESNOTIFY='true' />
+      <LOCATION CLASS='Lsun/awt/image/ImageFetcher;' METHOD='isFetcher' SIGNATURE='(Ljava/lang/Thread;)Z' OFFSET='10' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/util/Vector;' METHOD='removeElementAt' SIGNATURE='(I)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/util/Vector;' METHOD='addElement' SIGNATURE='(Ljava/lang/Object;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/util/Vector;' METHOD='elementAt' SIGNATURE='(I)Ljava/lang/Object;' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Lsun/awt/image/ImageFetcher;' METHOD='stoppingAnimation' SIGNATURE='(Ljava/lang/Thread;)V' OFFSET='10' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/util/Vector;' METHOD='removeElement' SIGNATURE='(Ljava/lang/Object;)Z' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/util/Vector;' METHOD='size' SIGNATURE='()I' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Lsun/awt/image/ImageFetcher;' METHOD='run' SIGNATURE='()V' OFFSET='14' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/util/Vector;' METHOD='indexOf' SIGNATURE='(Ljava/lang/Object;I)I' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Lsun/awt/image/ImageFetcher;' METHOD='nextImage' SIGNATURE='()Lsun/awt/image/ImageFetchable;' OFFSET='10' DOESWAIT='true' DOESNOTIFY='false' />
+      <PRIOR>6</PRIOR>
+      <PRIOR>43</PRIOR>
+      <PRIOR>97</PRIOR>
+      <PRIOR>41</PRIOR>
+    </DATA>
+    <ANALYSIS>
+      <MUTEX>
+        <LOCATION CLASS='Lsun/awt/image/ImageFetcher;' METHOD='isFetcher' SIGNATURE='(Ljava/lang/Thread;)Z' OFFSET='10' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/util/Vector;' METHOD='removeElementAt' SIGNATURE='(I)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/util/Vector;' METHOD='addElement' SIGNATURE='(Ljava/lang/Object;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/util/Vector;' METHOD='elementAt' SIGNATURE='(I)Ljava/lang/Object;' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Lsun/awt/image/ImageFetcher;' METHOD='stoppingAnimation' SIGNATURE='(Ljava/lang/Thread;)V' OFFSET='10' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/util/Vector;' METHOD='removeElement' SIGNATURE='(Ljava/lang/Object;)Z' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/util/Vector;' METHOD='size' SIGNATURE='()I' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Lsun/awt/image/ImageFetcher;' METHOD='run' SIGNATURE='()V' OFFSET='14' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/util/Vector;' METHOD='indexOf' SIGNATURE='(Ljava/lang/Object;I)I' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+      <CONDITION>
+        <WAITS>
+          <LOCATION CLASS='Lsun/awt/image/ImageFetcher;' METHOD='nextImage' SIGNATURE='()Lsun/awt/image/ImageFetchable;' OFFSET='69' DOESWAIT='false' DOESNOTIFY='false' />
+          <LOCATION CLASS='Lsun/awt/image/ImageFetcher;' METHOD='nextImage' SIGNATURE='()Lsun/awt/image/ImageFetchable;' OFFSET='10' DOESWAIT='true' DOESNOTIFY='false' />
+        </WAITS>
+        <NOTIFYS>
+          <LOCATION CLASS='Lsun/awt/image/ImageFetcher;' METHOD='add' SIGNATURE='(Lsun/awt/image/ImageFetchable;)V' OFFSET='10' DOESWAIT='false' DOESNOTIFY='true' />
+        </NOTIFYS>
+      </CONDITION>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='123' WAITS='1801' ENTERS='61053' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='15766036' BLOCKTIME='9210057'>
+      <CLASS>Ledu/brown/cs/bubbles/bale/BaleDocumentFragment;</CLASS>
+      <CLASS>Ledu/brown/cs/bubbles/bale/BaleDocumentIde;</CLASS>
+      <CLASS>Ledu/brown/cs/bubbles/bddt/BddtConsoleController$ConsoleDocument;</CLASS>
+      <LOCATION CLASS='Ljavax/swing/text/AbstractDocument;' METHOD='writeUnlock' SIGNATURE='()V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+      <LOCATION CLASS='Ljavax/swing/text/AbstractDocument;' METHOD='createPosition' SIGNATURE='(I)Ljavax/swing/text/Position;' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bale/BaleDocument;' METHOD='handleAstUpdated' SIGNATURE='(Ljava/util/List;)V' OFFSET='139' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljavax/swing/text/AbstractDocument;' METHOD='writeLock' SIGNATURE='()V' OFFSET='0' DOESWAIT='true' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljavax/swing/text/AbstractDocument;' METHOD='getCurrentWriter' SIGNATURE='()Ljava/lang/Thread;' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljavax/swing/text/AbstractDocument;' METHOD='writeLock' SIGNATURE='()V' OFFSET='53' DOESWAIT='true' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bale/BaleDocument;' METHOD='waitForAst' SIGNATURE='()V' OFFSET='28' DOESWAIT='true' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljavax/swing/text/AbstractDocument;' METHOD='readLock' SIGNATURE='()V' OFFSET='19' DOESWAIT='true' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljavax/swing/text/AbstractDocument;' METHOD='readLock' SIGNATURE='()V' OFFSET='0' DOESWAIT='true' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljavax/swing/text/AbstractDocument;' METHOD='readUnlock' SIGNATURE='()V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+      <PRIOR>6</PRIOR>
+      <PRIOR>123</PRIOR>
+      <EQUIV>108,178,165,157,114,120,55,184,75,51,56</EQUIV>
+    </DATA>
+    <ANALYSIS>
+      <READWRITE>
+        <READLOCKS>
+          <LOCATION CLASS='Ljavax/swing/text/AbstractDocument;' METHOD='writeLock' SIGNATURE='()V' OFFSET='53' DOESWAIT='true' DOESNOTIFY='false' />
+          <LOCATION CLASS='Ljavax/swing/text/AbstractDocument;' METHOD='readLock' SIGNATURE='()V' OFFSET='19' DOESWAIT='true' DOESNOTIFY='false' />
+          <LOCATION CLASS='Ljavax/swing/text/AbstractDocument;' METHOD='readLock' SIGNATURE='()V' OFFSET='0' DOESWAIT='true' DOESNOTIFY='false' />
+        </READLOCKS>
+        <WRITELOCKS>
+          <LOCATION CLASS='Ljavax/swing/text/AbstractDocument;' METHOD='writeLock' SIGNATURE='()V' OFFSET='0' DOESWAIT='true' DOESNOTIFY='false' />
+        </WRITELOCKS>
+        <READUNLOCKS>
+          <LOCATION CLASS='Ljavax/swing/text/AbstractDocument;' METHOD='writeUnlock' SIGNATURE='()V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+          <LOCATION CLASS='Ljavax/swing/text/AbstractDocument;' METHOD='readUnlock' SIGNATURE='()V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+        </READUNLOCKS>
+        <WRITEUNLOCKS>
+          <LOCATION CLASS='Ljavax/swing/text/AbstractDocument;' METHOD='writeUnlock' SIGNATURE='()V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+        </WRITEUNLOCKS>
+      </READWRITE>
+      <MUTEX>
+        <LOCATION CLASS='Ljavax/swing/text/AbstractDocument;' METHOD='createPosition' SIGNATURE='(I)Ljavax/swing/text/Position;' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ledu/brown/cs/bubbles/bale/BaleDocument;' METHOD='handleAstUpdated' SIGNATURE='(Ljava/util/List;)V' OFFSET='139' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljavax/swing/text/AbstractDocument;' METHOD='getCurrentWriter' SIGNATURE='()Ljava/lang/Thread;' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='93' WAITS='0' ENTERS='4' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='0' BLOCKTIME='381966'>
+      <CLASS>Ljava/util/Hashtable;</CLASS>
+      <LOCATION CLASS='Ljava/util/Hashtable;' METHOD='get' SIGNATURE='(Ljava/lang/Object;)Ljava/lang/Object;' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <PRIOR>6</PRIOR>
+    </DATA>
+    <ANALYSIS>
+      <MUTEX>
+        <LOCATION CLASS='Ljava/util/Hashtable;' METHOD='get' SIGNATURE='(Ljava/lang/Object;)Ljava/lang/Object;' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='124' WAITS='0' ENTERS='8' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='0' BLOCKTIME='246098'>
+      <CLASS>Ljava/util/Hashtable;</CLASS>
+      <LOCATION CLASS='Ljava/util/Hashtable;' METHOD='remove' SIGNATURE='(Ljava/lang/Object;)Ljava/lang/Object;' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/util/Hashtable;' METHOD='put' SIGNATURE='(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+    </DATA>
+    <ANALYSIS>
+      <MUTEX>
+        <LOCATION CLASS='Ljava/util/Hashtable;' METHOD='remove' SIGNATURE='(Ljava/lang/Object;)Ljava/lang/Object;' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/util/Hashtable;' METHOD='put' SIGNATURE='(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='135' WAITS='0' ENTERS='2' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='0' BLOCKTIME='0'>
+      <CLASS>Ljava/util/LinkedList;</CLASS>
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bale/BaleDocumentIde$RemoteEditor;' METHOD='run' SIGNATURE='()V' OFFSET='9' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bale/BaleDocumentIde;' METHOD='handleRemoteEdit' SIGNATURE='(Ljava/io/File;IILjava/lang/String;)V' OFFSET='41' DOESWAIT='false' DOESNOTIFY='false' />
+    </DATA>
+    <ANALYSIS>
+      <MUTEX>
+        <LOCATION CLASS='Ledu/brown/cs/bubbles/bale/BaleDocumentIde$RemoteEditor;' METHOD='run' SIGNATURE='()V' OFFSET='9' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ledu/brown/cs/bubbles/bale/BaleDocumentIde;' METHOD='handleRemoteEdit' SIGNATURE='(Ljava/io/File;IILjava/lang/String;)V' OFFSET='41' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='145' WAITS='3' ENTERS='0' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='false' WAITTIME='0' BLOCKTIME='0'>
+      <CLASS>Ledu/brown/cs/bubbles/bump/BumpRunManager;</CLASS>
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpRunManager;' METHOD='startDebugServer' SIGNATURE='()V' OFFSET='207' DOESWAIT='false' DOESNOTIFY='false' />
+    </DATA>
+    <ANALYSIS>
+      <DELAY>
+        <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpRunManager;' METHOD='startDebugServer' SIGNATURE='()V' OFFSET='207' DOESWAIT='false' DOESNOTIFY='false' />
+      </DELAY>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='10' WAITS='816' ENTERS='1168' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='65254376949' BLOCKTIME='406375414'>
+      <CLASS>Ledu/brown/cs/ivy/mint/client/MintClient;</CLASS>
+      <LOCATION CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' METHOD='queueReply' SIGNATURE='(Ljava/lang/Object;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+      <LOCATION CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' METHOD='handleRegister' SIGNATURE='(Ljava/lang/String;Lorg/w3c/dom/Element;Ledu/brown/cs/ivy/mint/MintHandler;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' METHOD='asynchProcessMessage' SIGNATURE='(Ljava/lang/Object;)V' OFFSET='3' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' METHOD='getNextReply' SIGNATURE='(Z)Ljava/lang/Object;' OFFSET='5' DOESWAIT='true' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' METHOD='getNextReply' SIGNATURE='(Z)Ljava/lang/Object;' OFFSET='73' DOESWAIT='true' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' METHOD='queueMessage' SIGNATURE='(Ljava/lang/Object;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+      <LOCATION CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' METHOD='getNextMessage' SIGNATURE='(Z)Ljava/lang/Object;' OFFSET='73' DOESWAIT='true' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' METHOD='getNextMessage' SIGNATURE='(Z)Ljava/lang/Object;' OFFSET='5' DOESWAIT='true' DOESNOTIFY='false' />
+      <PRIOR>8</PRIOR>
+    </DATA>
+    <ANALYSIS>
+      <SEMAPHORE COUNT='0'>
+        <LOCK>
+          <LOCATION CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' METHOD='getNextMessage' SIGNATURE='(Z)Ljava/lang/Object;' OFFSET='5' DOESWAIT='true' DOESNOTIFY='false' />
+          <LOCATION CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' METHOD='getNextMessage' SIGNATURE='(Z)Ljava/lang/Object;' OFFSET='73' DOESWAIT='true' DOESNOTIFY='false' />
+        </LOCK>
+        <UNLOCK>
+          <LOCATION CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' METHOD='queueMessage' SIGNATURE='(Ljava/lang/Object;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+        </UNLOCK>
+      </SEMAPHORE>
+      <SEMAPHORE COUNT='0'>
+        <LOCK>
+          <LOCATION CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' METHOD='getNextReply' SIGNATURE='(Z)Ljava/lang/Object;' OFFSET='73' DOESWAIT='true' DOESNOTIFY='false' />
+          <LOCATION CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' METHOD='getNextReply' SIGNATURE='(Z)Ljava/lang/Object;' OFFSET='5' DOESWAIT='true' DOESNOTIFY='false' />
+        </LOCK>
+        <UNLOCK>
+          <LOCATION CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' METHOD='queueReply' SIGNATURE='(Ljava/lang/Object;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+        </UNLOCK>
+      </SEMAPHORE>
+      <MUTEX>
+        <LOCATION CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' METHOD='handleRegister' SIGNATURE='(Ljava/lang/String;Lorg/w3c/dom/Element;Ledu/brown/cs/ivy/mint/MintHandler;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' METHOD='asynchProcessMessage' SIGNATURE='(Ljava/lang/Object;)V' OFFSET='3' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='189' WAITS='3' ENTERS='3' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='644089007' BLOCKTIME='0'>
+      <CLASS>Ledu/brown/cs/bubbles/bema/BemaMain$SaveSession;</CLASS>
+      <CLASS>Ledu/brown/cs/bubbles/board/BoardMetrics$DumpAllTask;</CLASS>
+      <CLASS>Lsun/awt/X11/XToolkit$2;</CLASS>
+      <LOCATION CLASS='Ljava/lang/Thread;' METHOD='join' SIGNATURE='(J)V' OFFSET='38' DOESWAIT='true' DOESNOTIFY='false' />
+      <EQUIV>187,188</EQUIV>
+    </DATA>
+    <ANALYSIS>
+      <JOIN>
+        <LOCATION CLASS='Ljava/lang/Thread;' METHOD='join' SIGNATURE='(J)V' OFFSET='38' DOESWAIT='true' DOESNOTIFY='false' />
+      </JOIN>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='35' WAITS='0' ENTERS='23' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='0' BLOCKTIME='4809871'>
+      <CLASS>Ledu/brown/cs/bubbles/board/BoardLog;</CLASS>
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/board/BoardLog;' METHOD='log' SIGNATURE='(Ledu/brown/cs/bubbles/board/BoardConstants$LogLevel;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V' OFFSET='72' DOESWAIT='false' DOESNOTIFY='false' />
+    </DATA>
+    <ANALYSIS>
+      <MUTEX>
+        <LOCATION CLASS='Ledu/brown/cs/bubbles/board/BoardLog;' METHOD='log' SIGNATURE='(Ledu/brown/cs/bubbles/board/BoardConstants$LogLevel;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V' OFFSET='72' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='5' WAITS='3' ENTERS='10716' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='868111' BLOCKTIME='699532749'>
+      <CLASS>Ljava/lang/Object;</CLASS>
+      <LOCATION CLASS='Lsun/awt/AWTAutoShutdown;' METHOD='activateBlockerThread' SIGNATURE='()V' OFFSET='29' DOESWAIT='true' DOESNOTIFY='false' />
+      <LOCATION CLASS='Lsun/awt/AWTAutoShutdown;' METHOD='notifyThreadBusy' SIGNATURE='(Ljava/lang/Thread;)V' OFFSET='18' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Lsun/awt/AWTAutoShutdown;' METHOD='notifyThreadFree' SIGNATURE='(Ljava/lang/Thread;)V' OFFSET='18' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Lsun/awt/AWTAutoShutdown;' METHOD='run' SIGNATURE='()V' OFFSET='32' DOESWAIT='true' DOESNOTIFY='false' />
+      <LOCATION CLASS='Lsun/awt/AWTAutoShutdown;' METHOD='run' SIGNATURE='()V' OFFSET='12' DOESWAIT='true' DOESNOTIFY='true' />
+      <LOCATION CLASS='Lsun/awt/AWTAutoShutdown;' METHOD='notifyPeerMapUpdated' SIGNATURE='()V' OFFSET='13' DOESWAIT='false' DOESNOTIFY='true' />
+      <PRIOR>6</PRIOR>
+      <PRIOR>126</PRIOR>
+      <PRIOR>171</PRIOR>
+      <PRIOR>123</PRIOR>
+    </DATA>
+    <ANALYSIS>
+      <MUTEX>
+        <LOCATION CLASS='Lsun/awt/AWTAutoShutdown;' METHOD='notifyThreadBusy' SIGNATURE='(Ljava/lang/Thread;)V' OFFSET='18' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Lsun/awt/AWTAutoShutdown;' METHOD='notifyThreadFree' SIGNATURE='(Ljava/lang/Thread;)V' OFFSET='18' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+      <CONDITION>
+        <WAITS>
+          <LOCATION CLASS='Lsun/awt/AWTAutoShutdown;' METHOD='activateBlockerThread' SIGNATURE='()V' OFFSET='29' DOESWAIT='true' DOESNOTIFY='false' />
+          <LOCATION CLASS='Lsun/awt/AWTAutoShutdown;' METHOD='run' SIGNATURE='()V' OFFSET='32' DOESWAIT='true' DOESNOTIFY='false' />
+          <LOCATION CLASS='Lsun/awt/AWTAutoShutdown;' METHOD='run' SIGNATURE='()V' OFFSET='12' DOESWAIT='true' DOESNOTIFY='true' />
+        </WAITS>
+        <NOTIFYS>
+          <LOCATION CLASS='Lsun/awt/AWTAutoShutdown;' METHOD='run' SIGNATURE='()V' OFFSET='12' DOESWAIT='true' DOESNOTIFY='true' />
+          <LOCATION CLASS='Lsun/awt/AWTAutoShutdown;' METHOD='notifyPeerMapUpdated' SIGNATURE='()V' OFFSET='13' DOESWAIT='false' DOESNOTIFY='true' />
+        </NOTIFYS>
+      </CONDITION>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='12' WAITS='18' ENTERS='67' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='0' BLOCKTIME='3254502'>
+      <CLASS>Ledu/brown/cs/bubbles/bump/BumpClient;</CLASS>
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient;' METHOD='startIDE' SIGNATURE='()V' OFFSET='3' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient;' METHOD='waitForIDE' SIGNATURE='()V' OFFSET='3' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient;' METHOD='waitForIDE' SIGNATURE='()V' OFFSET='40' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient;' METHOD='startIDE' SIGNATURE='()V' OFFSET='163' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient;' METHOD='ensureRunning' SIGNATURE='()V' OFFSET='346' DOESWAIT='true' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient;' METHOD='waitForIDE' SIGNATURE='()V' OFFSET='31' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient;' METHOD='ensureRunning' SIGNATURE='()V' OFFSET='351' DOESWAIT='false' DOESNOTIFY='false' />
+    </DATA>
+    <ANALYSIS>
+      <MUTEX>
+        <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient;' METHOD='startIDE' SIGNATURE='()V' OFFSET='3' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient;' METHOD='waitForIDE' SIGNATURE='()V' OFFSET='3' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient;' METHOD='startIDE' SIGNATURE='()V' OFFSET='163' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient;' METHOD='waitForIDE' SIGNATURE='()V' OFFSET='31' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='144' WAITS='3' ENTERS='3' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='234194284' BLOCKTIME='0'>
+      <CLASS>Ljava/lang/UNIXProcess$Gate;</CLASS>
+      <LOCATION CLASS='Ljava/lang/UNIXProcess$Gate;' METHOD='exit' SIGNATURE='()V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+      <LOCATION CLASS='Ljava/lang/UNIXProcess$Gate;' METHOD='waitForExit' SIGNATURE='()V' OFFSET='10' DOESWAIT='true' DOESNOTIFY='false' />
+      <PRIOR>8</PRIOR>
+      <EQUIV>13,9</EQUIV>
+    </DATA>
+    <ANALYSIS>
+      <SEMAPHORE COUNT='0'>
+        <LOCK>
+          <LOCATION CLASS='Ljava/lang/UNIXProcess$Gate;' METHOD='waitForExit' SIGNATURE='()V' OFFSET='10' DOESWAIT='true' DOESNOTIFY='false' />
+        </LOCK>
+        <UNLOCK>
+          <LOCATION CLASS='Ljava/lang/UNIXProcess$Gate;' METHOD='exit' SIGNATURE='()V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+        </UNLOCK>
+      </SEMAPHORE>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='6' WAITS='0' ENTERS='416' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='0' BLOCKTIME='68540669'>
+      <CLASS>Ljava/awt/Component$AWTTreeLock;</CLASS>
+      <LOCATION CLASS='Ljava/awt/Container;' METHOD='findComponentAtImpl' SIGNATURE='(IIZ)Ljava/awt/Component;' OFFSET='36' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Container;' METHOD='mixOnReshaping' SIGNATURE='()V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Component;' METHOD='getGraphicsConfiguration' SIGNATURE='()Ljava/awt/GraphicsConfiguration;' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Component;' METHOD='invalidate' SIGNATURE='()V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljavax/swing/JComponent;' METHOD='paintChildren' SIGNATURE='(Ljava/awt/Graphics;)V' OFFSET='8' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Container;' METHOD='findComponentAt' SIGNATURE='(II)Ljava/awt/Component;' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Container;' METHOD='validate' SIGNATURE='()V' OFFSET='15' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Container;' METHOD='getComponentZOrder' SIGNATURE='(Ljava/awt/Component;)I' OFFSET='12' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/BorderLayout;' METHOD='layoutContainer' SIGNATURE='(Ljava/awt/Container;)V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Container;' METHOD='mixOnValidating' SIGNATURE='()V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/FlowLayout;' METHOD='layoutContainer' SIGNATURE='(Ljava/awt/Container;)V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Container;' METHOD='increaseComponentCount' SIGNATURE='(Ljava/awt/Component;)V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Component;' METHOD='validate' SIGNATURE='()V' OFFSET='13' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Container;' METHOD='addImpl' SIGNATURE='(Ljava/awt/Component;Ljava/lang/Object;I)V' OFFSET='7' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Window;' METHOD='getGraphicsConfiguration' SIGNATURE='()Ljava/awt/GraphicsConfiguration;' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Container;' METHOD='dispatchEventImpl' SIGNATURE='(Ljava/awt/AWTEvent;)V' OFFSET='51' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Lsun/awt/im/InputContext;' METHOD='focusLost' SIGNATURE='(Ljava/awt/Component;Z)V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Container;' METHOD='mixOnShowing' SIGNATURE='()V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Component;' METHOD='reshape' SIGNATURE='(IIII)V' OFFSET='7' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Container;' METHOD='addNotify' SIGNATURE='()V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Component;' METHOD='addNotify' SIGNATURE='()V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Lsun/awt/im/InputContext;' METHOD='focusGained' SIGNATURE='(Ljava/awt/Component;)V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Container;' METHOD='removeAll' SIGNATURE='()V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Container;' METHOD='invalidateTree' SIGNATURE='()V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/GridBagLayout;' METHOD='GetLayoutInfo' SIGNATURE='(Ljava/awt/Container;I)Ljava/awt/GridBagLayoutInfo;' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Component;' METHOD='resize' SIGNATURE='(II)V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/Component;' METHOD='setFont' SIGNATURE='(Ljava/awt/Font;)V' OFFSET='7' DOESWAIT='false' DOESNOTIFY='false' />
+    </DATA>
+    <ANALYSIS>
+      <MUTEX>
+        <LOCATION CLASS='Ljava/awt/Container;' METHOD='findComponentAtImpl' SIGNATURE='(IIZ)Ljava/awt/Component;' OFFSET='36' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Container;' METHOD='mixOnReshaping' SIGNATURE='()V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Component;' METHOD='getGraphicsConfiguration' SIGNATURE='()Ljava/awt/GraphicsConfiguration;' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Component;' METHOD='invalidate' SIGNATURE='()V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljavax/swing/JComponent;' METHOD='paintChildren' SIGNATURE='(Ljava/awt/Graphics;)V' OFFSET='8' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Container;' METHOD='findComponentAt' SIGNATURE='(II)Ljava/awt/Component;' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Container;' METHOD='validate' SIGNATURE='()V' OFFSET='15' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Container;' METHOD='getComponentZOrder' SIGNATURE='(Ljava/awt/Component;)I' OFFSET='12' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/BorderLayout;' METHOD='layoutContainer' SIGNATURE='(Ljava/awt/Container;)V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Container;' METHOD='mixOnValidating' SIGNATURE='()V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/FlowLayout;' METHOD='layoutContainer' SIGNATURE='(Ljava/awt/Container;)V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Container;' METHOD='increaseComponentCount' SIGNATURE='(Ljava/awt/Component;)V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Component;' METHOD='validate' SIGNATURE='()V' OFFSET='13' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Container;' METHOD='addImpl' SIGNATURE='(Ljava/awt/Component;Ljava/lang/Object;I)V' OFFSET='7' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Window;' METHOD='getGraphicsConfiguration' SIGNATURE='()Ljava/awt/GraphicsConfiguration;' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Container;' METHOD='dispatchEventImpl' SIGNATURE='(Ljava/awt/AWTEvent;)V' OFFSET='51' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Lsun/awt/im/InputContext;' METHOD='focusLost' SIGNATURE='(Ljava/awt/Component;Z)V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Container;' METHOD='mixOnShowing' SIGNATURE='()V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Component;' METHOD='reshape' SIGNATURE='(IIII)V' OFFSET='7' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Container;' METHOD='addNotify' SIGNATURE='()V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Component;' METHOD='addNotify' SIGNATURE='()V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Lsun/awt/im/InputContext;' METHOD='focusGained' SIGNATURE='(Ljava/awt/Component;)V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Container;' METHOD='removeAll' SIGNATURE='()V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Container;' METHOD='invalidateTree' SIGNATURE='()V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/GridBagLayout;' METHOD='GetLayoutInfo' SIGNATURE='(Ljava/awt/Container;I)Ljava/awt/GridBagLayoutInfo;' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Component;' METHOD='resize' SIGNATURE='(II)V' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/Component;' METHOD='setFont' SIGNATURE='(Ljava/awt/Font;)V' OFFSET='7' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='126' WAITS='0' ENTERS='114' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='0' BLOCKTIME='104766114'>
+      <CLASS>Lsun/awt/PostEventQueue;</CLASS>
+      <LOCATION CLASS='Lsun/awt/PostEventQueue;' METHOD='postEvent' SIGNATURE='(Ljava/awt/AWTEvent;)V' OFFSET='12' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Lsun/awt/PostEventQueue;' METHOD='flush' SIGNATURE='()V' OFFSET='10' DOESWAIT='false' DOESNOTIFY='false' />
+      <PRIOR>6</PRIOR>
+    </DATA>
+    <ANALYSIS>
+      <MUTEX>
+        <LOCATION CLASS='Lsun/awt/PostEventQueue;' METHOD='postEvent' SIGNATURE='(Ljava/awt/AWTEvent;)V' OFFSET='12' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Lsun/awt/PostEventQueue;' METHOD='flush' SIGNATURE='()V' OFFSET='10' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='45' WAITS='8' ENTERS='8' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='860332' BLOCKTIME='0'>
+      <CLASS>Ljava/awt/image/PixelGrabber;</CLASS>
+      <LOCATION CLASS='Ljava/awt/image/PixelGrabber;' METHOD='grabPixels' SIGNATURE='(J)Z' OFFSET='105' DOESWAIT='true' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/image/PixelGrabber;' METHOD='imageComplete' SIGNATURE='(I)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+      <EQUIV>106,104,100,44,96,98,102</EQUIV>
+    </DATA>
+    <ANALYSIS>
+      <SEMAPHORE COUNT='0'>
+        <LOCK>
+          <LOCATION CLASS='Ljava/awt/image/PixelGrabber;' METHOD='grabPixels' SIGNATURE='(J)Z' OFFSET='105' DOESWAIT='true' DOESNOTIFY='false' />
+        </LOCK>
+        <UNLOCK>
+          <LOCATION CLASS='Ljava/awt/image/PixelGrabber;' METHOD='imageComplete' SIGNATURE='(I)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+        </UNLOCK>
+      </SEMAPHORE>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='43' WAITS='0' ENTERS='100' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='0' BLOCKTIME='6687013'>
+      <CLASS>Lsun/awt/image/FileImageSource;</CLASS>
+      <LOCATION CLASS='Lsun/awt/image/ImageDecoder;' METHOD='nextConsumer' SIGNATURE='(Lsun/awt/image/ImageConsumerQueue;)Lsun/awt/image/ImageConsumerQueue;' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Lsun/awt/image/InputStreamImageSource;' METHOD='doFetch' SIGNATURE='()V' OFFSET='3' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Lsun/awt/image/InputStreamImageSource;' METHOD='doneDecoding' SIGNATURE='(Lsun/awt/image/ImageDecoder;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Lsun/awt/image/InputStreamImageSource;' METHOD='setDecoder' SIGNATURE='(Lsun/awt/image/ImageDecoder;)V' OFFSET='3' DOESWAIT='false' DOESNOTIFY='false' />
+      <EQUIV>42</EQUIV>
+    </DATA>
+    <ANALYSIS>
+      <MUTEX>
+        <LOCATION CLASS='Lsun/awt/image/ImageDecoder;' METHOD='nextConsumer' SIGNATURE='(Lsun/awt/image/ImageConsumerQueue;)Lsun/awt/image/ImageConsumerQueue;' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Lsun/awt/image/InputStreamImageSource;' METHOD='doFetch' SIGNATURE='()V' OFFSET='3' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Lsun/awt/image/InputStreamImageSource;' METHOD='doneDecoding' SIGNATURE='(Lsun/awt/image/ImageDecoder;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Lsun/awt/image/InputStreamImageSource;' METHOD='setDecoder' SIGNATURE='(Lsun/awt/image/ImageDecoder;)V' OFFSET='3' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='97' WAITS='85' ENTERS='1372' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='4709878' BLOCKTIME='66803'>
+      <CLASS>Ljava/awt/MediaTracker;</CLASS>
+      <LOCATION CLASS='Ljava/awt/MediaTracker;' METHOD='waitForID' SIGNATURE='(IJ)Z' OFFSET='0' DOESWAIT='true' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljavax/swing/ImageIcon;' METHOD='loadImage' SIGNATURE='(Ljava/awt/Image;)V' OFFSET='8' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/MediaTracker;' METHOD='setDone' SIGNATURE='()V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+      <LOCATION CLASS='Ljava/awt/MediaTracker;' METHOD='addImage' SIGNATURE='(Ljava/awt/Image;III)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/MediaTracker;' METHOD='statusID' SIGNATURE='(IZZ)I' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/MediaTracker;' METHOD='statusAll' SIGNATURE='(ZZ)I' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/MediaTracker;' METHOD='waitForAll' SIGNATURE='(J)Z' OFFSET='73' DOESWAIT='true' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljavax/swing/ImageIcon;' METHOD='getNextID' SIGNATURE='()I' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/MediaTracker;' METHOD='waitForID' SIGNATURE='(IJ)Z' OFFSET='76' DOESWAIT='true' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/MediaTracker;' METHOD='isErrorAny' SIGNATURE='()Z' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljava/awt/MediaTracker;' METHOD='removeImage' SIGNATURE='(Ljava/awt/Image;I)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <PRIOR>6</PRIOR>
+      <PRIOR>41</PRIOR>
+      <EQUIV>101,99,95,105,1,103</EQUIV>
+    </DATA>
+    <ANALYSIS>
+      <SEMAPHORE COUNT='0'>
+        <LOCK>
+          <LOCATION CLASS='Ljava/awt/MediaTracker;' METHOD='waitForAll' SIGNATURE='(J)Z' OFFSET='73' DOESWAIT='true' DOESNOTIFY='false' />
+          <LOCATION CLASS='Ljava/awt/MediaTracker;' METHOD='waitForID' SIGNATURE='(IJ)Z' OFFSET='76' DOESWAIT='true' DOESNOTIFY='false' />
+        </LOCK>
+        <UNLOCK>
+          <LOCATION CLASS='Ljava/awt/MediaTracker;' METHOD='setDone' SIGNATURE='()V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+        </UNLOCK>
+      </SEMAPHORE>
+      <MUTEX>
+        <LOCATION CLASS='Ljavax/swing/ImageIcon;' METHOD='loadImage' SIGNATURE='(Ljava/awt/Image;)V' OFFSET='8' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/MediaTracker;' METHOD='addImage' SIGNATURE='(Ljava/awt/Image;III)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/MediaTracker;' METHOD='statusID' SIGNATURE='(IZZ)I' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/MediaTracker;' METHOD='statusAll' SIGNATURE='(ZZ)I' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljavax/swing/ImageIcon;' METHOD='getNextID' SIGNATURE='()I' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/MediaTracker;' METHOD='isErrorAny' SIGNATURE='()Z' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljava/awt/MediaTracker;' METHOD='removeImage' SIGNATURE='(Ljava/awt/Image;I)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='34' WAITS='0' ENTERS='1' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='0' BLOCKTIME='0'>
+      <CLASS>Ljava/lang/Object;</CLASS>
+      <LOCATION CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' METHOD='processMessage' SIGNATURE='(Ljava/lang/Object;)V' OFFSET='28' DOESWAIT='false' DOESNOTIFY='false' />
+    </DATA>
+    <ANALYSIS>
+      <MUTEX>
+        <LOCATION CLASS='Ledu/brown/cs/ivy/mint/client/MintClient;' METHOD='processMessage' SIGNATURE='(Ljava/lang/Object;)V' OFFSET='28' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='30' WAITS='145' ENTERS='264' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='66933349' BLOCKTIME='0'>
+      <CLASS>Ledu/brown/cs/bubbles/bump/BumpClient$ReplyHandler;</CLASS>
+      <CLASS>Ledu/brown/cs/ivy/mint/MintDefaultReply;</CLASS>
+      <LOCATION CLASS='Ledu/brown/cs/ivy/mint/MintDefaultReply;' METHOD='waitForReply' SIGNATURE='(J)V' OFFSET='22' DOESWAIT='true' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/ivy/mint/MintDefaultReply;' METHOD='handleReplyDone' SIGNATURE='(Ledu/brown/cs/ivy/mint/MintMessage;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+      <LOCATION CLASS='Ledu/brown/cs/ivy/mint/MintDefaultReply;' METHOD='handleReply' SIGNATURE='(Ledu/brown/cs/ivy/mint/MintMessage;Ledu/brown/cs/ivy/mint/MintMessage;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+      <PRIOR>135</PRIOR>
+      <PRIOR>145</PRIOR>
+      <EQUIV>18,64,16,76,24,90,148,66,65,176,67,116,73,62,153,74,112,139,134,78,25,29,94,125,164,110,46,83,27,32,82,173,127,77,118,177,109,186,54,28,160,39,52,80,172,133,158,88,36,17,140,22,11,87,21,79,149,107,155,129,111,71,136,72,183,15,146,152,170,84,168,163,58,113,119,154,147,69,128,130,31,166,85,92,50,63,14,159,131,167,181,19,151,156,48,49,117,68,60,175,47,174,162,59,142,185,81,23,91,179,137,161,53,89,86,61,38,121,169,182,132,57,37,115,180,143,33,20,122,26,70</EQUIV>
+    </DATA>
+    <ANALYSIS>
+      <CONDITION>
+        <WAITS>
+          <LOCATION CLASS='Ledu/brown/cs/ivy/mint/MintDefaultReply;' METHOD='waitForReply' SIGNATURE='(J)V' OFFSET='22' DOESWAIT='true' DOESNOTIFY='false' />
+        </WAITS>
+        <NOTIFYS>
+          <LOCATION CLASS='Ledu/brown/cs/ivy/mint/MintDefaultReply;' METHOD='handleReplyDone' SIGNATURE='(Ledu/brown/cs/ivy/mint/MintMessage;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+          <LOCATION CLASS='Ledu/brown/cs/ivy/mint/MintDefaultReply;' METHOD='handleReply' SIGNATURE='(Ledu/brown/cs/ivy/mint/MintMessage;Ledu/brown/cs/ivy/mint/MintMessage;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+        </NOTIFYS>
+      </CONDITION>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='171' WAITS='0' ENTERS='3' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='0' BLOCKTIME='23594'>
+      <CLASS>Ledu/brown/cs/ivy/swing/SwingFreezePane$FreezeRepainter;</CLASS>
+      <LOCATION CLASS='Ljavax/swing/RepaintManager;' METHOD='addInvalidComponent' SIGNATURE='(Ljavax/swing/JComponent;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ljavax/swing/RepaintManager;' METHOD='extendDirtyRegion' SIGNATURE='(Ljava/awt/Component;IIII)Z' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+    </DATA>
+    <ANALYSIS>
+      <MUTEX>
+        <LOCATION CLASS='Ljavax/swing/RepaintManager;' METHOD='addInvalidComponent' SIGNATURE='(Ljavax/swing/JComponent;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ljavax/swing/RepaintManager;' METHOD='extendDirtyRegion' SIGNATURE='(Ljava/awt/Component;IIII)Z' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='7' WAITS='0' ENTERS='63' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='0' BLOCKTIME='3968487'>
+      <CLASS>Ljava/util/HashMap;</CLASS>
+      <LOCATION CLASS='Lsun/awt/AppContext;' METHOD='get' SIGNATURE='(Ljava/lang/Object;)Ljava/lang/Object;' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      <PRIOR>6</PRIOR>
+      <PRIOR>123</PRIOR>
+    </DATA>
+    <ANALYSIS>
+      <MUTEX>
+        <LOCATION CLASS='Lsun/awt/AppContext;' METHOD='get' SIGNATURE='(Ljava/lang/Object;)Ljava/lang/Object;' OFFSET='6' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='2' WAITS='0' ENTERS='1' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='false' WAITTIME='0' BLOCKTIME='0'>
+      <CLASS>Lsun/awt/image/ImageRepresentation;</CLASS>
+      <LOCATION CLASS='Lsun/awt/image/ImageWatched;' METHOD='addWatcher' SIGNATURE='(Ljava/awt/image/ImageObserver;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <PRIOR>97</PRIOR>
+    </DATA>
+    <ANALYSIS>
+      <MUTEX>
+        <LOCATION CLASS='Lsun/awt/image/ImageWatched;' METHOD='addWatcher' SIGNATURE='(Ljava/awt/image/ImageObserver;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='138' WAITS='2' ENTERS='4' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='104812370' BLOCKTIME='0'>
+      <CLASS>Ledu/brown/cs/bubbles/bump/BumpClient$NameCollector;</CLASS>
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$NameCollector;' METHOD='getNames' SIGNATURE='()Ljava/util/Collection;' OFFSET='8' DOESWAIT='true' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$NameCollector;' METHOD='noteDone' SIGNATURE='()V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$NameCollector;' METHOD='addNames' SIGNATURE='(Lorg/w3c/dom/Element;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      <PRIOR>41</PRIOR>
+      <EQUIV>40</EQUIV>
+    </DATA>
+    <ANALYSIS>
+      <SEMAPHORE COUNT='0'>
+        <LOCK>
+          <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$NameCollector;' METHOD='getNames' SIGNATURE='()Ljava/util/Collection;' OFFSET='8' DOESWAIT='true' DOESNOTIFY='false' />
+        </LOCK>
+        <UNLOCK>
+          <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$NameCollector;' METHOD='noteDone' SIGNATURE='()V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='true' />
+        </UNLOCK>
+      </SEMAPHORE>
+      <MUTEX>
+        <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient$NameCollector;' METHOD='addNames' SIGNATURE='(Lorg/w3c/dom/Element;)V' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='141' WAITS='2' ENTERS='2' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='0' BLOCKTIME='0'>
+      <CLASS>Ledu/brown/cs/bubbles/bass/BassTreeModelBase$Rebuilder;</CLASS>
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bass/BassTreeModelBase$Rebuilder;' METHOD='run' SIGNATURE='()V' OFFSET='103' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bass/BassTreeModelBase$Rebuilder;' METHOD='run' SIGNATURE='()V' OFFSET='24' DOESWAIT='false' DOESNOTIFY='false' />
+      <EQUIV>150</EQUIV>
+    </DATA>
+    <ANALYSIS>
+      <DELAY>
+        <LOCATION CLASS='Ledu/brown/cs/bubbles/bass/BassTreeModelBase$Rebuilder;' METHOD='run' SIGNATURE='()V' OFFSET='24' DOESWAIT='false' DOESNOTIFY='false' />
+      </DELAY>
+      <MUTEX>
+        <LOCATION CLASS='Ledu/brown/cs/bubbles/bass/BassTreeModelBase$Rebuilder;' METHOD='run' SIGNATURE='()V' OFFSET='103' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='8' WAITS='0' ENTERS='50' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='0' BLOCKTIME='2862467'>
+      <CLASS>Ljava/lang/Class;</CLASS>
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient;' METHOD='getBump' SIGNATURE='()Ledu/brown/cs/bubbles/bump/BumpClient;' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+    </DATA>
+    <ANALYSIS>
+      <MUTEX>
+        <LOCATION CLASS='Ledu/brown/cs/bubbles/bump/BumpClient;' METHOD='getBump' SIGNATURE='()Ledu/brown/cs/bubbles/bump/BumpClient;' OFFSET='0' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+  <LOCK>
+    <DATA ID='41' WAITS='0' ENTERS='15' TIMEDS='-1' WAITEDS='-1' FIRSTLEVEL='true' WAITTIME='0' BLOCKTIME='688156'>
+      <CLASS>Ledu/brown/cs/bubbles/bass/BassRepositoryLocation;</CLASS>
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bass/BassRepositoryLocation;' METHOD='getAllNames' SIGNATURE='()Ljava/lang/Iterable;' OFFSET='3' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bass/BassRepositoryLocation;' METHOD='addNamesForFile' SIGNATURE='(Ljava/lang/String;Ljava/lang/String;Z)V' OFFSET='52' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bass/BassRepositoryLocation;' METHOD='waitForNames' SIGNATURE='()V' OFFSET='3' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bass/BassRepositoryLocation;' METHOD='findBubbleName' SIGNATURE='(Ljava/io/File;I)Ledu/brown/cs/bubbles/bass/BassName;' OFFSET='9' DOESWAIT='false' DOESNOTIFY='false' />
+      <LOCATION CLASS='Ledu/brown/cs/bubbles/bass/BassRepositoryLocation;' METHOD='removeNamesForFile' SIGNATURE='(Ljava/lang/String;Ljava/lang/String;)V' OFFSET='13' DOESWAIT='false' DOESNOTIFY='false' />
+    </DATA>
+    <ANALYSIS>
+      <MUTEX>
+        <LOCATION CLASS='Ledu/brown/cs/bubbles/bass/BassRepositoryLocation;' METHOD='getAllNames' SIGNATURE='()Ljava/lang/Iterable;' OFFSET='3' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ledu/brown/cs/bubbles/bass/BassRepositoryLocation;' METHOD='addNamesForFile' SIGNATURE='(Ljava/lang/String;Ljava/lang/String;Z)V' OFFSET='52' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ledu/brown/cs/bubbles/bass/BassRepositoryLocation;' METHOD='waitForNames' SIGNATURE='()V' OFFSET='3' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ledu/brown/cs/bubbles/bass/BassRepositoryLocation;' METHOD='findBubbleName' SIGNATURE='(Ljava/io/File;I)Ledu/brown/cs/bubbles/bass/BassName;' OFFSET='9' DOESWAIT='false' DOESNOTIFY='false' />
+        <LOCATION CLASS='Ledu/brown/cs/bubbles/bass/BassRepositoryLocation;' METHOD='removeNamesForFile' SIGNATURE='(Ljava/lang/String;Ljava/lang/String;)V' OFFSET='13' DOESWAIT='false' DOESNOTIFY='false' />
+      </MUTEX>
+    </ANALYSIS>
+  </LOCK>
+</DYLOCK>

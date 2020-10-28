@@ -1,0 +1,78 @@
+
+# RCS: $Header: /pro/spr_cvs/pro/dyvise/dymti/src/Make.data,v 1.9 2013/09/04 18:35:05 spr Exp $
+
+#
+# DYMTI -- JVMTI interface for DYPER
+#
+
+PACKAGE= dymti
+
+BFILES= \
+	dymtimain.o \
+	dymticonnection.o \
+	dymtimemory.o \
+	dymtimonitor.o \
+	dymtinative.o \
+
+
+SFILES= \
+	dymtimain.C \
+	dymticonnection.C \
+	dymtimemory.C \
+	dymtimonitor.C \
+	dymtinative.C \
+
+HFILES= dymti.H dymti_local.H
+
+INCLINKS= dymti.H
+
+SHLIBLINKS= libdymti.$(JSHAREDEXT)
+OSHLIBLINKS= libdymtiopt.$(JSHAREDEXT)
+PSHLIBLINKS= libdymtiprof.$(JSHAREDEXT)
+
+ifneq ($(LIBTYPE),$(JSHAREDEXT))
+LIBBLINKS= libdymti.a
+OLIBBLINKS= libdymtiopt.a
+PLIBBLINKS= libdymtiprof.a
+endif
+
+NO_LIBRARY= 1
+
+MONSLIB= libdymti.$(JSHAREDEXT)
+ifdef OPTIMIZE
+MONSLIB= libdymtiopt.$(JSHAREDEXT)
+endif
+
+ALL= libdymti.$(LIBTYPE) $(MONSLIB)
+
+opt:	libdymtiopt.$(LIBTYPE)
+
+prof:	libdymtiprof.$(LIBTYPE)
+
+USERCPLUSFLAGS=
+
+MINCE= $(LD_SEARCH)$(BROWN_DYVISE_IVY)/lib/$(BROWN_DYVISE_ARCH) -lmince
+MINCE= $(BROWN_DYVISE_IVY)/lib/$(BROWN_DYVISE_ARCH)/libmince.$(SHAREDEXT)
+
+DYNLIB= -L$(BROWN_DYVISE_IVY)/lib/$(BROWN_DYVISE_ARCH) $(MINCE) $(XERCESLIB)
+DYNLIB= $(MINCE) $(XERCESLIB)
+
+
+testit: all
+	../src/test01
+
+
+test1:	test1.o
+	CC $(CPLUSFLAGS) -g ../src/test1.C -L/pro/lib -L/pro/dyvise/lib/$(BROWN_DYVISE_ARCH) -ldymti -o test1
+	test1
+
+test1.o: test1.C
+	CC $(CPLUSFLAGS) -c -g ../src/test1.C
+
+
+testcp:
+	java -agentpath:/pro/dyvise/lib/x86_64/libdymti.so spr.simple.Simple
+
+testmac:
+	dyviserun -agentpath:/pro/dyvise/lib/mac64/libdymti.jnilib spr.onsets.OnsetMain
+

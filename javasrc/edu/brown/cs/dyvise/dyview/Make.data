@@ -1,0 +1,72 @@
+#
+# RCS: $Header: /pro/spr_cvs/pro/dyvise/javasrc/edu/brown/cs/dyvise/dyview/Make.data,v 1.6 2011-09-12 18:30:03 spr Exp $
+
+#
+# DYVIEW -- viewer implementation for dynamic visualization
+#
+
+
+PACKAGE=dyview
+
+SFILES= \
+	DyviewClassPanel.java \
+	DyviewConstants.java \
+	DyviewGraphicsFrame.java \
+	DyviewMain.java \
+	DyviewModel.java \
+	DyviewRunner.java \
+	DyviewStartPanel.java \
+	DyviewTupleBuilder.java \
+	DyviewTupleContext.java \
+	DyviewVisual.java \
+	DyviewVisualThreadState.java \
+	DyviewWindow.java \
+	DyviewAbstractPanel.java \
+	DyviewControlPanel.java \
+	DyviewDisplayPanel.java \
+	DyviewSetupPanel.java \
+	DyviewVisualPanel.java \
+	DyviewTest.java \
+
+SLIBLINKS= dyviewcreatedb.sql dyviewstatic.dycomp
+
+test: test2
+
+
+test1: all
+	dyvisejava edu.brown.cs.dyvise.dyview.DyviewTest -p s6 -id sample \
+		-J edu.brown.cs.s6.engine.EngineMain /pro/dyvise/dynamo/src/sample.xml
+
+testv: all
+	dyvisejava edu.brown.cs.dyvise.dyview.DyviewTest -p s6 -id sample -view \
+		/pro/dyvise/dynamo/src/sample.xml
+
+test2: all
+	dyvisejava -Xmx4000m edu.brown.cs.dyvise.dyview.DyviewMain -p s6 \
+		-s edu.brown.cs.s6.engine.EngineMain
+
+test3: all
+	dyvisejava -Xmx4000m edu.brown.cs.dyvise.dyview.DyviewMain \
+		/pro/dyvise/dyview/src/test4.dyview
+
+test4: all
+	echo `which dyvisejava`
+	dyvisejava -Xmx4000m edu.brown.cs.dyvise.dyview.DyviewMain -p bubbles \
+		-s edu.brown.cs.bubbles.bema.BemaMain
+
+
+testx: all
+	dyvisejava -Xmx8192m edu.brown.cs.dyvise.dyview.DyviewMain
+
+testcrawl: all
+	dyvisejava -Xmx4000m edu.brown.cs.dyvise.dyview.DyviewMain \
+		/pro/dyvise/dyview/src/crawl01.dyview
+
+testsolar: all
+	dyvisejava -Xmx4000m edu.brown.cs.dyvise.dyview.DyviewMain \
+		/pro/dyvise/dyview/src/solar.dyview
+
+testfait: all
+	dyvisejava -Xmx4000m edu.brown.cs.dyvise.dyview.DyviewMain \
+		/pro/dyvise/dyview/src/fait.dyview
+

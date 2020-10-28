@@ -1,0 +1,33 @@
+  <REACTION TOTTIME='410.41' TOTSAMP='1466' ACTSAMP='1.5K' ACTIVE='0.00'>
+    <CALLBACK METHOD='edu.brown.cs.s6.engine.EngineMain$TransformSolution@call' />
+    <CALLBACK METHOD='edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution@run' />
+    <CALLBACK METHOD='edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador@run' />
+    <CALLBACK METHOD='edu.brown.cs.s6.keysearch.KeySearchSet$RunSearch@run' />
+    <CALLBACK METHOD='edu.brown.cs.s6.keysearch.KeySearchGoogle$ScanSolution@run' />
+    <CALLBACK METHOD='edu.brown.cs.s6.engine.EngineMain$DependWorker@run' />
+    <CALLBACK METHOD='edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution@run' />
+    <CALLBACK METHOD='edu.brown.cs.s6.engine.EngineMain$TestWorker@run' />
+    <CALLBACK METHOD='edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile@run' />
+    <EVENT METHOD='java.util.concurrent.FutureTask@run' TYPE='NODE_WAIT' />
+    <EVENT METHOD='edu.brown.cs.ivy.xml.IvyXmlReader@readXml' TYPE='NODE_WAIT' />
+    <EVENTMETHOD CLASS='edu.brown.cs.ivy.xml.IvyXmlReader' METHOD='readXml' COUNT='14.7K' PCT='1000.0' TIME='4104.13' />
+    <EVENTMETHOD CLASS='edu.brown.cs.s6.engine.EngineMain$DependWorker' METHOD='run' COUNT='14.0' PCT='1.0' TIME='3.92' />
+    <EVENTMETHOD CLASS='edu.brown.cs.s6.engine.EngineMain$TestWorker' METHOD='run' COUNT='112.0' PCT='7.6' TIME='31.35' />
+    <EVENTMETHOD CLASS='edu.brown.cs.s6.engine.EngineMain$TransformSolution' METHOD='call' COUNT='1.8K' PCT='121.6' TIME='499.16' />
+    <EVENTMETHOD CLASS='edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution' METHOD='run' COUNT='222.0' PCT='15.1' TIME='62.15' />
+    <EVENTMETHOD CLASS='edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution' METHOD='run' COUNT='198.0' PCT='13.5' TIME='55.43' />
+    <EVENTMETHOD CLASS='edu.brown.cs.s6.keysearch.KeySearchKoders$ScanSolution' METHOD='run' COUNT='11.0' PCT='0.8' TIME='3.08' />
+    <EVENTMETHOD CLASS='edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile' METHOD='run' COUNT='903.0' PCT='61.6' TIME='252.80' />
+    <EVENTMETHOD CLASS='edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador' METHOD='run' COUNT='314.0' PCT='21.4' TIME='87.91' />
+    <EVENTMETHOD CLASS='java.util.concurrent.FutureTask' METHOD='run' COUNT='4.4K' PCT='302.7' TIME='1242.44' />
+  </REACTION>
+
+1) Eliminate org. as system.
+
+2) Look for Parameter as right type
+   Look for Field of parameter as right type
+   Look for Field of field of parameter as right type
+   Look for value of right type in this routine
+   Look for field of value of right type in this routine
+   etc.
+

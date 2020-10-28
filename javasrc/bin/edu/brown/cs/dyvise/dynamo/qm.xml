@@ -1,0 +1,161 @@
+<DYNAMO>
+
+<QM>
+
+   <ID>
+      <NAME>Transactional Thread-State Model</NAME>
+      <DESCRIPTION>
+		Show performance and sequencing information by threads and
+		by transaction.  This takes into account internal processing
+		of multiple events based on the original transaction.  It
+		should record information about the sequence of thread
+		states used by transaction, a summary of this information
+		where the transactions are grouped, and performance statistics
+		(CPU time, memory, ...) by transaction.
+      </DESCRIPTION>
+   </ID>
+
+   <INPUT>
+      <ITEM TYPE='ThreadClass' REQUIRED='TRUE' ID='thread'>
+	 <NAME>User Thread Class</NAME>
+	 <DESCRIPTION>
+		Specify the class representing the threads that should be
+		monitored for states.  This can either be a subclass of
+		Thread or an instance of Runnable that is passed to
+		Thread.
+	 </DESCRIPTION>
+      </ITEM>
+      <ITEM TYPE='EventClass' REQUIRED='TRUE' Id='event'>
+	 <NAME>Transaction Class</NAME>
+	 <DESCRIPTION>
+		Specify the class that represents a transaction within the
+		system.  This is generally a class that contains the session
+		data and is passed to each thread as it needs to work on the
+		transaction, either directly or indirectly
+	 </DESCRIPTION>
+      </ITEM>
+   </INPUT>
+
+   <ANALYSES>
+      <DYNAMIC NAME='ThreadState'>
+	 <PARAMETERS>
+	    <VAR ID='thread' />
+	 </PARAMETERS>
+	 <OUTPUT>
+	    <!-- map the output to internal variable names -->
+	 </OUTPUT>
+      </DYNAMIC>
+      <STATIC NAME='FlowUse'>
+	 <PARAMETERS>
+	 </PARAMETERS>
+	 <OUTPUT>
+	 </OUTPUT>
+      </STATIC>
+   </ANALYSES
+
+   <EVENTS>
+      <!-- describe how to use the above data to put dynamic instrumentation.
+	   This should record instrumentation points and the events they
+	   produce -->
+      <!-- this should also describe what additional information (e.g. performance
+	   data should be collected during a run -->
+   </EVENTS>
+
+   <MODEL>
+      <!-- this should describe an internal model based on the events described
+	   in the EVENTS section.  This should in general be an event-driven and
+	   parameterized automata where the states and arcs can hold information
+	   (e.g. counts, performance data, size data, ...) -->
+   </MODEL>
+
+   <VISUALIZATION>
+      <!-- This should provide options for appropriate visualizations of the above
+	   data.  The actual visualizations would be described in a separate
+	   section.  This section might, for example, describe what parameters of
+	   the model should be exposed to user filtering, what top level options
+	   the user should be provided with, what fields of the model are most
+	   important, etc. -->
+   </VISUALIZATION>
+
+</QM>
+
+
+<!-- This should be a primitive and should be parameterized by subtypes -->
+<DATATYPE NAME='Class'>
+   <DESCRIPTION>
+	This represents a user class
+   </DESCRIPTION>
+   <INPUT>
+      <CLASS />
+   </INPUT>
+   <!-- Other ways of using values of this type -->
+</DATATYPE>
+
+<DATATYPE NAME='ThreadClass' SUPER='Class'>
+   <DESCRIPTION>
+	This represents a user class representing a thread
+   </DESCRIPTION>
+   <INPUT>
+      <CLASS>
+	 <!-- specify either a subclass of Thread
+	      or an instance of runnable passed to a thread -->
+      </CLASS>
+   </INPUT>
+   <!-- Other ways of using values of this type -->
+</DATATYPE>
+
+<DATATYPE NAME='EventClass' SUPER='Class'>
+   <DESCRIPTION>
+	This represents a user class representing a transaction
+   </DESCRIPTION>
+   <INPUT>
+      <CLASS>
+	 <!-- any restrictions on the class go here -->
+      </CLASS>
+   </INPUT>
+   <!-- Other ways of using values of this type -->
+</DATATYPE>
+
+<DYNAMIC_ANALYSIS NAME='ThreadState'>
+   <DESCRIPTION>
+	This analysis finds thread states in the system for a set of threads
+   </DESCRIPTION>
+   <AGENT NAME='STATE'>
+   <PARAMETERS>
+      <PARAMETER NAME='thread_class' TYPE='Class' />
+   </PARAMETERS>
+   <MAP>
+      <!-- describe the xsl mapping from dymon output to standard input -->
+   </MAP>
+   <OUTPUT>
+      <!-- describe the output and the resultant data model -->
+   </OUTPUT>
+</DYNAMIC_ANALYSIS>
+
+<STATIC_ANALYSIS NAME='FlowUse'>
+   <DESCRIPTION>
+	This analysis finds thread states in the system for a set of threads
+   </DESCRIPTION>
+   <PARAMTERS>
+      <PARAMETER NAME='source_class' TYPE='Class' />
+   </PARAMETERS>
+   <SOURCES>
+      <!-- Define sources that should be created in terms of parameters
+   </SOURCES>
+   <QUERY>
+      <!-- provide a query for jflow -->
+   </QUERY>
+   <MAP>
+      <!-- provide xsl mapping from query otuput to standard input -->
+   </MAP>
+   <OUTPUT>
+      <!-- describe the output and the resultant data mode -->
+   </OUTPUT>
+</STATIC_ANALYSIS>
+
+
+</DYNAMO>
+
+
+
+

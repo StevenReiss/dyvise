@@ -1,0 +1,21 @@
+<DYLUTE>
+   <LOCK>
+      <LOCATION CLASS="edu/brown/cs/cs032/solar/SolarSystem"
+		METHOD="queueComputeLocalGravity"
+		SIGNATURE="(Ledu/brown/cs/cs032/solar/SolarObject;DILedu/brown/cs/cs032/solar/SolarFinisher;)V" />
+      <LOCATION CLASS="edu/brown/cs/cs032/solar/SolarSystem"
+		METHOD="handleDone"
+		SIGNATURE="(Ledu/brown/cs/cs032/solar/SolarObject;)V" />
+      <LOCATION CLASS="edu/brown/cs/cs032/solar/SolarSystem"
+		METHOD="waitForRoot"
+		SIGNATURE="()V" />
+      <LOCATION CLASS="edu/brown/cs/cs032/solar/SolarSystem$Finisher"
+		METHOD="addWaiter"
+		SIGNATURE="()V" />
+   </LOCK>
+   <LOCK>
+      <LOCATION CLASS="edu/brown/cs/cs032/solar/SolarCommonObject"
+		METHOD="addForces"
+		SIGNATURE="(Ledu/brown/cs/cs032/solar/SolarVector;Ledu/brown/cs/cs032/solar/SolarVector;DD)V" />
+   </LOCK>
+</DYLUTE>

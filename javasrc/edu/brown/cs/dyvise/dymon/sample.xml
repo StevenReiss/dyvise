@@ -1,0 +1,2372 @@
+<ANALYSIS PROCESS='29059@fred3' START='edu.brown.cs.s6.engine.EngineMain' OVERHEAD='0.1' ENABLED='true' ACTIVE='true' NOW='1240847489161'>
+  <SUMMARIES>
+    <SUMMARY NAME='CPU' VALUE='1.0' CONFIDENCE='0.5'>
+      <METER NAME='CPU LOAD' TYPE='PERCENT' VALUE='4.0' MIN='0' MAX='1.0' />
+      <BARGRAPH NAME='% CPU USAGE' TOTAL='1.0' TYPE='PERCENT' MIN='0'>
+	<ITEM NAME='edu.brown.cs.ivy.exec.IvyExec@doExec' VALUE='0.016071428571428573' />
+	<ITEM NAME='edu.brown.cs.ivy.file.IvyFile@expandName' VALUE='0.017857142857142856' />
+	<ITEM NAME='edu.brown.cs.s6.engine.EnginePool$Worker@run' VALUE='0.35892857142857143' />
+	<ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchBase@loadURI' VALUE='0.017857142857142856' />
+	<ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchBase@scanURI' VALUE='0.0125' />
+	<ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava@createFileFragment' VALUE='0.039285714285714285' />
+	<ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava@getKeyText' VALUE='0.03571428571428571' />
+	<ITEM NAME='edu.brown.cs.s6.language.java.JavaContext@findKnownType' VALUE='0.10892857142857144' />
+	<ITEM NAME='edu.brown.cs.s6.language.java.JavaContextBase@getInputStream' VALUE='0.017857142857142856' />
+	<ITEM NAME='edu.brown.cs.s6.language.java.JavaResolver$RefPass@buildArgumentList' VALUE='0.0125' />
+	<ITEM NAME='edu.brown.cs.s6.language.java.JavaScopeFixed@lookupMethod' VALUE='0.0125' />
+	<ITEM NAME='edu.brown.cs.s6.language.java.JavaScopeLookup@lookupVariable' VALUE='0.048214285714285716' />
+	<ITEM NAME='edu.brown.cs.s6.language.java.JavaType$MethodType@buildMethodTypeName' VALUE='0.0125' />
+	<ITEM NAME='edu.brown.cs.s6.language.java.JavaType$UnknownClassInterfaceType@lookupMethod' VALUE='0.016071428571428573' />
+	<ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper@findSystemType' VALUE='0.010714285714285716' />
+	<ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@findTypeName' VALUE='0.08035714285714286' />
+	<ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visit' VALUE='0.019642857142857142' />
+	<ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visitList' VALUE='0.0125' />
+	<ITEM NAME='edu.brown.cs.s6.language.java.TextDelta@apply' VALUE='0.03214285714285715' />
+	<ITEM NAME='edu.brown.cs.s6.license.FindCopyright@getCopyright' VALUE='0.06071428571428572' />
+	<ITEM NAME='edu.brown.cs.s6.license.LicenseManager@queryDatabase' VALUE='0.03035714285714286' />
+	<ITEM NAME='edu.brown.cs.s6.solution.SolutionBase@computeEncoding' VALUE='0.03214285714285715' />
+	<ITEM NAME='edu.brown.cs.s6.solution.SolutionSet@addInitialSolution' VALUE='0.016071428571428573' />
+	<ITEM NAME='org.eclipse.jdt.core.JavaCore@getOptions' VALUE='0.20535714285714285' />
+	<ITEM NAME='org.eclipse.jdt.core.ToolFactory@createCodeFormatter' VALUE='0.026785714285714284' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert' VALUE='0.1267857142857143' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convertType' VALUE='0.019642857142857142' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@removeTrailingCommentFromExpressionEndingWithAParen' VALUE='0.016071428571428573' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@setModifiers' VALUE='0.0125' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@setQualifiedNameNameAndSourceRanges' VALUE='0.010714285714285716' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@accept' VALUE='0.09821428571428571' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@acceptChildren' VALUE='0.048214285714285716' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@appendPrintString' VALUE='0.0125' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@checkNewChild' VALUE='0.026785714285714284' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@getStartPosition' VALUE='0.08750000000000001' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@postReplaceChild' VALUE='0.010714285714285716' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@postValueChange' VALUE='0.010714285714285716' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@preReplaceChild' VALUE='0.028571428571428574' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@preValueChange' VALUE='0.04107142857142857' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@setProperty' VALUE='0.03571428571428571' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@toString' VALUE='0.0125' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTNode$NodeList@&lt;init&gt;' VALUE='0.026785714285714284' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTNode$NodeList@add' VALUE='0.028571428571428574' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTNode$NodeList@newCursor' VALUE='0.026785714285714284' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTParser@internalCreateAST' VALUE='0.010714285714285716' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTVisitor@endVisit' VALUE='0.20357142857142857' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTVisitor@postVisit' VALUE='0.09285714285714286' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTVisitor@preVisit' VALUE='0.19464285714285715' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.ASTVisitor@visit' VALUE='0.028571428571428574' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.Block@accept0' VALUE='0.016071428571428573' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.CompilationUnitResolver@convert' VALUE='0.05357142857142857' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.CompilationUnitResolver@parse' VALUE='1.067857142857143' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.DefaultASTVisitor@visit' VALUE='0.03571428571428571' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.DefaultCommentMapper@getCommentIndex' VALUE='0.016071428571428573' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.DefaultCommentMapper@getLineNumber' VALUE='0.019642857142857142' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.DefaultCommentMapper@storeLeadingComments' VALUE='0.03571428571428571' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.DefaultCommentMapper@storeTrailingComments' VALUE='0.019642857142857142' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.DocCommentParser@parse' VALUE='0.021428571428571432' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.DocCommentParser@parseTag' VALUE='0.026785714285714284' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.MethodDeclaration@accept0' VALUE='0.042857142857142864' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.MethodInvocation@accept0' VALUE='0.019642857142857142' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.SimpleName@accept0' VALUE='0.017857142857142856' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.SimpleType@accept0' VALUE='0.019642857142857142' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.SingleVariableDeclaration@accept0' VALUE='0.023214285714285715' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.TypeDeclaration@accept0' VALUE='0.010714285714285716' />
+	<ITEM NAME='org.eclipse.jdt.core.dom.VariableDeclarationStatement@accept0' VALUE='0.026785714285714284' />
+	<ITEM NAME='org.eclipse.jface.text.TreeLineTracker@updateParentChain' VALUE='0.010714285714285716' />
+      </BARGRAPH>
+    </SUMMARY>
+    <SUMMARY NAME='THREADS' VALUE='0.1' CONFIDENCE='1.0'>
+      <METER NAME='% BLOCK' VALUE='0.0' TYPE='PERCENT' />
+      <METER NAME='BLOCK TIME' VALUE='635471.7465140574' TYPE='TIME' />
+    </SUMMARY>
+    <SUMMARY NAME='MEMORY' VALUE='0.4408069763967193' CONFIDENCE='1.0'>
+      <METER NAME='MEMORY USED' VALUE='6.22556048E8' TYPE='MEMORY' />
+      <METER NAME='GCs PER Minute' VALUE='24.960428588822598' />
+      <METER NAME='ALLOCS PER Minute' VALUE='3.4756570155902004E8' />
+    </SUMMARY>
+    <SUMMARY NAME='IO' VALUE='1.0' CONFIDENCE='0.5'>
+      <METER NAME='IO %' VALUE='11.0' TYPE='PERCENT' MIN='0' MAX='1.0' />
+    </SUMMARY>
+    <SUMMARY NAME='HEAP' VALUE='0.8276110802428818' CONFIDENCE='0.1' />
+    <SUMMARY NAME='REACTION' VALUE='0.2988950276243094' CONFIDENCE='0.5'>
+      <METER NAME='EVENT %' VALUE='0.22099447513812154' TYPE='PERCENT' MIN='0' MAX='1.0' />
+    </SUMMARY>
+    <SUMMARY NAME='SOCKETS' VALUE='1.0' CONFIDENCE='1.0'>
+      <METER NAME='SOCKET %' VALUE='10.315735520246028' TYPE='PERCENT' MIN='0' MAX='1.0' />
+    </SUMMARY>
+    <SUMMARY NAME='PHASE' VALUE='0.569947363750578' CONFIDENCE='1.0'>
+      <METER NAME='PHASE NUMBER' TYPE='NUMBER' VALUE='1' MIN='0' MAX='3' />
+      <BARGRAPH NAME='% PHASE TIME' TOTAL='1.0' TYPE='PERCENT'>
+	<ITEM NAME='0' VALUE='0.46490838863953743' />
+	<ITEM NAME='1' VALUE='0.430052636249422' />
+	<ITEM NAME='2' VALUE='0.10503897511104053' />
+      </BARGRAPH>
+    </SUMMARY>
+  </SUMMARIES>
+  <IMMEDIATES>
+    <CPUDELTA />
+    <IODELTA />
+    <REACTIONDELTA />
+    <PHASEDELTA />
+  </IMMEDIATES>
+  <CPUTIME TOTTIME='42.43' TOTSAMP='3902' ACTSAMP='560' ACTIVE='2617' PCTUSED='67.1' PCTACT='467.3' RECENT='4.0'>
+    <ITEM NAME='TOTAL' BASETIME='198.30' BASEPCT='467.3' TOTALTIME='4988.47' TOTALPCT='11756.1' TIMEERROR='19.44' BASEERROR='3.88' />
+    <ITEM NAME='edu.brown.cs.ivy.exec.IvyExec@&lt;init&gt;@161' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.ivy.exec.IvyExec@doExec@197' BASETIME='0.68' BASEPCT='1.6' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.23' />
+    <ITEM NAME='edu.brown.cs.ivy.exec.IvyExec@waitFor@290' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.ivy.exec.IvyExecFiles$Monitor@run@219' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.ivy.file.IvyFile@expandName@116' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.15' />
+    <ITEM NAME='edu.brown.cs.ivy.file.IvyFile@expandName@120' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.ivy.xml.IvyXml@convertStringToXml' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.08' />
+    <ITEM NAME='edu.brown.cs.ivy.xml.IvyXml$XmlParser@parse@1118' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.ivy.xml.IvyXmlReaderThread@run@161' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.engine.EngineMain@access$900@79' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.engine.EngineMain@createFileFragment@489' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='50.84' TOTALPCT='119.8' TIMEERROR='1.96' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.engine.EngineMain@handleCommand' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.engine.EngineMain$DependWorker@run' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.engine.EngineMain$EngineClient@processXmlMessage@1067' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.engine.EngineMain$TestWorker@run@861' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.12' TOTALPCT='5.0' TIMEERROR='0.40' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.engine.EngineMain$TransformSolution@call@663' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='100.17' TOTALPCT='236.1' TIMEERROR='2.76' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.engine.EngineMain$TransformSolution@call@678' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='40.77' TOTALPCT='96.1' TIMEERROR='1.76' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.engine.EngineMain$TransformSolution@call@682' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='59.18' TOTALPCT='139.5' TIMEERROR='2.12' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.engine.EnginePool$Worker@run@316' BASETIME='0.91' BASEPCT='2.1' TOTALTIME='0.91' TOTALPCT='2.1' TIMEERROR='0.26' BASEERROR='0.26' />
+    <ITEM NAME='edu.brown.cs.s6.engine.EnginePool$Worker@run@327' BASETIME='13.64' BASEPCT='32.1' TOTALTIME='13.64' TOTALPCT='32.1' TIMEERROR='1.02' BASEERROR='1.02' />
+    <ITEM NAME='edu.brown.cs.s6.engine.EnginePool$Worker@run@331' BASETIME='0.45' BASEPCT='1.1' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.19' />
+    <ITEM NAME='edu.brown.cs.s6.engine.EnginePool$Worker@run@334' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='182.08' TOTALPCT='429.1' TIMEERROR='3.71' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchBase@getSolutions@280' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='50.84' TOTALPCT='119.8' TIMEERROR='1.96' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchBase@getSolutions@283' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='11.52' TOTALPCT='27.1' TIMEERROR='0.93' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchBase@getSolutions@286' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='10.15' TOTALPCT='23.9' TIMEERROR='0.88' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchBase@loadURI@217' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchBase@loadURI@236' BASETIME='0.38' BASEPCT='0.9' TOTALTIME='0.38' TOTALPCT='0.9' TIMEERROR='0.17' BASEERROR='0.17' />
+    <ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchBase@loadURI@238' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.15' />
+    <ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchBase@scanURI@181' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchBase@scanURI@199' BASETIME='0.53' BASEPCT='1.2' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.20' />
+    <ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchGoogle$ItemParser' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution@run@272' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution@run@294' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='4.85' TOTALPCT='11.4' TIMEERROR='0.61' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution@run@286' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchLabrador$LabradorSource@&lt;init&gt;@237' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='4.24' TOTALPCT='10.0' TIMEERROR='0.57' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile@run@209' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='4.24' TOTALPCT='10.0' TIMEERROR='0.57' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile@run@210' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='67.67' TOTALPCT='159.5' TIMEERROR='2.26' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchSource@&lt;init&gt;@88' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.s6.keysearch.KeySearchSource@&lt;init&gt;@92' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='3.94' TOTALPCT='9.3' TIMEERROR='0.55' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava@checkTestCases@360' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.12' TOTALPCT='5.0' TIMEERROR='0.40' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava@createFileFragment@142' BASETIME='1.67' BASEPCT='3.9' TOTALTIME='8.94' TOTALPCT='21.1' TIMEERROR='0.82' BASEERROR='0.36' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava@createFileFragment@146' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='41.90' TOTALPCT='98.8' TIMEERROR='1.78' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava@getKeyText@198' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='49.48' TOTALPCT='116.6' TIMEERROR='1.94' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava@getKeyText@201' BASETIME='1.52' BASEPCT='3.6' TOTALTIME='11.97' TOTALPCT='28.2' TIMEERROR='0.95' BASEERROR='0.34' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava@resolveFragment@309' BASETIME='0.15' BASEPCT='0.4' TOTALTIME='20.46' TOTALPCT='48.2' TIMEERROR='1.25' BASEERROR='0.11' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava@resolveFragment@316' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='31.82' TOTALPCT='75.0' TIMEERROR='1.55' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava$ClonedClassFragment@getAstNode@771' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='52.66' TOTALPCT='124.1' TIMEERROR='2.00' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava$ClonedClassFragment@getKeyText@781' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='42.36' TOTALPCT='99.8' TIMEERROR='1.79' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava$ClonedClassFragment@getSourceText@766' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.82' TOTALPCT='4.3' TIMEERROR='0.37' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava$ClonedMethodFragment@getAstNode@886' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='16.22' TOTALPCT='38.2' TIMEERROR='1.11' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava$ClonedMethodFragment@getKeyText@906' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='10.68' TOTALPCT='25.2' TIMEERROR='0.90' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava$FileFragment@resolveFragment@639' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='11.52' TOTALPCT='27.1' TIMEERROR='0.93' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava$FragmentDelta@getAstNode@994' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='16.97' TOTALPCT='40.0' TIMEERROR='1.13' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava$FragmentDelta@getAstNode@995' BASETIME='0.15' BASEPCT='0.4' TOTALTIME='0.91' TOTALPCT='2.1' TIMEERROR='0.26' BASEERROR='0.11' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava$FragmentDelta@getAstNode@998' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='50.54' TOTALPCT='119.1' TIMEERROR='1.96' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava$FragmentDelta@getSourceText@948' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava$FragmentDelta@getSourceText@949' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava$FragmentDelta@getSourceText@953' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='12.81' TOTALPCT='30.2' TIMEERROR='0.99' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava$FragmentDelta@getSourceText@965' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.52' TOTALPCT='3.6' TIMEERROR='0.34' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava$FragmentDelta@getSourceText@986' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.29' TOTALPCT='3.0' TIMEERROR='0.31' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.FragmentJava$FragmentDelta@getSourceText@987' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.36' TOTALPCT='3.2' TIMEERROR='0.32' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaAst@getJavaType@99' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaAst@setExprType@174' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='1.36' TOTALPCT='3.2' TIMEERROR='0.32' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaChecker' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaContext@defineKnownMethod@181' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.08' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaContext@defineKnownType@151' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.15' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaContext@defineKnownType@153' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='5.53' TOTALPCT='13.0' TIMEERROR='0.65' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaContext@findKnownClassType@246' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.76' TOTALPCT='1.8' TIMEERROR='0.24' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaContext@findKnownType@212' BASETIME='2.50' BASEPCT='5.9' TOTALTIME='2.50' TOTALPCT='5.9' TIMEERROR='0.44' BASEERROR='0.44' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaContext@findKnownType@213' BASETIME='1.59' BASEPCT='3.8' TOTALTIME='1.59' TOTALPCT='3.8' TIMEERROR='0.35' BASEERROR='0.35' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaContext@findKnownType@215' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.91' TOTALPCT='2.1' TIMEERROR='0.26' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaContext@findKnownType@234' BASETIME='0.53' BASEPCT='1.2' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.20' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaContext$AsmClass' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaContext$AsmMethod' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.08' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaContextBase@getInputStream@159' BASETIME='0.53' BASEPCT='1.2' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.20' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaResolver@resolveNames@112' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.80' TOTALPCT='6.6' TIMEERROR='0.46' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaResolver@resolveNames@116' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='10.31' TOTALPCT='24.3' TIMEERROR='0.88' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaResolver$DefPass@visit' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaResolver$RefPass@&lt;init&gt;@332' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaResolver$RefPass@buildArgumentList@755' BASETIME='0.53' BASEPCT='1.2' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.20' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaResolver$RefPass@buildArgumentList@758' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.20' TOTALPCT='5.2' TIMEERROR='0.41' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaResolver$RefPass@endVisit@476' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.05' TOTALPCT='4.8' TIMEERROR='0.39' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaResolver$RefPass@endVisit@494' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.83' TOTALPCT='2.0' TIMEERROR='0.25' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaResolver$RefPass@lookupMethod@711' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaResolver$RefPass@lookupMethod@723' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.42' TOTALPCT='5.7' TIMEERROR='0.43' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaResolver$RefPass@visit@503' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.36' TOTALPCT='3.2' TIMEERROR='0.32' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaResolver$RefPass@visit@508' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.50' TOTALPCT='5.9' TIMEERROR='0.44' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaResolver$RefPass@visit@510' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.96' TOTALPCT='7.0' TIMEERROR='0.47' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaScopeAst@lookupVariable@115' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.05' TOTALPCT='4.8' TIMEERROR='0.39' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaScopeFixed@lookupMethod@149' BASETIME='0.53' BASEPCT='1.2' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.20' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaScopeLookup@lookupVariable@118' BASETIME='1.67' BASEPCT='3.9' TOTALTIME='1.67' TOTALPCT='3.9' TIMEERROR='0.36' BASEERROR='0.36' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaScopeLookup@lookupVariable@121' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTester@compileAndRunTestFile@412' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.83' TOTALPCT='2.0' TIMEERROR='0.25' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTester@produceTestFile@322' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTester@run@120' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.12' TOTALPCT='5.0' TIMEERROR='0.40' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTester@runJunitTest@198' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTester@runJunitTest@201' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.21' TOTALPCT='2.9' TIMEERROR='0.30' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaType@createMethodType@154' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.76' TOTALPCT='1.8' TIMEERROR='0.24' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaType@lookupKnownMethod@369' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.76' TOTALPCT='1.8' TIMEERROR='0.24' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaType@lookupKnownMethod@372' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaType@lookupMethod@258' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.42' TOTALPCT='5.7' TIMEERROR='0.43' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaType$ClassInterfaceType@lookupField' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaType$ClassInterfaceType@lookupMethod@618' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaType$KnownClassInterfaceType@lookupMethod@658' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.44' TOTALPCT='3.4' TIMEERROR='0.33' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaType$MethodType@&lt;init&gt;@917' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaType$MethodType@&lt;init&gt;@919' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaType$MethodType@buildMethodTypeName@929' BASETIME='0.53' BASEPCT='1.2' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.20' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaType$PrimType@isCompatibleWith@440' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaType$UnknownClassInterfaceType@lookupField@698' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaType$UnknownClassInterfaceType@lookupMethod@706' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.91' TOTALPCT='2.1' TIMEERROR='0.26' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaType$UnknownClassInterfaceType@lookupMethod@714' BASETIME='0.68' BASEPCT='1.6' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.23' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper@assignTypes@373' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='3.03' TOTALPCT='7.1' TIMEERROR='0.48' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper@assignTypes@375' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='15.00' TOTALPCT='35.4' TIMEERROR='1.07' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper@findSystemType@214' BASETIME='0.38' BASEPCT='0.9' TOTALTIME='0.38' TOTALPCT='0.9' TIMEERROR='0.17' BASEERROR='0.17' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper@findSystemType@235' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='5.83' TOTALPCT='13.8' TIMEERROR='0.66' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper@lookupKnownMethod@347' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@endVisit@845' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='8.71' TOTALPCT='20.5' TIMEERROR='0.81' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@findTypeName@1039' BASETIME='1.29' BASEPCT='3.0' TOTALTIME='1.29' TOTALPCT='3.0' TIMEERROR='0.31' BASEERROR='0.31' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@findTypeName@1044' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.97' TOTALPCT='4.6' TIMEERROR='0.39' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@findTypeName@1061' BASETIME='1.82' BASEPCT='4.3' TOTALTIME='1.82' TOTALPCT='4.3' TIMEERROR='0.37' BASEERROR='0.37' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@findTypeName@1067' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='3.03' TOTALPCT='7.1' TIMEERROR='0.48' BASEERROR='0.08' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@lookupPossibleType@1029' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='8.41' TOTALPCT='19.8' TIMEERROR='0.80' BASEERROR='0.08' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@lookupPossibleType@1033' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.99' TOTALPCT='2.3' TIMEERROR='0.27' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@lookupType' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.08' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visit@698' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='17.66' TOTALPCT='41.6' TIMEERROR='1.16' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visit@817' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.89' TOTALPCT='4.5' TIMEERROR='0.38' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visit@822' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visit@835' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.97' TOTALPCT='4.6' TIMEERROR='0.39' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visit@838' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visit@850' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visit@855' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.76' TOTALPCT='1.8' TIMEERROR='0.24' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visit@859' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='12.12' TOTALPCT='28.6' TIMEERROR='0.96' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visit@885' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.06' TOTALPCT='2.5' TIMEERROR='0.28' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visit@887' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.89' TOTALPCT='4.5' TIMEERROR='0.38' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visit@903' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visit@918' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visit@951' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='4.32' TOTALPCT='10.2' TIMEERROR='0.57' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visit@954' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.83' TOTALPCT='2.0' TIMEERROR='0.25' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visit@955' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.74' TOTALPCT='4.1' TIMEERROR='0.36' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visitItem@994' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='25.38' TOTALPCT='59.8' TIMEERROR='1.39' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visitList@1001' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.15' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visitList@1003' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.JavaTyper$TypeSetter@visitList@1005' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='22.35' TOTALPCT='52.7' TIMEERROR='1.30' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.LanguageJava@createFileFragment@135' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='50.84' TOTALPCT='119.8' TIMEERROR='1.96' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.LanguageJava@resolve@201' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='18.03' TOTALPCT='42.5' TIMEERROR='1.17' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.LanguageJava@resolve@202' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='13.41' TOTALPCT='31.6' TIMEERROR='1.01' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TextDelta@apply@101' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.15' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TextDelta@apply@104' BASETIME='0.38' BASEPCT='0.9' TOTALTIME='0.38' TOTALPCT='0.9' TIMEERROR='0.17' BASEERROR='0.17' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TextDelta@apply@96' BASETIME='0.45' BASEPCT='1.1' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.19' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TransformChunk@applyMethodTransform@120' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.05' TOTALPCT='4.8' TIMEERROR='0.39' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TransformChunk@findMethodMappings' BASETIME='0.15' BASEPCT='0.4' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.11' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TransformChunk$VarFinder@findVar' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.13' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TransformGeneralize@applyClassTransform@125' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='13.34' TOTALPCT='31.4' TIMEERROR='1.01' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TransformImplement@applyClassTransform@133' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='7.73' TOTALPCT='18.2' TIMEERROR='0.77' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TransformJava@addNewSolution@320' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='4.32' TOTALPCT='10.2' TIMEERROR='0.57' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TransformJava@addNewSolution@324' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='53.42' TOTALPCT='125.9' TIMEERROR='2.01' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TransformJava@applyClassTransform@274' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='9.32' TOTALPCT='22.0' TIMEERROR='0.84' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TransformJava@applyMethodTransform@239' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.91' TOTALPCT='2.1' TIMEERROR='0.26' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TransformJava@applyMethodTransform@245' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='12.12' TOTALPCT='28.6' TIMEERROR='0.96' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TransformJava@applyTransform@209' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='46.15' TOTALPCT='108.7' TIMEERROR='1.87' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TransformJava@applyTransform@212' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='13.03' TOTALPCT='30.7' TIMEERROR='0.99' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TransformJava@checkNoInternals@542' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TransformJava@findTransforms@130' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='59.18' TOTALPCT='139.5' TIMEERROR='2.12' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TransformJava@getTransformMemo@384' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='4.09' TOTALPCT='9.6' TIMEERROR='0.56' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TransformJava$TreeRewrite@postVisit@503' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TransformPackage@applyClassTransform@105' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='9.70' TOTALPCT='22.9' TIMEERROR='0.86' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.language.java.TransformStaticClass@applyClassTransform@113' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='5.53' TOTALPCT='13.0' TIMEERROR='0.65' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.license.FindCopyright@getCopyright@175' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.15' />
+    <ITEM NAME='edu.brown.cs.s6.license.FindCopyright@getCopyright@176' BASETIME='1.97' BASEPCT='4.6' TOTALTIME='1.97' TOTALPCT='4.6' TIMEERROR='0.39' BASEERROR='0.39' />
+    <ITEM NAME='edu.brown.cs.s6.license.LicenseManager@getLicenseUid@198' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.29' TOTALPCT='3.0' TIMEERROR='0.31' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.license.LicenseManager@getLicenseUidFromSource@158' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.58' TOTALPCT='6.1' TIMEERROR='0.44' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.license.LicenseManager@getLicenseUidFromSource@159' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.36' TOTALPCT='3.2' TIMEERROR='0.32' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.license.LicenseManager@queryDatabase@272' BASETIME='1.14' BASEPCT='2.7' TOTALTIME='1.14' TOTALPCT='2.7' TIMEERROR='0.29' BASEERROR='0.29' />
+    <ITEM NAME='edu.brown.cs.s6.solution.SolutionBase@&lt;init&gt;@122' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='9.47' TOTALPCT='22.3' TIMEERROR='0.85' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.solution.SolutionBase@&lt;init&gt;@147' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='53.42' TOTALPCT='125.9' TIMEERROR='2.01' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.solution.SolutionBase@computeEncoding@304' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='61.53' TOTALPCT='145.0' TIMEERROR='2.16' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.solution.SolutionBase@computeEncoding@307' BASETIME='0.45' BASEPCT='1.1' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.19' />
+    <ITEM NAME='edu.brown.cs.s6.solution.SolutionBase@computeEncoding@308' BASETIME='0.91' BASEPCT='2.1' TOTALTIME='0.91' TOTALPCT='2.1' TIMEERROR='0.26' BASEERROR='0.26' />
+    <ITEM NAME='edu.brown.cs.s6.solution.SolutionBase@createNewSolution@213' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='53.42' TOTALPCT='125.9' TIMEERROR='2.01' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.solution.SolutionBase@resolve@188' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='40.77' TOTALPCT='96.1' TIMEERROR='1.76' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.solution.SolutionSet@addInitialSolution@158' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='9.47' TOTALPCT='22.3' TIMEERROR='0.85' BASEERROR='0.00' />
+    <ITEM NAME='edu.brown.cs.s6.solution.SolutionSet@addInitialSolution@160' BASETIME='0.53' BASEPCT='1.2' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.20' />
+    <ITEM NAME='edu.brown.cs.s6.solution.SolutionSet@useSource@174' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='java.util.AbstractList@add@108' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.82' TOTALPCT='4.3' TIMEERROR='0.37' BASEERROR='0.00' />
+    <ITEM NAME='java.util.concurrent.Executors$RunnableAdapter@call@471' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='81.68' TOTALPCT='192.5' TIMEERROR='2.49' BASEERROR='0.00' />
+    <ITEM NAME='java.util.concurrent.FutureTask@run@166' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='181.86' TOTALPCT='428.6' TIMEERROR='3.71' BASEERROR='0.00' />
+    <ITEM NAME='java.util.concurrent.FutureTask$Sync@innerRun@334' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='181.86' TOTALPCT='428.6' TIMEERROR='3.71' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.JavaCore@getOptions@3172' BASETIME='8.71' BASEPCT='20.5' TOTALTIME='8.71' TOTALPCT='20.5' TIMEERROR='0.81' BASEERROR='0.81' />
+    <ITEM NAME='org.eclipse.jdt.core.ToolFactory@createCodeFormatter@137' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.14' TOTALPCT='2.7' TIMEERROR='0.29' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.ToolFactory@createCodeFormatter@163' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.15' />
+    <ITEM NAME='org.eclipse.jdt.core.ToolFactory@createCodeFormatter@169' BASETIME='0.76' BASEPCT='1.8' TOTALTIME='0.76' TOTALPCT='1.8' TIMEERROR='0.24' BASEERROR='0.24' />
+    <ITEM NAME='org.eclipse.jdt.core.compiler.CharOperation@indexOf' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.AST@&lt;init&gt;' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@buildBodyDeclarations@172' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.29' TOTALPCT='3.0' TIMEERROR='0.31' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@buildBodyDeclarations@179' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='21.90' TOTALPCT='51.6' TIMEERROR='1.29' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@buildBodyDeclarations@184' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='5.46' TOTALPCT='12.9' TIMEERROR='0.64' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@buildCommentsTable@342' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='3.18' TOTALPCT='7.5' TIMEERROR='0.49' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@checkAndAddMultipleFieldDeclaration@376' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='1.21' TOTALPCT='2.9' TIMEERROR='0.30' BASEERROR='0.08' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@checkAndAddMultipleLocalDeclaration@392' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.91' TOTALPCT='2.1' TIMEERROR='0.26' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@checkAndAddMultipleLocalDeclaration@396' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.12' TOTALPCT='5.0' TIMEERROR='0.40' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1134' BASETIME='0.45' BASEPCT='1.1' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.19' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1143' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.67' TOTALPCT='3.9' TIMEERROR='0.36' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1145' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='15.99' TOTALPCT='37.7' TIMEERROR='1.10' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1234' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='3.26' TOTALPCT='7.7' TIMEERROR='0.50' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1250' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1262' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='23.72' TOTALPCT='55.9' TIMEERROR='1.34' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1275' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1286' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.99' TOTALPCT='2.3' TIMEERROR='0.27' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1292' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='14.02' TOTALPCT='33.0' TIMEERROR='1.03' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1538' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.06' TOTALPCT='2.5' TIMEERROR='0.28' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1544' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1551' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1554' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.91' TOTALPCT='2.1' TIMEERROR='0.26' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1569' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.05' TOTALPCT='4.8' TIMEERROR='0.39' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1614' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1617' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1620' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1623' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.06' TOTALPCT='2.5' TIMEERROR='0.28' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1635' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='6.06' TOTALPCT='14.3' TIMEERROR='0.68' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1638' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.20' TOTALPCT='5.2' TIMEERROR='0.41' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1755' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1789' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='3.41' TOTALPCT='8.0' TIMEERROR='0.51' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1798' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.82' TOTALPCT='4.3' TIMEERROR='0.37' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1799' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='10.38' TOTALPCT='24.5' TIMEERROR='0.89' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1804' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='4.09' TOTALPCT='9.6' TIMEERROR='0.56' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1942' BASETIME='0.91' BASEPCT='2.1' TOTALTIME='0.91' TOTALPCT='2.1' TIMEERROR='0.26' BASEERROR='0.26' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@1943' BASETIME='0.53' BASEPCT='1.2' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.20' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2014' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.27' TOTALPCT='5.4' TIMEERROR='0.42' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2018' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2030' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2055' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2100' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2102' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2313' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2332' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2352' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.14' TOTALPCT='2.7' TIMEERROR='0.29' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2358' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2370' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.14' TOTALPCT='2.7' TIMEERROR='0.29' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2391' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.08' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2411' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='15.23' TOTALPCT='35.9' TIMEERROR='1.07' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2432' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='4.32' TOTALPCT='10.2' TIMEERROR='0.57' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2435' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='16.29' TOTALPCT='38.4' TIMEERROR='1.11' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2441' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.29' TOTALPCT='3.0' TIMEERROR='0.31' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2444' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.21' TOTALPCT='2.9' TIMEERROR='0.30' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2453' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='3.71' TOTALPCT='8.8' TIMEERROR='0.53' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2503' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.35' TOTALPCT='5.5' TIMEERROR='0.42' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2507' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='4.85' TOTALPCT='11.4' TIMEERROR='0.61' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2510' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='3.71' TOTALPCT='8.8' TIMEERROR='0.53' BASEERROR='0.08' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2544' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.06' TOTALPCT='2.5' TIMEERROR='0.28' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2599' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2602' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.73' TOTALPCT='6.4' TIMEERROR='0.45' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2692' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='28.87' TOTALPCT='68.0' TIMEERROR='1.48' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@2783' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.67' TOTALPCT='3.9' TIMEERROR='0.36' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@423' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@450' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@520' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@521' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.36' TOTALPCT='3.2' TIMEERROR='0.32' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@523' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='17.05' TOTALPCT='40.2' TIMEERROR='1.14' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@615' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@893' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@924' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.91' TOTALPCT='2.1' TIMEERROR='0.26' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convert@927' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.06' TOTALPCT='2.5' TIMEERROR='0.28' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convertImport@2796' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convertToFieldDeclaration@2905' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convertToParenthesizedExpression@2932' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.83' TOTALPCT='2.0' TIMEERROR='0.25' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convertToVariableDeclarationExpression' BASETIME='0.15' BASEPCT='0.4' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.11' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convertToVariableDeclarationFragment@3002' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convertToVariableDeclarationFragment@3042' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.29' TOTALPCT='3.0' TIMEERROR='0.31' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convertToVariableDeclarationStatement@3070' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.05' TOTALPCT='4.8' TIMEERROR='0.39' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convertToVariableDeclarationStatement@3077' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@convertType@3107' BASETIME='0.53' BASEPCT='1.2' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.20' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@createComment@3372' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='3.18' TOTALPCT='7.5' TIMEERROR='0.49' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@createModifier' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@removeLeadingAndTrailingCommentsFromLiteral@3880' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@removeTrailingCommentFromExpressionEndingWithAParen@3912' BASETIME='0.53' BASEPCT='1.2' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.20' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@setModifiers@4383' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.15' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@setModifiers@4512' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTConverter@setQualifiedNameNameAndSourceRanges@4854' BASETIME='0.38' BASEPCT='0.9' TOTALTIME='0.38' TOTALPCT='0.9' TIMEERROR='0.17' BASEERROR='0.17' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@&lt;init&gt;@1418' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='2.50' TOTALPCT='5.9' TIMEERROR='0.44' BASEERROR='0.15' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@accept@2476' BASETIME='3.94' BASEPCT='9.3' TOTALTIME='12.65' TOTALPCT='29.8' TIMEERROR='0.98' BASEERROR='0.55' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@accept@2478' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='580.35' TOTALPCT='1367.7' TIMEERROR='6.63' BASEERROR='0.08' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@accept@2480' BASETIME='0.15' BASEPCT='0.4' TOTALTIME='4.93' TOTALPCT='11.6' TIMEERROR='0.61' BASEERROR='0.11' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@acceptChild@2525' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='144.42' TOTALPCT='340.4' TIMEERROR='3.31' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@acceptChildren@2544' BASETIME='1.97' BASEPCT='4.6' TOTALTIME='3.11' TOTALPCT='7.3' TIMEERROR='0.49' BASEERROR='0.39' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@acceptChildren@2548' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='190.65' TOTALPCT='449.3' TIMEERROR='3.80' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@appendDebugString@2665' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='11.14' TOTALPCT='26.2' TIMEERROR='0.92' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@appendPrintString@2676' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='10.61' TOTALPCT='25.0' TIMEERROR='0.90' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@appendPrintString@2677' BASETIME='0.53' BASEPCT='1.2' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.20' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@checkNewChild@1877' BASETIME='1.14' BASEPCT='2.7' TOTALTIME='1.14' TOTALPCT='2.7' TIMEERROR='0.29' BASEERROR='0.29' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@getStartPosition@2570' BASETIME='3.71' BASEPCT='8.8' TOTALTIME='3.71' TOTALPCT='8.8' TIMEERROR='0.53' BASEERROR='0.53' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@hashCode@2330' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@postReplaceChild@1972' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.15' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@postValueChange@2021' BASETIME='0.45' BASEPCT='1.1' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.19' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@preReplaceChild@1933' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@preReplaceChild@1949' BASETIME='1.14' BASEPCT='2.7' TOTALTIME='1.36' TOTALPCT='3.2' TIMEERROR='0.32' BASEERROR='0.29' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@preValueChange@2010' BASETIME='1.74' BASEPCT='4.1' TOTALTIME='1.74' TOTALPCT='4.1' TIMEERROR='0.36' BASEERROR='0.36' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@setProperty@2162' BASETIME='0.99' BASEPCT='2.3' TOTALTIME='0.99' TOTALPCT='2.3' TIMEERROR='0.27' BASEERROR='0.27' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@setProperty@2164' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.15' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@toString@2633' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='11.14' TOTALPCT='26.2' TIMEERROR='0.92' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode@toString@2641' BASETIME='0.53' BASEPCT='1.2' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.20' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode$NodeList@&lt;init&gt;@1110' BASETIME='1.14' BASEPCT='2.7' TOTALTIME='1.14' TOTALPCT='2.7' TIMEERROR='0.29' BASEERROR='0.29' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode$NodeList@add@1257' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode$NodeList@add@1258' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.15' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode$NodeList@add@1261' BASETIME='0.45' BASEPCT='1.1' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.19' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode$NodeList@add@1265' BASETIME='0.45' BASEPCT='1.1' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.19' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTNode$NodeList@newCursor@1309' BASETIME='0.91' BASEPCT='2.1' TOTALTIME='0.91' TOTALPCT='2.1' TIMEERROR='0.26' BASEERROR='0.26' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTParser@&lt;init&gt;@218' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='8.03' TOTALPCT='18.9' TIMEERROR='0.78' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTParser@createAST@656' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='91.69' TOTALPCT='216.1' TIMEERROR='2.64' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTParser@createAST@659' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.76' TOTALPCT='1.8' TIMEERROR='0.24' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTParser@initializeDefaults@235' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='8.64' TOTALPCT='20.4' TIMEERROR='0.81' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTParser@internalCreateAST@898' BASETIME='0.45' BASEPCT='1.1' TOTALTIME='45.84' TOTALPCT='108.0' TIMEERROR='1.86' BASEERROR='0.19' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTParser@internalCreateAST@905' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='45.84' TOTALPCT='108.0' TIMEERROR='1.86' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTParser@newParser@118' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='8.03' TOTALPCT='18.9' TIMEERROR='0.78' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTRecoveryPropagator' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.15' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTVisitor@endVisit@1667' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.15' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTVisitor@endVisit@1880' BASETIME='0.61' BASEPCT='1.4' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.21' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTVisitor@endVisit@2107' BASETIME='1.21' BASEPCT='2.9' TOTALTIME='1.21' TOTALPCT='2.9' TIMEERROR='0.30' BASEERROR='0.30' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTVisitor@endVisit@2230' BASETIME='0.68' BASEPCT='1.6' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.23' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTVisitor@endVisit@2279' BASETIME='3.49' BASEPCT='8.2' TOTALTIME='3.49' TOTALPCT='8.2' TIMEERROR='0.51' BASEERROR='0.51' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTVisitor@endVisit@2291' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTVisitor@endVisit@2328' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.15' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTVisitor@endVisit@2535' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTVisitor@postVisit@162' BASETIME='3.94' BASEPCT='9.3' TOTALTIME='3.94' TOTALPCT='9.3' TIMEERROR='0.55' BASEERROR='0.55' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTVisitor@preVisit@149' BASETIME='8.26' BASEPCT='19.5' TOTALTIME='8.26' TOTALPCT='19.5' TIMEERROR='0.79' BASEERROR='0.79' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ASTVisitor@visit' BASETIME='1.21' BASEPCT='2.9' TOTALTIME='1.21' TOTALPCT='2.9' TIMEERROR='0.30' BASEERROR='0.30' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.AnonymousClassDeclaration@accept0@140' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='0.76' TOTALPCT='1.8' TIMEERROR='0.24' BASEERROR='0.08' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.AnonymousClassDeclaration@accept0@143' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ArrayAccess@accept0@161' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.14' TOTALPCT='2.7' TIMEERROR='0.29' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ArrayAccess@accept0@164' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.83' TOTALPCT='2.0' TIMEERROR='0.25' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ArrayAccess@accept0@165' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ArrayCreation@accept0@208' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ArrayInitializer@accept0' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.08' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ArrayType@accept0' BASETIME='0.15' BASEPCT='0.4' TOTALTIME='0.83' TOTALPCT='2.0' TIMEERROR='0.25' BASEERROR='0.11' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.Assignment@accept0@308' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.58' TOTALPCT='6.1' TIMEERROR='0.44' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.Assignment@accept0@311' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.20' TOTALPCT='5.2' TIMEERROR='0.41' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.Assignment@accept0@312' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='3.71' TOTALPCT='8.8' TIMEERROR='0.53' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.Block@accept0@134' BASETIME='0.68' BASEPCT='1.6' TOTALTIME='30.01' TOTALPCT='70.7' TIMEERROR='1.51' BASEERROR='0.23' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.Block@accept0@136' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='79.79' TOTALPCT='188.0' TIMEERROR='2.46' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.CastExpression@accept0@159' BASETIME='0.38' BASEPCT='0.9' TOTALTIME='2.50' TOTALPCT='5.9' TIMEERROR='0.44' BASEERROR='0.17' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.CastExpression@accept0@162' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.CastExpression@accept0@163' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.44' TOTALPCT='3.4' TIMEERROR='0.33' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.CatchClause@accept0@161' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.08' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.CatchClause@accept0@165' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ClassInstanceCreation@accept0@323' BASETIME='0.15' BASEPCT='0.4' TOTALTIME='2.35' TOTALPCT='5.5' TIMEERROR='0.42' BASEERROR='0.11' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ClassInstanceCreation@accept0@332' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ClassInstanceCreation@accept0@334' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.21' TOTALPCT='2.9' TIMEERROR='0.30' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ClassInstanceCreation@accept0@337' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.CompilationUnit@accept0@209' BASETIME='0.15' BASEPCT='0.4' TOTALTIME='11.67' TOTALPCT='27.5' TIMEERROR='0.94' BASEERROR='0.11' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.CompilationUnit@accept0@213' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.CompilationUnit@accept0@214' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='49.86' TOTALPCT='117.5' TIMEERROR='1.94' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.CompilationUnit@initCommentMapper@686' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='14.02' TOTALPCT='33.0' TIMEERROR='1.03' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.CompilationUnitResolver@convert@246' BASETIME='2.27' BASEPCT='5.4' TOTALTIME='2.27' TOTALPCT='5.4' TIMEERROR='0.42' BASEERROR='0.42' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.CompilationUnitResolver@convert@256' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='43.04' TOTALPCT='101.4' TIMEERROR='1.81' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.CompilationUnitResolver@parse@388' BASETIME='0.53' BASEPCT='1.2' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.20' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.CompilationUnitResolver@parse@392' BASETIME='11.97' BASEPCT='28.2' TOTALTIME='11.97' TOTALPCT='28.2' TIMEERROR='0.95' BASEERROR='0.95' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.CompilationUnitResolver@parse@393' BASETIME='2.50' BASEPCT='5.9' TOTALTIME='2.50' TOTALPCT='5.9' TIMEERROR='0.44' BASEERROR='0.44' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.CompilationUnitResolver@parse@396' BASETIME='2.96' BASEPCT='7.0' TOTALTIME='2.96' TOTALPCT='7.0' TIMEERROR='0.47' BASEERROR='0.47' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.CompilationUnitResolver@parse@399' BASETIME='14.70' BASEPCT='34.6' TOTALTIME='14.78' TOTALPCT='34.8' TIMEERROR='1.06' BASEERROR='1.06' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.CompilationUnitResolver@parse@439' BASETIME='12.65' BASEPCT='29.8' TOTALTIME='12.65' TOTALPCT='29.8' TIMEERROR='0.98' BASEERROR='0.98' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ConditionalExpression@accept0' BASETIME='0.15' BASEPCT='0.4' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.11' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.DefaultASTVisitor@endVisit' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.76' TOTALPCT='1.8' TIMEERROR='0.24' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.DefaultASTVisitor@visit@462' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.52' TOTALPCT='3.6' TIMEERROR='0.34' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.DefaultCommentMapper@getCommentIndex@87' BASETIME='0.45' BASEPCT='1.1' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.19' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.DefaultCommentMapper@getLineNumber@146' BASETIME='0.83' BASEPCT='2.0' TOTALTIME='0.83' TOTALPCT='2.0' TIMEERROR='0.25' BASEERROR='0.25' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.DefaultCommentMapper@initialize@246' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='13.79' TOTALPCT='32.5' TIMEERROR='1.02' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.DefaultCommentMapper@storeLeadingComments@302' BASETIME='1.29' BASEPCT='3.0' TOTALTIME='1.29' TOTALPCT='3.0' TIMEERROR='0.31' BASEERROR='0.31' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.DefaultCommentMapper@storeLeadingComments@310' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.DefaultCommentMapper@storeLeadingComments@368' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.DefaultCommentMapper@storeTrailingComments@423' BASETIME='0.83' BASEPCT='2.0' TOTALTIME='0.83' TOTALPCT='2.0' TIMEERROR='0.25' BASEERROR='0.25' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.DefaultCommentMapper$CommentMapperVisitor@endVisitNode@626' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.DefaultCommentMapper$CommentMapperVisitor@visitNode@572' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='0.83' TOTALPCT='2.0' TIMEERROR='0.25' BASEERROR='0.08' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.DefaultCommentMapper$CommentMapperVisitor@visitNode@586' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.35' TOTALPCT='5.5' TIMEERROR='0.42' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.DocCommentParser@&lt;init&gt;@35' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.DocCommentParser@parse@50' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='3.18' TOTALPCT='7.5' TIMEERROR='0.49' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.DocCommentParser@parse@64' BASETIME='0.83' BASEPCT='2.0' TOTALTIME='2.96' TOTALPCT='7.0' TIMEERROR='0.47' BASEERROR='0.25' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.DocCommentParser@parseTag@338' BASETIME='0.61' BASEPCT='1.4' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.21' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.DocCommentParser@parseTag@351' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.DocCommentParser@pushText' BASETIME='0.15' BASEPCT='0.4' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.11' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.EnhancedForStatement@accept0@188' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.Expression@&lt;init&gt;@62' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.29' TOTALPCT='3.0' TIMEERROR='0.31' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ExpressionStatement@accept0@142' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='5.23' TOTALPCT='12.3' TIMEERROR='0.63' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ExpressionStatement@accept0@144' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='17.20' TOTALPCT='40.5' TIMEERROR='1.14' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ExpressionStatement@accept0@146' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ExpressionStatement@getExpression@155' BASETIME='0.38' BASEPCT='0.9' TOTALTIME='0.38' TOTALPCT='0.9' TIMEERROR='0.17' BASEERROR='0.17' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.FieldAccess@accept0@191' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.08' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.FieldDeclaration@accept0@279' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='1.59' TOTALPCT='3.8' TIMEERROR='0.35' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.FieldDeclaration@accept0@287' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.76' TOTALPCT='1.8' TIMEERROR='0.24' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ForStatement@accept0@223' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='5.00' TOTALPCT='11.8' TIMEERROR='0.62' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ForStatement@accept0@226' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.36' TOTALPCT='3.2' TIMEERROR='0.32' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ForStatement@accept0@227' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.83' TOTALPCT='2.0' TIMEERROR='0.25' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ForStatement@accept0@229' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='6.29' TOTALPCT='14.8' TIMEERROR='0.69' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.IfStatement@accept0@186' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='10.91' TOTALPCT='25.7' TIMEERROR='0.91' BASEERROR='0.08' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.IfStatement@accept0@189' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='3.86' TOTALPCT='9.1' TIMEERROR='0.54' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.IfStatement@accept0@190' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='21.52' TOTALPCT='50.7' TIMEERROR='1.28' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.IfStatement@accept0@191' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='7.27' TOTALPCT='17.1' TIMEERROR='0.74' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ImportDeclaration@accept0@220' BASETIME='0.15' BASEPCT='0.4' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.11' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.InfixExpression@accept0@364' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='2.12' TOTALPCT='5.0' TIMEERROR='0.40' BASEERROR='0.08' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.InfixExpression@accept0@367' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='4.77' TOTALPCT='11.3' TIMEERROR='0.60' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.InfixExpression@accept0@368' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='3.56' TOTALPCT='8.4' TIMEERROR='0.52' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.InfixExpression@accept0@371' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.Initializer@accept0@250' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.InstanceofExpression@accept0@157' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='0.91' TOTALPCT='2.1' TIMEERROR='0.26' BASEERROR='0.08' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.Javadoc@accept0@201' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='1.36' TOTALPCT='3.2' TIMEERROR='0.32' BASEERROR='0.08' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.LabeledStatement@accept0@167' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.MethodDeclaration@accept0@487' BASETIME='1.82' BASEPCT='4.3' TOTALTIME='36.07' TOTALPCT='85.0' TIMEERROR='1.65' BASEERROR='0.37' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.MethodDeclaration@accept0@494' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.MethodDeclaration@accept0@496' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.36' TOTALPCT='3.2' TIMEERROR='0.32' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.MethodDeclaration@accept0@500' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.67' TOTALPCT='3.9' TIMEERROR='0.36' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.MethodDeclaration@accept0@502' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='28.87' TOTALPCT='68.0' TIMEERROR='1.48' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.MethodInvocation@accept0@237' BASETIME='0.68' BASEPCT='1.6' TOTALTIME='18.79' TOTALPCT='44.3' TIMEERROR='1.19' BASEERROR='0.23' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.MethodInvocation@accept0@240' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.36' TOTALPCT='3.2' TIMEERROR='0.32' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.MethodInvocation@accept0@244' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.67' TOTALPCT='3.9' TIMEERROR='0.36' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.MethodInvocation@accept0@245' BASETIME='0.15' BASEPCT='0.4' TOTALTIME='4.24' TOTALPCT='10.0' TIMEERROR='0.57' BASEERROR='0.11' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.MethodInvocation@accept0@247' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.44' TOTALPCT='3.4' TIMEERROR='0.33' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.Modifier' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ParameterizedType@accept0@171' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.76' TOTALPCT='1.8' TIMEERROR='0.24' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ParenthesizedExpression@accept0@137' BASETIME='0.15' BASEPCT='0.4' TOTALTIME='0.83' TOTALPCT='2.0' TIMEERROR='0.25' BASEERROR='0.11' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ParenthesizedExpression@accept0@139' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.65' TOTALPCT='6.2' TIMEERROR='0.45' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.PostfixExpression@accept0@243' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.38' TOTALPCT='0.9' TIMEERROR='0.17' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.PostfixExpression@getNodeType0@217' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.PrefixExpression@accept0@259' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.PrefixExpression@accept0@262' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.PrimitiveType@accept0@259' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.76' TOTALPCT='1.8' TIMEERROR='0.24' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.QualifiedName@accept0@167' BASETIME='0.15' BASEPCT='0.4' TOTALTIME='4.55' TOTALPCT='10.7' TIMEERROR='0.59' BASEERROR='0.11' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.QualifiedName@accept0@170' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.97' TOTALPCT='4.6' TIMEERROR='0.39' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.QualifiedName@accept0@171' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ReturnStatement@accept0@134' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='1.14' TOTALPCT='2.7' TIMEERROR='0.29' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ReturnStatement@accept0@136' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.42' TOTALPCT='5.7' TIMEERROR='0.43' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.SimpleName@accept0@148' BASETIME='0.68' BASEPCT='1.6' TOTALTIME='2.20' TOTALPCT='5.2' TIMEERROR='0.41' BASEERROR='0.23' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.SimpleName@accept0@149' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='15.91' TOTALPCT='37.5' TIMEERROR='1.10' BASEERROR='0.08' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.SimpleName@internalSetIdentifier@205' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.36' TOTALPCT='3.2' TIMEERROR='0.32' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.SimpleName@setIdentifier@185' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.SimpleType@accept0@135' BASETIME='0.83' BASEPCT='2.0' TOTALTIME='4.70' TOTALPCT='11.1' TIMEERROR='0.60' BASEERROR='0.25' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.SimpleType@accept0@137' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.88' TOTALPCT='6.8' TIMEERROR='0.47' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.SimpleType@accept0@139' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.SingleVariableDeclaration@accept0@365' BASETIME='0.99' BASEPCT='2.3' TOTALTIME='3.18' TOTALPCT='7.5' TIMEERROR='0.49' BASEERROR='0.27' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.SingleVariableDeclaration@accept0@371' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.91' TOTALPCT='2.1' TIMEERROR='0.26' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.Statement@&lt;init&gt;@95' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.14' TOTALPCT='2.7' TIMEERROR='0.29' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.StringLiteral@accept0@136' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.15' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.SuperConstructorInvocation@getNodeType0@183' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.SwitchStatement@accept0@173' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='1.44' TOTALPCT='3.4' TIMEERROR='0.33' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.SwitchStatement@accept0@177' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.52' TOTALPCT='3.6' TIMEERROR='0.34' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.SynchronizedStatement@accept0@165' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.29' TOTALPCT='3.0' TIMEERROR='0.31' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.TagElement@accept0@277' BASETIME='0.38' BASEPCT='0.9' TOTALTIME='1.06' TOTALPCT='2.5' TIMEERROR='0.28' BASEERROR='0.17' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.TextElement@accept0@141' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.ThrowStatement@accept0' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.08' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.TryStatement@accept0@192' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='1.67' TOTALPCT='3.9' TIMEERROR='0.36' BASEERROR='0.15' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.TryStatement@accept0@195' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='4.62' TOTALPCT='10.9' TIMEERROR='0.59' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.TryStatement@accept0@196' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.99' TOTALPCT='2.3' TIMEERROR='0.27' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.TryStatement@getNodeType0@162' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.15' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.TypeDeclaration@accept0@467' BASETIME='0.45' BASEPCT='1.1' TOTALTIME='44.55' TOTALPCT='105.0' TIMEERROR='1.84' BASEERROR='0.19' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.TypeDeclaration@accept0@484' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='42.66' TOTALPCT='100.5' TIMEERROR='1.80' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.VariableDeclarationExpression@accept0@263' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.VariableDeclarationExpression@accept0@270' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.VariableDeclarationFragment@accept0@221' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.35' TOTALPCT='5.5' TIMEERROR='0.42' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.VariableDeclarationFragment@accept0@224' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.VariableDeclarationFragment@accept0@225' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='6.90' TOTALPCT='16.2' TIMEERROR='0.72' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.VariableDeclarationStatement@accept0@266' BASETIME='0.99' BASEPCT='2.3' TOTALTIME='6.29' TOTALPCT='14.8' TIMEERROR='0.69' BASEERROR='0.27' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.VariableDeclarationStatement@accept0@272' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.VariableDeclarationStatement@accept0@273' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='5.00' TOTALPCT='11.8' TIMEERROR='0.62' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.WhileStatement@accept0@162' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='1.97' TOTALPCT='4.6' TIMEERROR='0.39' BASEERROR='0.08' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.WhileStatement@accept0@165' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.WhileStatement@accept0@166' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='3.26' TOTALPCT='7.7' TIMEERROR='0.50' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.WhileStatement@getNodeType0@135' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.15' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.rewrite.ASTRewrite@internalRewriteAST@261' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.rewrite.ASTRewrite@internalRewriteAST@262' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='12.43' TOTALPCT='29.3' TIMEERROR='0.97' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.core.dom.rewrite.ASTRewrite@rewriteAST@193' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='12.73' TOTALPCT='30.0' TIMEERROR='0.98' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.compiler.parser.AbstractCommentParser@commentParse@233' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.52' TOTALPCT='3.6' TIMEERROR='0.34' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.compiler.parser.AbstractCommentParser@commentParse@266' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.compiler.parser.Parser' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@1026' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='7.27' TOTALPCT='17.1' TIMEERROR='0.74' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@1036' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@1056' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.21' TOTALPCT='2.9' TIMEERROR='0.30' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@1193' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@1432' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.99' TOTALPCT='2.3' TIMEERROR='0.27' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@1530' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.76' TOTALPCT='1.8' TIMEERROR='0.24' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@1612' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='10.84' TOTALPCT='25.5' TIMEERROR='0.91' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@1693' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.06' TOTALPCT='2.5' TIMEERROR='0.28' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@1713' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@1730' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.14' TOTALPCT='2.7' TIMEERROR='0.29' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@346' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@423' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.61' TOTALPCT='1.4' TIMEERROR='0.21' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@425' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.76' TOTALPCT='1.8' TIMEERROR='0.24' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@437' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='13.79' TOTALPCT='32.5' TIMEERROR='1.02' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@565' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='9.17' TOTALPCT='21.6' TIMEERROR='0.83' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@742' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.27' TOTALPCT='5.4' TIMEERROR='0.42' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@806' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.21' TOTALPCT='2.9' TIMEERROR='0.30' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@816' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.99' TOTALPCT='2.3' TIMEERROR='0.27' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@818' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='3.71' TOTALPCT='8.8' TIMEERROR='0.53' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@821' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.14' TOTALPCT='2.7' TIMEERROR='0.29' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@849' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@853' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@901' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.76' TOTALPCT='1.8' TIMEERROR='0.24' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.NaiveASTFlattener@visit@966' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.76' TOTALPCT='1.8' TIMEERROR='0.24' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@doTextInsert@1021' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.67' TOTALPCT='3.9' TIMEERROR='0.36' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@doTextRemoveAndVisit@282' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.74' TOTALPCT='4.1' TIMEERROR='0.36' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@doVisit@290' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='38.11' TOTALPCT='89.8' TIMEERROR='1.70' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@doVisit@299' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='4.17' TOTALPCT='9.8' TIMEERROR='0.56' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@doVisitList@308' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='4.17' TOTALPCT='9.8' TIMEERROR='0.56' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@doVisitUnchangedChildren@335' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='62.36' TOTALPCT='147.0' TIMEERROR='2.17' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@rewriteNodeList' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@rewriteParagraphList@854' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='3.79' TOTALPCT='8.9' TIMEERROR='0.54' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@rewriteParagraphList@866' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@rewriteRequiredNode@581' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.52' TOTALPCT='3.6' TIMEERROR='0.34' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@rewriteRequiredNode@582' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.36' TOTALPCT='3.2' TIMEERROR='0.32' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@1324' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.89' TOTALPCT='4.5' TIMEERROR='0.38' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@1334' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='12.50' TOTALPCT='29.5' TIMEERROR='0.97' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@1442' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.35' TOTALPCT='5.5' TIMEERROR='0.42' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@1479' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='10.76' TOTALPCT='25.4' TIMEERROR='0.90' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@1535' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='15.38' TOTALPCT='36.3' TIMEERROR='1.08' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@1554' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@1754' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.06' TOTALPCT='2.5' TIMEERROR='0.28' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@1799' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@1802' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@1839' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.91' TOTALPCT='2.1' TIMEERROR='0.26' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@1980' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.58' TOTALPCT='6.1' TIMEERROR='0.44' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@2025' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='3.41' TOTALPCT='8.0' TIMEERROR='0.51' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@2072' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='4.70' TOTALPCT='11.1' TIMEERROR='0.60' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@2169' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@2284' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@2311' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.35' TOTALPCT='5.5' TIMEERROR='0.42' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@2432' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.76' TOTALPCT='1.8' TIMEERROR='0.24' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@2461' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.76' TOTALPCT='1.8' TIMEERROR='0.24' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@2470' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@2478' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@2787' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.06' TOTALPCT='2.5' TIMEERROR='0.28' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@2815' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.76' TOTALPCT='1.8' TIMEERROR='0.24' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@visit@2836' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@voidVisit@314' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='30.16' TOTALPCT='71.1' TIMEERROR='1.51' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@voidVisit@320' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='27.88' TOTALPCT='65.7' TIMEERROR='1.45' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@voidVisit@322' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='34.10' TOTALPCT='80.4' TIMEERROR='1.61' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer@voidVisitList@328' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='34.10' TOTALPCT='80.4' TIMEERROR='1.61' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer$ListRewriter@rewriteList@547' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteFormatter@formatNode@363' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.21' TOTALPCT='2.9' TIMEERROR='0.30' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteFormatter@formatString@243' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.21' TOTALPCT='2.9' TIMEERROR='0.30' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteFormatter@getFormattedResult@184' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.21' TOTALPCT='2.9' TIMEERROR='0.30' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.core.dom.rewrite.RewriteEventStore' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.06' TOTALPCT='2.5' TIMEERROR='0.28' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jdt.internal.formatter.DefaultCodeFormatter' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jface.text.AbstractDocument@getPositions@966' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.15' />
+    <ITEM NAME='org.eclipse.jface.text.AbstractDocument@replace@1151' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.53' TOTALPCT='1.2' TIMEERROR='0.20' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jface.text.AbstractDocument@replace@1176' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.21' TOTALPCT='2.9' TIMEERROR='0.30' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jface.text.AbstractLineTracker@checkImplementation@227' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jface.text.AbstractLineTracker@replace@214' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jface.text.AbstractLineTracker@set@202' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jface.text.AbstractLineTracker$1@nextDelimiterInfo@103' BASETIME='0.38' BASEPCT='0.9' TOTALTIME='0.38' TOTALPCT='0.9' TIMEERROR='0.17' BASEERROR='0.17' />
+    <ITEM NAME='org.eclipse.jface.text.AbstractLineTracker$2@&lt;init&gt;@227' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jface.text.CopyOnWriteTextStore' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='0.68' TOTALPCT='1.6' TIMEERROR='0.23' BASEERROR='0.08' />
+    <ITEM NAME='org.eclipse.jface.text.Document@&lt;init&gt;@60' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jface.text.GapTextStore@get' BASETIME='0.30' BASEPCT='0.7' TOTALTIME='0.30' TOTALPCT='0.7' TIMEERROR='0.15' BASEERROR='0.15' />
+    <ITEM NAME='org.eclipse.jface.text.ListLineTracker@createLines' BASETIME='0.08' BASEPCT='0.2' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.08' />
+    <ITEM NAME='org.eclipse.jface.text.ListLineTracker@set@348' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jface.text.TreeLineTracker@&lt;init&gt;@194' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jface.text.TreeLineTracker@insertAfter@528' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jface.text.TreeLineTracker@updateParentChain@801' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.45' TOTALPCT='1.1' TIMEERROR='0.19' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.jface.text.TreeLineTracker@updateParentChain@815' BASETIME='0.38' BASEPCT='0.9' TOTALTIME='0.38' TOTALPCT='0.9' TIMEERROR='0.17' BASEERROR='0.17' />
+    <ITEM NAME='org.eclipse.text.edits.DeleteEdit@performDocumentUpdating@64' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='0.83' TOTALPCT='2.0' TIMEERROR='0.25' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.text.edits.TextEdit@apply@710' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.36' TOTALPCT='3.2' TIMEERROR='0.32' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.text.edits.TextEdit@apply@734' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.52' TOTALPCT='3.6' TIMEERROR='0.34' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.text.edits.TextEdit@dispatchPerformEdits@738' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.36' TOTALPCT='3.2' TIMEERROR='0.32' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.text.edits.TextEdit@traverseDocumentUpdating@891' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='2.35' TOTALPCT='5.5' TIMEERROR='0.42' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.text.edits.TextEdit@traverseDocumentUpdating@898' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.21' TOTALPCT='2.9' TIMEERROR='0.30' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.text.edits.TextEditGroup@getTextEdits@143' BASETIME='0.23' BASEPCT='0.5' TOTALTIME='0.23' TOTALPCT='0.5' TIMEERROR='0.13' BASEERROR='0.13' />
+    <ITEM NAME='org.eclipse.text.edits.TextEditProcessor@executeDo@188' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.21' TOTALPCT='2.9' TIMEERROR='0.30' BASEERROR='0.00' />
+    <ITEM NAME='org.eclipse.text.edits.TextEditProcessor@performEdits@156' BASETIME='0.00' BASEPCT='0.0' TOTALTIME='1.36' TOTALPCT='3.2' TIMEERROR='0.32' BASEERROR='0.00' />
+  </CPUTIME>
+  <THREADS SUMMARY='0.753752610466726'>
+    <THREAD ID='10' NAME='DestroyJavaVM' RUNPCT='0.0' WAITPCT='0.0' IOPCT='0.0' BLOCKPCT='0.0' SLEEPPCT='0.0' RUNTIME='0.00' NUMBLOCK='0.0' NUMWAIT='0.0' TOTTIME='295.64' TERMINATED='false' />
+    <THREAD ID='11' NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60166' RUNPCT='0.0' WAITPCT='0.0' IOPCT='100.0' BLOCKPCT='0.0' SLEEPPCT='0.0' RUNTIME='0.00' NUMBLOCK='0.0' NUMWAIT='0.0' TOTTIME='295.64' TERMINATED='false' />
+    <THREAD ID='12' NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60167' RUNPCT='0.0' WAITPCT='0.0' IOPCT='100.0' BLOCKPCT='0.0' SLEEPPCT='0.0' RUNTIME='0.00' NUMBLOCK='0.0' NUMWAIT='0.0' TOTTIME='295.64' TERMINATED='false' />
+    <THREAD ID='13' NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60168' RUNPCT='0.0' WAITPCT='0.0' IOPCT='100.0' BLOCKPCT='0.0' SLEEPPCT='0.0' RUNTIME='0.00' NUMBLOCK='0.0' NUMWAIT='0.0' TOTTIME='295.64' TERMINATED='false' />
+    <THREAD ID='14' NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60169' RUNPCT='0.0' WAITPCT='0.0' IOPCT='100.0' BLOCKPCT='0.0' SLEEPPCT='0.0' RUNTIME='0.00' NUMBLOCK='0.0' NUMWAIT='0.0' TOTTIME='295.64' TERMINATED='false' />
+    <THREAD ID='15' NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60170' RUNPCT='0.0' WAITPCT='0.0' IOPCT='100.0' BLOCKPCT='0.0' SLEEPPCT='0.0' RUNTIME='0.00' NUMBLOCK='0.0' NUMWAIT='0.0' TOTTIME='295.64' TERMINATED='false' />
+    <THREAD ID='16' NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60171' RUNPCT='0.0' WAITPCT='0.0' IOPCT='100.0' BLOCKPCT='0.0' SLEEPPCT='0.0' RUNTIME='0.00' NUMBLOCK='0.0' NUMWAIT='0.0' TOTTIME='295.64' TERMINATED='false' />
+    <THREAD ID='162' NAME='process reaper' RUNPCT='100.0' WAITPCT='0.0' IOPCT='0.0' BLOCKPCT='0.0' SLEEPPCT='0.0' RUNTIME='29.62' NUMBLOCK='0.0' NUMWAIT='0.0' TOTTIME='29.62' TERMINATED='true' />
+    <THREAD ID='17' NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60172' RUNPCT='0.0' WAITPCT='0.0' IOPCT='100.0' BLOCKPCT='0.0' SLEEPPCT='0.0' RUNTIME='0.00' NUMBLOCK='0.0' NUMWAIT='0.0' TOTTIME='295.64' TERMINATED='false' />
+    <THREAD ID='18' NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60173' RUNPCT='0.0' WAITPCT='0.0' IOPCT='100.0' BLOCKPCT='0.0' SLEEPPCT='0.0' RUNTIME='0.00' NUMBLOCK='0.0' NUMWAIT='0.0' TOTTIME='295.64' TERMINATED='false' />
+    <THREAD ID='19' NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60174' RUNPCT='0.0' WAITPCT='0.0' IOPCT='100.0' BLOCKPCT='0.0' SLEEPPCT='0.0' RUNTIME='0.00' NUMBLOCK='0.0' NUMWAIT='0.0' TOTTIME='295.64' TERMINATED='false' />
+    <THREAD ID='2' NAME='Reference Handler' RUNPCT='0.3' WAITPCT='99.7' IOPCT='0.0' BLOCKPCT='0.0' SLEEPPCT='0.0' RUNTIME='0.39' NUMBLOCK='72.0' NUMWAIT='65.0' WAITTIME='153.66' BLOCKTIME='0.22' TOTTIME='128.82' TERMINATED='false' />
+    <THREAD ID='20' NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60175' RUNPCT='0.0' WAITPCT='0.0' IOPCT='100.0' BLOCKPCT='0.0' SLEEPPCT='0.0' RUNTIME='0.00' NUMBLOCK='0.0' NUMWAIT='0.0' TOTTIME='295.64' TERMINATED='false' />
+    <THREAD ID='21' NAME='Attach Listener' RUNPCT='0.0' WAITPCT='0.0' IOPCT='0.0' BLOCKPCT='0.0' SLEEPPCT='0.0' RUNTIME='0.00' NUMBLOCK='0.0' NUMWAIT='0.0' TOTTIME='295.64' TERMINATED='false' />
+    <THREAD ID='28' NAME='EngineClient_/128.148.31.11:59970_/128.148.31.11:41052' RUNPCT='0.7' WAITPCT='98.6' IOPCT='0.7' BLOCKPCT='0.0' SLEEPPCT='0.0' RUNTIME='1.06' NUMBLOCK='45.0' NUMWAIT='274.0' WAITTIME='118.55' BLOCKTIME='0.05' TOTTIME='153.72' TERMINATED='false' />
+    <THREAD ID='29' NAME='S6EnginePoolThread_0' RUNPCT='29.4' WAITPCT='52.3' IOPCT='9.1' BLOCKPCT='9.2' SLEEPPCT='0.0' RUNTIME='43.56' NUMBLOCK='892.0' NUMWAIT='101.0' WAITTIME='85.56' BLOCKTIME='20.85' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='3' NAME='Finalizer' RUNPCT='0.4' WAITPCT='99.5' IOPCT='0.0' BLOCKPCT='0.1' SLEEPPCT='0.0' RUNTIME='0.51' NUMBLOCK='75.0' NUMWAIT='62.0' WAITTIME='79.60' BLOCKTIME='0.34' TOTTIME='139.19' TERMINATED='false' />
+    <THREAD ID='30' NAME='S6EnginePoolThread_1' RUNPCT='29.3' WAITPCT='52.4' IOPCT='11.3' BLOCKPCT='7.0' SLEEPPCT='0.0' RUNTIME='44.85' NUMBLOCK='1015.0' NUMWAIT='103.0' WAITTIME='68.87' BLOCKTIME='32.78' TOTTIME='153.14' TERMINATED='false' />
+    <THREAD ID='32' NAME='S6EnginePoolThread_2' RUNPCT='32.4' WAITPCT='55.4' IOPCT='5.1' BLOCKPCT='7.1' SLEEPPCT='0.0' RUNTIME='48.11' NUMBLOCK='1019.0' NUMWAIT='97.0' WAITTIME='81.44' BLOCKTIME='12.90' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='33' NAME='S6EnginePoolThread_3' RUNPCT='30.9' WAITPCT='53.8' IOPCT='7.4' BLOCKPCT='8.0' SLEEPPCT='0.0' RUNTIME='45.78' NUMBLOCK='900.0' NUMWAIT='102.0' WAITTIME='86.32' BLOCKTIME='19.20' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='34' NAME='S6EnginePoolThread_4' RUNPCT='2.1' WAITPCT='81.5' IOPCT='9.0' BLOCKPCT='7.5' SLEEPPCT='0.0' RUNTIME='3.08' NUMBLOCK='260.0' NUMWAIT='122.0' WAITTIME='55.90' BLOCKTIME='0.64' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='35' NAME='S6EnginePoolThread_5' RUNPCT='3.9' WAITPCT='86.7' IOPCT='1.7' BLOCKPCT='7.7' SLEEPPCT='0.0' RUNTIME='5.78' NUMBLOCK='345.0' NUMWAIT='124.0' WAITTIME='104.81' BLOCKTIME='26.60' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='36' NAME='S6EnginePoolThread_6' RUNPCT='2.2' WAITPCT='86.4' IOPCT='2.2' BLOCKPCT='9.1' SLEEPPCT='0.0' RUNTIME='3.32' NUMBLOCK='243.0' NUMWAIT='137.0' WAITTIME='115.32' BLOCKTIME='13.62' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='37' NAME='S6EnginePoolThread_7' RUNPCT='3.9' WAITPCT='86.5' IOPCT='2.5' BLOCKPCT='7.1' SLEEPPCT='0.0' RUNTIME='5.78' NUMBLOCK='259.0' NUMWAIT='119.0' WAITTIME='94.95' BLOCKTIME='29.64' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='38' NAME='S6EnginePoolThread_8' RUNPCT='2.3' WAITPCT='87.0' IOPCT='2.0' BLOCKPCT='8.7' SLEEPPCT='0.0' RUNTIME='3.45' NUMBLOCK='320.0' NUMWAIT='127.0' WAITTIME='96.49' BLOCKTIME='23.98' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='39' NAME='S6EnginePoolThread_9' RUNPCT='2.7' WAITPCT='82.1' IOPCT='6.6' BLOCKPCT='8.7' SLEEPPCT='0.0' RUNTIME='3.94' NUMBLOCK='242.0' NUMWAIT='130.0' WAITTIME='113.84' BLOCKTIME='17.74' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='4' NAME='Signal Dispatcher' RUNPCT='0.0' WAITPCT='0.0' IOPCT='0.0' BLOCKPCT='0.0' SLEEPPCT='0.0' RUNTIME='0.00' NUMBLOCK='0.0' NUMWAIT='0.0' TOTTIME='295.64' TERMINATED='false' />
+    <THREAD ID='40' NAME='S6EnginePoolThread_10' RUNPCT='2.0' WAITPCT='83.0' IOPCT='6.9' BLOCKPCT='8.1' SLEEPPCT='0.0' RUNTIME='2.95' NUMBLOCK='259.0' NUMWAIT='102.0' WAITTIME='75.99' BLOCKTIME='16.75' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='41' NAME='S6EnginePoolThread_11' RUNPCT='2.1' WAITPCT='84.6' IOPCT='5.0' BLOCKPCT='8.4' SLEEPPCT='0.0' RUNTIME='3.08' NUMBLOCK='240.0' NUMWAIT='114.0' WAITTIME='75.17' BLOCKTIME='17.34' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='42' NAME='S6EnginePoolThread_12' RUNPCT='3.4' WAITPCT='81.7' IOPCT='7.5' BLOCKPCT='7.4' SLEEPPCT='0.0' RUNTIME='5.05' NUMBLOCK='287.0' NUMWAIT='105.0' WAITTIME='75.66' BLOCKTIME='17.63' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='43' NAME='S6EnginePoolThread_13' RUNPCT='2.3' WAITPCT='82.3' IOPCT='7.2' BLOCKPCT='8.1' SLEEPPCT='0.0' RUNTIME='3.45' NUMBLOCK='177.0' NUMWAIT='112.0' WAITTIME='74.25' BLOCKTIME='12.87' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='44' NAME='S6EnginePoolThread_14' RUNPCT='1.9' WAITPCT='81.7' IOPCT='7.1' BLOCKPCT='9.4' SLEEPPCT='0.0' RUNTIME='2.83' NUMBLOCK='202.0' NUMWAIT='117.0' WAITTIME='56.74' BLOCKTIME='19.28' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='45' NAME='S6EnginePoolThread_15' RUNPCT='2.0' WAITPCT='82.4' IOPCT='6.7' BLOCKPCT='8.9' SLEEPPCT='0.0' RUNTIME='2.95' NUMBLOCK='302.0' NUMWAIT='101.0' WAITTIME='58.83' BLOCKTIME='22.01' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='46' NAME='S6EnginePoolThread_16' RUNPCT='2.2' WAITPCT='69.2' IOPCT='19.8' BLOCKPCT='8.8' SLEEPPCT='0.0' RUNTIME='3.32' NUMBLOCK='261.0' NUMWAIT='114.0' WAITTIME='69.68' BLOCKTIME='20.91' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='47' NAME='S6EnginePoolThread_17' RUNPCT='2.7' WAITPCT='84.7' IOPCT='4.5' BLOCKPCT='8.1' SLEEPPCT='0.0' RUNTIME='3.94' NUMBLOCK='370.0' NUMWAIT='113.0' WAITTIME='76.53' BLOCKTIME='21.51' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='48' NAME='S6EnginePoolThread_18' RUNPCT='1.8' WAITPCT='82.4' IOPCT='6.9' BLOCKPCT='8.9' SLEEPPCT='0.0' RUNTIME='2.71' NUMBLOCK='393.0' NUMWAIT='111.0' WAITTIME='76.37' BLOCKTIME='20.32' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='49' NAME='S6EnginePoolThread_19' RUNPCT='1.7' WAITPCT='82.5' IOPCT='6.5' BLOCKPCT='9.3' SLEEPPCT='0.0' RUNTIME='2.58' NUMBLOCK='393.0' NUMWAIT='107.0' WAITTIME='67.70' BLOCKTIME='27.01' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='50' NAME='S6EnginePoolThread_20' RUNPCT='2.5' WAITPCT='78.5' IOPCT='10.8' BLOCKPCT='8.2' SLEEPPCT='0.0' RUNTIME='3.69' NUMBLOCK='313.0' NUMWAIT='108.0' WAITTIME='73.96' BLOCKTIME='10.86' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='51' NAME='S6EnginePoolThread_21' RUNPCT='3.7' WAITPCT='65.1' IOPCT='24.6' BLOCKPCT='6.6' SLEEPPCT='0.0' RUNTIME='5.54' NUMBLOCK='330.0' NUMWAIT='111.0' WAITTIME='69.22' BLOCKTIME='18.91' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='52' NAME='S6EnginePoolThread_22' RUNPCT='2.2' WAITPCT='69.9' IOPCT='19.6' BLOCKPCT='8.3' SLEEPPCT='0.0' RUNTIME='3.32' NUMBLOCK='153.0' NUMWAIT='110.0' WAITTIME='69.68' BLOCKTIME='20.97' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='53' NAME='S6EnginePoolThread_23' RUNPCT='4.9' WAITPCT='81.7' IOPCT='7.6' BLOCKPCT='5.7' SLEEPPCT='0.0' RUNTIME='7.26' NUMBLOCK='392.0' NUMWAIT='103.0' WAITTIME='75.52' BLOCKTIME='12.90' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='54' NAME='S6EnginePoolThread_24' RUNPCT='3.8' WAITPCT='70.5' IOPCT='18.3' BLOCKPCT='7.3' SLEEPPCT='0.0' RUNTIME='5.66' NUMBLOCK='244.0' NUMWAIT='107.0' WAITTIME='61.50' BLOCKTIME='24.54' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='55' NAME='S6EnginePoolThread_25' RUNPCT='2.7' WAITPCT='83.8' IOPCT='5.3' BLOCKPCT='8.2' SLEEPPCT='0.0' RUNTIME='3.94' NUMBLOCK='263.0' NUMWAIT='113.0' WAITTIME='59.50' BLOCKTIME='28.88' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='56' NAME='S6EnginePoolThread_26' RUNPCT='2.5' WAITPCT='87.1' IOPCT='1.3' BLOCKPCT='9.1' SLEEPPCT='0.0' RUNTIME='3.69' NUMBLOCK='220.0' NUMWAIT='114.0' WAITTIME='58.45' BLOCKTIME='25.43' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='57' NAME='S6EnginePoolThread_27' RUNPCT='2.7' WAITPCT='82.9' IOPCT='6.6' BLOCKPCT='7.7' SLEEPPCT='0.0' RUNTIME='4.06' NUMBLOCK='229.0' NUMWAIT='111.0' WAITTIME='66.05' BLOCKTIME='24.53' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='58' NAME='S6EnginePoolThread_28' RUNPCT='3.0' WAITPCT='83.2' IOPCT='6.1' BLOCKPCT='7.8' SLEEPPCT='0.0' RUNTIME='4.43' NUMBLOCK='141.0' NUMWAIT='110.0' WAITTIME='70.44' BLOCKTIME='17.25' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='59' NAME='S6EnginePoolThread_29' RUNPCT='2.1' WAITPCT='83.8' IOPCT='5.0' BLOCKPCT='9.1' SLEEPPCT='0.0' RUNTIME='3.08' NUMBLOCK='179.0' NUMWAIT='112.0' WAITTIME='69.40' BLOCKTIME='22.76' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='60' NAME='S6EnginePoolThread_30' RUNPCT='3.5' WAITPCT='82.6' IOPCT='6.1' BLOCKPCT='7.9' SLEEPPCT='0.0' RUNTIME='5.17' NUMBLOCK='199.0' NUMWAIT='113.0' WAITTIME='75.17' BLOCKTIME='17.65' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='61' NAME='S6EnginePoolThread_31' RUNPCT='2.1' WAITPCT='79.3' IOPCT='9.6' BLOCKPCT='8.9' SLEEPPCT='0.0' RUNTIME='3.08' NUMBLOCK='201.0' NUMWAIT='120.0' WAITTIME='76.12' BLOCKTIME='16.53' TOTTIME='148.28' TERMINATED='false' />
+    <THREAD ID='8' NAME='IvyExecMonitor' RUNPCT='0.1' WAITPCT='99.6' IOPCT='0.3' BLOCKPCT='0.0' SLEEPPCT='0.0' RUNTIME='0.13' NUMBLOCK='95.0' NUMWAIT='310.0' WAITTIME='164.86' BLOCKTIME='0.03' TOTTIME='131.92' TERMINATED='false' />
+    <THREAD ID='9' NAME='S6_ENGINE_ACCEPT' RUNPCT='0.0' WAITPCT='0.0' IOPCT='100.0' BLOCKPCT='0.0' SLEEPPCT='0.0' RUNTIME='0.00' NUMBLOCK='0.0' NUMWAIT='0.0' TOTTIME='295.64' TERMINATED='false' />
+    <LOCKMAT>
+      <FORTHREAD ID='8' NAME='IvyExecMonitor'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' />
+	<BLOCKON ID='32' />
+	<BLOCKON ID='33' />
+	<BLOCKON ID='34' />
+	<BLOCKON ID='35' />
+	<BLOCKON ID='36' />
+	<BLOCKON ID='37' />
+	<BLOCKON ID='38' />
+	<BLOCKON ID='39' />
+	<BLOCKON ID='40' />
+	<BLOCKON ID='41' />
+	<BLOCKON ID='42' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' />
+	<BLOCKON ID='45' />
+	<BLOCKON ID='46' />
+	<BLOCKON ID='47' />
+	<BLOCKON ID='48' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' />
+	<BLOCKON ID='51' />
+	<BLOCKON ID='52' />
+	<BLOCKON ID='53' />
+	<BLOCKON ID='54' />
+	<BLOCKON ID='55' />
+	<BLOCKON ID='56' />
+	<BLOCKON ID='57' />
+	<BLOCKON ID='58' />
+	<BLOCKON ID='59' />
+	<BLOCKON ID='60' />
+	<BLOCKON ID='61' />
+      </FORTHREAD>
+      <FORTHREAD ID='29' NAME='S6EnginePoolThread_0'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='32' />
+	<BLOCKON ID='32' COUNT='64' />
+	<BLOCKON ID='33' COUNT='80' />
+	<BLOCKON ID='34' COUNT='16' />
+	<BLOCKON ID='35' COUNT='56' />
+	<BLOCKON ID='36' COUNT='8' />
+	<BLOCKON ID='37' COUNT='72' />
+	<BLOCKON ID='38' COUNT='8' />
+	<BLOCKON ID='39' COUNT='16' />
+	<BLOCKON ID='40' COUNT='16' />
+	<BLOCKON ID='41' />
+	<BLOCKON ID='42' COUNT='24' />
+	<BLOCKON ID='43' COUNT='8' />
+	<BLOCKON ID='44' COUNT='16' />
+	<BLOCKON ID='45' COUNT='32' />
+	<BLOCKON ID='46' COUNT='8' />
+	<BLOCKON ID='47' COUNT='8' />
+	<BLOCKON ID='48' COUNT='16' />
+	<BLOCKON ID='49' COUNT='8' />
+	<BLOCKON ID='50' COUNT='32' />
+	<BLOCKON ID='51' COUNT='88' />
+	<BLOCKON ID='52' COUNT='32' />
+	<BLOCKON ID='53' COUNT='104' />
+	<BLOCKON ID='54' COUNT='40' />
+	<BLOCKON ID='55' />
+	<BLOCKON ID='56' COUNT='16' />
+	<BLOCKON ID='57' COUNT='24' />
+	<BLOCKON ID='58' COUNT='24' />
+	<BLOCKON ID='59' COUNT='8' />
+	<BLOCKON ID='60' COUNT='24' />
+	<BLOCKON ID='61' COUNT='8' />
+      </FORTHREAD>
+      <FORTHREAD ID='30' NAME='S6EnginePoolThread_1'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' COUNT='11' />
+	<BLOCKON ID='30' />
+	<BLOCKON ID='32' COUNT='55' />
+	<BLOCKON ID='33' COUNT='89' />
+	<BLOCKON ID='34' COUNT='11' />
+	<BLOCKON ID='35' COUNT='78' />
+	<BLOCKON ID='36' COUNT='11' />
+	<BLOCKON ID='37' COUNT='78' />
+	<BLOCKON ID='38' COUNT='22' />
+	<BLOCKON ID='39' COUNT='11' />
+	<BLOCKON ID='40' COUNT='11' />
+	<BLOCKON ID='41' COUNT='11' />
+	<BLOCKON ID='42' COUNT='22' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='11' />
+	<BLOCKON ID='45' COUNT='11' />
+	<BLOCKON ID='46' />
+	<BLOCKON ID='47' COUNT='33' />
+	<BLOCKON ID='48' COUNT='22' />
+	<BLOCKON ID='49' COUNT='33' />
+	<BLOCKON ID='50' COUNT='22' />
+	<BLOCKON ID='51' COUNT='66' />
+	<BLOCKON ID='52' COUNT='55' />
+	<BLOCKON ID='53' COUNT='145' />
+	<BLOCKON ID='54' COUNT='55' />
+	<BLOCKON ID='55' COUNT='22' />
+	<BLOCKON ID='56' COUNT='22' />
+	<BLOCKON ID='57' COUNT='44' />
+	<BLOCKON ID='58' COUNT='33' />
+	<BLOCKON ID='59' />
+	<BLOCKON ID='60' COUNT='22' />
+	<BLOCKON ID='61' />
+      </FORTHREAD>
+      <FORTHREAD ID='32' NAME='S6EnginePoolThread_2'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='35' />
+	<BLOCKON ID='32' />
+	<BLOCKON ID='33' COUNT='118' />
+	<BLOCKON ID='34' COUNT='23' />
+	<BLOCKON ID='35' COUNT='82' />
+	<BLOCKON ID='36' />
+	<BLOCKON ID='37' COUNT='82' />
+	<BLOCKON ID='38' COUNT='23' />
+	<BLOCKON ID='39' />
+	<BLOCKON ID='40' COUNT='11' />
+	<BLOCKON ID='41' />
+	<BLOCKON ID='42' COUNT='35' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='11' />
+	<BLOCKON ID='45' COUNT='11' />
+	<BLOCKON ID='46' COUNT='11' />
+	<BLOCKON ID='47' COUNT='35' />
+	<BLOCKON ID='48' COUNT='23' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' COUNT='11' />
+	<BLOCKON ID='51' COUNT='94' />
+	<BLOCKON ID='52' COUNT='59' />
+	<BLOCKON ID='53' COUNT='142' />
+	<BLOCKON ID='54' COUNT='71' />
+	<BLOCKON ID='55' COUNT='11' />
+	<BLOCKON ID='56' COUNT='35' />
+	<BLOCKON ID='57' COUNT='47' />
+	<BLOCKON ID='58' COUNT='23' />
+	<BLOCKON ID='59' />
+	<BLOCKON ID='60' COUNT='11' />
+	<BLOCKON ID='61' />
+      </FORTHREAD>
+      <FORTHREAD ID='33' NAME='S6EnginePoolThread_3'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' COUNT='9' />
+	<BLOCKON ID='30' COUNT='9' />
+	<BLOCKON ID='32' COUNT='56' />
+	<BLOCKON ID='33' />
+	<BLOCKON ID='34' COUNT='9' />
+	<BLOCKON ID='35' COUNT='65' />
+	<BLOCKON ID='36' COUNT='18' />
+	<BLOCKON ID='37' COUNT='65' />
+	<BLOCKON ID='38' COUNT='9' />
+	<BLOCKON ID='39' COUNT='9' />
+	<BLOCKON ID='40' COUNT='9' />
+	<BLOCKON ID='41' />
+	<BLOCKON ID='42' COUNT='28' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='9' />
+	<BLOCKON ID='45' COUNT='37' />
+	<BLOCKON ID='46' COUNT='9' />
+	<BLOCKON ID='47' COUNT='18' />
+	<BLOCKON ID='48' COUNT='18' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' COUNT='37' />
+	<BLOCKON ID='51' COUNT='103' />
+	<BLOCKON ID='52' COUNT='46' />
+	<BLOCKON ID='53' COUNT='121' />
+	<BLOCKON ID='54' COUNT='56' />
+	<BLOCKON ID='55' COUNT='9' />
+	<BLOCKON ID='56' COUNT='28' />
+	<BLOCKON ID='57' COUNT='37' />
+	<BLOCKON ID='58' COUNT='28' />
+	<BLOCKON ID='59' COUNT='9' />
+	<BLOCKON ID='60' COUNT='28' />
+	<BLOCKON ID='61' COUNT='9' />
+      </FORTHREAD>
+      <FORTHREAD ID='34' NAME='S6EnginePoolThread_4'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='8' />
+	<BLOCKON ID='32' COUNT='8' />
+	<BLOCKON ID='33' COUNT='20' />
+	<BLOCKON ID='34' />
+	<BLOCKON ID='35' COUNT='20' />
+	<BLOCKON ID='36' />
+	<BLOCKON ID='37' COUNT='23' />
+	<BLOCKON ID='38' COUNT='5' />
+	<BLOCKON ID='39' />
+	<BLOCKON ID='40' COUNT='5' />
+	<BLOCKON ID='41' COUNT='5' />
+	<BLOCKON ID='42' COUNT='8' />
+	<BLOCKON ID='43' COUNT='5' />
+	<BLOCKON ID='44' COUNT='2' />
+	<BLOCKON ID='45' COUNT='11' />
+	<BLOCKON ID='46' COUNT='2' />
+	<BLOCKON ID='47' COUNT='2' />
+	<BLOCKON ID='48' />
+	<BLOCKON ID='49' COUNT='5' />
+	<BLOCKON ID='50' COUNT='2' />
+	<BLOCKON ID='51' COUNT='31' />
+	<BLOCKON ID='52' COUNT='11' />
+	<BLOCKON ID='53' COUNT='34' />
+	<BLOCKON ID='54' COUNT='11' />
+	<BLOCKON ID='55' />
+	<BLOCKON ID='56' COUNT='5' />
+	<BLOCKON ID='57' COUNT='5' />
+	<BLOCKON ID='58' COUNT='5' />
+	<BLOCKON ID='59' COUNT='2' />
+	<BLOCKON ID='60' COUNT='5' />
+	<BLOCKON ID='61' />
+      </FORTHREAD>
+      <FORTHREAD ID='35' NAME='S6EnginePoolThread_5'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='3' />
+	<BLOCKON ID='32' COUNT='18' />
+	<BLOCKON ID='33' COUNT='33' />
+	<BLOCKON ID='34' COUNT='7' />
+	<BLOCKON ID='35' />
+	<BLOCKON ID='36' COUNT='3' />
+	<BLOCKON ID='37' COUNT='33' />
+	<BLOCKON ID='38' COUNT='7' />
+	<BLOCKON ID='39' COUNT='3' />
+	<BLOCKON ID='40' COUNT='7' />
+	<BLOCKON ID='41' COUNT='3' />
+	<BLOCKON ID='42' COUNT='11' />
+	<BLOCKON ID='43' COUNT='3' />
+	<BLOCKON ID='44' COUNT='7' />
+	<BLOCKON ID='45' COUNT='3' />
+	<BLOCKON ID='46' COUNT='11' />
+	<BLOCKON ID='47' COUNT='7' />
+	<BLOCKON ID='48' COUNT='7' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' COUNT='7' />
+	<BLOCKON ID='51' COUNT='18' />
+	<BLOCKON ID='52' COUNT='11' />
+	<BLOCKON ID='53' COUNT='51' />
+	<BLOCKON ID='54' COUNT='25' />
+	<BLOCKON ID='55' COUNT='3' />
+	<BLOCKON ID='56' COUNT='7' />
+	<BLOCKON ID='57' COUNT='11' />
+	<BLOCKON ID='58' COUNT='11' />
+	<BLOCKON ID='59' />
+	<BLOCKON ID='60' COUNT='11' />
+	<BLOCKON ID='61' COUNT='7' />
+      </FORTHREAD>
+      <FORTHREAD ID='36' NAME='S6EnginePoolThread_6'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' COUNT='2' />
+	<BLOCKON ID='30' COUNT='2' />
+	<BLOCKON ID='32' COUNT='17' />
+	<BLOCKON ID='33' COUNT='19' />
+	<BLOCKON ID='34' COUNT='4' />
+	<BLOCKON ID='35' COUNT='19' />
+	<BLOCKON ID='36' />
+	<BLOCKON ID='37' COUNT='22' />
+	<BLOCKON ID='38' COUNT='2' />
+	<BLOCKON ID='39' />
+	<BLOCKON ID='40' COUNT='2' />
+	<BLOCKON ID='41' COUNT='2' />
+	<BLOCKON ID='42' COUNT='6' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='4' />
+	<BLOCKON ID='45' COUNT='8' />
+	<BLOCKON ID='46' COUNT='4' />
+	<BLOCKON ID='47' COUNT='4' />
+	<BLOCKON ID='48' COUNT='4' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' COUNT='4' />
+	<BLOCKON ID='51' COUNT='24' />
+	<BLOCKON ID='52' COUNT='8' />
+	<BLOCKON ID='53' COUNT='26' />
+	<BLOCKON ID='54' COUNT='13' />
+	<BLOCKON ID='55' />
+	<BLOCKON ID='56' COUNT='6' />
+	<BLOCKON ID='57' COUNT='8' />
+	<BLOCKON ID='58' COUNT='6' />
+	<BLOCKON ID='59' COUNT='2' />
+	<BLOCKON ID='60' COUNT='6' />
+	<BLOCKON ID='61' COUNT='4' />
+      </FORTHREAD>
+      <FORTHREAD ID='37' NAME='S6EnginePoolThread_7'>
+	<BLOCKON ID='8' COUNT='3' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='9' />
+	<BLOCKON ID='32' COUNT='15' />
+	<BLOCKON ID='33' COUNT='27' />
+	<BLOCKON ID='34' COUNT='6' />
+	<BLOCKON ID='35' COUNT='21' />
+	<BLOCKON ID='36' COUNT='3' />
+	<BLOCKON ID='37' />
+	<BLOCKON ID='38' COUNT='6' />
+	<BLOCKON ID='39' COUNT='3' />
+	<BLOCKON ID='40' COUNT='6' />
+	<BLOCKON ID='41' COUNT='3' />
+	<BLOCKON ID='42' COUNT='9' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='3' />
+	<BLOCKON ID='45' COUNT='3' />
+	<BLOCKON ID='46' COUNT='6' />
+	<BLOCKON ID='47' COUNT='3' />
+	<BLOCKON ID='48' />
+	<BLOCKON ID='49' COUNT='6' />
+	<BLOCKON ID='50' COUNT='3' />
+	<BLOCKON ID='51' COUNT='18' />
+	<BLOCKON ID='52' COUNT='12' />
+	<BLOCKON ID='53' COUNT='39' />
+	<BLOCKON ID='54' COUNT='15' />
+	<BLOCKON ID='55' COUNT='6' />
+	<BLOCKON ID='56' COUNT='6' />
+	<BLOCKON ID='57' COUNT='12' />
+	<BLOCKON ID='58' COUNT='6' />
+	<BLOCKON ID='59' />
+	<BLOCKON ID='60' COUNT='6' />
+	<BLOCKON ID='61' COUNT='3' />
+      </FORTHREAD>
+      <FORTHREAD ID='38' NAME='S6EnginePoolThread_8'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='3' />
+	<BLOCKON ID='32' COUNT='18' />
+	<BLOCKON ID='33' COUNT='24' />
+	<BLOCKON ID='34' COUNT='6' />
+	<BLOCKON ID='35' COUNT='21' />
+	<BLOCKON ID='36' COUNT='3' />
+	<BLOCKON ID='37' COUNT='27' />
+	<BLOCKON ID='38' />
+	<BLOCKON ID='39' COUNT='3' />
+	<BLOCKON ID='40' COUNT='6' />
+	<BLOCKON ID='41' COUNT='3' />
+	<BLOCKON ID='42' COUNT='9' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='3' />
+	<BLOCKON ID='45' COUNT='12' />
+	<BLOCKON ID='46' COUNT='3' />
+	<BLOCKON ID='47' COUNT='9' />
+	<BLOCKON ID='48' COUNT='6' />
+	<BLOCKON ID='49' COUNT='3' />
+	<BLOCKON ID='50' COUNT='15' />
+	<BLOCKON ID='51' COUNT='33' />
+	<BLOCKON ID='52' COUNT='15' />
+	<BLOCKON ID='53' COUNT='36' />
+	<BLOCKON ID='54' COUNT='15' />
+	<BLOCKON ID='55' COUNT='3' />
+	<BLOCKON ID='56' COUNT='12' />
+	<BLOCKON ID='57' COUNT='9' />
+	<BLOCKON ID='58' COUNT='6' />
+	<BLOCKON ID='59' COUNT='3' />
+	<BLOCKON ID='60' COUNT='6' />
+	<BLOCKON ID='61' />
+      </FORTHREAD>
+      <FORTHREAD ID='39' NAME='S6EnginePoolThread_9'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='6' />
+	<BLOCKON ID='32' COUNT='16' />
+	<BLOCKON ID='33' COUNT='18' />
+	<BLOCKON ID='34' COUNT='2' />
+	<BLOCKON ID='35' COUNT='16' />
+	<BLOCKON ID='36' COUNT='2' />
+	<BLOCKON ID='37' COUNT='20' />
+	<BLOCKON ID='38' COUNT='4' />
+	<BLOCKON ID='39' />
+	<BLOCKON ID='40' COUNT='2' />
+	<BLOCKON ID='41' COUNT='4' />
+	<BLOCKON ID='42' COUNT='4' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='4' />
+	<BLOCKON ID='45' COUNT='9' />
+	<BLOCKON ID='46' COUNT='4' />
+	<BLOCKON ID='47' COUNT='2' />
+	<BLOCKON ID='48' COUNT='4' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' COUNT='6' />
+	<BLOCKON ID='51' COUNT='27' />
+	<BLOCKON ID='52' COUNT='9' />
+	<BLOCKON ID='53' COUNT='29' />
+	<BLOCKON ID='54' COUNT='13' />
+	<BLOCKON ID='55' />
+	<BLOCKON ID='56' COUNT='4' />
+	<BLOCKON ID='57' COUNT='6' />
+	<BLOCKON ID='58' COUNT='4' />
+	<BLOCKON ID='59' COUNT='2' />
+	<BLOCKON ID='60' COUNT='6' />
+	<BLOCKON ID='61' COUNT='2' />
+      </FORTHREAD>
+      <FORTHREAD ID='40' NAME='S6EnginePoolThread_10'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='7' />
+	<BLOCKON ID='32' COUNT='13' />
+	<BLOCKON ID='33' COUNT='21' />
+	<BLOCKON ID='34' COUNT='5' />
+	<BLOCKON ID='35' COUNT='23' />
+	<BLOCKON ID='36' COUNT='2' />
+	<BLOCKON ID='37' COUNT='23' />
+	<BLOCKON ID='38' COUNT='5' />
+	<BLOCKON ID='39' COUNT='5' />
+	<BLOCKON ID='40' />
+	<BLOCKON ID='41' COUNT='2' />
+	<BLOCKON ID='42' COUNT='7' />
+	<BLOCKON ID='43' COUNT='2' />
+	<BLOCKON ID='44' COUNT='5' />
+	<BLOCKON ID='45' COUNT='2' />
+	<BLOCKON ID='46' COUNT='2' />
+	<BLOCKON ID='47' COUNT='7' />
+	<BLOCKON ID='48' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' />
+	<BLOCKON ID='51' COUNT='31' />
+	<BLOCKON ID='52' COUNT='10' />
+	<BLOCKON ID='53' COUNT='31' />
+	<BLOCKON ID='54' COUNT='13' />
+	<BLOCKON ID='55' />
+	<BLOCKON ID='56' COUNT='5' />
+	<BLOCKON ID='57' COUNT='7' />
+	<BLOCKON ID='58' COUNT='7' />
+	<BLOCKON ID='59' />
+	<BLOCKON ID='60' COUNT='5' />
+	<BLOCKON ID='61' COUNT='2' />
+      </FORTHREAD>
+      <FORTHREAD ID='41' NAME='S6EnginePoolThread_11'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='7' />
+	<BLOCKON ID='32' COUNT='16' />
+	<BLOCKON ID='33' COUNT='19' />
+	<BLOCKON ID='34' COUNT='4' />
+	<BLOCKON ID='35' COUNT='16' />
+	<BLOCKON ID='36' COUNT='2' />
+	<BLOCKON ID='37' COUNT='16' />
+	<BLOCKON ID='38' COUNT='2' />
+	<BLOCKON ID='39' COUNT='4' />
+	<BLOCKON ID='40' COUNT='2' />
+	<BLOCKON ID='41' />
+	<BLOCKON ID='42' COUNT='4' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='4' />
+	<BLOCKON ID='45' COUNT='9' />
+	<BLOCKON ID='46' COUNT='2' />
+	<BLOCKON ID='47' COUNT='2' />
+	<BLOCKON ID='48' COUNT='4' />
+	<BLOCKON ID='49' COUNT='4' />
+	<BLOCKON ID='50' COUNT='4' />
+	<BLOCKON ID='51' COUNT='26' />
+	<BLOCKON ID='52' COUNT='9' />
+	<BLOCKON ID='53' COUNT='30' />
+	<BLOCKON ID='54' COUNT='14' />
+	<BLOCKON ID='55' />
+	<BLOCKON ID='56' COUNT='4' />
+	<BLOCKON ID='57' COUNT='7' />
+	<BLOCKON ID='58' COUNT='4' />
+	<BLOCKON ID='59' COUNT='2' />
+	<BLOCKON ID='60' COUNT='7' />
+	<BLOCKON ID='61' COUNT='2' />
+      </FORTHREAD>
+      <FORTHREAD ID='42' NAME='S6EnginePoolThread_12'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='6' />
+	<BLOCKON ID='32' COUNT='19' />
+	<BLOCKON ID='33' COUNT='25' />
+	<BLOCKON ID='34' COUNT='6' />
+	<BLOCKON ID='35' COUNT='22' />
+	<BLOCKON ID='36' COUNT='3' />
+	<BLOCKON ID='37' COUNT='22' />
+	<BLOCKON ID='38' COUNT='6' />
+	<BLOCKON ID='39' COUNT='3' />
+	<BLOCKON ID='40' COUNT='3' />
+	<BLOCKON ID='41' COUNT='3' />
+	<BLOCKON ID='42' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='6' />
+	<BLOCKON ID='45' COUNT='3' />
+	<BLOCKON ID='46' COUNT='3' />
+	<BLOCKON ID='47' COUNT='3' />
+	<BLOCKON ID='48' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' COUNT='9' />
+	<BLOCKON ID='51' COUNT='16' />
+	<BLOCKON ID='52' COUNT='9' />
+	<BLOCKON ID='53' COUNT='41' />
+	<BLOCKON ID='54' COUNT='25' />
+	<BLOCKON ID='55' COUNT='3' />
+	<BLOCKON ID='56' COUNT='6' />
+	<BLOCKON ID='57' COUNT='9' />
+	<BLOCKON ID='58' COUNT='12' />
+	<BLOCKON ID='59' />
+	<BLOCKON ID='60' COUNT='9' />
+	<BLOCKON ID='61' />
+      </FORTHREAD>
+      <FORTHREAD ID='43' NAME='S6EnginePoolThread_13'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='1' />
+	<BLOCKON ID='32' COUNT='7' />
+	<BLOCKON ID='33' COUNT='14' />
+	<BLOCKON ID='34' COUNT='5' />
+	<BLOCKON ID='35' COUNT='12' />
+	<BLOCKON ID='36' COUNT='1' />
+	<BLOCKON ID='37' COUNT='16' />
+	<BLOCKON ID='38' COUNT='1' />
+	<BLOCKON ID='39' />
+	<BLOCKON ID='40' COUNT='1' />
+	<BLOCKON ID='41' COUNT='1' />
+	<BLOCKON ID='42' COUNT='3' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='3' />
+	<BLOCKON ID='45' COUNT='7' />
+	<BLOCKON ID='46' COUNT='1' />
+	<BLOCKON ID='47' COUNT='3' />
+	<BLOCKON ID='48' COUNT='3' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' COUNT='5' />
+	<BLOCKON ID='51' COUNT='19' />
+	<BLOCKON ID='52' COUNT='3' />
+	<BLOCKON ID='53' COUNT='21' />
+	<BLOCKON ID='54' COUNT='9' />
+	<BLOCKON ID='55' />
+	<BLOCKON ID='56' COUNT='5' />
+	<BLOCKON ID='57' COUNT='7' />
+	<BLOCKON ID='58' COUNT='7' />
+	<BLOCKON ID='59' COUNT='1' />
+	<BLOCKON ID='60' COUNT='5' />
+	<BLOCKON ID='61' />
+      </FORTHREAD>
+      <FORTHREAD ID='44' NAME='S6EnginePoolThread_14'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='5' />
+	<BLOCKON ID='32' COUNT='14' />
+	<BLOCKON ID='33' COUNT='14' />
+	<BLOCKON ID='34' COUNT='5' />
+	<BLOCKON ID='35' COUNT='12' />
+	<BLOCKON ID='36' COUNT='1' />
+	<BLOCKON ID='37' COUNT='16' />
+	<BLOCKON ID='38' COUNT='3' />
+	<BLOCKON ID='39' />
+	<BLOCKON ID='40' COUNT='3' />
+	<BLOCKON ID='41' COUNT='3' />
+	<BLOCKON ID='42' COUNT='5' />
+	<BLOCKON ID='43' COUNT='3' />
+	<BLOCKON ID='44' />
+	<BLOCKON ID='45' COUNT='7' />
+	<BLOCKON ID='46' COUNT='5' />
+	<BLOCKON ID='47' COUNT='1' />
+	<BLOCKON ID='48' COUNT='3' />
+	<BLOCKON ID='49' COUNT='3' />
+	<BLOCKON ID='50' COUNT='3' />
+	<BLOCKON ID='51' COUNT='19' />
+	<BLOCKON ID='52' COUNT='8' />
+	<BLOCKON ID='53' COUNT='21' />
+	<BLOCKON ID='54' COUNT='10' />
+	<BLOCKON ID='55' COUNT='1' />
+	<BLOCKON ID='56' COUNT='5' />
+	<BLOCKON ID='57' COUNT='3' />
+	<BLOCKON ID='58' COUNT='7' />
+	<BLOCKON ID='59' COUNT='1' />
+	<BLOCKON ID='60' COUNT='3' />
+	<BLOCKON ID='61' COUNT='1' />
+      </FORTHREAD>
+      <FORTHREAD ID='45' NAME='S6EnginePoolThread_15'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' COUNT='2' />
+	<BLOCKON ID='30' COUNT='5' />
+	<BLOCKON ID='32' COUNT='25' />
+	<BLOCKON ID='33' COUNT='22' />
+	<BLOCKON ID='34' COUNT='8' />
+	<BLOCKON ID='35' COUNT='19' />
+	<BLOCKON ID='36' />
+	<BLOCKON ID='37' COUNT='25' />
+	<BLOCKON ID='38' COUNT='5' />
+	<BLOCKON ID='39' />
+	<BLOCKON ID='40' COUNT='2' />
+	<BLOCKON ID='41' COUNT='5' />
+	<BLOCKON ID='42' COUNT='5' />
+	<BLOCKON ID='43' COUNT='2' />
+	<BLOCKON ID='44' COUNT='5' />
+	<BLOCKON ID='45' />
+	<BLOCKON ID='46' COUNT='5' />
+	<BLOCKON ID='47' COUNT='2' />
+	<BLOCKON ID='48' />
+	<BLOCKON ID='49' COUNT='5' />
+	<BLOCKON ID='50' COUNT='8' />
+	<BLOCKON ID='51' COUNT='31' />
+	<BLOCKON ID='52' COUNT='16' />
+	<BLOCKON ID='53' COUNT='33' />
+	<BLOCKON ID='54' COUNT='11' />
+	<BLOCKON ID='55' COUNT='5' />
+	<BLOCKON ID='56' COUNT='11' />
+	<BLOCKON ID='57' COUNT='11' />
+	<BLOCKON ID='58' COUNT='8' />
+	<BLOCKON ID='59' COUNT='2' />
+	<BLOCKON ID='60' COUNT='5' />
+	<BLOCKON ID='61' />
+      </FORTHREAD>
+      <FORTHREAD ID='46' NAME='S6EnginePoolThread_16'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='7' />
+	<BLOCKON ID='32' COUNT='14' />
+	<BLOCKON ID='33' COUNT='17' />
+	<BLOCKON ID='34' COUNT='4' />
+	<BLOCKON ID='35' COUNT='22' />
+	<BLOCKON ID='36' COUNT='2' />
+	<BLOCKON ID='37' COUNT='22' />
+	<BLOCKON ID='38' COUNT='2' />
+	<BLOCKON ID='39' />
+	<BLOCKON ID='40' COUNT='4' />
+	<BLOCKON ID='41' COUNT='2' />
+	<BLOCKON ID='42' COUNT='7' />
+	<BLOCKON ID='43' COUNT='4' />
+	<BLOCKON ID='44' COUNT='4' />
+	<BLOCKON ID='45' COUNT='9' />
+	<BLOCKON ID='46' />
+	<BLOCKON ID='47' COUNT='4' />
+	<BLOCKON ID='48' COUNT='4' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' COUNT='7' />
+	<BLOCKON ID='51' COUNT='27' />
+	<BLOCKON ID='52' COUNT='4' />
+	<BLOCKON ID='53' COUNT='29' />
+	<BLOCKON ID='54' COUNT='14' />
+	<BLOCKON ID='55' COUNT='2' />
+	<BLOCKON ID='56' COUNT='7' />
+	<BLOCKON ID='57' COUNT='9' />
+	<BLOCKON ID='58' COUNT='7' />
+	<BLOCKON ID='59' COUNT='2' />
+	<BLOCKON ID='60' COUNT='4' />
+	<BLOCKON ID='61' COUNT='2' />
+      </FORTHREAD>
+      <FORTHREAD ID='47' NAME='S6EnginePoolThread_17'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='11' />
+	<BLOCKON ID='32' COUNT='22' />
+	<BLOCKON ID='33' COUNT='37' />
+	<BLOCKON ID='34' COUNT='7' />
+	<BLOCKON ID='35' COUNT='33' />
+	<BLOCKON ID='36' COUNT='3' />
+	<BLOCKON ID='37' COUNT='26' />
+	<BLOCKON ID='38' COUNT='7' />
+	<BLOCKON ID='39' COUNT='7' />
+	<BLOCKON ID='40' COUNT='11' />
+	<BLOCKON ID='41' COUNT='3' />
+	<BLOCKON ID='42' COUNT='11' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='3' />
+	<BLOCKON ID='45' COUNT='3' />
+	<BLOCKON ID='46' COUNT='3' />
+	<BLOCKON ID='47' />
+	<BLOCKON ID='48' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' COUNT='3' />
+	<BLOCKON ID='51' COUNT='37' />
+	<BLOCKON ID='52' COUNT='15' />
+	<BLOCKON ID='53' COUNT='49' />
+	<BLOCKON ID='54' COUNT='26' />
+	<BLOCKON ID='55' />
+	<BLOCKON ID='56' COUNT='7' />
+	<BLOCKON ID='57' COUNT='11' />
+	<BLOCKON ID='58' COUNT='7' />
+	<BLOCKON ID='59' />
+	<BLOCKON ID='60' COUNT='11' />
+	<BLOCKON ID='61' COUNT='3' />
+      </FORTHREAD>
+      <FORTHREAD ID='48' NAME='S6EnginePoolThread_18'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' COUNT='3' />
+	<BLOCKON ID='30' COUNT='3' />
+	<BLOCKON ID='32' COUNT='36' />
+	<BLOCKON ID='33' COUNT='36' />
+	<BLOCKON ID='34' COUNT='7' />
+	<BLOCKON ID='35' COUNT='33' />
+	<BLOCKON ID='36' COUNT='7' />
+	<BLOCKON ID='37' COUNT='33' />
+	<BLOCKON ID='38' COUNT='3' />
+	<BLOCKON ID='39' COUNT='3' />
+	<BLOCKON ID='40' COUNT='3' />
+	<BLOCKON ID='41' COUNT='3' />
+	<BLOCKON ID='42' COUNT='11' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='3' />
+	<BLOCKON ID='45' COUNT='14' />
+	<BLOCKON ID='46' COUNT='3' />
+	<BLOCKON ID='47' COUNT='11' />
+	<BLOCKON ID='48' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' COUNT='14' />
+	<BLOCKON ID='51' COUNT='40' />
+	<BLOCKON ID='52' COUNT='11' />
+	<BLOCKON ID='53' COUNT='47' />
+	<BLOCKON ID='54' COUNT='18' />
+	<BLOCKON ID='55' />
+	<BLOCKON ID='56' COUNT='7' />
+	<BLOCKON ID='57' COUNT='11' />
+	<BLOCKON ID='58' COUNT='7' />
+	<BLOCKON ID='59' COUNT='3' />
+	<BLOCKON ID='60' COUNT='7' />
+	<BLOCKON ID='61' COUNT='3' />
+      </FORTHREAD>
+      <FORTHREAD ID='49' NAME='S6EnginePoolThread_19'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='10' />
+	<BLOCKON ID='32' COUNT='28' />
+	<BLOCKON ID='33' COUNT='35' />
+	<BLOCKON ID='34' COUNT='7' />
+	<BLOCKON ID='35' COUNT='24' />
+	<BLOCKON ID='36' COUNT='3' />
+	<BLOCKON ID='37' COUNT='24' />
+	<BLOCKON ID='38' COUNT='7' />
+	<BLOCKON ID='39' COUNT='7' />
+	<BLOCKON ID='40' COUNT='7' />
+	<BLOCKON ID='41' COUNT='3' />
+	<BLOCKON ID='42' COUNT='10' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='3' />
+	<BLOCKON ID='45' COUNT='14' />
+	<BLOCKON ID='46' COUNT='7' />
+	<BLOCKON ID='47' COUNT='10' />
+	<BLOCKON ID='48' COUNT='7' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' COUNT='14' />
+	<BLOCKON ID='51' COUNT='38' />
+	<BLOCKON ID='52' COUNT='14' />
+	<BLOCKON ID='53' COUNT='45' />
+	<BLOCKON ID='54' COUNT='21' />
+	<BLOCKON ID='55' />
+	<BLOCKON ID='56' COUNT='7' />
+	<BLOCKON ID='57' COUNT='10' />
+	<BLOCKON ID='58' COUNT='10' />
+	<BLOCKON ID='59' COUNT='3' />
+	<BLOCKON ID='60' COUNT='10' />
+	<BLOCKON ID='61' COUNT='7' />
+      </FORTHREAD>
+      <FORTHREAD ID='50' NAME='S6EnginePoolThread_20'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='12' />
+	<BLOCKON ID='32' COUNT='9' />
+	<BLOCKON ID='33' COUNT='34' />
+	<BLOCKON ID='34' COUNT='9' />
+	<BLOCKON ID='35' COUNT='22' />
+	<BLOCKON ID='36' />
+	<BLOCKON ID='37' COUNT='22' />
+	<BLOCKON ID='38' COUNT='6' />
+	<BLOCKON ID='39' />
+	<BLOCKON ID='40' COUNT='6' />
+	<BLOCKON ID='41' COUNT='3' />
+	<BLOCKON ID='42' COUNT='6' />
+	<BLOCKON ID='43' COUNT='6' />
+	<BLOCKON ID='44' COUNT='3' />
+	<BLOCKON ID='45' COUNT='12' />
+	<BLOCKON ID='46' COUNT='9' />
+	<BLOCKON ID='47' COUNT='3' />
+	<BLOCKON ID='48' COUNT='6' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' />
+	<BLOCKON ID='51' COUNT='34' />
+	<BLOCKON ID='52' COUNT='15' />
+	<BLOCKON ID='53' COUNT='37' />
+	<BLOCKON ID='54' COUNT='12' />
+	<BLOCKON ID='55' />
+	<BLOCKON ID='56' COUNT='6' />
+	<BLOCKON ID='57' COUNT='12' />
+	<BLOCKON ID='58' COUNT='9' />
+	<BLOCKON ID='59' COUNT='3' />
+	<BLOCKON ID='60' COUNT='6' />
+	<BLOCKON ID='61' />
+      </FORTHREAD>
+      <FORTHREAD ID='51' NAME='S6EnginePoolThread_21'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='8' />
+	<BLOCKON ID='32' COUNT='37' />
+	<BLOCKON ID='33' COUNT='28' />
+	<BLOCKON ID='34' />
+	<BLOCKON ID='35' COUNT='28' />
+	<BLOCKON ID='36' COUNT='4' />
+	<BLOCKON ID='37' COUNT='20' />
+	<BLOCKON ID='38' COUNT='8' />
+	<BLOCKON ID='39' />
+	<BLOCKON ID='40' COUNT='4' />
+	<BLOCKON ID='41' COUNT='4' />
+	<BLOCKON ID='42' COUNT='8' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='4' />
+	<BLOCKON ID='45' COUNT='16' />
+	<BLOCKON ID='46' COUNT='4' />
+	<BLOCKON ID='47' COUNT='4' />
+	<BLOCKON ID='48' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' COUNT='12' />
+	<BLOCKON ID='51' />
+	<BLOCKON ID='52' COUNT='16' />
+	<BLOCKON ID='53' COUNT='53' />
+	<BLOCKON ID='54' COUNT='20' />
+	<BLOCKON ID='55' COUNT='4' />
+	<BLOCKON ID='56' COUNT='12' />
+	<BLOCKON ID='57' />
+	<BLOCKON ID='58' COUNT='12' />
+	<BLOCKON ID='59' COUNT='4' />
+	<BLOCKON ID='60' COUNT='12' />
+	<BLOCKON ID='61' />
+      </FORTHREAD>
+      <FORTHREAD ID='52' NAME='S6EnginePoolThread_22'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='6' />
+	<BLOCKON ID='32' COUNT='9' />
+	<BLOCKON ID='33' COUNT='12' />
+	<BLOCKON ID='34' COUNT='3' />
+	<BLOCKON ID='35' COUNT='10' />
+	<BLOCKON ID='36' COUNT='1' />
+	<BLOCKON ID='37' COUNT='13' />
+	<BLOCKON ID='38' COUNT='3' />
+	<BLOCKON ID='39' />
+	<BLOCKON ID='40' COUNT='1' />
+	<BLOCKON ID='41' COUNT='1' />
+	<BLOCKON ID='42' COUNT='3' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='3' />
+	<BLOCKON ID='45' COUNT='6' />
+	<BLOCKON ID='46' COUNT='1' />
+	<BLOCKON ID='47' COUNT='1' />
+	<BLOCKON ID='48' COUNT='3' />
+	<BLOCKON ID='49' COUNT='3' />
+	<BLOCKON ID='50' COUNT='3' />
+	<BLOCKON ID='51' COUNT='16' />
+	<BLOCKON ID='52' />
+	<BLOCKON ID='53' COUNT='19' />
+	<BLOCKON ID='54' COUNT='7' />
+	<BLOCKON ID='55' COUNT='1' />
+	<BLOCKON ID='56' COUNT='4' />
+	<BLOCKON ID='57' COUNT='6' />
+	<BLOCKON ID='58' COUNT='3' />
+	<BLOCKON ID='59' COUNT='1' />
+	<BLOCKON ID='60' COUNT='3' />
+	<BLOCKON ID='61' />
+      </FORTHREAD>
+      <FORTHREAD ID='53' NAME='S6EnginePoolThread_23'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' COUNT='5' />
+	<BLOCKON ID='30' COUNT='11' />
+	<BLOCKON ID='32' COUNT='22' />
+	<BLOCKON ID='33' COUNT='39' />
+	<BLOCKON ID='34' COUNT='5' />
+	<BLOCKON ID='35' COUNT='39' />
+	<BLOCKON ID='36' COUNT='5' />
+	<BLOCKON ID='37' COUNT='39' />
+	<BLOCKON ID='38' COUNT='11' />
+	<BLOCKON ID='39' />
+	<BLOCKON ID='40' COUNT='11' />
+	<BLOCKON ID='41' COUNT='5' />
+	<BLOCKON ID='42' COUNT='11' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='5' />
+	<BLOCKON ID='45' COUNT='5' />
+	<BLOCKON ID='46' />
+	<BLOCKON ID='47' COUNT='5' />
+	<BLOCKON ID='48' COUNT='11' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' COUNT='17' />
+	<BLOCKON ID='51' COUNT='34' />
+	<BLOCKON ID='52' COUNT='5' />
+	<BLOCKON ID='53' />
+	<BLOCKON ID='54' COUNT='34' />
+	<BLOCKON ID='55' />
+	<BLOCKON ID='56' COUNT='17' />
+	<BLOCKON ID='57' COUNT='17' />
+	<BLOCKON ID='58' COUNT='17' />
+	<BLOCKON ID='59' />
+	<BLOCKON ID='60' COUNT='11' />
+	<BLOCKON ID='61' />
+      </FORTHREAD>
+      <FORTHREAD ID='54' NAME='S6EnginePoolThread_24'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='5' />
+	<BLOCKON ID='32' COUNT='22' />
+	<BLOCKON ID='33' COUNT='19' />
+	<BLOCKON ID='34' COUNT='2' />
+	<BLOCKON ID='35' COUNT='19' />
+	<BLOCKON ID='36' />
+	<BLOCKON ID='37' COUNT='24' />
+	<BLOCKON ID='38' COUNT='5' />
+	<BLOCKON ID='39' />
+	<BLOCKON ID='40' COUNT='2' />
+	<BLOCKON ID='41' COUNT='2' />
+	<BLOCKON ID='42' COUNT='5' />
+	<BLOCKON ID='43' COUNT='2' />
+	<BLOCKON ID='44' COUNT='5' />
+	<BLOCKON ID='45' COUNT='2' />
+	<BLOCKON ID='46' />
+	<BLOCKON ID='47' COUNT='8' />
+	<BLOCKON ID='48' COUNT='5' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' COUNT='2' />
+	<BLOCKON ID='51' COUNT='22' />
+	<BLOCKON ID='52' COUNT='11' />
+	<BLOCKON ID='53' COUNT='36' />
+	<BLOCKON ID='54' />
+	<BLOCKON ID='55' COUNT='5' />
+	<BLOCKON ID='56' COUNT='5' />
+	<BLOCKON ID='57' COUNT='11' />
+	<BLOCKON ID='58' COUNT='5' />
+	<BLOCKON ID='59' />
+	<BLOCKON ID='60' COUNT='5' />
+	<BLOCKON ID='61' />
+      </FORTHREAD>
+      <FORTHREAD ID='55' NAME='S6EnginePoolThread_25'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' COUNT='2' />
+	<BLOCKON ID='30' COUNT='10' />
+	<BLOCKON ID='32' COUNT='13' />
+	<BLOCKON ID='33' COUNT='23' />
+	<BLOCKON ID='34' COUNT='5' />
+	<BLOCKON ID='35' COUNT='18' />
+	<BLOCKON ID='36' />
+	<BLOCKON ID='37' COUNT='18' />
+	<BLOCKON ID='38' COUNT='5' />
+	<BLOCKON ID='39' COUNT='2' />
+	<BLOCKON ID='40' COUNT='5' />
+	<BLOCKON ID='41' COUNT='2' />
+	<BLOCKON ID='42' COUNT='7' />
+	<BLOCKON ID='43' COUNT='2' />
+	<BLOCKON ID='44' COUNT='2' />
+	<BLOCKON ID='45' COUNT='2' />
+	<BLOCKON ID='46' COUNT='7' />
+	<BLOCKON ID='47' COUNT='5' />
+	<BLOCKON ID='48' COUNT='5' />
+	<BLOCKON ID='49' COUNT='2' />
+	<BLOCKON ID='50' COUNT='2' />
+	<BLOCKON ID='51' COUNT='21' />
+	<BLOCKON ID='52' COUNT='10' />
+	<BLOCKON ID='53' COUNT='31' />
+	<BLOCKON ID='54' COUNT='18' />
+	<BLOCKON ID='55' />
+	<BLOCKON ID='56' COUNT='7' />
+	<BLOCKON ID='57' COUNT='10' />
+	<BLOCKON ID='58' COUNT='5' />
+	<BLOCKON ID='59' />
+	<BLOCKON ID='60' COUNT='5' />
+	<BLOCKON ID='61' COUNT='2' />
+      </FORTHREAD>
+      <FORTHREAD ID='56' NAME='S6EnginePoolThread_26'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' COUNT='2' />
+	<BLOCKON ID='30' COUNT='8' />
+	<BLOCKON ID='32' COUNT='18' />
+	<BLOCKON ID='33' COUNT='14' />
+	<BLOCKON ID='34' COUNT='4' />
+	<BLOCKON ID='35' COUNT='14' />
+	<BLOCKON ID='36' />
+	<BLOCKON ID='37' COUNT='16' />
+	<BLOCKON ID='38' COUNT='4' />
+	<BLOCKON ID='39' />
+	<BLOCKON ID='40' COUNT='4' />
+	<BLOCKON ID='41' COUNT='2' />
+	<BLOCKON ID='42' COUNT='4' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='4' />
+	<BLOCKON ID='45' COUNT='8' />
+	<BLOCKON ID='46' COUNT='4' />
+	<BLOCKON ID='47' COUNT='2' />
+	<BLOCKON ID='48' COUNT='4' />
+	<BLOCKON ID='49' COUNT='4' />
+	<BLOCKON ID='50' COUNT='10' />
+	<BLOCKON ID='51' COUNT='22' />
+	<BLOCKON ID='52' COUNT='10' />
+	<BLOCKON ID='53' COUNT='26' />
+	<BLOCKON ID='54' COUNT='12' />
+	<BLOCKON ID='55' COUNT='2' />
+	<BLOCKON ID='56' />
+	<BLOCKON ID='57' COUNT='6' />
+	<BLOCKON ID='58' COUNT='4' />
+	<BLOCKON ID='59' COUNT='2' />
+	<BLOCKON ID='60' COUNT='6' />
+	<BLOCKON ID='61' COUNT='2' />
+      </FORTHREAD>
+      <FORTHREAD ID='57' NAME='S6EnginePoolThread_27'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='7' />
+	<BLOCKON ID='32' COUNT='14' />
+	<BLOCKON ID='33' COUNT='17' />
+	<BLOCKON ID='34' COUNT='2' />
+	<BLOCKON ID='35' COUNT='17' />
+	<BLOCKON ID='36' COUNT='2' />
+	<BLOCKON ID='37' COUNT='14' />
+	<BLOCKON ID='38' COUNT='4' />
+	<BLOCKON ID='39' />
+	<BLOCKON ID='40' COUNT='2' />
+	<BLOCKON ID='41' COUNT='2' />
+	<BLOCKON ID='42' COUNT='4' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='2' />
+	<BLOCKON ID='45' COUNT='9' />
+	<BLOCKON ID='46' COUNT='2' />
+	<BLOCKON ID='47' COUNT='2' />
+	<BLOCKON ID='48' />
+	<BLOCKON ID='49' COUNT='4' />
+	<BLOCKON ID='50' COUNT='7' />
+	<BLOCKON ID='51' COUNT='27' />
+	<BLOCKON ID='52' COUNT='12' />
+	<BLOCKON ID='53' COUNT='32' />
+	<BLOCKON ID='54' COUNT='14' />
+	<BLOCKON ID='55' />
+	<BLOCKON ID='56' COUNT='7' />
+	<BLOCKON ID='57' />
+	<BLOCKON ID='58' COUNT='4' />
+	<BLOCKON ID='59' COUNT='2' />
+	<BLOCKON ID='60' COUNT='7' />
+	<BLOCKON ID='61' />
+      </FORTHREAD>
+      <FORTHREAD ID='58' NAME='S6EnginePoolThread_28'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' COUNT='1' />
+	<BLOCKON ID='30' COUNT='1' />
+	<BLOCKON ID='32' COUNT='6' />
+	<BLOCKON ID='33' COUNT='10' />
+	<BLOCKON ID='34' COUNT='1' />
+	<BLOCKON ID='35' COUNT='10' />
+	<BLOCKON ID='36' COUNT='1' />
+	<BLOCKON ID='37' COUNT='10' />
+	<BLOCKON ID='38' COUNT='3' />
+	<BLOCKON ID='39' COUNT='1' />
+	<BLOCKON ID='40' COUNT='1' />
+	<BLOCKON ID='41' COUNT='1' />
+	<BLOCKON ID='42' COUNT='3' />
+	<BLOCKON ID='43' COUNT='1' />
+	<BLOCKON ID='44' COUNT='1' />
+	<BLOCKON ID='45' COUNT='6' />
+	<BLOCKON ID='46' COUNT='1' />
+	<BLOCKON ID='47' COUNT='1' />
+	<BLOCKON ID='48' COUNT='3' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' COUNT='7' />
+	<BLOCKON ID='51' COUNT='16' />
+	<BLOCKON ID='52' COUNT='6' />
+	<BLOCKON ID='53' COUNT='18' />
+	<BLOCKON ID='54' COUNT='7' />
+	<BLOCKON ID='55' COUNT='1' />
+	<BLOCKON ID='56' COUNT='3' />
+	<BLOCKON ID='57' COUNT='6' />
+	<BLOCKON ID='58' />
+	<BLOCKON ID='59' COUNT='1' />
+	<BLOCKON ID='60' COUNT='4' />
+	<BLOCKON ID='61' />
+      </FORTHREAD>
+      <FORTHREAD ID='59' NAME='S6EnginePoolThread_29'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' COUNT='1' />
+	<BLOCKON ID='30' COUNT='3' />
+	<BLOCKON ID='32' COUNT='13' />
+	<BLOCKON ID='33' COUNT='14' />
+	<BLOCKON ID='34' COUNT='4' />
+	<BLOCKON ID='35' COUNT='11' />
+	<BLOCKON ID='36' />
+	<BLOCKON ID='37' COUNT='11' />
+	<BLOCKON ID='38' COUNT='3' />
+	<BLOCKON ID='39' />
+	<BLOCKON ID='40' COUNT='1' />
+	<BLOCKON ID='41' COUNT='3' />
+	<BLOCKON ID='42' COUNT='3' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='1' />
+	<BLOCKON ID='45' COUNT='6' />
+	<BLOCKON ID='46' COUNT='3' />
+	<BLOCKON ID='47' COUNT='1' />
+	<BLOCKON ID='48' COUNT='3' />
+	<BLOCKON ID='49' COUNT='3' />
+	<BLOCKON ID='50' COUNT='8' />
+	<BLOCKON ID='51' COUNT='16' />
+	<BLOCKON ID='52' COUNT='6' />
+	<BLOCKON ID='53' COUNT='21' />
+	<BLOCKON ID='54' COUNT='8' />
+	<BLOCKON ID='55' COUNT='3' />
+	<BLOCKON ID='56' COUNT='4' />
+	<BLOCKON ID='57' COUNT='6' />
+	<BLOCKON ID='58' COUNT='4' />
+	<BLOCKON ID='59' />
+	<BLOCKON ID='60' COUNT='6' />
+	<BLOCKON ID='61' COUNT='1' />
+      </FORTHREAD>
+      <FORTHREAD ID='60' NAME='S6EnginePoolThread_30'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='2' />
+	<BLOCKON ID='32' COUNT='10' />
+	<BLOCKON ID='33' COUNT='16' />
+	<BLOCKON ID='34' COUNT='2' />
+	<BLOCKON ID='35' COUNT='14' />
+	<BLOCKON ID='36' COUNT='2' />
+	<BLOCKON ID='37' COUNT='14' />
+	<BLOCKON ID='38' COUNT='4' />
+	<BLOCKON ID='39' COUNT='2' />
+	<BLOCKON ID='40' COUNT='4' />
+	<BLOCKON ID='41' COUNT='2' />
+	<BLOCKON ID='42' COUNT='4' />
+	<BLOCKON ID='43' COUNT='2' />
+	<BLOCKON ID='44' COUNT='2' />
+	<BLOCKON ID='45' COUNT='8' />
+	<BLOCKON ID='46' COUNT='4' />
+	<BLOCKON ID='47' COUNT='2' />
+	<BLOCKON ID='48' COUNT='4' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' COUNT='8' />
+	<BLOCKON ID='51' COUNT='23' />
+	<BLOCKON ID='52' COUNT='6' />
+	<BLOCKON ID='53' COUNT='25' />
+	<BLOCKON ID='54' COUNT='12' />
+	<BLOCKON ID='55' />
+	<BLOCKON ID='56' COUNT='4' />
+	<BLOCKON ID='57' COUNT='8' />
+	<BLOCKON ID='58' COUNT='4' />
+	<BLOCKON ID='59' COUNT='2' />
+	<BLOCKON ID='60' />
+	<BLOCKON ID='61' COUNT='2' />
+      </FORTHREAD>
+      <FORTHREAD ID='61' NAME='S6EnginePoolThread_31'>
+	<BLOCKON ID='8' />
+	<BLOCKON ID='29' />
+	<BLOCKON ID='30' COUNT='7' />
+	<BLOCKON ID='32' COUNT='15' />
+	<BLOCKON ID='33' COUNT='18' />
+	<BLOCKON ID='34' COUNT='3' />
+	<BLOCKON ID='35' COUNT='13' />
+	<BLOCKON ID='36' COUNT='1' />
+	<BLOCKON ID='37' COUNT='11' />
+	<BLOCKON ID='38' COUNT='3' />
+	<BLOCKON ID='39' COUNT='3' />
+	<BLOCKON ID='40' COUNT='3' />
+	<BLOCKON ID='41' COUNT='1' />
+	<BLOCKON ID='42' COUNT='5' />
+	<BLOCKON ID='43' />
+	<BLOCKON ID='44' COUNT='1' />
+	<BLOCKON ID='45' COUNT='7' />
+	<BLOCKON ID='46' COUNT='3' />
+	<BLOCKON ID='47' COUNT='3' />
+	<BLOCKON ID='48' COUNT='3' />
+	<BLOCKON ID='49' />
+	<BLOCKON ID='50' COUNT='5' />
+	<BLOCKON ID='51' COUNT='20' />
+	<BLOCKON ID='52' COUNT='7' />
+	<BLOCKON ID='53' COUNT='22' />
+	<BLOCKON ID='54' COUNT='11' />
+	<BLOCKON ID='55' />
+	<BLOCKON ID='56' COUNT='3' />
+	<BLOCKON ID='57' COUNT='5' />
+	<BLOCKON ID='58' COUNT='5' />
+	<BLOCKON ID='59' COUNT='1' />
+	<BLOCKON ID='60' COUNT='5' />
+	<BLOCKON ID='61' />
+      </FORTHREAD>
+    </LOCKMAT>
+  </THREADS>
+  <TIMING PROCESSORS='8' LIVE='29.08354689902614' LIVESTDEV='16.377239911189825' NTHREAD='155' SUMMARY='0.8038278952407347'>
+    <THREAD ID='10' NAME='DestroyJavaVM' PCTCPU='0.1' PCTUSER='0.1' PCTSYS='0.0' />
+    <THREAD ID='100' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='101' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='102' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='103' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='104' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='105' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='106' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='107' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='108' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='109' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='110' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='111' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='112' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='113' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='114' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='115' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='116' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='117' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='118' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='119' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='120' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='121' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='122' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='123' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='127' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='128' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='129' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='130' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='131' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='132' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='133' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='134' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='135' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='136' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='137' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='138' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='139' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='140' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='141' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='142' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='143' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='144' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='145' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='146' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='147' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='148' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='149' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='150' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='152' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='153' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='154' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='155' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='156' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='157' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='158' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='159' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='160' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='161' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='162' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='21' NAME='Attach Listener' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='28' NAME='EngineClient_/128.148.31.11:59970_/128.148.31.11:41052' PCTCPU='0.2' PCTUSER='0.2' PCTSYS='0.0' />
+    <THREAD ID='29' NAME='S6EnginePoolThread_0' PCTCPU='11.8' PCTUSER='11.7' PCTSYS='0.1' />
+    <THREAD ID='30' NAME='S6EnginePoolThread_1' PCTCPU='12.1' PCTUSER='12.0' PCTSYS='0.1' />
+    <THREAD ID='32' NAME='S6EnginePoolThread_2' PCTCPU='12.0' PCTUSER='11.9' PCTSYS='0.1' />
+    <THREAD ID='33' NAME='S6EnginePoolThread_3' PCTCPU='12.2' PCTUSER='12.1' PCTSYS='0.1' />
+    <THREAD ID='34' NAME='S6EnginePoolThread_4' PCTCPU='0.1' PCTUSER='0.1' PCTSYS='0.0' />
+    <THREAD ID='35' NAME='S6EnginePoolThread_5' PCTCPU='0.6' PCTUSER='0.6' PCTSYS='0.0' />
+    <THREAD ID='36' NAME='S6EnginePoolThread_6' PCTCPU='0.3' PCTUSER='0.3' PCTSYS='0.0' />
+    <THREAD ID='37' NAME='S6EnginePoolThread_7' PCTCPU='0.6' PCTUSER='0.5' PCTSYS='0.1' />
+    <THREAD ID='38' NAME='S6EnginePoolThread_8' PCTCPU='0.3' PCTUSER='0.3' PCTSYS='0.0' />
+    <THREAD ID='39' NAME='S6EnginePoolThread_9' PCTCPU='0.2' PCTUSER='0.2' PCTSYS='0.0' />
+    <THREAD ID='40' NAME='S6EnginePoolThread_10' PCTCPU='0.2' PCTUSER='0.2' PCTSYS='0.0' />
+    <THREAD ID='41' NAME='S6EnginePoolThread_11' PCTCPU='0.2' PCTUSER='0.1' PCTSYS='0.0' />
+    <THREAD ID='42' NAME='S6EnginePoolThread_12' PCTCPU='0.5' PCTUSER='0.4' PCTSYS='0.0' />
+    <THREAD ID='43' NAME='S6EnginePoolThread_13' PCTCPU='0.2' PCTUSER='0.1' PCTSYS='0.0' />
+    <THREAD ID='44' NAME='S6EnginePoolThread_14' PCTCPU='0.2' PCTUSER='0.2' PCTSYS='0.0' />
+    <THREAD ID='45' NAME='S6EnginePoolThread_15' PCTCPU='0.2' PCTUSER='0.2' PCTSYS='0.0' />
+    <THREAD ID='46' NAME='S6EnginePoolThread_16' PCTCPU='0.2' PCTUSER='0.2' PCTSYS='0.0' />
+    <THREAD ID='47' NAME='S6EnginePoolThread_17' PCTCPU='0.2' PCTUSER='0.2' PCTSYS='0.0' />
+    <THREAD ID='48' NAME='S6EnginePoolThread_18' PCTCPU='0.2' PCTUSER='0.2' PCTSYS='0.0' />
+    <THREAD ID='49' NAME='S6EnginePoolThread_19' PCTCPU='0.1' PCTUSER='0.1' PCTSYS='0.0' />
+    <THREAD ID='50' NAME='S6EnginePoolThread_20' PCTCPU='0.2' PCTUSER='0.2' PCTSYS='0.0' />
+    <THREAD ID='51' NAME='S6EnginePoolThread_21' PCTCPU='0.5' PCTUSER='0.5' PCTSYS='0.0' />
+    <THREAD ID='52' NAME='S6EnginePoolThread_22' PCTCPU='0.2' PCTUSER='0.2' PCTSYS='0.0' />
+    <THREAD ID='53' NAME='S6EnginePoolThread_23' PCTCPU='0.5' PCTUSER='0.5' PCTSYS='0.0' />
+    <THREAD ID='54' NAME='S6EnginePoolThread_24' PCTCPU='0.4' PCTUSER='0.4' PCTSYS='0.0' />
+    <THREAD ID='55' NAME='S6EnginePoolThread_25' PCTCPU='0.3' PCTUSER='0.3' PCTSYS='0.0' />
+    <THREAD ID='56' NAME='S6EnginePoolThread_26' PCTCPU='0.3' PCTUSER='0.3' PCTSYS='0.0' />
+    <THREAD ID='57' NAME='S6EnginePoolThread_27' PCTCPU='0.3' PCTUSER='0.3' PCTSYS='0.0' />
+    <THREAD ID='58' NAME='S6EnginePoolThread_28' PCTCPU='0.2' PCTUSER='0.2' PCTSYS='0.0' />
+    <THREAD ID='59' NAME='S6EnginePoolThread_29' PCTCPU='0.2' PCTUSER='0.2' PCTSYS='0.0' />
+    <THREAD ID='60' NAME='S6EnginePoolThread_30' PCTCPU='0.3' PCTUSER='0.3' PCTSYS='0.0' />
+    <THREAD ID='61' NAME='S6EnginePoolThread_31' PCTCPU='0.1' PCTUSER='0.1' PCTSYS='0.0' />
+    <THREAD ID='62' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='63' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='64' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='65' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='66' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='67' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='68' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='69' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='70' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='71' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='72' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='73' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='74' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='75' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='76' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='77' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='78' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='79' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='8' NAME='IvyExecMonitor' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='80' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='81' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='82' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='83' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='84' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='85' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='86' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='88' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='89' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='9' NAME='S6_ENGINE_ACCEPT' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='90' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='91' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='92' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='93' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='94' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='95' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='96' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='97' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='98' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+    <THREAD ID='99' NAME='process reaper' PCTCPU='0.0' PCTUSER='0.0' PCTSYS='0.0' />
+  </TIMING>
+  <MEMORY USED='593.7M' COMMITTED='1.7G' GCS='123' ALLOCS='232825044' TTIME='295668.0' ALLOCSPER='787.4543203863793'>
+    <REGIONS>
+      <USAGE NAME='HEAP' INIT='0.0' MAX='17.4G' USEDAVG='110.1M' USEDSTD='184.6M' COMMAVG='205.4M' COMMSTD='324.8M' MODS='3902' USED='5.89214736E8' COMM='1.73735936E9' />
+      <USAGE NAME='NONHEAP' INIT='23.2M' MAX='132.0M' USEDAVG='16.2M' USEDSTD='8.1M' COMMAVG='27.3M' COMMSTD='6.3M' MODS='3902' USED='3.3341312E7' COMM='3.8600704E7' />
+    </REGIONS>
+    <POOLS>
+      <USAGE NAME='POOL_Code Cache' INIT='2.4M' MAX='48.0M' USEDAVG='2.8M' USEDSTD='2.9M' COMMAVG='4.0M' COMMSTD='2.6M' MODS='3902' USED='1.021536E7' COMM='1.114112E7' />
+      <USAGE NAME='POOL_PS Eden Space' INIT='3.0M' MAX='6.5G' USEDAVG='62.1M' USEDSTD='104.2M' COMMAVG='127.9M' COMMSTD='187.3M' MODS='3902' USED='2.62149536E8' COMM='9.48502528E8' />
+      <USAGE NAME='POOL_PS Old Gen' INIT='5.2M' MAX='13.0G' USEDAVG='31.1M' USEDSTD='61.8M' COMMAVG='43.9M' COMMSTD='78.6M' MODS='3902' USED='2.8807732E8' COMM='3.96951552E8' />
+      <USAGE NAME='POOL_PS Perm Gen' INIT='20.8M' MAX='84.0M' USEDAVG='13.4M' USEDSTD='5.3M' COMMAVG='23.3M' COMMSTD='3.9M' MODS='3902' USED='2.3125952E7' COMM='2.7459584E7' />
+      <USAGE NAME='POOL_PS Survivor Space' INIT='512.0K' MAX='509.9M' USEDAVG='16.9M' USEDSTD='41.4M' COMMAVG='33.7M' COMMSTD='73.8M' MODS='3902' USED='4.3579504E7' COMM='3.9190528E8' />
+    </POOLS>
+    <GCS>
+      <GC NAME='PS MarkSweep' COUNT='15' TIME='8.56' />
+      <GC NAME='PS Scavenge' COUNT='108' TIME='6.08' />
+    </GCS>
+    <ALLOCATIONS TOTAL='0' />
+  </MEMORY>
+  <IO TOTTIME='295.67' TOTSAMP='3902' TOTIO='46025' IOTIME='3487.47' RECENT='11.0'>
+    <IOMETHOD CLASS='java.io.FilterReader' METHOD='read' COUNT='39.0K' PCT='1000.0' TIME='2956.76'>
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60166' COUNT='3.9K' PCT='10.0' TIME='295.67' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60167' COUNT='3.9K' PCT='10.0' TIME='295.67' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60168' COUNT='3.9K' PCT='10.0' TIME='295.67' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60169' COUNT='3.9K' PCT='10.0' TIME='295.67' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60170' COUNT='3.9K' PCT='10.0' TIME='295.67' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60171' COUNT='3.9K' PCT='10.0' TIME='295.67' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60172' COUNT='3.9K' PCT='10.0' TIME='295.67' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60173' COUNT='3.9K' PCT='10.0' TIME='295.67' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60174' COUNT='3.9K' PCT='10.0' TIME='295.67' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60175' COUNT='3.9K' PCT='10.0' TIME='295.67' />
+      <THREAD NAME='EngineClient_/128.148.31.11:59970_/128.148.31.11:41052' COUNT='1.0' PCT='0.0' TIME='0.08' />
+      <SOURCE FILE='IvyXmlReader.java' CLASS='edu.brown.cs.ivy.xml.IvyXmlReader' METHOD='readXml' LINE='196' COUNT='39.0K' PCT='100.0' />
+    </IOMETHOD>
+    <IOMETHOD CLASS='java.net.ServerSocket' METHOD='accept' COUNT='3.9K' PCT='100.0' TIME='295.67'>
+      <THREAD NAME='S6_ENGINE_ACCEPT' COUNT='3.9K' PCT='100.0' TIME='295.67' />
+      <SOURCE FILE='EngineMain.java' CLASS='edu.brown.cs.s6.engine.EngineMain$EngineServer' METHOD='run' LINE='967' COUNT='3.9K' PCT='100.0' />
+    </IOMETHOD>
+    <IOMETHOD CLASS='sun.net.www.protocol.http.HttpURLConnection' METHOD='getInputStream' COUNT='2.2K' PCT='57.6' TIME='170.41'>
+      <THREAD NAME='S6EnginePoolThread_16' COUNT='226.0' PCT='10.0' TIME='17.12' />
+      <THREAD NAME='S6EnginePoolThread_22' COUNT='222.0' PCT='9.9' TIME='16.82' />
+      <THREAD NAME='S6EnginePoolThread_24' COUNT='213.0' PCT='9.5' TIME='16.14' />
+      <THREAD NAME='S6EnginePoolThread_31' COUNT='109.0' PCT='4.8' TIME='8.26' />
+      <THREAD NAME='S6EnginePoolThread_23' COUNT='85.0' PCT='3.8' TIME='6.44' />
+      <THREAD NAME='S6EnginePoolThread_14' COUNT='81.0' PCT='3.6' TIME='6.14' />
+      <THREAD NAME='S6EnginePoolThread_13' COUNT='80.0' PCT='3.6' TIME='6.06' />
+      <THREAD NAME='S6EnginePoolThread_20' COUNT='80.0' PCT='3.6' TIME='6.06' />
+      <THREAD NAME='S6EnginePoolThread_12' COUNT='78.0' PCT='3.5' TIME='5.91' />
+      <THREAD NAME='S6EnginePoolThread_10' COUNT='76.0' PCT='3.4' TIME='5.76' />
+      <THREAD NAME='S6EnginePoolThread_15' COUNT='75.0' PCT='3.3' TIME='5.68' />
+      <THREAD NAME='S6EnginePoolThread_19' COUNT='75.0' PCT='3.3' TIME='5.68' />
+      <THREAD NAME='S6EnginePoolThread_18' COUNT='73.0' PCT='3.2' TIME='5.53' />
+      <THREAD NAME='S6EnginePoolThread_27' COUNT='72.0' PCT='3.2' TIME='5.46' />
+      <THREAD NAME='S6EnginePoolThread_9' COUNT='70.0' PCT='3.1' TIME='5.30' />
+      <THREAD NAME='S6EnginePoolThread_3' COUNT='69.0' PCT='3.1' TIME='5.23' />
+      <THREAD NAME='S6EnginePoolThread_30' COUNT='67.0' PCT='3.0' TIME='5.08' />
+      <THREAD NAME='S6EnginePoolThread_21' COUNT='56.0' PCT='2.5' TIME='4.24' />
+      <THREAD NAME='S6EnginePoolThread_25' COUNT='54.0' PCT='2.4' TIME='4.09' />
+      <THREAD NAME='S6EnginePoolThread_11' COUNT='51.0' PCT='2.3' TIME='3.86' />
+      <THREAD NAME='S6EnginePoolThread_29' COUNT='51.0' PCT='2.3' TIME='3.86' />
+      <THREAD NAME='S6EnginePoolThread_0' COUNT='50.0' PCT='2.2' TIME='3.79' />
+      <THREAD NAME='S6EnginePoolThread_4' COUNT='49.0' PCT='2.2' TIME='3.71' />
+      <THREAD NAME='S6EnginePoolThread_2' COUNT='43.0' PCT='1.9' TIME='3.26' />
+      <THREAD NAME='S6EnginePoolThread_17' COUNT='41.0' PCT='1.8' TIME='3.11' />
+      <THREAD NAME='S6EnginePoolThread_1' COUNT='36.0' PCT='1.6' TIME='2.73' />
+      <THREAD NAME='S6EnginePoolThread_6' COUNT='18.0' PCT='0.8' TIME='1.36' />
+      <THREAD NAME='S6EnginePoolThread_7' COUNT='14.0' PCT='0.6' TIME='1.06' />
+      <THREAD NAME='S6EnginePoolThread_26' COUNT='9.0' PCT='0.4' TIME='0.68' />
+      <THREAD NAME='S6EnginePoolThread_5' COUNT='9.0' PCT='0.4' TIME='0.68' />
+      <THREAD NAME='S6EnginePoolThread_8' COUNT='9.0' PCT='0.4' TIME='0.68' />
+      <THREAD NAME='EngineClient_/128.148.31.11:59970_/128.148.31.11:41052' COUNT='4.0' PCT='0.2' TIME='0.30' />
+      <THREAD NAME='S6EnginePoolThread_28' COUNT='4.0' PCT='0.2' TIME='0.30' />
+      <SOURCE FILE='KeySearchBase.java' CLASS='edu.brown.cs.s6.keysearch.KeySearchBase' METHOD='scanURI' LINE='198' COUNT='2.0K' PCT='87.7' />
+      <SOURCE FILE='KeySearchBase.java' CLASS='edu.brown.cs.s6.keysearch.KeySearchBase' METHOD='loadURI' LINE='236' COUNT='272.0' PCT='12.1' />
+      <SOURCE FILE='KeySearchKrugle.java' CLASS='edu.brown.cs.s6.keysearch.KeySearchKrugle' METHOD='getAuthenticationData' LINE='185' COUNT='4.0' PCT='0.2' />
+    </IOMETHOD>
+    <IOMETHOD CLASS='java.io.BufferedReader' METHOD='readLine' COUNT='684.0' PCT='17.5' TIME='51.83'>
+      <THREAD NAME='S6EnginePoolThread_21' COUNT='237.0' PCT='34.6' TIME='17.96' />
+      <THREAD NAME='S6EnginePoolThread_1' COUNT='103.0' PCT='15.1' TIME='7.80' />
+      <THREAD NAME='S6EnginePoolThread_28' COUNT='65.0' PCT='9.5' TIME='4.93' />
+      <THREAD NAME='S6EnginePoolThread_0' COUNT='53.0' PCT='7.7' TIME='4.02' />
+      <THREAD NAME='S6EnginePoolThread_4' COUNT='53.0' PCT='7.7' TIME='4.02' />
+      <THREAD NAME='S6EnginePoolThread_20' COUNT='46.0' PCT='6.7' TIME='3.49' />
+      <THREAD NAME='S6EnginePoolThread_2' COUNT='10.0' PCT='1.5' TIME='0.76' />
+      <THREAD NAME='S6EnginePoolThread_7' COUNT='10.0' PCT='1.5' TIME='0.76' />
+      <THREAD NAME='S6EnginePoolThread_16' COUNT='8.0' PCT='1.2' TIME='0.61' />
+      <THREAD NAME='S6EnginePoolThread_12' COUNT='7.0' PCT='1.0' TIME='0.53' />
+      <THREAD NAME='S6EnginePoolThread_22' COUNT='7.0' PCT='1.0' TIME='0.53' />
+      <THREAD NAME='S6EnginePoolThread_3' COUNT='7.0' PCT='1.0' TIME='0.53' />
+      <THREAD NAME='S6EnginePoolThread_25' COUNT='6.0' PCT='0.9' TIME='0.45' />
+      <THREAD NAME='S6EnginePoolThread_10' COUNT='5.0' PCT='0.7' TIME='0.38' />
+      <THREAD NAME='S6EnginePoolThread_11' COUNT='5.0' PCT='0.7' TIME='0.38' />
+      <THREAD NAME='S6EnginePoolThread_13' COUNT='5.0' PCT='0.7' TIME='0.38' />
+      <THREAD NAME='S6EnginePoolThread_18' COUNT='5.0' PCT='0.7' TIME='0.38' />
+      <THREAD NAME='S6EnginePoolThread_24' COUNT='5.0' PCT='0.7' TIME='0.38' />
+      <THREAD NAME='S6EnginePoolThread_27' COUNT='5.0' PCT='0.7' TIME='0.38' />
+      <THREAD NAME='S6EnginePoolThread_5' COUNT='5.0' PCT='0.7' TIME='0.38' />
+      <THREAD NAME='S6EnginePoolThread_8' COUNT='5.0' PCT='0.7' TIME='0.38' />
+      <THREAD NAME='S6EnginePoolThread_26' COUNT='4.0' PCT='0.6' TIME='0.30' />
+      <THREAD NAME='S6EnginePoolThread_29' COUNT='4.0' PCT='0.6' TIME='0.30' />
+      <THREAD NAME='S6EnginePoolThread_6' COUNT='4.0' PCT='0.6' TIME='0.30' />
+      <THREAD NAME='S6EnginePoolThread_9' COUNT='4.0' PCT='0.6' TIME='0.30' />
+      <THREAD NAME='S6EnginePoolThread_15' COUNT='3.0' PCT='0.4' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_23' COUNT='3.0' PCT='0.4' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_30' COUNT='3.0' PCT='0.4' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_31' COUNT='3.0' PCT='0.4' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_17' COUNT='2.0' PCT='0.3' TIME='0.15' />
+      <THREAD NAME='S6EnginePoolThread_14' COUNT='1.0' PCT='0.1' TIME='0.08' />
+      <THREAD NAME='S6EnginePoolThread_19' COUNT='1.0' PCT='0.1' TIME='0.08' />
+      <SOURCE FILE='KeySearchLabrador.java' CLASS='edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador' METHOD='run' LINE='168' COUNT='537.0' PCT='78.5' />
+      <SOURCE FILE='KeySearchBase.java' CLASS='edu.brown.cs.s6.keysearch.KeySearchBase' METHOD='loadURI' LINE='238' COUNT='146.0' PCT='21.3' />
+      <SOURCE FILE='JavaTester.java' CLASS='edu.brown.cs.s6.language.java.JavaTester' METHOD='produceTestFile' LINE='320' COUNT='1.0' PCT='0.1' />
+    </IOMETHOD>
+    <IOMETHOD CLASS='sun.net.www.protocol.file.FileURLConnection' METHOD='getInputStream' COUNT='83.0' PCT='2.1' TIME='6.29'>
+      <THREAD NAME='S6EnginePoolThread_1' COUNT='4.0' PCT='4.8' TIME='0.30' />
+      <THREAD NAME='S6EnginePoolThread_11' COUNT='4.0' PCT='4.8' TIME='0.30' />
+      <THREAD NAME='S6EnginePoolThread_12' COUNT='4.0' PCT='4.8' TIME='0.30' />
+      <THREAD NAME='S6EnginePoolThread_16' COUNT='4.0' PCT='4.8' TIME='0.30' />
+      <THREAD NAME='S6EnginePoolThread_2' COUNT='4.0' PCT='4.8' TIME='0.30' />
+      <THREAD NAME='S6EnginePoolThread_25' COUNT='4.0' PCT='4.8' TIME='0.30' />
+      <THREAD NAME='S6EnginePoolThread_0' COUNT='3.0' PCT='3.6' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_14' COUNT='3.0' PCT='3.6' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_18' COUNT='3.0' PCT='3.6' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_20' COUNT='3.0' PCT='3.6' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_21' COUNT='3.0' PCT='3.6' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_22' COUNT='3.0' PCT='3.6' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_24' COUNT='3.0' PCT='3.6' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_27' COUNT='3.0' PCT='3.6' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_28' COUNT='3.0' PCT='3.6' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_31' COUNT='3.0' PCT='3.6' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_5' COUNT='3.0' PCT='3.6' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_8' COUNT='3.0' PCT='3.6' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_10' COUNT='2.0' PCT='2.4' TIME='0.15' />
+      <THREAD NAME='S6EnginePoolThread_15' COUNT='2.0' PCT='2.4' TIME='0.15' />
+      <THREAD NAME='S6EnginePoolThread_19' COUNT='2.0' PCT='2.4' TIME='0.15' />
+      <THREAD NAME='S6EnginePoolThread_23' COUNT='2.0' PCT='2.4' TIME='0.15' />
+      <THREAD NAME='S6EnginePoolThread_26' COUNT='2.0' PCT='2.4' TIME='0.15' />
+      <THREAD NAME='S6EnginePoolThread_29' COUNT='2.0' PCT='2.4' TIME='0.15' />
+      <THREAD NAME='S6EnginePoolThread_30' COUNT='2.0' PCT='2.4' TIME='0.15' />
+      <THREAD NAME='S6EnginePoolThread_6' COUNT='2.0' PCT='2.4' TIME='0.15' />
+      <THREAD NAME='S6EnginePoolThread_7' COUNT='2.0' PCT='2.4' TIME='0.15' />
+      <THREAD NAME='S6EnginePoolThread_13' COUNT='1.0' PCT='1.2' TIME='0.08' />
+      <THREAD NAME='S6EnginePoolThread_17' COUNT='1.0' PCT='1.2' TIME='0.08' />
+      <THREAD NAME='S6EnginePoolThread_3' COUNT='1.0' PCT='1.2' TIME='0.08' />
+      <THREAD NAME='S6EnginePoolThread_4' COUNT='1.0' PCT='1.2' TIME='0.08' />
+      <THREAD NAME='S6EnginePoolThread_9' COUNT='1.0' PCT='1.2' TIME='0.08' />
+      <SOURCE FILE='KeySearchBase.java' CLASS='edu.brown.cs.s6.keysearch.KeySearchBase' METHOD='loadURI' LINE='236' COUNT='83.0' PCT='100.0' />
+    </IOMETHOD>
+    <IOMETHOD CLASS='java.io.Reader' METHOD='read' COUNT='26.0' PCT='0.7' TIME='1.97'>
+      <THREAD NAME='S6EnginePoolThread_17' COUNT='9.0' PCT='34.6' TIME='0.68' />
+      <THREAD NAME='S6EnginePoolThread_29' COUNT='3.0' PCT='11.5' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_3' COUNT='3.0' PCT='11.5' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_18' COUNT='2.0' PCT='7.7' TIME='0.15' />
+      <THREAD NAME='S6EnginePoolThread_9' COUNT='2.0' PCT='7.7' TIME='0.15' />
+      <THREAD NAME='S6EnginePoolThread_0' COUNT='1.0' PCT='3.8' TIME='0.08' />
+      <THREAD NAME='S6EnginePoolThread_20' COUNT='1.0' PCT='3.8' TIME='0.08' />
+      <THREAD NAME='S6EnginePoolThread_22' COUNT='1.0' PCT='3.8' TIME='0.08' />
+      <THREAD NAME='S6EnginePoolThread_23' COUNT='1.0' PCT='3.8' TIME='0.08' />
+      <THREAD NAME='S6EnginePoolThread_31' COUNT='1.0' PCT='3.8' TIME='0.08' />
+      <THREAD NAME='S6EnginePoolThread_4' COUNT='1.0' PCT='3.8' TIME='0.08' />
+      <THREAD NAME='S6EnginePoolThread_8' COUNT='1.0' PCT='3.8' TIME='0.08' />
+      <SOURCE FILE='Parser.java' CLASS='javax.swing.text.html.parser.Parser' METHOD='readCh' LINE='2291' COUNT='26.0' PCT='100.0' />
+    </IOMETHOD>
+    <IOMETHOD CLASS='java.io.FileReader' METHOD='&lt;init&gt;' COUNT='21.0' PCT='0.5' TIME='1.59'>
+      <THREAD NAME='S6EnginePoolThread_4' COUNT='4.0' PCT='19.0' TIME='0.30' />
+      <THREAD NAME='S6EnginePoolThread_3' COUNT='3.0' PCT='14.3' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_7' COUNT='3.0' PCT='14.3' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_8' COUNT='3.0' PCT='14.3' TIME='0.23' />
+      <THREAD NAME='S6EnginePoolThread_1' COUNT='2.0' PCT='9.5' TIME='0.15' />
+      <THREAD NAME='S6EnginePoolThread_6' COUNT='2.0' PCT='9.5' TIME='0.15' />
+      <THREAD NAME='S6EnginePoolThread_0' COUNT='1.0' PCT='4.8' TIME='0.08' />
+      <THREAD NAME='S6EnginePoolThread_2' COUNT='1.0' PCT='4.8' TIME='0.08' />
+      <THREAD NAME='S6EnginePoolThread_5' COUNT='1.0' PCT='4.8' TIME='0.08' />
+      <THREAD NAME='S6EnginePoolThread_9' COUNT='1.0' PCT='4.8' TIME='0.08' />
+      <SOURCE FILE='JavaTester.java' CLASS='edu.brown.cs.s6.language.java.JavaTester' METHOD='produceTestFile' LINE='317' COUNT='15.0' PCT='71.4' />
+      <SOURCE FILE='JavaTester.java' CLASS='edu.brown.cs.s6.language.java.JavaTester' METHOD='produceAntFile' LINE='361' COUNT='6.0' PCT='28.6' />
+    </IOMETHOD>
+  </IO>
+  <HEAP SIZE='0' COUNT='0' OBJECTS='0' />
+  <REACTION TOTTIME='295.67' TOTSAMP='3902' ACTSAMP='3.9K' ACTIVE='0.00'>
+    <CALLBACK METHOD='edu.brown.cs.s6.keysearch.KeySearchKrugle$ScanSolution@run' />
+    <CALLBACK METHOD='org.eclipse.jface.text.Document@&lt;init&gt;' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.dom.DocCommentParser@pushText' />
+    <CALLBACK METHOD='edu.brown.cs.s6.engine.EngineMain$TransformSolution@call' />
+    <CALLBACK METHOD='edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution@run' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.dom.ASTNode$NodeList@add' />
+    <CALLBACK METHOD='edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador@run' />
+    <CALLBACK METHOD='edu.brown.cs.s6.keysearch.KeySearchKoders$ScanSolution@run' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.dom.TagElement@isNested' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.dom.AST@apiLevel' />
+    <CALLBACK METHOD='edu.brown.cs.s6.keysearch.KeySearchSet$RunSearch@run' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.compiler.CharOperation@replace' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.ToolFactory@createScanner' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.dom.DocCommentParser@updateDocComment' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.dom.DocCommentParser@parseTag' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.dom.ASTNode@hashCode' />
+    <CALLBACK METHOD='edu.brown.cs.s6.keysearch.KeySearchGoogle$ScanSolution@run' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.ToolFactory@createCodeFormatter' />
+    <CALLBACK METHOD='edu.brown.cs.s6.engine.EngineMain$DependWorker@run' />
+    <CALLBACK METHOD='edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution@run' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.dom.DocCommentParser@pushParamName' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.JavaCore@getOptions' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.dom.rewrite.TargetSourceRangeComputer@computeSourceRange' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.dom.ASTNode@structuralPropertiesForType' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.dom.ASTNode@getStructuralProperty' />
+    <CALLBACK METHOD='org.eclipse.text.edits.TextEditGroup@getTextEdits' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.dom.ASTNode@accept' />
+    <CALLBACK METHOD='edu.brown.cs.s6.engine.EngineMain$TestWorker@run' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.compiler.CharOperation@subarray' />
+    <CALLBACK METHOD='edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile@run' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.dom.DocCommentParser@createArgumentReference' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.dom.DocCommentParser@createTypeReference' />
+    <CALLBACK METHOD='org.eclipse.jdt.core.compiler.CharOperation@&lt;clinit&gt;' />
+    <EVENT METHOD='edu.brown.cs.s6.keysearch.KeySearchKoders$ScanSolution@run' TYPE='NODE_IO' />
+    <EVENT METHOD='edu.brown.cs.s6.keysearch.KeySearchSet$RunSearch@run' TYPE='NODE_IO' />
+    <EVENT METHOD='edu.brown.cs.s6.keysearch.KeySearchKrugle$ScanSolution@run' TYPE='NODE_IO' />
+    <EVENT METHOD='edu.brown.cs.s6.keysearch.KeySearchGoogle$ScanSolution@run' TYPE='NODE_IO' />
+    <EVENT METHOD='edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile@run' TYPE='NODE_IO' />
+    <EVENT METHOD='edu.brown.cs.s6.engine.EngineMain$DependWorker@run' TYPE='NODE_IO' />
+    <EVENT METHOD='edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution@run' TYPE='NODE_IO' />
+    <EVENT METHOD='edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution@run' TYPE='NODE_IO' />
+    <EVENTMETHOD CLASS='edu.brown.cs.s6.engine.EngineMain$TestWorker' METHOD='run' COUNT='58.0' PCT='1.5' TIME='4.39' />
+    <EVENTMETHOD CLASS='edu.brown.cs.s6.engine.EngineMain$TransformSolution' METHOD='call' COUNT='1.1K' PCT='27.8' TIME='82.29' />
+    <EVENTMETHOD CLASS='edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution' METHOD='run' COUNT='474.0' PCT='12.1' TIME='35.92' />
+    <EVENTMETHOD CLASS='edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution' METHOD='run' COUNT='2.0K' PCT='50.5' TIME='149.27' />
+    <EVENTMETHOD CLASS='edu.brown.cs.s6.keysearch.KeySearchKoders$ScanSolution' METHOD='run' COUNT='35.0' PCT='0.9' TIME='2.65' />
+    <EVENTMETHOD CLASS='edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile' METHOD='run' COUNT='1.1K' PCT='27.2' TIME='80.55' />
+    <EVENTMETHOD CLASS='edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador' METHOD='run' COUNT='538.0' PCT='13.8' TIME='40.77' />
+    <EVENTMETHOD CLASS='java.util.concurrent.FutureTask' METHOD='run' COUNT='87.0' PCT='2.2' TIME='6.59' />
+    <EVENTMETHOD CLASS='org.eclipse.jdt.core.dom.ASTNode' METHOD='accept' COUNT='269.0' PCT='6.9' TIME='20.38' />
+    <EVENTMETHOD CLASS='org.eclipse.jdt.core.dom.ASTNode$NodeList' METHOD='add' COUNT='24.0' PCT='0.6' TIME='1.82' />
+  </REACTION>
+  <SOCKETS TOTTIME='295.67' TOTSAMP='3902' TOTCOLL='40252' COLLTIME='3050.03'>
+    <TOTALS OPEN='118.0' READ='7.7K' WRITE='829.0' CLOSE='108.0' />
+    <SOCKETCOUNT CLASS='java.net.SocketInputStream' METHOD='read' COUNT='40.2K' PCT='1031.5' TIME='3049.88'>
+      <THREAD NAME='S6EnginePoolThread_21' COUNT='57.0' PCT='0.1' TIME='4.32' />
+      <THREAD NAME='S6EnginePoolThread_20' COUNT='50.0' PCT='0.1' TIME='3.79' />
+      <THREAD NAME='S6EnginePoolThread_23' COUNT='52.0' PCT='0.1' TIME='3.94' />
+      <THREAD NAME='S6EnginePoolThread_2' COUNT='50.0' PCT='0.1' TIME='3.79' />
+      <THREAD NAME='S6EnginePoolThread_3' COUNT='80.0' PCT='0.2' TIME='6.06' />
+      <THREAD NAME='S6EnginePoolThread_22' COUNT='30.0' PCT='0.1' TIME='2.27' />
+      <THREAD NAME='S6EnginePoolThread_0' COUNT='51.0' PCT='0.1' TIME='3.86' />
+      <THREAD NAME='S6EnginePoolThread_25' COUNT='58.0' PCT='0.1' TIME='4.39' />
+      <THREAD NAME='S6EnginePoolThread_1' COUNT='35.0' PCT='0.1' TIME='2.65' />
+      <THREAD NAME='S6EnginePoolThread_24' COUNT='17.0' PCT='0.0' TIME='1.29' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60168' COUNT='3.9K' PCT='9.7' TIME='295.67' />
+      <THREAD NAME='S6EnginePoolThread_27' COUNT='37.0' PCT='0.1' TIME='2.80' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60167' COUNT='3.9K' PCT='9.7' TIME='295.67' />
+      <THREAD NAME='S6EnginePoolThread_26' COUNT='12.0' PCT='0.0' TIME='0.91' />
+      <THREAD NAME='S6EnginePoolThread_29' COUNT='55.0' PCT='0.1' TIME='4.17' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60166' COUNT='3.9K' PCT='9.7' TIME='295.67' />
+      <THREAD NAME='S6EnginePoolThread_28' COUNT='10.0' PCT='0.0' TIME='0.76' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60169' COUNT='3.9K' PCT='9.7' TIME='295.67' />
+      <THREAD NAME='S6EnginePoolThread_10' COUNT='40.0' PCT='0.1' TIME='3.03' />
+      <THREAD NAME='EngineClient_/128.148.31.11:59970_/128.148.31.11:41052' COUNT='2.0' PCT='0.0' TIME='0.15' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60171' COUNT='3.9K' PCT='9.7' TIME='295.67' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60170' COUNT='3.9K' PCT='9.7' TIME='295.67' />
+      <THREAD NAME='S6EnginePoolThread_14' COUNT='43.0' PCT='0.1' TIME='3.26' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60173' COUNT='3.9K' PCT='9.7' TIME='295.67' />
+      <THREAD NAME='S6EnginePoolThread_13' COUNT='44.0' PCT='0.1' TIME='3.33' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60172' COUNT='3.9K' PCT='9.7' TIME='295.67' />
+      <THREAD NAME='S6EnginePoolThread_12' COUNT='46.0' PCT='0.1' TIME='3.49' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60175' COUNT='3.9K' PCT='9.7' TIME='295.67' />
+      <THREAD NAME='S6EnginePoolThread_11' COUNT='54.0' PCT='0.1' TIME='4.09' />
+      <THREAD NAME='EngineClient_conifer.cs.brown.edu/128.148.32.181:17240_/128.148.31.11:60174' COUNT='3.9K' PCT='9.7' TIME='295.67' />
+      <THREAD NAME='S6EnginePoolThread_18' COUNT='41.0' PCT='0.1' TIME='3.11' />
+      <THREAD NAME='S6EnginePoolThread_17' COUNT='52.0' PCT='0.1' TIME='3.94' />
+      <THREAD NAME='S6EnginePoolThread_16' COUNT='31.0' PCT='0.1' TIME='2.35' />
+      <THREAD NAME='S6EnginePoolThread_15' COUNT='39.0' PCT='0.1' TIME='2.96' />
+      <THREAD NAME='S6EnginePoolThread_31' COUNT='21.0' PCT='0.1' TIME='1.59' />
+      <THREAD NAME='S6EnginePoolThread_30' COUNT='32.0' PCT='0.1' TIME='2.42' />
+      <THREAD NAME='S6EnginePoolThread_19' COUNT='38.0' PCT='0.1' TIME='2.88' />
+      <THREAD NAME='S6EnginePoolThread_8' COUNT='13.0' PCT='0.0' TIME='0.99' />
+      <THREAD NAME='S6EnginePoolThread_9' COUNT='38.0' PCT='0.1' TIME='2.88' />
+      <THREAD NAME='S6EnginePoolThread_4' COUNT='49.0' PCT='0.1' TIME='3.71' />
+      <THREAD NAME='S6EnginePoolThread_5' COUNT='12.0' PCT='0.0' TIME='0.91' />
+      <THREAD NAME='S6EnginePoolThread_6' COUNT='21.0' PCT='0.1' TIME='1.59' />
+      <THREAD NAME='S6EnginePoolThread_7' COUNT='20.0' PCT='0.0' TIME='1.52' />
+    </SOCKETCOUNT>
+    <SOCKETCOUNT CLASS='java.net.SocketInputStream' METHOD='available' COUNT='2.0' PCT='0.1' TIME='0.15'>
+      <THREAD NAME='S6EnginePoolThread_27' COUNT='1.0' PCT='50.0' TIME='0.08' />
+      <THREAD NAME='S6EnginePoolThread_18' COUNT='1.0' PCT='50.0' TIME='0.08' />
+    </SOCKETCOUNT>
+    <SOCKET READ='148' WRITE='1' CLOSED='true'>
+      <LOCAL>/128.148.31.11:50097</LOCAL>
+      <REMOTE>www.google.com/74.125.91.103:80</REMOTE>
+    </SOCKET>
+    <SOCKET READ='194' WRITE='1' CLOSED='true'>
+      <LOCAL>/128.148.31.11:50098</LOCAL>
+      <REMOTE>www.google.com/74.125.91.103:80</REMOTE>
+    </SOCKET>
+    <SOCKET READ='144' WRITE='144' CLOSED='false'>
+      <LOCAL>/128.148.31.11:55443</LOCAL>
+      <REMOTE>bridget/128.148.31.144:5432</REMOTE>
+    </SOCKET>
+    <SOCKET READ='530' WRITE='1' CLOSED='true'>
+      <LOCAL>/128.148.31.11:50099</LOCAL>
+      <REMOTE>www.google.com/74.125.91.103:80</REMOTE>
+    </SOCKET>
+  </SOCKETS>
+  <PHASER PHASE='1' NAME='org.eclipse.jdt.core.dom.ASTNode' />
+  <STATES>
+    <STATENODE COUNT='0' TOTAL='84299'>
+      <STATENODE NAME='edu.brown.cs.s6.engine.EnginePool$Worker@run@334' COUNT='3' TOTAL='9432'>
+	<STATENODE NAME='java.util.concurrent.FutureTask@run@166' COUNT='1' TOTAL='9429'>
+	  <STATENODE NAME='java.util.concurrent.FutureTask$Sync@innerRun@334' COUNT='0' TOTAL='9428'>
+	    <STATENODE NAME='edu.brown.cs.s6.engine.EngineMain$TransformSolution@call@663' COUNT='0' TOTAL='1330'>
+	      <STATENODE NAME='edu.brown.cs.s6.engine.EngineMain$TransformSolution@call@682' COUNT='0' TOTAL='787'>
+		<STATENODE NAME='edu.brown.cs.s6.language.java.TransformJava@findTransforms@130' COUNT='1' TOTAL='787'>
+		  <STATENODE NAME='edu.brown.cs.s6.language.java.TransformJava@applyTransform@209' COUNT='0' TOTAL='612' />
+		</STATENODE>
+	      </STATENODE>
+	      <STATENODE NAME='edu.brown.cs.s6.engine.EngineMain$TransformSolution@call@678' COUNT='1' TOTAL='540' />
+	    </STATENODE>
+	    <STATENODE NAME='java.util.concurrent.Executors$RunnableAdapter@call@471' COUNT='1' TOTAL='8098'>
+	      <STATENODE NAME='edu.brown.cs.s6.keysearch.KeySearchLabrador$RunLabrador@run@168' COUNT='534' TOTAL='535' />
+	      <STATENODE NAME='edu.brown.cs.s6.keysearch.KeySearchGoogle$LoadSolution@run@294' COUNT='0' TOTAL='457' />
+	      <STATENODE NAME='edu.brown.cs.s6.engine.EngineMain$TestWorker@run@861' COUNT='0' TOTAL='885' />
+	      <STATENODE NAME='edu.brown.cs.s6.keysearch.KeySearchLabrador$LoadFile@run@210' COUNT='0' TOTAL='3461'>
+		<STATENODE NAME='edu.brown.cs.s6.keysearch.KeySearchBase@getSolutions@280' COUNT='1' TOTAL='739'>
+		  <STATENODE NAME='edu.brown.cs.s6.engine.EngineMain@createFileFragment@489' COUNT='0' TOTAL='738'>
+		    <STATENODE NAME='edu.brown.cs.s6.language.java.LanguageJava@createFileFragment@135' COUNT='1' TOTAL='738'>
+		      <STATENODE NAME='edu.brown.cs.s6.language.java.FragmentJava@createFileFragment@146' COUNT='0' TOTAL='588'>
+			<STATENODE NAME='org.eclipse.jdt.core.dom.ASTParser@createAST@656' COUNT='1' TOTAL='583' />
+		      </STATENODE>
+		    </STATENODE>
+		  </STATENODE>
+		</STATENODE>
+		<STATENODE NAME='edu.brown.cs.s6.keysearch.KeySearchBase@getSolutions@278' COUNT='0' TOTAL='685' />
+		<STATENODE NAME='edu.brown.cs.s6.keysearch.KeySearchBase@getSolutions@286' COUNT='0' TOTAL='1770' />
+	      </STATENODE>
+	      <STATENODE NAME='edu.brown.cs.s6.keysearch.KeySearchKoders$LoadSolution@run@286' COUNT='0' TOTAL='1966' />
+	    </STATENODE>
+	  </STATENODE>
+	</STATENODE>
+      </STATENODE>
+      <STATENODE NAME='edu.brown.cs.ivy.xml.IvyXmlReaderThread@run@161' COUNT='0' TOTAL='1309'>
+	<STATENODE NAME='edu.brown.cs.s6.engine.EngineMain$EngineClient@processXmlMessage@1067' COUNT='0' TOTAL='1306'>
+	  <STATENODE NAME='edu.brown.cs.s6.engine.EngineMain@access$900@79' COUNT='1' TOTAL='1306'>
+	    <STATENODE NAME='edu.brown.cs.s6.engine.EngineMain@handleCommand@1028' COUNT='0' TOTAL='1300'>
+	      <STATENODE NAME='edu.brown.cs.s6.engine.EngineMain@handleSearchRequest@287' COUNT='1' TOTAL='830' />
+	    </STATENODE>
+	  </STATENODE>
+	</STATENODE>
+      </STATENODE>
+      <STATENODE NAME='edu.brown.cs.s6.engine.EngineMain$EngineServer@run@967' COUNT='3901' TOTAL='3902' />
+      <STATENODE NAME='edu.brown.cs.ivy.exec.IvyExecFiles$Monitor@run@219' COUNT='1296' TOTAL='1297' />
+      <STATENODE NAME='edu.brown.cs.ivy.xml.IvyXmlReaderThread@run@159' COUNT='0' TOTAL='39021' />
+      <STATENODE NAME='edu.brown.cs.s6.engine.EnginePool$Worker@run@327' COUNT='29310' TOTAL='29311' />
+    </STATENODE>
+  </STATES>
+</ANALYSIS>
+

@@ -1,0 +1,1529 @@
+<DYVIEW>
+  <PROJECT_DIR>/home/spr/.ivy/Projects</PROJECT_DIR>
+  <PROJECT_NAME>bubbles</PROJECT_NAME>
+  <START_CLASS>edu.brown.cs.bubbles.bema.BemaMain</START_CLASS>
+  <VISUAL NAME='ThreadState'>
+    <TRANSACTION>edu.brown.cs.bubbles.bale.BaleDocument</TRANSACTION>
+    <TRANSACTION>edu.brown.cs.bubbles.bale.BaleHighlightContext</TRANSACTION>
+  </VISUAL>
+  <TUPLEMODEL>
+    <TUPLE INDEX='0' NAME='EVENT'>
+      <FIELD NAME='THREAD' TYPE='THREAD' />
+      <FIELD NAME='TRANSACTION' TYPE='OBJECT' />
+      <FIELD NAME='TASK' TYPE='OBJECT' />
+      <FIELD NAME='STATE' TYPE='STRING' />
+      <FIELD NAME='START' TYPE='START_TIME' />
+      <FIELD NAME='CPU' TYPE='INTERVAL' />
+      <FIELD NAME='END' TYPE='END_TIME' />
+    </TUPLE>
+    <TUPLE INDEX='1' NAME='CREATE'>
+      <FIELD NAME='THREAD' TYPE='THREAD' />
+      <FIELD NAME='TIME' TYPE='START_TIME' />
+      <FIELD NAME='TRANSACTION' TYPE='OBJECT' />
+      <FIELD NAME='TASK' TYPE='OBJECT' />
+    </TUPLE>
+  </TUPLEMODEL>
+  <GRAPHMODEL>
+    <GRAPH NAME='Events over Time' TYPE='TIMEROWS'>
+      <SELECT WHAT='ROWDATA'>
+        <TABLE DEFAULT='true' NAME='EVENT' />
+      </SELECT>
+      <SELECT SIZE='10' WHAT='ROW'>
+        <FIELD DEFAULT='true' NAME='THREAD' SORT='SORT_NAME' TABLE='EVENT' />
+        <FIELD NAME='THREAD' SORT='SORT_TIME' TABLE='EVENT' />
+        <FIELD NAME='TRANSACTION' SORT='SORT_NAME' TABLE='EVENT' />
+        <FIELD NAME='TRANSACTION' SORT='SORT_TIME' TABLE='EVENT' />
+      </SELECT>
+      <SELECT WHAT='HUE'>
+        <CONST NAME='NONE' VALUE='0.5' />
+        <FIELD NAME='THREAD' OP='MODE' TABLE='EVENT' />
+        <FIELD DEFAULT='true' NAME='TRANSACTION' OP='MODE' TABLE='EVENT' />
+        <FIELD NAME='STATE' OP='MODE' TABLE='EVENT' />
+      </SELECT>
+      <SELECT WHAT='SAT'>
+        <CONST DEFAULT='true' NAME='NONE' NULL='0.0' VALUE='1.0' />
+      </SELECT>
+      <SELECT WHAT='VALUE'>
+        <CONST DEFAULT='true' NAME='NONE' VALUE='1.0' />
+      </SELECT>
+      <SELECT SIZE='5' WHAT='ROWITEM'>
+        <CONST NAME='NONE' VALUE='0' />
+        <FIELD NAME='TRANSACTION' TABLE='EVENT' />
+        <FIELD DEFAULT='true' NAME='STATE' TABLE='EVENT' />
+      </SELECT>
+      <SELECT WHAT='WIDTH'>
+        <CONST DEFAULT='true' NAME='NONE' VALUE='1.0' />
+      </SELECT>
+      <SELECT WHAT='ITEMWIDTH'>
+        <INTERVAL DEFAULT='true' TABLE='EVENT' />
+      </SELECT>
+      <SELECT WHAT='LINKDATA'>
+        <TABLE DEFAULT='true' NAME='CREATE' />
+      </SELECT>
+      <SELECT WHAT='DATA1'>
+        <CONST NAME='NONE' VALUE='0' />
+        <FIELD DEFAULT='true' NAME='TRANSACTION' TABLE='CREATE' />
+      </SELECT>
+      <SELECT WHAT='DATA2'>
+        <CONST DEFAULT='true' NAME='NONE' VALUE='0' />
+        <FIELD NAME='TASK' TABLE='CREATE' />
+      </SELECT>
+      <SELECT WHAT='LHUE'>
+        <CONST DEFAULT='true' NAME='NONE' VALUE='0' />
+        <FIELD NAME='TRANSACTION' TABLE='EVENT' />
+      </SELECT>
+      <SELECT WHAT='LSAT'>
+        <CONST DEFAULT='true' NAME='GRAY' VALUE='0' />
+        <CONST DEFAULT='true' NAME='COLORED' VALUE='1' />
+      </SELECT>
+      <SELECT WHAT='LVALUE'>
+        <CONST DEFAULT='true' NAME='GRAY' VALUE='0.5' />
+      </SELECT>
+      <SELECT WHAT='LENDHUE'>
+        <CONST DEFAULT='true' NAME='NONE' VALUE='0' />
+        <FIELD NAME='TRANSACTION' TABLE='EVENT' />
+      </SELECT>
+      <SELECT WHAT='LENDSAT'>
+        <CONST DEFAULT='true' NAME='GRAY' VALUE='0' />
+        <CONST DEFAULT='true' NAME='COLORED' VALUE='1' />
+      </SELECT>
+      <SELECT WHAT='LENDVALUE'>
+        <CONST DEFAULT='true' NAME='GRAY' VALUE='0.5' />
+      </SELECT>
+      <SELECT WHAT='LALPHA'>
+        <CONST DEFAULT='true' NAME='HALF' VALUE='0.5' />
+        <CONST NAME='NONE' VALUE='1.0' />
+      </SELECT>
+      <SELECT WHAT='SPLITROWS'>
+        <CONST DEFAULT='true' NAME='INTERIOR' VALUE='0' />
+        <CONST NAME='AS ROWS' VALUE='1' />
+      </SELECT>
+    </GRAPH>
+  </GRAPHMODEL>
+  <PATCHMODEL NAME='EVENTSTATE'>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleAnnotationArea' METHOD='changedUpdate'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='1' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleAnnotationArea' MEMBER='for_document' RESULT='edu.brown.cs.bubbles.bale.BaleDocument' TYPE='FIELD' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='2' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleAnnotationArea' METHOD='insertUpdate'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='3' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleAnnotationArea' MEMBER='for_document' RESULT='edu.brown.cs.bubbles.bale.BaleDocument' TYPE='FIELD' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='4' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleAnnotationArea' METHOD='paintComponent'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='5' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleAnnotationArea' MEMBER='for_document' RESULT='edu.brown.cs.bubbles.bale.BaleDocument' TYPE='FIELD' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='6' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleAnnotationArea$LineChecker' METHOD='run'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='7' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleAnnotationArea$LineChecker' MEMBER='this$0' RESULT='edu.brown.cs.bubbles.bale.BaleAnnotationArea' TYPE='FIELD' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleAnnotationArea' MEMBER='access$1' TYPE='METHOD0' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='8' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleAstNode' METHOD='toString'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='9' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleAstNode' MEMBER='for_document' RESULT='edu.brown.cs.bubbles.bale.BaleDocumentIde' TYPE='FIELD' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='10' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleCompletionContext$CompletionGetter' METHOD='run'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='11' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleCompletionContext$CompletionGetter' MEMBER='this$0' RESULT='edu.brown.cs.bubbles.bale.BaleCompletionContext' TYPE='FIELD' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleCompletionContext' MEMBER='access$2' TYPE='METHOD0' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='12' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleCompletionContext$CompletionShower' METHOD='actionPerformed'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='13' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleCompletionContext$CompletionShower' MEMBER='this$0' RESULT='edu.brown.cs.bubbles.bale.BaleCompletionContext' TYPE='FIELD' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleCompletionContext' MEMBER='access$2' TYPE='METHOD0' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='14' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleCompletionContext$EditKeyer' METHOD='keyPressed'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='15' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleCompletionContext$EditKeyer' MEMBER='this$0' RESULT='edu.brown.cs.bubbles.bale.BaleCompletionContext' TYPE='FIELD' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleCompletionContext' MEMBER='access$2' TYPE='METHOD0' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='16' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleCrumbBar' METHOD='insertUpdate'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='17' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleCrumbBar' MEMBER='for_document' RESULT='edu.brown.cs.bubbles.bale.BaleDocument' TYPE='FIELD' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='18' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleDocumentFragment' METHOD='getFont'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='19' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='THIS' />
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='20' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleDocumentFragment' METHOD='getForeground'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='21' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='THIS' />
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='22' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleDocumentFragment' METHOD='insertString'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='23' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='THIS' />
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='24' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleDocumentFragment' METHOD='insertUpdate'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='25' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='THIS' />
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='26' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleDocumentFragment' METHOD='removeUpdate'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='27' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='THIS' />
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='28' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleDocumentIde$EclipseUpdater' METHOD='insertUpdate'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='29' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleDocumentIde$EclipseUpdater' MEMBER='this$0' RESULT='edu.brown.cs.bubbles.bale.BaleDocumentIde' TYPE='FIELD' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='30' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleDocumentIde$FragmentElisionUpdater' METHOD='run'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='31' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleDocumentIde$FragmentElisionUpdater' MEMBER='this$0' RESULT='edu.brown.cs.bubbles.bale.BaleDocumentIde' TYPE='FIELD' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='32' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleEditorPane' METHOD='paintComponent'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='33' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleEditorPane' MEMBER='getBaleDocument' TYPE='METHOD0' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='34' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleElement' METHOD='getAttribute'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='35' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleElement' MEMBER='for_document' RESULT='edu.brown.cs.bubbles.bale.BaleDocument' TYPE='FIELD' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='36' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleElement' METHOD='getAttributes'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='37' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleElement' MEMBER='for_document' RESULT='edu.brown.cs.bubbles.bale.BaleDocument' TYPE='FIELD' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='38' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleElement' METHOD='getDocument'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='39' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleElement' MEMBER='for_document' RESULT='edu.brown.cs.bubbles.bale.BaleDocument' TYPE='FIELD' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='40' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleElement' METHOD='getEndOffset'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='41' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleElement' MEMBER='for_document' RESULT='edu.brown.cs.bubbles.bale.BaleDocument' TYPE='FIELD' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='42' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleElement' METHOD='getStartOffset'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='43' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleElement' MEMBER='for_document' RESULT='edu.brown.cs.bubbles.bale.BaleDocument' TYPE='FIELD' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='44' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleElement' METHOD='isDefined'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='45' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleElement' MEMBER='for_document' RESULT='edu.brown.cs.bubbles.bale.BaleDocument' TYPE='FIELD' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='46' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleElementBuffer' METHOD='toString'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='47' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleElementBuffer' MEMBER='base_document' RESULT='edu.brown.cs.bubbles.bale.BaleDocument' TYPE='FIELD' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='48' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleFindBar$HighlightCanceler' METHOD='caretUpdate'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='49' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleFindBar$HighlightCanceler' MEMBER='this$0' RESULT='edu.brown.cs.bubbles.bale.BaleFindBar' TYPE='FIELD' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleFindBar' MEMBER='access$1' TYPE='METHOD0' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleEditorPane' MEMBER='getBaleDocument' TYPE='METHOD0' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='50' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleFragmentContent' METHOD='getChars'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='51' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleFragmentContent' MEMBER='base_document' RESULT='edu.brown.cs.bubbles.bale.BaleDocumentIde' TYPE='FIELD' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='52' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleFragmentContent' METHOD='length'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='53' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleFragmentContent' MEMBER='base_document' RESULT='edu.brown.cs.bubbles.bale.BaleDocumentIde' TYPE='FIELD' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='54' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleHighlightContext' METHOD='caretUpdate'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='55' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='THIS' />
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='56' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleViewBase' METHOD='childAllocation'>
+      <PATCH WHAT='ENTER'>
+        <MODE POST='false'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='57' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='MULTIPLE'>
+              <ACCESS LOCAL='0' TYPE='LOCAL' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleViewBase' MEMBER='getBaleElement' TYPE='METHOD0' />
+              <ACCESS CLASS='edu.brown.cs.bubbles.bale.BaleElement' MEMBER='getBaleDocument' TYPE='METHOD0' />
+            </ARG>
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+      </PATCH>
+      <PATCH WHAT='EXIT'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='58' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleFactory' METHOD='getDocument'>
+      <PATCH WHAT='CALL'>
+        <MODE POST='true'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='59' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='STACK' />
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='edu.brown.cs.bubbles.bale.BaleDocumentIde.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleEditorKit$FragmentKit' METHOD='createDefaultDocument'>
+      <PATCH WHAT='CALL'>
+        <MODE POST='true'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='60' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='STACK' />
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='edu.brown.cs.bubbles.bale.BaleDocumentFragment.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleFactory' METHOD='getGlobalHighlightContext'>
+      <PATCH WHAT='CALL'>
+        <MODE POST='true'>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object,java.lang.Object,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='61' />
+            <ARG TYPE='CURTHREAD' />
+            <ARG TYPE='STACK' />
+            <ARG TYPE='NULL' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='edu.brown.cs.bubbles.bale.BaleHighlightContext.&lt;init&gt;' CASE='METHOD' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.ivy.mint.client.MintClient' METHOD='getNextMessage'>
+      <PATCH WHAT='LINE'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='62' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='650' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.ivy.mint.client.MintClient' METHOD='getNextReply'>
+      <PATCH WHAT='LINE'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='63' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='682' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.ivy.mint.client.MintClient$AsynchMessager' METHOD='run'>
+      <PATCH WHAT='LINE'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='64' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='583' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.buda.BudaRoot$MouseEventQueue' METHOD='dispatchEvent'>
+      <PATCH WHAT='LINE'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='65' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='2130' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.buda.BudaRoot$MouseEventQueue' METHOD='resend'>
+      <PATCH WHAT='LINE'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='66' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='2200' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.bubbles.bale.BaleDocumentIde$FragmentElisionUpdater' METHOD='run'>
+      <PATCH WHAT='LINE'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='67' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='504' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.ivy.exec.IvyExec$ReaderThread' METHOD='run'>
+      <PATCH WHAT='LINE'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='68' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='601' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.ivy.mint.client.MintClient$ReaderThread' METHOD='run'>
+      <PATCH WHAT='LINE'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='69' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='911' CASE='LINE' />
+      </PATCH>
+    </FOR>
+    <FOR CLASS='edu.brown.cs.ivy.mint.client.MintClient$ReaderThread' METHOD='run'>
+      <PATCH WHAT='LINE'>
+        <MODE>
+          <CODE CLASS='edu.brown.cs.dyvise.dyper.DyperAgentEvents' METHOD='newEvent' SIGNATURE='(int,java.lang.Object)' TYPE='CALL'>
+            <ARG TYPE='INTEGER' VALUE='70' />
+            <ARG TYPE='CURTHREAD' />
+          </CODE>
+        </MODE>
+        <WHEN ARG='924' CASE='LINE' />
+      </PATCH>
+    </FOR>
+  </PATCHMODEL>
+  <EVENTMODEL>
+    <EVENT ID='1' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleAnnotationArea.changedUpdate'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleAnnotationArea.changedUpdate' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='2' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleAnnotationArea.changedUpdate'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='3' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleAnnotationArea.insertUpdate'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleAnnotationArea.insertUpdate' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='4' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleAnnotationArea.insertUpdate'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='5' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleAnnotationArea.paintComponent'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleAnnotationArea.paintComponent' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='6' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleAnnotationArea.paintComponent'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='7' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleAnnotationArea$LineChecker.run'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleAnnotationArea$LineChecker.run' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='8' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleAnnotationArea$LineChecker.run'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='9' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleAstNode.toString'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleAstNode.toString' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='10' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleAstNode.toString'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='11' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleCompletionContext$CompletionGetter.run'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleCompletionContext$CompletionGetter.run' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='12' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleCompletionContext$CompletionGetter.run'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='13' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleCompletionContext$CompletionShower.actionPerformed'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleCompletionContext$CompletionShower.actionPerformed' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='14' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleCompletionContext$CompletionShower.actionPerformed'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='15' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleCompletionContext$EditKeyer.keyPressed'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleCompletionContext$EditKeyer.keyPressed' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='16' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleCompletionContext$EditKeyer.keyPressed'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='17' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleCrumbBar.insertUpdate'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleCrumbBar.insertUpdate' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='18' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleCrumbBar.insertUpdate'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='19' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleDocumentFragment.getFont'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleDocumentFragment.getFont' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='20' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleDocumentFragment.getFont'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='21' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleDocumentFragment.getForeground'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleDocumentFragment.getForeground' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='22' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleDocumentFragment.getForeground'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='23' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleDocumentFragment.insertString'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleDocumentFragment.insertString' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='24' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleDocumentFragment.insertString'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='25' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleDocumentFragment.insertUpdate'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleDocumentFragment.insertUpdate' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='26' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleDocumentFragment.insertUpdate'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='27' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleDocumentFragment.removeUpdate'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleDocumentFragment.removeUpdate' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='28' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleDocumentFragment.removeUpdate'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='29' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleDocumentIde$EclipseUpdater.insertUpdate'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleDocumentIde$EclipseUpdater.insertUpdate' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='30' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleDocumentIde$EclipseUpdater.insertUpdate'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='31' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleDocumentIde$FragmentElisionUpdater.run'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleDocumentIde$FragmentElisionUpdater.run' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='32' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleDocumentIde$FragmentElisionUpdater.run'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='33' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleEditorPane.paintComponent'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleEditorPane.paintComponent' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='34' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleEditorPane.paintComponent'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='35' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleElement.getAttribute'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleElement.getAttribute' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='36' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleElement.getAttribute'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='37' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleElement.getAttributes'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleElement.getAttributes' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='38' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleElement.getAttributes'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='39' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleElement.getDocument'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleElement.getDocument' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='40' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleElement.getDocument'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='41' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleElement.getEndOffset'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleElement.getEndOffset' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='42' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleElement.getEndOffset'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='43' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleElement.getStartOffset'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleElement.getStartOffset' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='44' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleElement.getStartOffset'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='45' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleElement.isDefined'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleElement.isDefined' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='46' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleElement.isDefined'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='47' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleElementBuffer.toString'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleElementBuffer.toString' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='48' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleElementBuffer.toString'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='49' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleFindBar$HighlightCanceler.caretUpdate'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleFindBar$HighlightCanceler.caretUpdate' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='50' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleFindBar$HighlightCanceler.caretUpdate'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='51' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleFragmentContent.getChars'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleFragmentContent.getChars' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='52' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleFragmentContent.getChars'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='53' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleFragmentContent.length'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleFragmentContent.length' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='54' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleFragmentContent.length'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='55' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleHighlightContext.caretUpdate'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleHighlightContext.caretUpdate' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='56' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleHighlightContext.caretUpdate'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='57' NAME='STARTEVENT edu.brown.cs.bubbles.bale.BaleViewBase.childAllocation'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='BEGIN@edu.brown.cs.bubbles.bale.BaleViewBase.childAllocation' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+    </EVENT>
+    <EVENT ID='58' NAME='ENDEVENT edu.brown.cs.bubbles.bale.BaleViewBase.childAllocation'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='59' NAME='ALLOC edu.brown.cs.bubbles.bale.BaleFactory.getDocument &gt; edu.brown.cs.bubbles.bale.BaleDocumentIde'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='60' NAME='ALLOC edu.brown.cs.bubbles.bale.BaleEditorKit$FragmentKit.createDefaultDocument &gt; edu.brown.cs.bubbles.bale.BaleDocumentFragment'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='61' NAME='ALLOC edu.brown.cs.bubbles.bale.BaleFactory.getGlobalHighlightContext &gt; edu.brown.cs.bubbles.bale.BaleHighlightContext'>
+      <ACTION ALLOWNEW='true' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION TYPE='IFNEW' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION CONST='ALLOC' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION TYPE='ENDIF' />
+      <ACTION ALLOWNEW='true' ID='P0' NEW='true' TYPE='BEGIN' WHICH='1' />
+      <ACTION FIELD='THREAD' TYPE='FIELD' VALUE='P0' />
+      <ACTION FIELD='TRANSACTION' TYPE='FIELD' VALUE='P1' />
+      <ACTION FIELD='TASK' TYPE='FIELD' VALUE='P2' />
+      <ACTION FIELD='TIME' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='true' TYPE='OUTPUT' />
+    </EVENT>
+    <EVENT ID='62' NAME='THREADSTATE edu.brown.cs.ivy.mint.client.MintClient.getNextMessage @ 650'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.ivy.mint.client.MintClient.getNextMessage@650' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='63' NAME='THREADSTATE edu.brown.cs.ivy.mint.client.MintClient.getNextReply @ 682'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.ivy.mint.client.MintClient.getNextReply@682' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='64' NAME='THREADSTATE edu.brown.cs.ivy.mint.client.MintClient$AsynchMessager.run @ 583'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.ivy.mint.client.MintClient$AsynchMessager.run@583' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='65' NAME='THREADSTATE edu.brown.cs.bubbles.buda.BudaRoot$MouseEventQueue.dispatchEvent @ 2130'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.bubbles.buda.BudaRoot$MouseEventQueue.dispatchEvent@2130' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='66' NAME='THREADSTATE edu.brown.cs.bubbles.buda.BudaRoot$MouseEventQueue.resend @ 2200'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.bubbles.buda.BudaRoot$MouseEventQueue.resend@2200' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='67' NAME='THREADSTATE edu.brown.cs.bubbles.bale.BaleDocumentIde$FragmentElisionUpdater.run @ 504'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.bubbles.bale.BaleDocumentIde$FragmentElisionUpdater.run@504' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='68' NAME='THREADSTATE edu.brown.cs.ivy.exec.IvyExec$ReaderThread.run @ 601'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.ivy.exec.IvyExec$ReaderThread.run@601' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='69' NAME='THREADSTATE edu.brown.cs.ivy.mint.client.MintClient$ReaderThread.run @ 911'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.ivy.mint.client.MintClient$ReaderThread.run@911' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+    <EVENT ID='70' NAME='THREADSTATE edu.brown.cs.ivy.mint.client.MintClient$ReaderThread.run @ 924'>
+      <ACTION ALLOWNEW='false' ID='P0' NEW='false' TYPE='BEGIN' WHICH='0' />
+      <ACTION FIELD='END' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DIFFERENCE='true' FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION DISCARD='false' TYPE='OUTPUT' />
+      <ACTION FIELD='START' TYPE='FIELD' VALUE='TIME' />
+      <ACTION FIELD='CPU' TYPE='FIELD' VALUE='TIME' />
+      <ACTION CONST='edu.brown.cs.ivy.mint.client.MintClient$ReaderThread.run@924' FIELD='STATE' TYPE='FIELD' VALUE='CONST' />
+    </EVENT>
+  </EVENTMODEL>
+  <GRAPHICS>
+    <VIEW NAME='Events over Time' ENABLED='true'>
+      <SELECTOR NAME='ROWDATA'>
+        <ITEM TYPE='TABLE' TABLE='EVENT' />
+      </SELECTOR>
+      <SELECTOR NAME='LINKDATA'>
+        <ITEM TYPE='TABLE' TABLE='CREATE' />
+      </SELECTOR>
+      <SELECTOR NAME='ROW'>
+        <ITEM TYPE='FIELD' FIELD='THREAD' MERGE='NONE' SORT='SORT_NAME' />
+      </SELECTOR>
+      <SELECTOR NAME='ROWITEM'>
+        <ITEM TYPE='FIELD' FIELD='STATE' MERGE='NONE' SORT='SORT_NAME' />
+      </SELECTOR>
+      <SELECTOR NAME='HUE'>
+        <ITEM TYPE='FIELD' FIELD='TRANSACTION' MERGE='MODE' SORT='SORT_NAME' />
+      </SELECTOR>
+      <SELECTOR NAME='SAT'>
+        <ITEM TYPE='CONST' NAME='NONE' VALUE='1.0' NULL='0.0' />
+      </SELECTOR>
+      <SELECTOR NAME='VALUE'>
+        <ITEM TYPE='CONST' NAME='NONE' VALUE='1.0' NULL='1.0' />
+      </SELECTOR>
+      <SELECTOR NAME='WIDTH'>
+        <ITEM TYPE='CONST' NAME='NONE' VALUE='1.0' NULL='1.0' />
+      </SELECTOR>
+      <SELECTOR NAME='ITEMWIDTH'>
+        <ITEM TYPE='INTERVAL' />
+      </SELECTOR>
+      <SELECTOR NAME='DATA1'>
+        <ITEM TYPE='FIELD' FIELD='TRANSACTION' MERGE='NONE' SORT='SORT_NAME' />
+      </SELECTOR>
+      <SELECTOR NAME='DATA2'>
+        <ITEM TYPE='CONST' NAME='NONE' VALUE='0.0' NULL='0.0' />
+      </SELECTOR>
+      <SELECTOR NAME='LHUE'>
+        <ITEM TYPE='CONST' NAME='NONE' VALUE='0.0' NULL='0.0' />
+      </SELECTOR>
+      <SELECTOR NAME='LSAT'>
+        <ITEM TYPE='CONST' NAME='GRAY' VALUE='0.0' NULL='0.0' />
+      </SELECTOR>
+      <SELECTOR NAME='LVALUE'>
+        <ITEM TYPE='CONST' NAME='GRAY' VALUE='0.5' NULL='0.5' />
+      </SELECTOR>
+      <SELECTOR NAME='LENDHUE'>
+        <ITEM TYPE='CONST' NAME='NONE' VALUE='0.0' NULL='0.0' />
+      </SELECTOR>
+      <SELECTOR NAME='LENDSAT'>
+        <ITEM TYPE='CONST' NAME='GRAY' VALUE='0.0' NULL='0.0' />
+      </SELECTOR>
+      <SELECTOR NAME='LENDVALUE'>
+        <ITEM TYPE='CONST' NAME='GRAY' VALUE='0.5' NULL='0.5' />
+      </SELECTOR>
+      <SELECTOR NAME='LALPHA'>
+        <ITEM TYPE='CONST' NAME='HALF' VALUE='0.5' NULL='0.5' />
+      </SELECTOR>
+      <SELECTOR NAME='SPLITROWS'>
+        <ITEM TYPE='CONST' NAME='INTERIOR' VALUE='0.0' NULL='0.0' />
+      </SELECTOR>
+    </VIEW>
+  </GRAPHICS>
+</DYVIEW>

@@ -1,0 +1,15 @@
+<DYVISE>
+   <ANALYZE>
+      <NAME>Transactional Thread-State Model for process using 'transaction class name'</NAME>
+      <QM>Transactional Thread-State Model</QM>
+      <INPUT>
+	 <ITEM TYPE='ThreadClass' ID='thread'>
+	    <VALUE>edu.brown.cs.s6.engine.EnginePool$Worker</VALUE>
+	    <VALUE>edu.brown.cs.s6.engine.EngineMain$EngineClient</VALUE>
+	 </ITEM>
+	 <ITEM TYPE='EventClass' ID='event'>
+	    <VALUE>edu.brown.cs.s6.common.S6Request$Search</VALUE>
+	 </ITEM>
+      </INPUT>
+   </ANALYZE>
+</DYVISE>

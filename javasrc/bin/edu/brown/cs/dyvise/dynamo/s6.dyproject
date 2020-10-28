@@ -1,0 +1,55 @@
+<DYVISE>
+   <PROJECT NAME='s6' OWNER='spr' TYPE='eclipse'>
+      <DESCRIPTION>S6 search project</DESCRIPTION>
+      <PATHS>
+	 <CP>/pro/ivy/java</CP>
+	 <CP>/pro/ivy/lib/jikesbt.jar</CP>
+	 <CP>/pro/java/linux/jdk1.6_x64/lib/tools.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.jdt.core_3.4.4.v_894_R34x.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.core.filebuffers_3.4.0.v20080603-2000.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.core.resources_3.4.2.R34x_v20090126.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.core.runtime_3.4.0.v20080512.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.core.jobs_3.4.1.R34x_v20081128.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.core.contenttype_3.3.0.v20080604-1400.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.equinox.common_3.4.0.v20080421-2006.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.equinox.preferences_3.2.201.R34x_v20080709.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.equinox.registry_3.4.0.v20080516-0950.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.equinox.app_1.1.0.v20080421-2006.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.debug.core_3.4.1.v20090106_r342.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.debug.ui_3.4.2.v20090110_r342.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.jdt.debug_3.4.1.v20081216_r342/jdi.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.jdt.debug_3.4.1.v20081216_r342/jdimodel.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.text_3.4.0.v20080605-1800.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.core.runtime.compatibility.auth_3.2.100.v20070502.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.core.filesystem_1.2.0.v20080604-1400.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.search_3.4.1.r341_v20080813-0800.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.jface_3.4.2.M20090107-0800.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.ui.workbench_3.4.2.M20090127-1700.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.swt_3.4.2.v3452b.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.swt.gtk.linux.x86_64_3.4.1.v3452b.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.jface.text_3.4.2.r342_v20081119-0800.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.jdt.ui_3.4.2.r342_v20090107-0800.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.osgi_3.4.3.R34x_v20081215-1030.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.osgi.util_3.1.300.v20080303.jar</CP>
+	 <CP>/home/spr/eclipse34/eclipse/plugins/org.eclipse.osgi.services_3.1.200.v20071203.jar</CP>
+	 <CP>/pro/s6/java</CP>
+	 <CP>/pro/s6/lib/lucene230.jar</CP>
+	 <CP>/pro/s6/public/gwt/gwt-user.jar</CP>
+	 <CP>/pro/s6/public/gwt/gwt-dev-linux.jar</CP>
+	 <CP>/pro/s6/lib/asm-3.1.jar</CP>
+	 <CP>/pro/s6/lib/json.jar</CP>
+	 <SP>/pro/ivy/javasrc</SP>
+	 <SP>/pro/s6/javasrc</SP>
+      </PATHS>
+      <USER>
+	 <PACKAGE>edu.brown.cs.s6.</PACKAGE>
+	 <PACKAGE>edu.brown.cs.ivy.</PACKAGE>
+	 <CLASS TYPE='START'>edu.brown.cs.s6.engine.EngineMain</CLASS>
+      </USER>
+      <EXECS>
+	 <EXEC NAME='edu.brown.cs.s6.engine.EngineMain'>
+	    <RUN>$(JAVA) -Xmx1500m $(MAIN) -t 4 /pro/s6/engine/src/test01.s6</RUN>
+	 </EXEC>
+      </EXECS>
+   </PROJECT>
+</DYVISE>

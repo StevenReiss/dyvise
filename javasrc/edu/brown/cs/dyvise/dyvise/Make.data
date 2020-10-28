@@ -1,0 +1,26 @@
+#
+# RCS: $Header: /pro/spr_cvs/pro/dyvise/javasrc/edu/brown/cs/dyvise/dyvise/Make.data,v 1.2 2009-10-07 01:00:23 spr Exp $
+
+#
+# DYVISE -- common definitions and classes
+#
+
+
+PACKAGE=dyvise
+
+SFILES= \
+	DyviseAnalysisModel.java \
+	DyviseConstants.java \
+	DyviseDataType.java \
+	DyviseDatabase.java \
+	DyviseEvent.java \
+	DyviseEventVisitor.java \
+	DyviseException.java \
+	DyviseInputModel.java \
+	DyviseInstance.java \
+	DyviseProcessChooser.java \
+	DyviseQuestionModel.java \
+	DyviseTimeManager.java \
+	DyviseVisualModel.java \
+
+

@@ -1,0 +1,60 @@
+
+# RCS: $Header: /pro/spr_cvs/pro/dyvise/dylute/src/Make.data,v 1.2 2016/11/02 18:59:05 spr Exp $
+
+#
+# DYLUTE -- DYname Lock Utilization Test Environment
+#
+
+
+PACKAGE=dylute
+
+SFILES= \
+	DyluteConstants.java \
+	DyluteInstrumenter.java \
+	DyluteMain.java \
+	DyluteMonitor.java \
+	DyluteTransformer.java \
+	DyluteTest.java \
+
+SLIBLINKS= dylute.jar
+POSTALL= jar
+
+test:
+	-rm DyluteTest.class
+	make DyluteTest.class
+	dyvisejava edu.brown.cs.dyvise.dylute.DyluteMain
+	javap -l -private -s -verbose edu.brown.cs.dyvise.dylute.DyluteTest
+	cp DyluteTest.out DyluteTest.class
+	javap -l -private -s -verbose edu.brown.cs.dyvise.dylute.DyluteTest
+	java -verify edu.brown.cs.dyvise.dylute.DyluteTest
+	rm DyluteTest.class
+
+
+
+SCP =  $(HOME)/solar/java:$(HOME)/solar/javasrc:/pro/ivy/java:$(HOME)/jogl/jogl-linux64/jogl.jar
+SIN = $(HOME)/solar/src/model.solar
+
+test1:	all
+	java -cp $(SCP) -javaagent:/pro/dyvise/dylute/src/dylute.jar=LOCK=/research/dyvise/dylute/src/solar.test:OUTPUT=/vol/spr/solar.out -d64 -Xmx8000m edu.brown.cs.cs032.solar.SolarMain -p 4 $(SIN)
+
+test1a:  all
+	java -cp $(SCP) edu.brown.cs.cs032.solar.SolarMain -p 4 $(SIN)
+
+test2:	all
+	java -verbose -cp $(SCP) -javaagent:/pro/dyvise/dylute/src/dylute.jar=LOCK=/research/dyvise/dylute/src/solar.test:OUTPUT=/research/devise/dylute/src/solar.out edu.brown.cs.cs032.solar.SolarMain -p 4 $(SIN)
+
+
+
+jar:
+	taigabuildimpljar -cp $(BROWN_DYVISE_DYVISE)/java:$(BROWN_DYVISE_DYVISE)/lib/sprasm.jar \
+		-j $(BROWN_DYVISE_DYVISE)/dylute/src/dylute.jar \
+		-m $(BROWN_DYVISE_DYVISE)/dylute/src/manifest.mf \
+		edu.brown.cs.dyvise.dylute.DyluteMain \
+		edu.brown.cs.dyvise.dylute.DyluteMonitor
+
+dyluteasm:
+	java -jar $(BROWN_DYVISE_IVY)/lib/jarjar.jar \
+		process $(BROWN_DYVISE_DYVISE)/dylute/src/dyluteasm.rules \
+		$(BROWN_DYVISE_IVY)/lib/asm6.jar dyluteasm.jar
+	cp dyluteasm.jar $(BROWN_DYVISE_DYVISE)/lib
+	cp dyluteasm.jar $(BROWN_DYVISE_DYVISE)/lib/sprasm.jar

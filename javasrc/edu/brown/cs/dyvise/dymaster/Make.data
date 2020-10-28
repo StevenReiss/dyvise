@@ -1,0 +1,17 @@
+#
+# RCS: $Header: /pro/spr_cvs/pro/dyvise/javasrc/edu/brown/cs/dyvise/dymaster/Make.data,v 1.1 2008-11-24 23:39:54 spr Exp $
+
+#
+# DYMASTER -- master control panel for dyvise	
+#
+
+
+PACKAGE=dymaster
+
+SFILES= \
+	DymasterConstants.java \
+	DymasterMain.java \
+
+
+test: all
+	dyvisejava edu.brown.cs.dyvise.dymaster.DymasterMain
