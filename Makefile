@@ -43,7 +43,7 @@ OTHERCOMPS=
 
 C++_COMPONENTS = dymti dylti
 JAVA_COMPONENTS= dyper dypatchasm dymon dymaster dymem dyvision dpin \
-			dyvise dycomp dymac dynamo dystatic dystore dygraph dyview \
+			dyvise dycomp dymac dynamo dystore dygraph dyview \
 			dylate dylock dylute
 LC++_COMPONENTS = $(C++_COMPONENTS)
 APPLE_COMPONENTS = $(C++_COMPONENTS)

@@ -156,8 +156,9 @@ old
 dyluteasm.jar
 *.timestamp
 .classpath
-.project					
+.project				
 .settings
 DYVISEBIN
 *.save
 *.jmap
+dystatic
