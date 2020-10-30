@@ -393,6 +393,8 @@ private void setupProcess()
    Element mdl = IvyXml.getChild(xml,"MODEL");
    model_name = IvyXml.getAttrString(mdl,"NAME");
 
+   System.err.println("DYVIEW: Setup process model: " + IvyXml.convertXmlToString(mdl));
+   
    model_reply = new MintDefaultReply();
    patch_process.send("MODEL",IvyXml.convertXmlToString(mdl),model_reply,MINT_MSG_ALL_REPLIES);
 

@@ -699,6 +699,8 @@ private String handleClassModel(Element opts)
    Class<?> [] cset = class_inst.getAllLoadedClasses();
    for (Class<?> c : cset) {
       if (c.isArray() || c.isPrimitive()) continue;
+      if (c.getName().contains("LambdaForm$")) continue;
+      if (c.getName().contains("$$Lambda$")) continue;
       String nm = c.getName();
       xw.begin("CLASS");
       xw.field("NAME",c.getName());
@@ -838,6 +840,7 @@ private String handleInstrument(Element xml)
 
 	 try {
 	    class_inst.redefineClasses(cdefs);
+            System.err.println("DYPER: redefine succeeded");
 	  }
 	 catch (Throwable e) {
 	    System.err.println("DYPER: Problem doing instrumentation: " + e);
@@ -1343,110 +1346,110 @@ private class CmdHandler {
       System.err.println("DYPER: Command: " + cmd);
       Element cnts = null;
       for (Node n = xml.getFirstChild(); n != null; n = n.getNextSibling()) {
-	 if (n.getNodeType() == Node.ELEMENT_NODE) {
-	    cnts = (Element) n;
-	    break;
-	  }
+         if (n.getNodeType() == Node.ELEMENT_NODE) {
+            cnts = (Element) n;
+            break;
+          }
        }
-
+   
       if (cmd == null) ;
       else if (cmd.equals("WHO")) {
-	 rslt = "<DYPER_REPLY ID='" + process_id +
-	    "' ACTIVE='" + stack_monitor.isMonitoringEnabled() + "' />";
+         rslt = "<DYPER_REPLY ID='" + process_id +
+            "' ACTIVE='" + stack_monitor.isMonitoringEnabled() + "' />";
        }
       else if (cmd.equals("WHORU")) {
-	 rslt = handleWhoAreYou();
+         rslt = handleWhoAreYou();
        }
       else if (cmd.equals("PING")) {
-	 rslt = "PONG " + init_overhead;
+         rslt = "PONG " + init_overhead;
        }
       else if (cmd.equals("SET")) {
-	 handleSet(cnts);
+         handleSet(cnts);
        }
       else if (cmd.equals("GET")) {
-	 if (cnts != null) rslt = processGet(getAttrString(cnts,"NAME"));
+         if (cnts != null) rslt = processGet(getAttrString(cnts,"NAME"));
        }
       else if (cmd.equals("CLEAR")) {
-	 if (cnts == null) rslt = handleClear(null);
-	 else rslt = handleClear(getAttrString(cnts,"AGENT"));
+         if (cnts == null) rslt = handleClear(null);
+         else rslt = handleClear(getAttrString(cnts,"AGENT"));
        }
       else if (cmd.equals("SETDETAIL")) {
-	 handleSetDetail(cnts);
+         handleSetDetail(cnts);
        }
       else if (cmd.equals("CLASSES")) {
-	 handleClasses(cnts);
+         handleClasses(cnts);
        }
       else if (cmd.equals("GETCLASSES")) {
-	 rslt = handleGetClasses(cnts);
+         rslt = handleGetClasses(cnts);
        }
       else if (cmd.equals("CLASSMODEL")) {
-	 rslt = handleClassModel(cnts);
+         rslt = handleClassModel(cnts);
        }
       else if (cmd.equals("REPORT")) {
-	 if (cnts == null) rslt = handleReport(null);
-	 else rslt = handleReport(getAttrString(cnts,"TYPE"));
+         if (cnts == null) rslt = handleReport(null);
+         else rslt = handleReport(getAttrString(cnts,"TYPE"));
        }
       else if (cmd.equals("SHOWSTACK")) {
-	 rslt = handleStackDump();
+         rslt = handleStackDump();
        }
       else if (cmd.equals("INSTRUMENT")) {
-	 rslt = handleInstrument(cnts);
+         rslt = handleInstrument(cnts);
        }
       else if (cmd.equals("AGENT")) {
-	 if (cnts != null) {
-	    String anm = getAttrString(cnts,"CLASS");
-	    if (anm != null && !installed_agents.contains(anm)) {
-	       installed_agents.add(anm);
-	       try {
-		  String s = System.getProperty("sun.boot.class.path");
-		  if (s != null && !s.contains(DYPER_PATCH_JAR)) {
-		     System.setProperty("sun.boot.class.path",s + File.pathSeparator +
-					   DYPER_PATCH_JAR);
-		   }
-		  Class<?> c = loadClass(anm);
-		  if (c == null) throw new ClassNotFoundException(anm);
-		  Constructor<?> con = c.getConstructor(DyperControl.class);
-		  DyperAgent da = (DyperAgent) con.newInstance(DyperControl.this);
-		  stack_monitor.addAgent(da);
-		  rslt = "OK";
-		}
-	       catch (Throwable t) {
-		  System.err.println("DYPER: Problem installing agent " + anm + ": " + t);
-		  t.printStackTrace();
-		}
-	     }
-	  }
+         if (cnts != null) {
+            String anm = getAttrString(cnts,"CLASS");
+            if (anm != null && !installed_agents.contains(anm)) {
+               installed_agents.add(anm);
+               try {
+        	  String s = System.getProperty("sun.boot.class.path");
+        	  if (s != null && !s.contains(DYPER_PATCH_JAR)) {
+        	     System.setProperty("sun.boot.class.path",s + File.pathSeparator +
+        				   DYPER_PATCH_JAR);
+        	   }
+        	  Class<?> c = loadClass(anm);
+        	  if (c == null) throw new ClassNotFoundException(anm);
+        	  Constructor<?> con = c.getConstructor(DyperControl.class);
+        	  DyperAgent da = (DyperAgent) con.newInstance(DyperControl.this);
+        	  stack_monitor.addAgent(da);
+        	  rslt = "OK";
+        	}
+               catch (Throwable t) {
+        	  System.err.println("DYPER: Problem installing agent " + anm + ": " + t);
+        	  t.printStackTrace();
+        	}
+             }
+          }
        }
       else if (cmd.equals("ACTIVATE")) {
-	 if (cnts != null) {
-	    String anm = getAttrString(cnts,"AGENT");
-	    boolean act = isElement(cnts,"ACTIVATE");
-	    if (act) stack_monitor.reactivateAgent(anm);
-	    else stack_monitor.deactivateAgent(anm,System.currentTimeMillis());
-	  }
+         if (cnts != null) {
+            String anm = getAttrString(cnts,"AGENT");
+            boolean act = isElement(cnts,"ACTIVATE");
+            if (act) stack_monitor.reactivateAgent(anm);
+            else stack_monitor.deactivateAgent(anm,System.currentTimeMillis());
+          }
        }
       else if (cmd.equals("USETHREAD")) {
-	 handleUseThread(cnts);
+         handleUseThread(cnts);
        }
       else if (cmd.equals("GC")) {
-	 handleGC();
+         handleGC();
        }
       else if (cmd.equals("DUMPHEAP")) {
-	 if (cnts == null) rslt = handleDumpHeap("heap.out",true);
-	 else rslt = handleDumpHeap(getAttrString(cnts,"FILE"),
-	       getAttrBool(cnts,"LIVE",true));
+         if (cnts == null) rslt = handleDumpHeap("heap.out",true);
+         else rslt = handleDumpHeap(getAttrString(cnts,"FILE"),
+               getAttrBool(cnts,"LIVE",true));
        }
       else if (cmd.equals("DUMPMEMORY")) {
-	 // System.err.println("DYPER: Handle DUMP MEMORY");
-	 if (cnts == null) rslt = handleDumpMemory("memory.out");
-	 else rslt = handleDumpMemory(getAttrString(cnts,"FILE"));
+         // System.err.println("DYPER: Handle DUMP MEMORY");
+         if (cnts == null) rslt = handleDumpMemory("memory.out");
+         else rslt = handleDumpMemory(getAttrString(cnts,"FILE"));
        }
       else {
-	 System.err.println("DYPER: Unknown command " + cmd);
+         System.err.println("DYPER: Unknown command " + cmd);
        }
-
+   
       sendReply(rslt);
-
+   
       init_overhead += System.currentTimeMillis() - now;
     }
 

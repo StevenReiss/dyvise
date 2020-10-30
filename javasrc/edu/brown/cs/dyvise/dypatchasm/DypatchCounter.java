@@ -292,13 +292,20 @@ public void visitFieldInsn(int opcode,String owner,String name,String desc)
 	 dims = 0;
 	 //FALLTHROUGH
       case Opcodes.ANEWARRAY:
-         try {
-            Type t = Type.getType(type);
-            allocXml(t, dims);
-          }
-         catch (Throwable t) {
-            System.err.println("DYPATCH: can't find type " + type + " for " + opcode);
-          }
+	 Type t = null;
+	 try {
+	    t = Type.getObjectType(type);
+	  }
+	 catch (Throwable e) { }
+	 try {
+	    String tnm = "L" + type + ";";
+	    if (t ==  null) t = Type.getObjectType(tnm);
+	  }
+	 catch (Throwable e) { }
+	 if (t != null) allocXml(t, dims);
+	 else {
+	    System.err.println("DYPATCH: can't find explicit type " + type + " for " + opcode);
+	  }
 	 break;
    }
    ++ins_no;

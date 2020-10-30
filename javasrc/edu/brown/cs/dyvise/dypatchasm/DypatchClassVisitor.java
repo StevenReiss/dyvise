@@ -63,6 +63,8 @@ import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
+import org.objectweb.asm.util.Textifier;
+import org.objectweb.asm.util.TraceMethodVisitor;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
@@ -114,10 +116,10 @@ private class DypatchMethodVisitor extends MethodVisitor {
 
 private Collection<Element>		      xml_collection;
 private int				      access_flags;
-private boolean 			      constructing;
+private boolean 			      is_constructing;
 private String				      method_name;
 private String				      method_desc;
-private Map<PatchOption, Collection<Element>> patches;
+private Map<PatchOption, Collection<Element>> patch_set;
 private Map<String, Integer>		      local_names;
 private Map<Integer, DypatchLocal>	      local_vars;
 private Set<DypatchLocal>		      new_locals;
@@ -145,7 +147,8 @@ public DypatchMethodVisitor(int xapi,MethodVisitor xmv,int access,String name,St
    method_name = name;
    method_desc = desc;
    access_flags = access;
-   constructing = name.equals("<init>");
+   is_constructing = name.equals("<init>");
+   if (is_constructing && class_name.equals("java/lang/Object")) is_constructing = false;
    xml_collection = patched_methods.get("*");
    if (xml_collection == null) xml_collection = new HashSet<Element>();
    String nm1 = name+desc;
@@ -153,10 +156,10 @@ public DypatchMethodVisitor(int xapi,MethodVisitor xmv,int access,String name,St
       xml_collection.addAll(patched_methods.get(name));
    if (patched_methods.containsKey(nm1))
       xml_collection.addAll(patched_methods.get(nm1));
-   patches = new HashMap<PatchOption, Collection<Element>>();
-   local_names = new HashMap<String, Integer>();
-   local_vars = new HashMap<Integer, DypatchLocal>();
-   new_locals = new HashSet<DypatchLocal>();
+   patch_set = new HashMap<>();
+   local_names = new HashMap<>();
+   local_vars = new HashMap<>();
+   new_locals = new HashSet<>();
    local_start = new Label();
    last_label = new Label();
    current_label = null;
@@ -211,12 +214,14 @@ private void populateMap()
       for (Element e : IvyXml.elementsByTag(xml, "PATCH")) {
 	 PatchOption what = IvyXml.getAttrEnum(e, "WHAT", PatchOption.NONE);
 	 if (what == PatchOption.NONE) continue;
-	 Collection<Element> collection = patches.get(what);
+	 Collection<Element> collection = patch_set.get(what);
 	 if (collection == null) {
 	    collection = new ArrayList<Element>();
-	    patches.put(what, collection);
+	    patch_set.put(what, collection);
 	 }
 	 collection.add(e);
+         System.err.println("DYPATCH: Add to patch set " +
+               what + " " + e);
       }
    }
 }
@@ -232,7 +237,7 @@ private void populateMap()
    applyLabel();
    super.visitCode();
    super.visitLabel(local_start);
-   if (!constructing) applyEntryPatches();
+   if (!is_constructing) applyEntryPatches();
 }
 
 @Override public void visitEnd()
@@ -415,9 +420,9 @@ public void visitLocalVariable(String name,String desc,String signature)
 @Override public void visitMethodInsn(int opcode,String owner,String name,String desc,boolean itf)
 {
    applyLabel();
-   if (constructing && name.equals("<init>") && owner.equals(super_class_name)) {
+   if (is_constructing && name.equals("<init>") && owner.equals(super_class_name)) {
       super.visitMethodInsn(opcode, owner, name, desc, itf);
-      constructing = false;
+      is_constructing = false;
       applyEntryPatches();
    }
    else {
@@ -530,7 +535,7 @@ private void removeOldVar(Integer var)
 // Applies patches that come before instruction
 private void applyPrePatches(PatchOption po)
 {
-   Collection<Element> collection = patches.get(po);
+   Collection<Element> collection = patch_set.get(po);
    if (collection == null) return;
    for (Element xml : collection) {
       applyPatch(xml, false);
@@ -540,7 +545,7 @@ private void applyPrePatches(PatchOption po)
 // Applies patches that come after instruction
 private void applyPostPatches(PatchOption po)
 {
-   Collection<Element> collection = patches.get(po);
+   Collection<Element> collection = patch_set.get(po);
    if (collection == null) return;
    for (Element xml : collection) {
       applyPatch(xml, true);
@@ -558,7 +563,7 @@ private void applyEntryPatches()
  */
 private void applyPreBlockPatches()
 {
-   if (constructing) return;
+   if (is_constructing) return;
    if (!in_block) {
       applyPrePatches(PatchOption.BLOCK);
       in_block = true;
@@ -579,7 +584,8 @@ private void applyPostBlockPatches()
  */
 private void applyPatch(Element xml,boolean postPatch)
 {
-   if (constructing) return;
+   System.err.println("DYPATCH: Start apply " + IvyXml.convertXmlToString(xml));
+   if (is_constructing) return;
    Element mode = mode_map.get(IvyXml.getAttrString(xml, "MODE"));
    if (mode == null) {
       mode = IvyXml.getChild(xml, "MODE");
@@ -679,6 +685,7 @@ private boolean validCode(Element e,String name)
  */
 private void applyCode(Element xml,String context)
 {
+   System.err.println("DYPATCH: Apply code " + context);
    String methodClass = IvyXml.getAttrString(xml, "CLASS");
    if (methodClass == null) methodClass = context;
    if (methodClass == null) return;
@@ -689,6 +696,7 @@ private void applyCode(Element xml,String context)
       return;
    }
 
+   System.err.println("DYPATCH: Generate call");
    pushArguments(xml, methodClass, method, signature);
    Type t = Type.VOID_TYPE;
    Element ret = IvyXml.getChild(xml, "RETURN");
@@ -1099,8 +1107,11 @@ private void addLocalVariable(int opcode,int var,String name)
    String nm1 = name + desc;
    if (patched_methods.containsKey(name) || patched_methods.containsKey("*") ||
 	  patched_methods.containsKey(nm1)) {
-      DypatchMethodVisitor dmv = new DypatchMethodVisitor(api,mv,access,name,desc);
-      return dmv;
+      System.err.println("DYPATCH: Patch method " + name + desc);
+      Textifier output = new Textifier();
+      mv = new TraceMethodVisitor(mv,output);
+      mv = new Tracer(mv,nm1,output);
+      mv = new DypatchMethodVisitor(api,mv,access,name,desc);
    }
    return mv;
 }
@@ -1306,5 +1317,36 @@ private static boolean isStoreInsn(int opcode)
    }
    return true;
 }
+
+
+
+/********************************************************************************/
+/*                                                                              */
+/*      Tracer                                                                  */
+/*                                                                              */
+/********************************************************************************/
+
+private static class Tracer extends MethodVisitor {
+ 
+   private String method_name;
+   private Textifier output_printer;
+   
+   Tracer(MethodVisitor nmv,String name,Textifier out) {
+      super(Opcodes.ASM6,nmv);
+      method_name = name;
+      output_printer = out;
+    }
+   
+   
+   
+   @Override public void visitEnd() {
+      System.err.println("CODE FOR " + method_name);
+      System.err.println(output_printer.getText());
+    }
+   
+}       // end of inner class Tracer
+
+
+
 
 }

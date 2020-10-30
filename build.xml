@@ -23,13 +23,11 @@
 
    <target name='all' depends='setup'>
       <ant antfile="build.xml" dir="javasrc" />
-      <ant antfile='build.xml' dir='${PRO}/dyvisebb' />
    </target>
 
    <path id='jdocsrc'>
       <pathelement location='./javasrc' />
       <pathelement location='${PRO}/ivy/javasrc' />
-      <pathelement location='${PRO}/bubbles/javasrc' />
     </path>
 
    <target name='doc'>

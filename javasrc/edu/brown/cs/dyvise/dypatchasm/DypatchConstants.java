@@ -117,7 +117,7 @@ enum PatchMode
 /********************************************************************************/
 
 String MODE_FILE = IvyFile.expandName("$(DYVISE)/lib/dypatch_modes.xml");
-String ALT_MODE_FILE = "dyvise/edu/brown/cs/dyvise/dypatch/dypatch_modes.xml";
+String ALT_MODE_FILE = "dyvise/edu/brown/cs/dyvise/dypatchasm/src/dypatch_modes.xml";
 
 /********************************************************************************/
 /*										*/
@@ -126,7 +126,7 @@ String ALT_MODE_FILE = "dyvise/edu/brown/cs/dyvise/dypatch/dypatch_modes.xml";
 /********************************************************************************/
 
 long   EXIT_DELAY  = 300000;
-int    ASM_VERSION = Opcodes.ASM4;
+int    ASM_VERSION = Opcodes.ASM6;
 
 String TEST0_CLASSPATH = "<CLASSMODEL CLASSPATH = '' BOOTPATH = ''/>";
 

@@ -95,9 +95,13 @@ private static Collection<String> ignore_classes;
 static {
    ignore_classes = new ArrayList<String>();
    ignore_classes.add("sun.rmi.registry.RegistryImpl");
-   // ignore_classes.add("edu.brown.cs.dyvise.dypatch.DypatchMain");
-   // ignore_classes.add("edu.brown.cs.ivy.mint.server.MintServer");
+   ignore_classes.add("edu.brown.cs.dyvise.dymaster.DymasterMain");
+   ignore_classes.add("edu.brown.cs.dyvise.dypatch.DypatchMain");
+   ignore_classes.add("edu.brown.cs.ivy.mint.server.MintServer");
    ignore_classes.add("edu.brown.cs.dyvise.dymon.DymonMain");
+   ignore_classes.add("edu.brown.cs.dyvise.dymon.DymonDyperServer");
+   ignore_classes.add("edu.brown.cs.dyvise.dyvision.DyvisionMain");
+   ignore_classes.add("edu.brown.cs.dyvise.");
 }
 
 

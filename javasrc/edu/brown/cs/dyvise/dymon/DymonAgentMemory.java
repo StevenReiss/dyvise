@@ -230,7 +230,9 @@ DymonAgentMemory(DymonMain dm,DymonProcess p)
 private void startContinuous()
 {
    dymon_main.requestPatch(continuous_request);
-   for_process.setDyperDetail("MEMORY","ALLOC_COUNT",true);
+//    for_process.setDyperDetail("MEMORY","ALLOC_COUNT",true);
+//    for_process.setDyperDetail("MEMORY","ALLOC_TYPE",true);
+   for_process.setDyperDetail("MEMORY","ALLOC_SOURCE",true);
    do_continuous = true;
 }
 
@@ -593,10 +595,10 @@ private class PatchRequest extends DymonPatchRequest {
 
    @Override protected void addPatchInfo(IvyXmlWriter xw,String c,String m) {
       if (c.equals("java.lang.Object") && m.equals("<init>") && !do_continuous) {
-	 xw.begin("PATCH");
-	 xw.field("WHAT","ENTER");
-	 xw.field("MODE","MEMAGENT_TYPE");
-	 xw.end("PATCH");
+         xw.begin("PATCH");
+         xw.field("WHAT","ENTER");
+         xw.field("MODE","MEMAGENT_TYPE");
+         xw.end("PATCH");
        }
     }
 
@@ -663,10 +665,10 @@ private class ContinuousPatchRequest extends DymonPatchRequest {
 
    protected void addPatchInfo(IvyXmlWriter xw,String c,String m) {
       if (c.equals("java.lang.Object") && m.equals("<init>")) {
-	 xw.begin("PATCH");
-	 xw.field("WHAT","ENTER");
-	 xw.field("MODE","MEMAGENT_COUNT");
-	 xw.end("PATCH");
+         xw.begin("PATCH");
+         xw.field("WHAT","ENTER");
+         xw.field("MODE","MEMAGENT_COUNT");
+         xw.end("PATCH");
        }
     }
 

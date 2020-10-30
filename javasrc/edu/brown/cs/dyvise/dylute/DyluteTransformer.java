@@ -90,7 +90,7 @@ private static boolean	do_debug = false;
 
 private static int	OFFSET_DELTA = 0;
 
-private static int ASM_API = Opcodes.ASM5;
+private static int ASM_API = Opcodes.ASM6;
 
 
 

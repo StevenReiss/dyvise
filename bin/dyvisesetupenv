@@ -57,6 +57,8 @@ else
       set y2 = "${y2:h}"
     endif
 
+
+
    set y3 = "${y2:h}"
    set y4 = "$y3/tea"
    setenv BROWN_DYVISE_ROOT "$y3"
@@ -76,7 +78,6 @@ else
    endif
 
    set path = ( $path "$BROWN_DYVISE_DYVISE/bin" "$BROWN_DYVISE_DYVISE/bin/$BROWN_DYVISE_ARCH" )
-
 endif
 
 if ($?BROWN_DYVISE_TRACE_DIR) then

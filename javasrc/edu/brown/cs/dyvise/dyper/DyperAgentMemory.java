@@ -189,6 +189,8 @@ private void setMonitorType(String typ,boolean fg)
    int val = MONITOR_COUNT;
    if (typ.contains("TYPE")) val = MONITOR_TYPE;
    else if (typ.contains("SOURCE")) val = MONITOR_SOURCE;
+   
+   System.err.println("DYPER: SET MONITOR TYPE " + typ + " " + fg + " " + val);
 
    if (val == MONITOR_COUNT) {
       long now = System.currentTimeMillis();

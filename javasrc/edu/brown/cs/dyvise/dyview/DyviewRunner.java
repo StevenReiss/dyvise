@@ -157,6 +157,7 @@ void setupProcess()
    Element pm = view_model.getPatchModel();
    model_name = IvyXml.getAttrString(pm,"NAME");
    model_reply = new MintDefaultReply();
+   System.err.println("DYVIEW: setup patch model: " + IvyXml.convertXmlToString(pm));
 
    patch_process.send("MODEL",IvyXml.convertXmlToString(pm),model_reply,MINT_MSG_ALL_REPLIES);
 

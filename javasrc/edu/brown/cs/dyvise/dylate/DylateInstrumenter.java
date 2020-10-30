@@ -263,19 +263,19 @@ private class SafeClassWriter extends ClassWriter {
 
    @Override protected String getCommonSuperClass(String typ1,String typ2) {
       try {
-	 return super.getCommonSuperClass(typ1,typ2);
+         return super.getCommonSuperClass(typ1,typ2);
        }
       catch (Throwable t) { }
-
+   
       if (typ1.equals("java/awt/Container") && typ2.equals("javax/swing/JComponent"))
-	 return typ1;
+         return typ1;
       if (typ2.equals("java/awt/Container") && typ1.equals("javax/swing/JComponent"))
-	 return typ2;
+         return typ2;
       if (typ1.equals("java/awtColor") && typ2.equals("sun/swing/PrintColorUIResource"))
-	 return typ1;
-
+         return typ1;
+   
       System.err.println("DYLATE: COMMON SUPER " + typ1 + " " + typ2);
-
+   
       return "java/lang/Object";
     }
 

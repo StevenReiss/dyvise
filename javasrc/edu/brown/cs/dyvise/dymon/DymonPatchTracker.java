@@ -331,6 +331,7 @@ private boolean instrument(DymonPatchRequest pr,boolean insert)
 
    System.err.println("DYMON: INSTRUMENT " + pr.getModelName() + " " + insert + " " +
 			 pr.getDuration() + " " + new Date());
+   System.err.println("DYMON: Using " + xw.toString());
 
    MintDefaultReply mr = new MintDefaultReply();
    for_process.sendDyperMessage("INSTRUMENT",xw.toString(),mr,MINT_MSG_FIRST_REPLY);

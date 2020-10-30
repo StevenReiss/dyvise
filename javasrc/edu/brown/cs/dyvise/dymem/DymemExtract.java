@@ -159,6 +159,8 @@ private void badArgs()
 private void process()
 {
    File f = new File(DYMEM_HEAP_PREFIX + process_id + ".trace");
+   f.deleteOnExit();
+   
    IvyXmlReader xr = null;
 
    try {

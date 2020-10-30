@@ -332,6 +332,8 @@ private void updateModel()
    xw.end("PATCHMODEL");
 
    Element xml = null;
+   
+   System.err.println("DYMON: Setup patch request: " + xw.toString());
 
    synchronized (doing_prepare) {
       MintDefaultReply mr = new MintDefaultReply();

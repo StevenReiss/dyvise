@@ -121,7 +121,7 @@ public byte [] transform(ClassLoader ldr,String name,Class<?> cls,
     }
    else if (!cd.hasData()) cd.setData(buf);	// first time should be original data
 
-   // System.err.println("DYPER: TRANSFORM " + name + " " + cd.getPatchData().length + " " + buf.length + " " + cd.getPatchFile());
+   System.err.println("DYPER: TRANSFORM " + name + " " + cd.getPatchData().length + " " + buf.length);
 
    return cd.getPatchData();
 }
@@ -217,7 +217,7 @@ private static class ClassData {
 
    byte [] getPatchData() {
       if (patch_data != null) {
-	 return patch_data;
+         return patch_data;
        }
       return orig_data;
     }

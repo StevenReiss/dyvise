@@ -751,25 +751,25 @@ private class ClassMonitor extends Thread {
       long [] tids = thread_bean.getAllThreadIds();
       ThreadInfo [] tinfo = thread_bean.getThreadInfo(tids,max_depth);
       try {
-	 DyperXmlWriter xw = null;
-	 if (show_stack) {
-	    xw = new DyperXmlWriter();
-	    xw.begin("THREADS");
-	    xw.field("TIME",last_monitor);
-	  }
-
-	 if (monitor_enabled) {
-	    monitorStacks(last_monitor,tinfo,xw);
-	  }
-
-	 if (xw != null) {
-	    xw.end("THREADS");
-	    the_control.sendStackDump(last_monitor,xw.toString());
-	  }
+         DyperXmlWriter xw = null;
+         if (show_stack) {
+            xw = new DyperXmlWriter();
+            xw.begin("THREADS");
+            xw.field("TIME",last_monitor);
+          }
+   
+         if (monitor_enabled) {
+            monitorStacks(last_monitor,tinfo,xw);
+          }
+   
+         if (xw != null) {
+            xw.end("THREADS");
+            the_control.sendStackDump(last_monitor,xw.toString());
+          }
        }
       catch (Throwable t) {
-	 System.err.println("DYPER: Problem during monitoring: " + t);
-	 t.printStackTrace();
+         System.err.println("DYPER: Problem during monitoring: " + t);
+         t.printStackTrace();
        }
     }
 

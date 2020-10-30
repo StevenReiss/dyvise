@@ -290,6 +290,9 @@ public static Map<String, Element> loadModes()
    }
 
    Element xml = IvyXml.loadXmlFromFile(f);
+   System.err.println("DYPATCH: Loaded modes: " +
+         IvyXml.convertXmlToString(xml));
+   
    if (xml == null) return modeMap;
 
    for (Element e : IvyXml.elementsByTag(xml, "MODE")) {
@@ -655,9 +658,9 @@ private String setupCounters(Element xml)
    xw.begin("COUNTERDATA");
    DypatchCounter counter = new DypatchCounter(ASM_VERSION,xw,class_loader);
    for (Element e : IvyXml.children(xml)) {
-      if (IvyXml.isElement(e, "CLASS") || IvyXml.isElement(e, "FOR")) {
+      if (IvyXml.isElement(e, "CLASS") || IvyXml.isElement(e,"FOR")) {
 	 String name = IvyXml.getAttrString(e, "NAME");
-	 if (name == null) name = IvyXml.getAttrString(e, "CLASS");
+	 if (name == null) name = IvyXml.getAttrString(e,"CLASS");
 	 if (counted.contains(name) || name == null) continue;
 	 System.err.println("DYPATCH: Counting class: " + name);
 	 doCounting(name, counter);
@@ -779,6 +782,7 @@ private void patchActiveClasses(Collection<String> clsset,IvyXmlWriter xw)
 	 files = new HashMap<String, File>();
 	 class_files.put(name, files);
       }
+      
       ClassWriter cw = new DypatchClassWriter(ClassWriter.COMPUTE_MAXS
 	       | ClassWriter.COMPUTE_FRAMES,class_loader);
 
@@ -793,8 +797,9 @@ private void patchActiveClasses(Collection<String> clsset,IvyXmlWriter xw)
 	    orig = newOutputFile(cw.toByteArray());
 	 }
 	 files.put("%ORIGINAL%", orig);
-	 cw = new DypatchClassWriter(ClassWriter.COMPUTE_MAXS
-		  | ClassWriter.COMPUTE_FRAMES,class_loader);
+         // need to recreate because original was used with doPatching above
+ 	 cw = new DypatchClassWriter(ClassWriter.COMPUTE_MAXS
+               | ClassWriter.COMPUTE_FRAMES,class_loader);
       }
       File patch;
       if (!(patches == null) && !patches.isEmpty()) {
@@ -812,7 +817,8 @@ private void patchActiveClasses(Collection<String> clsset,IvyXmlWriter xw)
 	    else {
 	       patch = newOutputFile(cw.toByteArray());
 	       files.put(patchString, patch);
-	    }
+               System.err.println("DYPATCH: patched file save as " + patch);
+             }
 	 }
       }
       else {

@@ -51,12 +51,19 @@ prof:	libdymtiprof.$(LIBTYPE)
 
 USERCPLUSFLAGS=
 
-MINCE= $(LD_SEARCH)$(BROWN_DYVISE_IVY)/lib/$(BROWN_DYVISE_ARCH) -lmince
 MINCE= $(BROWN_DYVISE_IVY)/lib/$(BROWN_DYVISE_ARCH)/libmince.$(SHAREDEXT)
+MINCE= $(LD_SEARCH)$(BROWN_DYVISE_IVY)/lib/$(BROWN_DYVISE_ARCH) -lmince
+MINCE= $(LD_SEARCH)$(BROWN_DYVISE_IVY)/lib/$(BROWN_DYVISE_ARCH) $(BROWN_DYVISE_IVY)/lib/$(BROWN_DYVISE_ARCH)/libmince.$(SHAREDEXT)
+ifeq ($(BROWN_DYVISE_ARCH),mac64)
+MINCE= $(wildcard $(BROWN_DYVISE_IVY)/mince/bin.share.$(BROWN_DYVISE_ARCH)/mince*.o)
+endif
 
 DYNLIB= -L$(BROWN_DYVISE_IVY)/lib/$(BROWN_DYVISE_ARCH) $(MINCE) $(XERCESLIB)
 DYNLIB= $(MINCE) $(XERCESLIB)
 
+checkmince:
+	echo $(MINCE1)
+	echo $(MINCE2)
 
 testit: all
 	../src/test01
@@ -75,4 +82,5 @@ testcp:
 
 testmac:
 	dyviserun -agentpath:/pro/dyvise/lib/mac64/libdymti.jnilib spr.onsets.OnsetMain
+
 
